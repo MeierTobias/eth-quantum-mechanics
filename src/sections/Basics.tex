@@ -1,0 +1,78 @@
+\section{Introduction}
+\subsection{Statistics}
+The probability $\rho$ is called \textbf{normalized} if
+\begin{equation*}
+    \int_{-\infty}^{\infty}\rho(x)dx = 1
+\end{equation*}
+The \textbf{expectation value} $\langle x \rangle$ can be calculated with
+\begin{equation*}
+    \langle x \rangle = \int_{-\infty}^{\infty} x\rho(x) dx
+\end{equation*}
+The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ is given by
+\begin{equation*}
+    {\sigma_x}^2 = \langle x^2 \rangle - {\langle x \rangle }^2
+\end{equation*}
+
+\subsection{Schrödinger Equation}
+\begin{align*}
+               &  & i\hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} & = \underbrace{- \frac{\hbar^2}{2m} \nabla^2 \Psi(\mathbf{r},t)}_{E_{kin}} + \underbrace{V(\mathbf{r},t)\Psi(\mathbf{r},t)}_{E_{pot}} \\
+    \text{1D:} &  & i\hbar \frac{\partial \Psi(x,t)}{\partial t}          & = \underbrace{- \frac{\hbar^2}{2m} \frac{\partial^2 \Psi(x,t)}{\partial x^2}}_{E_{kin}} + \underbrace{V(x,t)\Psi(x,t)}_{E_{pot}}
+\end{align*}
+
+\renewcommand{\arraystretch}{1.3}
+\setlength\tabcolsep{6pt} % default value: 6pt
+\begin{tabularx}{\linewidth}{@{}ll@{}}
+    $\hbar = \frac{h}{2\pi}$ & $h$: Planck constant             \\
+    $m,t,x$                  & Mass, time, position          \\
+    $V(x,t)$                 & Potential energy function     \\
+    $\Psi$                   & Complex particle wavefunction \\
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{6pt} % default value: 6pt
+
+\subsection{Planck}
+When describing black body radiation with classical physics, the problem of \textit{infinite radiation at 
+high frequencies at any temperature} occurs, becuase each of the infinite modes need a small amount of energy.
+In quantum mechancs, each mode can only be filled in discrete amounts of energy $h \nu$:
+\begin{equation*}
+    k_B T_{low} \ll h\nu_{high}
+\end{equation*}
+
+\subsubsection{De Broglie}
+The \textit{de Briogle relation} connects the wavelength $\lambda$ with the momentum $p$ for both light and matter
+\begin{equation*}
+    \lambda = \frac{h}{p}
+\end{equation*}
+
+\subsubsection{Probabilities}
+The probability of finding the particle between $a$ and $b$ at time $t$ is:
+\begin{equation*}
+    \int_a^b {\Psi(x,t)}^*\Psi(x,t)\,dx
+\end{equation*}
+The probability density of the is given by
+\begin{equation*}
+    \rho(x,t) = |\Psi(x,t)|^2
+\end{equation*}
+To be physically meaningful, $\Psi$ has to be in $L_2$ (square integrable) and be normalized
+\begin{equation*}
+    \int_{-\infty}^{\infty} |\Psi|^2 dx = 1
+\end{equation*}
+
+\subsection{Position, Momentum and Uncertainty}
+Any observable quantity $Q$ has an operator $\hat{Q}$ which can be formulated in terms of the position and momentum operators $\hat{x}, \hat{p}$
+\begin{equation*}
+    \hat{Q}(\hat{x},\hat{p}), \hspace*{10pt} \hat{x},\; \hat{p}=-i\hbar \frac{\partial}{\partial x}
+\end{equation*}
+
+\subsubsection{Expectation Value}
+The expectation value can be obtained by measuring the \textbf{observable quantity} on an \textit{quantum mechanical ensemble}:
+\begin{align*}
+    \langle \hat{Q}(\hat{x},\hat{p})\rangle & = \int_{-\infty}^{\infty}\Psi^*\hat{Q}(\hat{x},\hat{p})\Psi dx                    \\
+                                            & = \int_{-\infty}^{\infty}\hat{Q}(\hat{x},\hat{p}) \underbrace{|\Psi|^2}_{\rho} dx
+\end{align*}
+
+\subsubsection{Uncertainty}
+By gaining certainty on the observation of either position or momentum, the uncertainty of the other one increases
+\begin{equation*}
+    \underbrace{\sigma_x\sigma_p}_{\text{std. dev.}} \geq \frac{\hbar}{2}
+\end{equation*}
