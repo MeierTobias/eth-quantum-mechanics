@@ -1,0 +1,32 @@
+\section{Appendix}
+\subsection{Constants}
+\noindent\begin{align*}
+    h = 6.63 \cdot 10^{-34} \;\mathrm{J\cdot s}&&& \text{Planck constant}\\
+    k_b =8.617 \cdot 10^{-5} \;\mathrm{\frac{eV}{K}}&&&\text{Boltzmann constant}     
+\end{align*}
+
+\subsection{Useful Integrals}
+\subsubsection{Exponentials}
+\begin{footnotesize}
+    \noindent\begin{align*}
+         & \int e^{\lambda x}dx           &  & =\frac{1}{\lambda }e^{\lambda x}+C                                          \\
+         & \int a^{\lambda x}dx           &  & =\frac{1}{\lambda \cdot \ln(a)}a^{\lambda x}+C                              \\
+         & \int e^{\lambda x}\sin(ax+b)dx &  & =\frac{e^{\lambda x}}{a^2+\lambda ^2}\left(\lambda \sin(ax+b)-a\cos(ax+b)\right)+C \\
+         & \int e^{\lambda x}\cos(ax+b)dx &  & =\frac{e^{\lambda x}}{a^2+\lambda ^2}\left(\lambda \cos(ax+b)+a\sin(ax+b)\right)+C \\
+         & \int x \cdot e^{\lambda x}dx   &  & =(\frac{\lambda x-1}{\lambda ^2})\cdot e^{\lambda x}+C                             \\
+         & \int x^2 \cdot e^{\lambda x}dx &  & =(\frac{\lambda ^2x^2-2\lambda x+2}{\lambda ^3})\cdot e^{\lambda x}                       \\
+         & \int x\cdot e^{x^2}dx   &  & =\frac{1}{2}\cdot e^{x^2}+C
+    \end{align*}
+\end{footnotesize}
+
+\paragraph{Specific Intervals}
+\begin{footnotesize}
+    \noindent\begin{align*}
+         & \int_0^{\infty} e^{-\lambda x}x^n dx               &  & =\frac{n!}{\lambda ^{n+1}},\quad \lambda >0              \\
+         & \int_0^{\infty} e^{-\lambda x^2} dx                &  & =\frac{1}{2}\sqrt{\frac{\pi}{\lambda }},\quad \lambda >0 \\
+         & \int_{-\infty}^{\infty} e^{-\lambda x^2} dx        &  & =\sqrt{\frac{\pi}{\lambda }},\quad \lambda >0            \\
+         & \int_{-\infty}^{\infty}e^{-ax^2}e^{-iwx} dx &  & = \sqrt{\frac{\pi}{a}}e^{\frac{w^2}{4a}}   \\
+         & \int_{-\infty}^{\infty}e^{-(ax^2+bx+c)}dx   &  & = \sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}-c} \\
+         & \int_{-\infty}^{\infty}x^2e^{-\lambda x^2}dx   &  & = \frac{1}{2\lambda }\sqrt{\frac{\pi}{\lambda }},\quad \mathrm{Re}\{\lambda \} >0
+    \end{align*}
+\end{footnotesize}
