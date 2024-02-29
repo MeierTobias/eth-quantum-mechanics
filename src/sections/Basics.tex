@@ -17,7 +17,7 @@ The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ 
     {\sigma_x}^2 = \langle x^2 \rangle - {\langle x \rangle }^2
 \end{equation*}
 
-\subsection{Schrödinger Equation}
+\subsection{Schrödinger Equation for Matter}
 \begin{align*}
                &  & i\hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} & = \underbrace{- \frac{\hbar^2}{2m} \nabla^2 \Psi(\mathbf{r},t)}_{E_{kin}} + \underbrace{V(\mathbf{r},t)\Psi(\mathbf{r},t)}_{E_{pot}} \\
     \text{1D:} &  & i\hbar \frac{\partial \Psi(x,t)}{\partial t}          & = \underbrace{- \frac{\hbar^2}{2m} \frac{\partial^2 \Psi(x,t)}{\partial x^2}}_{E_{kin}} + \underbrace{V(x,t)\Psi(x,t)}_{E_{pot}}
@@ -47,6 +47,11 @@ The \textit{de Briogle relation} connects the wavelength $\lambda$ with the mome
 \begin{equation*}
     \lambda = \frac{h}{p}
 \end{equation*}
+\textbf{Remarks:}
+\begin{enumerate}
+    \item As $\lambda$ is a property of waves and $p$ one of particles respectively, this relation connects the two domains.
+    \item QM becomes relevant if $\lambda$ is greater than the item's characteristic size $d$.
+\end{enumerate}
 
 \subsubsection{Probabilities}
 The probability of finding the particle between $a$ and $b$ at time $t$ is:
@@ -62,7 +67,11 @@ To be physically meaningful, $\Psi$ has to be in $L_2$ (square integrable) and b
     \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1 \\
     \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 0
 \end{align*}
-\textbf{Remark:} If $\Psi(x,t)$ is normalized at $t=0$ it will stay normalized $\forall t$.
+\textbf{Remarks:}
+\begin{enumerate}
+    \item If $\Psi(x,t)$ is normalized at $t=0$ it will stay normalized $\forall t$.
+    \item $\Psi \in L_2$ implies $\lim \limits_{x \to \infty}\Psi=0$
+\end{enumerate}
 
 
 \subsection{Position, Momentum and Uncertainty}
@@ -75,20 +84,32 @@ Any observable quantity $Q$ has an operator $\hat{Q}$ which can be formulated in
 \subsubsection{Expectation Value}
 The \textbf{expectation value} of both position and momentum can be optained by
 
-The expectation value can be obtained by measuring the \textbf{observable quantity} on an \textit{quantum mechanical ensemble}:
+The expectation value can be obtained by measuring the \textbf{observable quantity} on an \textit{quantum mechanical ensemble} (ensemble of identically prepared systems):
 \begin{align*}
-    \langle \hat{x} \rangle                 & = \int_{-\infty}^{\infty} \hat{x} |\Psi(x,t)|^2 \, dx                                                                                              \\
-    \langle \hat{p} \rangle                 & = \int_{-\infty}^{\infty} \underbrace{-i\hbar \frac{\partial}{\partial x}}_{\hat{p}} |\Psi(x,t)|^2 \, dx & = m \frac{d\langle \hat{x} \rangle}{dt} \\
-    \langle \hat{Q}(\hat{x},\hat{p})\rangle & = \int_{-\infty}^{\infty}\Psi^*\hat{Q}(\hat{x},\hat{p})\Psi dx                                                                                     \\
-                                            & = \int_{-\infty}^{\infty}\hat{Q}(\hat{x},\hat{p}) \underbrace{|\Psi|^2}_{\rho} dx
+    \langle x \rangle     & = \int_{-\infty}^{\infty} \hat{x} |\Psi(x,t)|^2 \, dx                                                                                              \\
+    \langle p \rangle     & = \int_{-\infty}^{\infty} \underbrace{-i\hbar \frac{\partial}{\partial x}}_{\hat{p}} |\Psi(x,t)|^2 \, dx & = m \frac{d\langle \hat{x} \rangle}{dt} \\
+    \langle Q(x,p)\rangle & = \int_{-\infty}^{\infty}\Psi^*\hat{Q}(\hat{x},\hat{p})\Psi dx
 \end{align*}
-For example, the expectation value of the kinetic energy is
+if valid (e.g. $\hat{Q}$) contains no $\partial{x}$ or $\partial{t}$ this can be simplified to:\\
 \begin{align*}
-    \langle \hat{T} \rangle & = -\frac{\hbar^2}{2m}\int_{-\infty}^{\infty}\Psi^*\frac{\partial^2\Psi}{\partial x^2} \,dx
+    \int_{-\infty}^{\infty}\hat{Q}(\hat{x},\hat{p}) \underbrace{|\Psi|^2}_{\rho} dx
 \end{align*}
 
+For example, the expectation value of the kinetic energy is
+\begin{align*}
+    \langle T \rangle & = -\frac{\hbar^2}{2m}\int_{-\infty}^{\infty}\Psi^*\frac{\partial^2\Psi}{\partial x^2} \,dx
+\end{align*}
+
+\textbf{Remarks:}
+\begin{enumerate}
+    \item An operator $\hat{Q}$ $\textit{represents}$ its observable $Q$ which means that $\hat{Q}$ yields $Q$ when "sandwiching" it and integrating over $\mathbb{R}$.
+    \item $\textit{Ehrenfest's Theorem}$ states that Expectation values in QM follow classical laws (example: $\langle p \rangle$).
+\end{enumerate}
+
 \subsubsection{Heisenberg Uncertainty Principle}
-By gaining certainty on the observation of either position or momentum, the uncertainty of the other one increases
+By gaining certainty on the observation of either position or momentum, the uncertainty of the other one increases:
 \begin{equation*}
     \underbrace{\sigma_x\sigma_p}_{\text{std.\ dev.}} \geq \frac{\hbar}{2}
 \end{equation*}
+
+
