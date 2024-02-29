@@ -1,6 +1,6 @@
 \section{Introduction}
 \subsection{Statistics}
-Given a probability density $\rho$ the probability of obtaining $x$ in the interval [$a,b$] is given be
+Given a probability density $\rho$ the probability of obtaining $x$ in the interval $x+dx$ is given by $\rho dx$ and hence the probability of finding it in [$a,b$] is given by
 \begin{equation*}
     P_{ab}=\int_{a}^{b} \rho(x)\, dx
 \end{equation*}
@@ -30,6 +30,7 @@ The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ 
     $m,t,x$                  & Mass, time, position          \\
     $V(x,t)$                 & Potential energy function     \\
     $\Psi$                   & Complex particle wavefunction \\
+                             & ("probability amplitude")     \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 \setlength\tabcolsep{6pt} % default value: 6pt
@@ -41,11 +42,11 @@ In quantum mechancs, each mode can only be filled in discrete amounts of energy 
 \begin{equation*}
     k_B T_{low} \ll h\nu_{high}
 \end{equation*}
-
+which means that there is not enough thermal energy for high frequency modes to radiate.
 \subsubsection{De Broglie}
 The \textit{de Briogle relation} connects the wavelength $\lambda$ with the momentum $p$ for both light and matter
 \begin{equation*}
-    \lambda = \frac{h}{p}
+    p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
 \end{equation*}
 \textbf{Remarks:}
 \begin{enumerate}
@@ -64,7 +65,7 @@ The probability density of the is given by
 \end{equation*}
 To be physically meaningful, $\Psi$ has to be in $L_2$ (square integrable) and be \textit{normalized}
 \begin{align*}
-    \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1 \\
+    \int_{-\infty}^{\infty} |C\cdot \Psi(x,t)|^2 dx = 1, \; C\in\mathbb{C} \\
     \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 0
 \end{align*}
 \textbf{Remarks:}
@@ -83,27 +84,29 @@ Any observable quantity $Q$ has an operator $\hat{Q}$ which can be formulated in
 
 \subsubsection{Expectation Value}
 The \textbf{expectation value} of both position and momentum can be optained by
-
-The expectation value can be obtained by measuring the \textbf{observable quantity} on an \textit{quantum mechanical ensemble} (ensemble of identically prepared systems):
 \begin{align*}
-    \langle x \rangle     & = \int_{-\infty}^{\infty} \hat{x} |\Psi(x,t)|^2 \, dx                                                                                              \\
-    \langle p \rangle     & = \int_{-\infty}^{\infty} \underbrace{-i\hbar \frac{\partial}{\partial x}}_{\hat{p}} |\Psi(x,t)|^2 \, dx & = m \frac{d\langle \hat{x} \rangle}{dt} \\
+    \langle x \rangle & = \int_{-\infty}^{\infty} \hat{x} |\Psi(x,t)|^2 \, dx                                                                                                         \\
+    \langle p \rangle & = \int_{-\infty}^{\infty} \Psi^* \underbrace{\left(-i\hbar \frac{\partial}{\partial x}\right)}_{\hat{p}} \Psi \, dx & = m \frac{d\langle \hat{x} \rangle}{dt}
+\end{align*}
+In general the expectation value can be obtained by measuring the \textbf{observable quantity} on a \textit{quantum mechanical ensemble} (ensemble of identically prepared systems):
+\begin{align*}
     \langle Q(x,p)\rangle & = \int_{-\infty}^{\infty}\Psi^*\hat{Q}(\hat{x},\hat{p})\Psi dx
 \end{align*}
-if valid (e.g. $\hat{Q}$) contains no $\partial{x}$ or $\partial{t}$ this can be simplified to:\\
+if valid (e.g. $\hat{Q}$ contains no $\partial{x}$ or $\partial{t}$) this can be simplified to:\\
 \begin{align*}
     \int_{-\infty}^{\infty}\hat{Q}(\hat{x},\hat{p}) \underbrace{|\Psi|^2}_{\rho} dx
 \end{align*}
-
-For example, the expectation value of the kinetic energy is
+For example, the expectation value of the kinetic energy
 \begin{align*}
+    T                 & =\frac{mv^2}{2}=\frac{p^2}{2m}                                                             \\
+    \text{is given by}                                                                                             \\
     \langle T \rangle & = -\frac{\hbar^2}{2m}\int_{-\infty}^{\infty}\Psi^*\frac{\partial^2\Psi}{\partial x^2} \,dx
 \end{align*}
 
 \textbf{Remarks:}
 \begin{enumerate}
     \item An operator $\hat{Q}$ $\textit{represents}$ its observable $Q$ which means that $\hat{Q}$ yields $Q$ when "sandwiching" it and integrating over $\mathbb{R}$.
-    \item $\textit{Ehrenfest's Theorem}$ states that Expectation values in QM follow classical laws (example: $\langle p \rangle$).
+    \item $\textit{Ehrenfest's Theorem}$ states that expectation values in QM follow classical laws (example: $\langle p \rangle$).
 \end{enumerate}
 
 \subsubsection{Heisenberg Uncertainty Principle}
