@@ -1,0 +1,38 @@
+\section{Time Independent SE}
+
+\subsection{Stationary States}
+The Schrödinger equation can be solved by separation of variables:
+\noindent\begin{align*}
+    \Psi(x,t)                                                        & = \psi(x)\varphi(t)                                                                                          \\
+    \underbrace{i\hbar\frac1\varphi\frac{d\varphi}{dt}}_{\varphi(t)} & =\underbrace{-\frac{\hbar^2}{2m}\frac1\psi\frac{d^2\psi}{dx^2}+V}_{\psi(x)} = \underbrace{E}_{\text{const.}}
+\end{align*}
+The \textbf{time-dependent} part is a first order ODE that can be solved by:
+\noindent\begin{align*}
+    \frac{d\varphi}{d\iota} & =-\frac{iE}{\hbar}\varphi \\
+    \varphi_n(t)              & =e^{-iE_n t/\hbar}
+\end{align*}
+
+The \textbf{time-independent} part is a second order ODE, whoose solution depends on the potential $V(x)$.
+
+\newpar{}
+Generally, these two groups of \textbf{separable solutions} can be combined to form a stationary state
+\noindent\begin{equation*}
+    \Psi_n(x,t)=\psi_n(x)e^{-iE_nt/\hbar}
+\end{equation*}
+
+By superposition of the stationary states, the solution of the SE can be obtained as a \textbf{Fourier series}:
+\noindent\begin{equation*}
+    \Psi(x,t) =\sum_{n=1}^\infty c_n\psi_n(x) \underbrace{e^{-iE_n t/\hbar}}_{\varphi(t)}=\sum_{n=1}^\infty c_n\Psi_n(x,t)
+\end{equation*}
+where $|c_n|^2$ is the \textit{probability that a measurement of the energy would return} $E_n$. Therfore $|c_n|^2$ is normalized and energy is conserved:
+\noindent\begin{align*}
+    \sum_{n=1}^\infty|c_n|^2&=1\\
+    \langle H\rangle&=\sum_{n=1}^\infty|c_n|^2E_n
+\end{align*}
+
+
+\subsection{Free Particle}
+
+\subsection{Infinite Square Well}
+
+\subsection{Harmonic Oscillator}
