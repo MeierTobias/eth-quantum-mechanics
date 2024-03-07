@@ -1,9 +1,9 @@
-\section{Time Independent SE}
+\section{Time Independent SE (TISE)}
 
 \subsection{Stationary States}
 The Schrödinger equation can be solved by separation of variables:
 \noindent\begin{align*}
-    \Psi_n(x,t)                                                        & = \psi_n(x)\varphi_n(t)                                                                                          \\
+    \Psi_n(x,t)                                                        & = \psi_n(x)\varphi_n(t)                                                                                         \\
     \underbrace{i\hbar\frac1\varphi\frac{d\varphi}{dt}}_{\varphi_n(t)} & =\underbrace{-\frac{\hbar^2}{2m}\frac1\psi\frac{d^2\psi}{dx^2}+V}_{\psi_n (x)} = \underbrace{E}_{\text{const.}}
 \end{align*}
 
@@ -11,8 +11,8 @@ The Schrödinger equation can be solved by separation of variables:
 
 The \textbf{time-dependent} part is a first order ODE that can be solved by:
 \noindent\begin{align*}
-    \frac{d\varphi}{d\iota} & =-\frac{iE}{\hbar}\varphi \\
-    \varphi_n(t)            & =e^{-iE_n t/\hbar}
+    \frac{d\varphi}{d\iota} & =-\frac{iE}{\hbar}\varphi                                               \\
+    \varphi_n(t)            & =\exp\left[\frac{-iE_n t}{\hbar}\right],\quad E_{n}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}
 \end{align*}
 
 \ptitle{RHS:}
@@ -25,11 +25,20 @@ The \textbf{time-independent} part is a second order ODE, whoose solution depend
 \newpar{}
 Assuming that the particle has only kinetic energy ($V(x) = 0$), two general solutions are possible:
 \noindent\begin{align*}
-    \psi(x) & =A\sin(kx)+B\cos(kx)                                               &  & \text{free particle} \\
-    \psi(x) & =Ce^{ikx}+De^{-ikx}                                                &  & \text{ISW}           \\
+    \psi(x) & =A\sin(kx)+B\cos(kx)                                               &  & \text{standing wave (ISW)}           \\
+    \psi(x) & =Ce^{ikx}+De^{-ikx}                                                &  & \text{free particle} \\
     k       & =\sqrt{\frac{2mE}{\hbar^{2}}}=\frac{p}{\hbar}=\frac{2\pi}{\lambda} &  & \text{wave number}
 \end{align*}
 
+\textbf{Remark:}
+\begin{itemize}
+    \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density is time-independent):
+    \noindent\begin{equation*}
+        \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\hat{Q}\psi(x)dx
+    \end{equation*}
+\end{itemize}
+
+\newpar{}
 \ptitle{Hamiltonian}
 
 $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
@@ -43,9 +52,6 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
     \item every expectation value is constant in time
 \end{itemize}
 
-
-
-
 \subsubsection{Combining the Separable Solutions}
 The \textbf{separable solutions}
 \noindent\begin{equation*}
@@ -53,7 +59,7 @@ The \textbf{separable solutions}
 \end{equation*}
 are \textbf{stationary states} that can be superpositioned to obtain $\Psi(x,t)$ (\textit{Fourier series}):
 \noindent\begin{equation*}
-    \Psi(x,t) =\sum_{n=1}^\infty c_n\psi_n(x) \underbrace{e^{-iE_n t/\hbar}}_{\varphi(t)}=\sum_{n=1}^\infty c_n\Psi_n(x,t)
+    \Psi(x,t) =\sum_{n=1}^\infty c_n\psi_n(x) \underbrace{\exp\left[\frac{-iE_n t}{\hbar}\right]}_{\varphi_n(t)}=\sum_{n=1}^\infty c_n\Psi_n(x,t)
 \end{equation*}
 where $|c_n|^2$ is the \textit{probability that a measurement of the energy would return} $E_n$. Therfore $|c_n|^2$ is normalized and energy is conserved:
 \noindent\begin{align*}
@@ -61,8 +67,76 @@ where $|c_n|^2$ is the \textit{probability that a measurement of the energy woul
     \langle H\rangle         & =\sum_{n=1}^\infty|c_n|^2E_n
 \end{align*}
 
-\subsubsection{Free Particle}
 
 \subsubsection{Infinite Square Well (ISW)}
+A particle constrained ``walls'' behaves differently from a free particle. Given the potential i.e.\ constraint
+\noindent\begin{equation*}
+    V(x)=\begin{cases}0,&0\le x\le a\\\infty,&\text{otherwise}\end{cases}
+\end{equation*}
+the particle will manifest as infinitely many standing waves
+\noindent\begin{align*}
+    \psi_{n}(x)=\sqrt{\frac{2}{a}}\sin(\frac{n\pi}{a}x)
+\end{align*}
+each with a corresponding energy (quantized)
+\noindent\begin{equation*}
+    E_{n}=\frac{\hbar^{2}k_{n}^{2}}{2m}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}
+\end{equation*}
+
+\begin{center}
+    \includegraphics[width = 0.4\linewidth]{ISW.png}
+\end{center}
+
+\textbf{Remarks:}
+\begin{itemize}
+    \item Solutions alternate between \textit{odd} and \textit{even} starting from \textit{odd}
+    \item $\psi_{n+1}$ has one node (zero-crossing) more than $\psi_n$
+    \item $\psi_n$ are eigenfunctions/vectors and $E_n$ are the corresponding eigenvalues
+    \item $\psi_n$ are orthonormal base functions (complete). This implies that any function can be  described by this \textit{Fourier series} (\textbf{Dirichlet's theorem}):
+    \noindent\begin{equation*}
+        \int_{0}^{L} \psi_m^*\psi_n\; dx = \delta_{mn}= \begin{cases}
+            1 & m=n\\
+            0 & m\neq n
+        \end{cases}
+    \end{equation*}
+\end{itemize}
+
+\ptitle{General Solution}
+
+These standing waves can be combined to form
+\noindent\begin{equation*}
+    \Psi(x,t)=\sum_{n=1}^{\infty}c_{n} \underbrace{\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)}_{\psi_n} \underbrace{\exp\left[-i\frac{n^{2}\pi^{2}\hbar}{2ma^{2}t}\right]}_{\varphi_n}.
+\end{equation*}
+With the initial condition $\Psi(x,0)$ the weights $c_n$ can be determined:
+\noindent\begin{equation*}
+    c_n=\sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)dx
+\end{equation*}
+
+\subsubsection{Free Particle}
+A \textit{free particle} propagates in space as a \textbf{wave packet} and its wavefunction is determined by
+\noindent\begin{equation*}
+    \Psi_{wp}(x_{i}t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
+\end{equation*}
+the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ (inverse FT):
+\noindent\begin{equation*}
+    g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
+\end{equation*}
+
+\textbf{Remark:}
+
+\begin{itemize}
+    \item A free particle can have any positive energy $E$.
+\end{itemize}
+
+\ptitle{Group Velocity}
+
+A wavepacket consisting of infinitely many waves has a different \textit{group velocity} than the \textit{phase velocity} of the individual waves:
+\noindent\begin{equation*}
+    v_{group} = v_{classical} = 2v_{phase}
+\end{equation*}
+
+\begin{center}
+    \includegraphics[width = 0.4\linewidth]{group_vel.png}
+\end{center}
+
 
 \subsection{Harmonic Oscillator}
