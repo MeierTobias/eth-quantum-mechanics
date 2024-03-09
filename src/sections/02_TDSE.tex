@@ -1,4 +1,4 @@
-\section{Time Independent SE (TISE)}
+\section{Time Dependent SE (TDSE)}
 
 \subsection{Stationary States}
 The Schrödinger equation can be solved by separation of variables:
@@ -7,38 +7,34 @@ The Schrödinger equation can be solved by separation of variables:
     \underbrace{i\hbar\frac1\varphi\frac{d\varphi}{dt}}_{\varphi_n(t)} & =\underbrace{-\frac{\hbar^2}{2m}\frac1\psi\frac{d^2\psi}{dx^2}+V}_{\psi_n (x)} = \underbrace{E}_{\text{const.}}
 \end{align*}
 
-\ptitle{LHS:}
+\ptitle{Left hand side:}
 
 The \textbf{time-dependent} part is a first order ODE that can be solved by:
 \noindent\begin{align*}
-    \frac{d\varphi}{d\iota} & =-\frac{iE}{\hbar}\varphi                                               \\
-    \varphi_n(t)            & =\exp\left[\frac{-iE_n t}{\hbar}\right],\quad E_{n}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}
+    \frac{d\varphi}{dt} & =-\frac{iE}{\hbar}\varphi \quad\Leftrightarrow                                 \\
+    \varphi_n(t)        & =\exp\left[\frac{-iE_n t}{\hbar}\right], \qquad E_n = \frac{\hbar^2 k_n^2}{2m}
 \end{align*}
 
-\ptitle{RHS:}
+Where the solution $\varphi_n(t)$ is called the \textbf{phase factor}.
+\newpar{}
+
+\ptitle{Right hand side:}
 
 The \textbf{time-independent} part is a second order ODE, whoose solution depends on the potential $V(x)$ (i.e.\ a measure of the environment of the particle).
-\noindent\begin{equation*}
-    \underbrace{\Bigl[\overbrace{-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}}^{E_{kin}}+ \overbrace{V(x)}^{E_{pot}}\Bigr]}_{\widehat{H}}\psi = E\psi
-\end{equation*}
+\noindent\begin{align*}
+    \Bigl[\overbrace{-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}}^{E_{kin}}+ \overbrace{V(x)}^{E_{pot}}\Bigr]\psi & = E\psi \\
+    \widehat{H}\psi                                                                                       & = E\psi
+\end{align*}
+Which is also called the \textbf{time independent} SE (TISE).
 
 \newpar{}
 Assuming that the particle has only kinetic energy ($V(x) = 0$), two general solutions are possible:
 \noindent\begin{align*}
-    \psi(x) & =A\sin(kx)+B\cos(kx)                                               &  & \text{standing wave (ISW)}           \\
-    \psi(x) & =Ce^{ikx}+De^{-ikx}                                                &  & \text{free particle} \\
+    \psi(x) & =A\sin(kx)+B\cos(kx)                                               &  & \text{standing wave (ISW)} \\
+    \psi(x) & =Ce^{ikx}+De^{-ikx}                                                &  & \text{free particle}       \\
     k       & =\sqrt{\frac{2mE}{\hbar^{2}}}=\frac{p}{\hbar}=\frac{2\pi}{\lambda} &  & \text{wave number}
 \end{align*}
 
-\textbf{Remark:}
-\begin{itemize}
-    \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density is time-independent):
-    \noindent\begin{equation*}
-        \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\hat{Q}\psi(x)dx
-    \end{equation*}
-\end{itemize}
-
-\newpar{}
 \ptitle{Hamiltonian}
 
 $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
@@ -46,8 +42,14 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
     \langle H\rangle = E,\quad{\sigma_H}^2 = 0
 \end{equation*}
 
+\newpar{}
+
 \textbf{Remarks:}
 \begin{itemize}
+    \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density is time-independent):
+          \noindent\begin{equation*}
+              \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\hat{Q}\psi(x)dx
+          \end{equation*}
     \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}
     \item every expectation value is constant in time
 \end{itemize}
@@ -55,17 +57,19 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
 \subsubsection{Combining the Separable Solutions}
 The \textbf{separable solutions}
 \noindent\begin{equation*}
-    \Psi_n(x,t)=\psi_n(x)e^{-iE_n t/\hbar}
+    \Psi_n(x,t)=\psi_n(x)\underbrace{e^{-iE_n t/\hbar}}_{\varphi_n(t)}
 \end{equation*}
 are \textbf{stationary states} that can be superpositioned to obtain $\Psi(x,t)$ (\textit{Fourier series}):
 \noindent\begin{equation*}
     \Psi(x,t) =\sum_{n=1}^\infty c_n\psi_n(x) \underbrace{\exp\left[\frac{-iE_n t}{\hbar}\right]}_{\varphi_n(t)}=\sum_{n=1}^\infty c_n\Psi_n(x,t)
 \end{equation*}
-where $|c_n|^2$ is the \textit{probability that a measurement of the energy would return} $E_n$. Therfore $|c_n|^2$ is normalized and energy is conserved:
+where $|c_n|^2$ is the \textit{probability that an energy measurement would result in} $E_n$. Therfore $|c_n|^2$ is normalized and energy is conserved:
 \noindent\begin{align*}
     \sum_{n=1}^\infty|c_n|^2 & =1                           \\
     \langle H\rangle         & =\sum_{n=1}^\infty|c_n|^2E_n
 \end{align*}
+
+In other words, $\Psi_n$ \textit{says} where a particle \textit{is} when it has the energy $E_n$. So $\Psi$ tells us that a particle is in serval $\Psi_n$'s with serveral $E_n$'s at the same time. A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
 
 
 \subsubsection{Infinite Square Well (ISW)}
@@ -92,12 +96,12 @@ each with a corresponding energy (\textbf{quantized})
     \item $\psi_{n+1}$ has one node (zero-crossing) more than $\psi_n$
     \item $\psi_n$ are eigenfunctions/vectors and $E_n$ are the corresponding eigenvalues
     \item $\psi_n$ are orthonormal base functions (complete). This implies that any function can be  described by this \textit{Fourier series} (\textbf{Dirichlet's theorem}):
-    \noindent\begin{equation*}
-        \int_{0}^{a} \psi_m^*\psi_n\; dx = \delta_{mn}= \begin{cases}
-            1 & m=n\\
-            0 & m\neq n
-        \end{cases}
-    \end{equation*}
+          \noindent\begin{equation*}
+              \int_{0}^{a} \psi_m^*\psi_n\; dx = \delta_{mn}= \begin{cases}
+                  1 & m=n     \\
+                  0 & m\neq n
+              \end{cases}
+          \end{equation*}
 \end{itemize}
 
 \ptitle{General Solution}
