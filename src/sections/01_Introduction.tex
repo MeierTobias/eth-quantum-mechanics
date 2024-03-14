@@ -30,7 +30,7 @@ The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ 
     $m,t,x$                  & Mass, time, position          \\
     $V(x,t)$                 & Potential energy function     \\
     $\Psi$                   & Complex particle wavefunction \\
-                             & ("probability amplitude")     \\
+                             & (``probability amplitude'')     \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 \setlength\tabcolsep{6pt} % default value: 6pt
@@ -86,7 +86,7 @@ Any observable quantity $Q$ has an operator $\hat{Q}$ which can be formulated in
 The \textbf{expectation value} of both position and momentum can be optained by
 \begin{align*}
     \langle x \rangle & = \int_{-\infty}^{\infty} \hat{x} |\Psi(x,t)|^2 \, dx                                                                                                         \\
-    \langle p \rangle & = \int_{-\infty}^{\infty} \Psi^* \underbrace{\left(-i\hbar \frac{\partial}{\partial x}\right)}_{\hat{p}} \Psi \, dx & = m \frac{d\langle \hat{x} \rangle}{dt}
+    \langle p \rangle & = \int_{-\infty}^{\infty} \Psi^* \underbrace{\left(-i\hbar \frac{\partial}{\partial x}\right)}_{\hat{p}} \Psi \, dx & = m \frac{d\langle x \rangle}{dt}
 \end{align*}
 In general the expectation value can be obtained by measuring the \textbf{observable quantity} on a \textit{quantum mechanical ensemble} (ensemble of identically prepared systems):
 \begin{align*}
@@ -105,7 +105,7 @@ For example, the expectation value of the kinetic energy
 
 \textbf{Remarks:}
 \begin{enumerate}
-    \item An operator $\hat{Q}$ $\textit{represents}$ its observable $Q$ which means that $\hat{Q}$ yields $Q$ when "sandwiching" it and integrating over $\mathbb{R}$.
+    \item An operator $\hat{Q}$ $\textit{represents}$ its observable $Q$ which means that $\hat{Q}$ yields $Q$ when ``sandwiching'' it and integrating over $\mathbb{R}$.
     \item $\textit{Ehrenfest's Theorem}$ states that expectation values in QM follow classical laws (example: $\langle p \rangle$).
 \end{enumerate}
 
