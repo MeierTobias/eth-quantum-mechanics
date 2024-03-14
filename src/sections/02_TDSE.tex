@@ -180,7 +180,7 @@ The TISE becomes
 
 \ptitle{Ladder Operators}
 
-To solve this TISE one can use the \textbf{rising and lowering operators}: (for details on operators see~\ref{operators})
+To solve this TISE one can use the \textbf{rising and lowering operators}: (for details on operators see~\ref{comm})
 \begin{align*}
     \hat{a}_{+} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(-i\hat{p}+m\omega\hat{x}\right) &  & \text{raising operator}  \\
     \hat{a}_{-} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(+i\hat{p}+m\omega\hat{x}\right) &  & \text{lowering operator}
@@ -256,13 +256,26 @@ For an arbitrary state $n$ the next state is given by
 \end{align*}
 Note that the energy $E_n$ is split up equally into kinetic and potential energy $T,V$
 
-\subsection{Commutator}
+\subsection{Commutator}\label{comm}
+\noindent\begin{equation*}
+    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A}
+\end{equation*}
+If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefor the order of the operations matters.
+
+\newpar{}
+
+\ptitle{Canonical Commutation Relation}
+
+\begin{equation*}
+    \left[\hat{x},\hat{p}\right] = i\hbar
+\end{equation*}
+
+\ptitle{Useful Commutators}
 \noindent\begin{align*}
-    \left[\hat A,\hat B\right]           & \equiv\hat A\hat B-\hat B\hat A                    \\
-    \left[c,\hat B\right]                & =0                              & c \in \mathbb{R} \\
-    \left[\hat{x},\hat{p}\right]         & =i\hbar                                            \\
+    \left[c,\hat B\right]                & =0                                                 \\
     \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1
 \end{align*}
+
 
 \textbf{Remark}
 
