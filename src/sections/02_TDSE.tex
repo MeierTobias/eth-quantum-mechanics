@@ -63,13 +63,52 @@ are \textbf{stationary states} that can be superpositioned to obtain $\Psi(x,t)$
 \noindent\begin{equation*}
     \Psi(x,t) =\sum_{n=1}^\infty c_n\psi_n(x) \underbrace{\exp\left[\frac{-iE_n t}{\hbar}\right]}_{\varphi_n(t)}=\sum_{n=1}^\infty c_n\Psi_n(x,t)
 \end{equation*}
-where $|c_n|^2$ is the \textit{probability that an energy measurement would result in} $E_n$. Therfore $|c_n|^2$ is normalized and energy is conserved:
-\noindent\begin{align*}
-    \sum_{n=1}^\infty|c_n|^2 & =1                           \\
-    \langle H\rangle         & =\sum_{n=1}^\infty|c_n|^2E_n
+where $|c_n|^2$ is the \textit{probability that an energy measurement would result in} $E_n$. Therefore $|c_n|^2$ is normalized and energy is conserved:
+\noindent\begin{equation*}
+    \sum_{n=1}^\infty|c_n|^2 =1
+\end{equation*}
+The expectation value of the energy of a particle in a general state is given by:
+\noindent\begin{equation*}
+    \langle H\rangle=\sum_{n=1}^\infty|c_n|^2E_n
+\end{equation*}
+
+\ptitle{Remark:}
+In other words, $\Psi_n$ \textit{says} where a particle most likely \textit{is} when it has the energy $E_n$. So $\Psi$ tells us that a particle is in serval $\Psi_n$'s with several $E_n$'s at the same time. A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+
+\subsubsection{Free Particle}
+A \textit{free particle} propagates in space as a \textbf{wave packet} and its wavefunction is determined by
+\noindent\begin{equation*}
+    \Psi_{wp}(x_{i}t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
+\end{equation*}
+the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ (inverse FT):
+\noindent\begin{equation*}
+    g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
+\end{equation*}
+
+with:
+
+\begin{align*}
+    k & = \frac{2\pi}{\lambda} \\
+    p & = \hbar k
 \end{align*}
 
-In other words, $\Psi_n$ \textit{says} where a particle \textit{is} when it has the energy $E_n$. So $\Psi$ tells us that a particle is in serval $\Psi_n$'s with serveral $E_n$'s at the same time. A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+\textbf{Remark:}
+
+\begin{itemize}
+    \item A free particle can have any positive energy $E$.
+    \item Separable solutions do not represent physical states, therefore $\notin$ Hilbert space.
+\end{itemize}
+
+\ptitle{Group Velocity}
+
+A wavepacket consisting of infinitely many waves has a different \textit{group velocity} than the \textit{phase velocity} of the individual waves:
+\noindent\begin{equation*}
+    v_{group} = v_{classical} = 2v_{phase}
+\end{equation*}
+
+\begin{center}
+    \includegraphics[width = 0.4\linewidth]{group_vel.png}
+\end{center}
 
 
 \subsubsection{Infinite Square Well (ISW)}
@@ -97,16 +136,21 @@ each with a corresponding energy (\textbf{quantized})
     \item $\psi_n$ are eigenfunctions/vectors and $E_n$ are the corresponding eigenvalues
     \item $\psi_n$ are orthonormal base functions (complete). This implies that any function can be  described by this \textit{Fourier series} (\textbf{Dirichlet's theorem}):
           \noindent\begin{equation*}
-              \int_{0}^{a} \psi_m^*\psi_n\; dx = \delta_{mn}= \begin{cases}
+              \int_{-\infty}^{\infty} \psi_m^*\psi_n\; dx = \delta_{mn}= \begin{cases}
                   1 & m=n     \\
                   0 & m\neq n
               \end{cases}
           \end{equation*}
 \end{itemize}
 
+\ptitle{Stationary states}
+\begin{equation*}
+    \Psi_n(x,t)=\underbrace{\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)}_{\psi_n} \underbrace{\exp\left[-i\frac{n^{2}\pi^{2}\hbar}{2ma^{2}}t\right]}_{\varphi_n}.
+\end{equation*}
+
 \ptitle{General Solution}
 
-These standing waves can be combined to form
+These stationary states can be combined to form
 \noindent\begin{equation*}
     \Psi(x,t)=\sum_{n=1}^{\infty}c_{n} \underbrace{\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)}_{\psi_n} \underbrace{\exp\left[-i\frac{n^{2}\pi^{2}\hbar}{2ma^{2}}t\right]}_{\varphi_n}.
 \end{equation*}
@@ -115,33 +159,129 @@ With the initial condition $\Psi(x,0)$ the weights $c_n$ can be determined:
     c_n=\sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)dx
 \end{equation*}
 
-\subsubsection{Free Particle}
-A \textit{free particle} propagates in space as a \textbf{wave packet} and its wavefunction is determined by
-\noindent\begin{equation*}
-    \Psi_{wp}(x_{i}t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
-\end{equation*}
-the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ (inverse FT):
-\noindent\begin{equation*}
-    g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
-\end{equation*}
-
-\textbf{Remark:}
-
-\begin{itemize}
-    \item A free particle can have any positive energy $E$.
-    \item Separable solutions do not represent physical states, therefore $\notin$ Hilbert space.
-\end{itemize}
-
-\ptitle{Group Velocity}
-
-A wavepacket consisting of infinitely many waves has a different \textit{group velocity} than the \textit{phase velocity} of the individual waves:
-\noindent\begin{equation*}
-    v_{group} = v_{classical} = 2v_{phase}
-\end{equation*}
-
-\begin{center}
-    \includegraphics[width = 0.4\linewidth]{group_vel.png}
-\end{center}
-
 
 \subsection{Harmonic Oscillator}
+
+The Harmonic Oscillator differs from the Infinite Square Well by the Potential Energy function $V(x,t)$ which is given by the following quadratic function:
+
+\begin{equation*}
+    \widehat{V}(x) = \frac{1}{2}k_s x^2 = \frac{1}{2}m \omega^2 x^2 \qquad \text{with} \quad \omega = \sqrt{\frac{k_s}{m}}
+\end{equation*}
+The mechanical equivalent would be a frictionless spring and mass system with spring constant $k_s$.
+
+\newpar{}
+
+The TISE becomes
+\noindent\begin{align*}
+    \widehat{H}\psi                                                          & = E\psi \qquad \Leftrightarrow \\
+    \Bigl[-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+\widehat{V}(x)\Bigr]\psi       & = E\psi \qquad \Leftrightarrow \\
+    \frac{-\hbar^2}{2m}\frac{d^2\psi}{dx^2} + \frac{1}{2}m \omega^2 x^2 \psi & = E\psi
+\end{align*}
+
+\ptitle{Ladder Operators}
+
+To solve this TISE one can use the \textbf{rising and lowering operators}: (for details on operators see~\ref{comm})
+\begin{align*}
+    \hat{a}_{+} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(-i\hat{p}+m\omega\hat{x}\right) &  & \text{raising operator}  \\
+    \hat{a}_{-} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(+i\hat{p}+m\omega\hat{x}\right) &  & \text{lowering operator}
+\end{align*}
+
+\ptitle{Hamiltonian}
+
+The Hamiltonian Operator can now be written as
+\noindent\begin{align*}
+    \hat{H} & =\hbar\omega\left(\hat{a}_{-}\hat{a}_{+}-\frac{1}{2}\right) \\
+            & =\hbar\omega\left(\hat{a}_{+}\hat{a}_{-}+\frac{1}{2}\right)
+\end{align*}
+from which
+\noindent\begin{gather*}
+    \hat{a}_{-}\hat{a}_{+}=\frac{1}{\hbar\omega}\hat{H}+\frac{1}{2} \quad\quad \hat{a}_{+}\hat{a}_{-}=\frac{1}{\hbar\omega}\hat{H}-\frac{1}{2}\\
+    \left[\hat{a}_{-},\hat{a}_{+}\right] = 1
+\end{gather*}
+
+\ptitle{TISE}
+
+Applied to the TISE we get
+\begin{align*}
+    \widehat{H}(\hat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\hat{a}_{+}\psi_n \\
+    \widehat{H}(\hat{a}_{-}\psi_n) & = (E_n-\hbar\omega)\hat{a}_{-}\psi_n
+\end{align*}
+This implies, if $\psi_n$ are solutions to the TISE with energy $E_n$, then $\hat{a}_{+}\psi_n$/$\hat{a}_{-}\psi_n$ are also solutions but with one more/less quantum of energy.
+\newpar{}
+At the bottom of the energy potential function the steady state is given by
+\begin{equation*}
+    \hat{a}_{+}\psi_0 = 0\psi_0 = 0
+\end{equation*}
+Which is a simple solvable differential equation that results in
+\begin{equation*}
+    \psi_0 = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)
+\end{equation*}
+To get $\psi_n$, $\hat{a}_{+}$ can be applied $n$-times.
+\begin{equation*}
+    \psi_n = \frac{1}{\sqrt{n!}}{\left(\hat{a}_{+}\right)}^n \psi_0
+\end{equation*}
+with
+\begin{align*}
+    E_0 & = \frac{1}{2}\hbar\omega     \\
+    E_n & = (n+\frac{1}{2})\hbar\omega
+\end{align*}
+
+For an arbitrary state $n$ the next state is given by
+\begin{align*}
+    \hat{a}_{+}\psi_n & = \sqrt{n+1}\psi_{n+1} \\
+    \hat{a}_{-}\psi_n & = \sqrt{n}\psi_{n-1}
+\end{align*}
+
+\includegraphics[width=\linewidth]{harmonic_oscillator.png}
+
+\ptitle{Remarks:}
+\begin{itemize}
+    \item The energy is quantized.
+    \item $n$ is the number of energy quanta in the oscillator
+    \item $\widehat{N} \equiv \hat{a}_{+}\hat{a}_{-} = $ number operator because $\left<N\right> = n$ for $\psi_n$
+    \item The lowest state $\psi_0$ has the \textbf{zero point energy}. Even if all the energy is removed from the system (zero Kelvin) the oscillator still has this zero point energy.
+    \item Solutions alter between even and odd.
+    \item $\psi_n$ form a complete basis.
+    \item Soft boundary conditions - finite potential at the boundary/barrier.
+\end{itemize}
+
+\ptitle{Specific Expectation Values}
+\noindent\begin{align*}
+    \left\langle x \right\rangle _n   & = 0                                                                                                    & \forall n \in \mathbb{N} \\
+    \left\langle x^2 \right\rangle _n & = \left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega}                                                      & \forall n \in \mathbb{N} \\
+    \left\langle p \right\rangle _n   & = 0                                                                                                    & \forall n \in \mathbb{N} \\
+    \left\langle p^2 \right\rangle _n & = \left(n+\frac{1}{2}\right)\hbar m\omega                                                              & \forall n \in \mathbb{N} \\
+    \left\langle T \right\rangle _n   & = \frac{\left\langle p^2 \right\rangle}{2m} =  \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right)                                   \\
+    \left\langle V \right\rangle _n   & = \frac{m\omega^2}{2}\left\langle x^2 \right\rangle = \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right)
+\end{align*}
+Note that the energy $E_n$ is split up equally into kinetic and potential energy $T,V$
+
+\subsection{Commutator}\label{comm}
+\noindent\begin{equation*}
+    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A}
+\end{equation*}
+If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefor the order of the operations matters.
+
+\newpar{}
+
+\ptitle{Canonical Commutation Relation}
+
+\begin{equation*}
+    \left[\hat{x},\hat{p}\right] = i\hbar
+\end{equation*}
+
+\ptitle{Useful Commutators}
+\noindent\begin{align*}
+    \left[c,\hat B\right]                & =0                                                 \\
+    \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1
+\end{align*}
+
+
+\textbf{Remark}
+
+For some operators it can be useful to evaluate the commutator on a test function first, and then remove the test function in the end, e.g.:
+\noindent\begin{align*}
+    \left[\frac{d^2}{dx^2}, \hat{x}\right] f(x) & = \frac{d^2}{dx^2} xf(x) - x\frac{d^2}{dx^2}f(x) \\
+                                                & = 2\frac{d}{dx} f(x)                             \\
+    \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
+\end{align*}
