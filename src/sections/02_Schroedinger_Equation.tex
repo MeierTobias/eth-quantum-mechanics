@@ -111,7 +111,7 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \end{center}
 
 
-\subsubsection{Infinite Square Well (ISW)}
+\subsubsection{Infinite Square Well (ISW)}\label{ssec:ISW}
 A particle constrained ``walls'' behaves differently from a free particle. Given the potential i.e.\ constraint
 \noindent\begin{equation*}
     V(x)=\begin{cases}0,&0\le x\le a\\\infty,&\text{otherwise}\end{cases}
@@ -272,7 +272,7 @@ If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B
 
 \ptitle{Useful Commutators}
 \noindent\begin{align*}
-    \left[c,\hat B\right]                & =0                                                 \\
+    \left[c,\hat B\right]                & =0  \\
     \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1
 \end{align*}
 
@@ -286,4 +286,55 @@ For some operators it can be useful to evaluate the commutator on a test functio
     \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
 \end{align*}
 
-\subsection{Finite Sqare Well}
+\subsection{Finite Potential}
+Another way of modeling the boundary conditions through the finite potentials $V(x) < \infty$.
+
+For any potential, the solution to the SE will either be a combination of \textit{scattering} and \textit{bound states} depending on the energy of the particle:
+\noindent\begin{equation*}
+    \begin{cases}
+        E > V(\pm \infty) & \text{scattering state} \\
+        E < V(\pm \infty) & \text{bound state}
+    \end{cases}
+\end{equation*}
+\textbf{Remark}
+
+The total energy of the particle is conserved i.e.\ if the potential $V$ increases, the wavelength $\lambda$ decreases and vice versa.
+\noindent\begin{equation*}
+    k=\sqrt{\frac{2m(E-V_0)}{\hbar^2}} = \frac{2\pi}{\lambda}
+\end{equation*}
+
+\subsubsection{Finite Potential Step}
+\begin{center}
+    \includegraphics[width = .5\linewidth]{fin_pot_step.png}
+\end{center}
+\begin{itemize}
+    \item $E>V_0$: transmission and reflection (increased $\lambda$)
+    \item $0<E<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
+    \item $E<0$: no physical solution
+\end{itemize}
+
+\subsubsection{Finite Potential Well}
+\begin{center}
+    \includegraphics[width = .5\linewidth]{fin_pot_well.png}
+\end{center}
+\begin{itemize}
+    \item $E>V_0$: transmission and reflection (decreased $\lambda$ over well)
+    \item $0<E<V_0$: at least one bound state with penetration into barrier
+    \item $E<0$: no physical solution
+\end{itemize}
+
+\subsubsection{Finite Potential Barrier}
+\begin{center}
+    \includegraphics[width = .5\linewidth]{fin_pot_barr.png}
+\end{center}
+\begin{itemize}
+    \item $E>V_0$: transmission and reflection (increased $\lambda$ over step)
+    \item $0<E<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
+    \item $E<0$: no physical solution
+\end{itemize}
+
+\subsubsection{Tunneling}
+The probability that a particle is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ and the difference in energy $\sqrt{V_0-E}$:
+\noindent\begin{equation*}
+    T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
+\end{equation*}
