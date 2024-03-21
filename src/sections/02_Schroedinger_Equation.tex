@@ -234,6 +234,21 @@ For an arbitrary state $n$ the next state is given by
 
 \includegraphics[width=\linewidth]{harmonic_oscillator.png}
 
+\ptitle{Hermite Polynomial Form}
+
+\noindent\begin{align*}
+    \psi_n(x) & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\frac{1}{\sqrt{2^n n!}}H_n(\xi)\exp\left(-\frac{\xi^2}{2}\right) \\
+    \xi       & =\sqrt{\frac{m\omega}{\hbar}}x
+\end{align*}
+{\tiny\noindent\begin{align*}
+    H_1 & = 2x                                       &  & \text{odd}  \\
+    H_2 & = 4x^2-2                                   &  & \text{even} \\
+    H_3 & = 8x^3-12x                                 &  & \text{odd}  \\
+    H_4 & = 16x^4-48x^2+12                           &  & \text{even} \\
+    H_n & = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2}
+\end{align*}
+}
+
 \ptitle{Remarks:}
 \begin{itemize}
     \item The energy is quantized.
