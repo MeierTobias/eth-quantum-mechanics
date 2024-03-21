@@ -51,7 +51,7 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
               \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\hat{Q}\psi(x)dx
           \end{equation*}
     \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}
-    \item every expectation value is constant in time
+    \item every expectation value is \textbf{constant in time}
 \end{itemize}
 
 \subsubsection{Combining the Separable Solutions}
@@ -72,15 +72,18 @@ The expectation value of the energy of a particle in a general state is given by
     \langle H\rangle=\sum_{n=1}^\infty|c_n|^2E_n
 \end{equation*}
 
-\ptitle{Remark:}
-In other words, $\Psi_n$ \textit{says} where a particle most likely \textit{is} when it has the energy $E_n$. So $\Psi$ tells us that a particle is in serval $\Psi_n$'s with several $E_n$'s at the same time. A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
-
+\ptitle{Remarks:}
+\begin{itemize}
+    \item In other words, $\Psi_n$ \textit{says} where a particle most likely \textit{is} when it has the energy $E_n$. So $\Psi$ tells us that a particle is in serval $\Psi_n$'s with several $E_n$'s at the same time. A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+    \item In contrast to the case of stationary states, probabilities and expectations of the general solution (a linear combination of stationary states) are in general \textbf{not} time-independent.
+    \item As $c_n$ are independent on time, the probability to get a certain energy and $\langle H\rangle$ are constant in time (energy conservation).
+\end{itemize}
 \subsubsection{Free Particle}
 A \textit{free particle} propagates in space as a \textbf{wave packet} and its wavefunction is determined by
 \noindent\begin{equation*}
-    \Psi_{wp}(x_{i}t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
+    \Psi_{wp}(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
 \end{equation*}
-the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ (inverse FT):
+the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ ($g(k)$ is the Fourier transform of the initial state):
 \noindent\begin{equation*}
     g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
 \end{equation*}
@@ -96,7 +99,10 @@ with:
 
 \begin{itemize}
     \item A free particle can have any positive energy $E$.
+    \item There is no free particle with a definite energy.
+    \item $\frac{1}{\sqrt{2\pi}}$ plays the role of $c_n$ from the discrete superposition case.
     \item Separable solutions do not represent physical states, therefore $\notin$ Hilbert space.
+    \item The particle carries a range of $k$
 \end{itemize}
 
 \ptitle{Group Velocity}
@@ -165,7 +171,7 @@ With the initial condition $\Psi(x,0)$ the weights $c_n$ can be determined:
 The Harmonic Oscillator differs from the Infinite Square Well by the Potential Energy function $V(x,t)$ which is given by the following quadratic function:
 
 \begin{equation*}
-    \widehat{V}(x) = \frac{1}{2}k_s x^2 = \frac{1}{2}m \omega^2 x^2 \qquad \text{with} \quad \omega = \sqrt{\frac{k_s}{m}}
+    V(x) = \frac{1}{2}k x^2 = \frac{1}{2}m \omega^2 x^2 \qquad \text{with} \quad \omega = \sqrt{\frac{k}{m}}
 \end{equation*}
 The mechanical equivalent would be a frictionless spring and mass system with spring constant $k_s$.
 
@@ -208,11 +214,11 @@ Applied to the TISE we get
 \end{align*}
 This implies, if $\psi_n$ are solutions to the TISE with energy $E_n$, then $\hat{a}_{+}\psi_n$/$\hat{a}_{-}\psi_n$ are also solutions but with one more/less quantum of energy.
 \newpar{}
-At the bottom of the energy potential function the steady state is given by
+At the bottom (one level above having no energy at all) of the energy potential function the steady state is given by
 \begin{equation*}
-    \hat{a}_{+}\psi_0 = 0\psi_0 = 0
+    \hat{a}_{-}\psi_0 = 0\psi_0 = 0
 \end{equation*}
-Which is a simple solvable differential equation that results in
+Which is a simple ODE that results in
 \begin{equation*}
     \psi_0 = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)
 \end{equation*}
