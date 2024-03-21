@@ -35,6 +35,13 @@ Such an operator is called a hermitian operator. These operators are linear if
     \hat{Q}\left[af(x)+bg(x)\right]=a\hat{Q}f(x)+b\hat{Q}g(x),
 \end{equation*}
 
+\ptitle{Properties}
+
+\noindent\begin{align*}
+    \langle f|(\hat{Q} + \hat{R})g\rangle                                    & = \langle (\hat{Q} + \hat{R})f|g\rangle                                                               \\[0.75em]
+    \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
+\end{align*}
+
 \subsubsection{Determinant States}
 A state that would return the same result for every measurement of an ensemble is called a \textbf{determinant state} of the observable $Q$.
 In other words, there would be no variance
@@ -90,7 +97,7 @@ It follows that
     \langle Q\rangle & = \sum_{n=1}^{\infty} |c_n|^2 q_n                     \\
     1                & =\sum_{n=1}^{\infty} |c_n|^2      & \text{normalized}
 \end{align*}
-As mentioned in Section \ref{ssec:ISW}, these coefficients can be obtaines by projecting $\Psi$ onto $\psi_n$:
+As mentioned in Section\ \ref{ssec:ISW}, these coefficients can be obtaines by projecting $\Psi$ onto $\psi_n$:
 \noindent\begin{equation*}
     c_n = \int_{-\infty}^{\infty} {\psi_n}^* \Psi\; d^3 \mathbf{r} = \langle \psi_n |\Psi \rangle
 \end{equation*}
