@@ -2,16 +2,15 @@
 
 \subsection{Dirac Notation and Hilbert Spaces}
 Assuming the functions $\alpha, \beta$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbert space}) $\mathcal{H}$,
-Dirac notation is used to simplify the notation of vectors, scalar product, expectation values etc.:
+Dirac notation is used to simplify the notation of vectors, inner product (scalar product), expectation values etc.:
 \noindent\begin{align*}
     |f\rangle           & := \begin{bmatrix}
                                  c_1 & c_2 & \cdots & c_n
-                             \end{bmatrix}^T                             \\
+                             \end{bmatrix}^T                               &  & \text{``ket''}              \\
     \langle f|          & := \begin{bmatrix}
                                  {c_1}^* & {c_2}^* & \cdots & {c_n}^*
-                             \end{bmatrix}                 \\
-    \langle f|g \rangle & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 \\
-    \langle f|g \rangle & = {\langle f|g \rangle}^*
+                             \end{bmatrix}                   &  & \text{``bra''}                            \\
+    \langle f|g \rangle & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  & \text{inner product}
 \end{align*}
 
 These functions can be used as a complete orthonormal base if
@@ -20,6 +19,20 @@ These functions can be used as a complete orthonormal base if
     f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x) &  & \text{complete}           \\
     c_n                     & = \langle f_m|f \rangle          &  & \text{projection on base}
 \end{align*}
+
+
+\subsubsection{Properties of the Inner Product}
+
+\noindent\begin{align*}
+    \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle             &  & \text{semilinear for scalar mul.} \\
+    \langle f|\lambda g \rangle & =\lambda \langle f|g \rangle                                                      \\
+    \langle f+g|h \rangle       & =\langle f|h \rangle + \langle g|h \rangle &  & \text{linear for addition}        \\
+    \langle f|g+h \rangle       & =\langle f|g \rangle + \langle f|h \rangle                                        \\
+    \langle g|f \rangle         & = {\langle f|g \rangle}^*                  &  & \text{``hermitian''}              \\
+    \langle f|f \rangle         & \ge 0                                      &  & \text{positive definite}          \\
+    \langle f|f \rangle         & = 0 \leftrightarrow f=0                                                           \\
+\end{align*}
+
 
 
 \subsection{Observables}
