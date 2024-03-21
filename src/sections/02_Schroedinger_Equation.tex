@@ -255,9 +255,12 @@ For an arbitrary state $n$ the next state is given by
     \item $n$ is the number of energy quanta in the oscillator
     \item $\widehat{N} \equiv \hat{a}_{+}\hat{a}_{-} = $ number operator because $\left<N\right> = n$ for $\psi_n$
     \item The lowest state $\psi_0$ has the \textbf{zero point energy}. Even if all the energy is removed from the system (zero Kelvin) the oscillator still has this zero point energy.
-    \item Solutions alter between even and odd because the potential is symmetric.
-    \item $\psi_n$ form a complete basis.
+    \item Solutions alter between even and odd because the potential is \textbf{symmetric}.
+    \item $\psi_{n+1}$ has one node more than $\psi_n$
+    \item $\psi_n$ are mutually orthogonal + complete (form a basis).
     \item Soft boundary conditions - finite potential at the boundary/barrier.
+    \item Outside the potential the particle has a potential energy higher than its potential energy for zero velocity. Hence, it must have negative kinetic energy outside the potential parabola.
+    \item The spacing between two energy levels spreads out for large $k$ as $\omega=\sqrt{\frac{k}{m}}$.
 \end{itemize}
 
 \ptitle{Specific Expectation Values}
@@ -273,9 +276,9 @@ Note that the energy $E_n$ is split up equally into kinetic and potential energy
 
 \subsection{Commutator}\label{comm}
 \noindent\begin{equation*}
-    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A}
+    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
 \end{equation*}
-If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefor the order of the operations matters.
+If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefore the order of the operations matters.
 
 \newpar{}
 
@@ -292,7 +295,7 @@ If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B
 \end{align*}
 
 
-\textbf{Remark}
+\textbf{Evaluate Commutators}
 
 For some operators it can be useful to evaluate the commutator on a test function first, and then remove the test function in the end, e.g.:
 \noindent\begin{align*}
@@ -300,6 +303,9 @@ For some operators it can be useful to evaluate the commutator on a test functio
                                                 & = 2\frac{d}{dx} f(x)                             \\
     \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
 \end{align*}
+
+Remark:\\
+It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$ directly.
 
 \subsection{Finite Potential}
 Another way of modeling the boundary conditions through the finite potentials $V(x) < \infty$.
@@ -311,12 +317,15 @@ For any potential, the solution to the SE will either be a combination of \texti
         E < V(\pm \infty) & \text{bound state}
     \end{cases}
 \end{equation*}
-\textbf{Remark}
+\textbf{Remarks}
 
-The total energy of the particle is conserved i.e.\ if the potential $V$ increases, the wavelength $\lambda$ decreases and vice versa.
-\noindent\begin{equation*}
-    k=\sqrt{\frac{2m(E-V_0)}{\hbar^2}} = \frac{2\pi}{\lambda}
-\end{equation*}
+\begin{itemize}
+    \item The total energy of the particle is conserved i.e.\ if the potential $V$ increases, the wavelength $\lambda$ (and so the velocity!) decreases and vice versa.
+          \noindent\begin{equation*}
+              k=\sqrt{\frac{2m(E-V_0)}{\hbar^2}} = \frac{2\pi}{\lambda}
+          \end{equation*}
+    \item If a particle penetrates into a potential higher than its own energy level it will take negative kinetic energy to conserve energy.
+\end{itemize}
 
 \subsubsection{Finite Potential Step}
 \begin{center}
@@ -333,7 +342,7 @@ The total energy of the particle is conserved i.e.\ if the potential $V$ increas
     \includegraphics[width = .5\linewidth]{fin_pot_well.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection (decreased $\lambda$ over well)
+    \item $E>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
     \item $0<E<V_0$: at least one bound state with penetration into barrier
     \item $E<0$: no physical solution
 \end{itemize}
@@ -349,7 +358,7 @@ The total energy of the particle is conserved i.e.\ if the potential $V$ increas
 \end{itemize}
 
 \subsubsection{Tunneling}
-The probability that a particle is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ and the difference in energy $\sqrt{V_0-E}$:
+The probability that a particle with energy $0<E<V_0$ is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ (which is why we can't run through walls) and the difference in energy $\sqrt{V_0-E}$:
 \noindent\begin{equation*}
     T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
 \end{equation*}

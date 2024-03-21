@@ -2,7 +2,12 @@
 
 \subsection{Dirac Notation and Hilbert Spaces}
 Assuming the functions $\alpha, \beta$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbert space}) $\mathcal{H}$,
-Dirac notation is used to simplify the notation of vectors, inner product (scalar product), expectation values etc.:
+Dirac notation is used to simplify the notation of vectors, inner product (scalar product), expectation values etc. For the functions
+\begin{align*}
+    f   & = \sum_n c_n f_n     \\
+    f^* & = \sum_n c_n^* f_n^*
+\end{align*}
+we define:
 \noindent\begin{align*}
     |f\rangle           & := \begin{bmatrix}
                                  c_1 & c_2 & \cdots & c_n
@@ -13,11 +18,11 @@ Dirac notation is used to simplify the notation of vectors, inner product (scala
     \langle f|g \rangle & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  & \text{inner product}
 \end{align*}
 
-These functions can be used as a complete orthonormal base if
+These functions can be used as a complete orthonormal base (ONB) if
 \noindent\begin{align*}
     \langle f_m|f_n \rangle & = \delta_{mn}                    &  & \text{orthonormal}        \\
     f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x) &  & \text{complete}           \\
-    c_n                     & = \langle f_m|f \rangle          &  & \text{projection on base}
+    c_n                     & = \langle f_n|f \rangle          &  & \text{projection on base}
 \end{align*}
 
 
@@ -33,7 +38,11 @@ These functions can be used as a complete orthonormal base if
     \langle f|f \rangle         & = 0 \leftrightarrow f=0                                                           \\
 \end{align*}
 
-
+\subsubsection{Properties of QM Hilbert Space}
+\begin{itemize}
+    \item Describes physical solutions to QM systems
+    \item The stationary states $\psi_n$ form an ONB and are complete
+\end{itemize}
 
 \subsection{Observables}
 Observables are represented by hermitian operators.
@@ -43,7 +52,7 @@ The expectation value of a observable is real and thus
     \langle Q\rangle           & = {\langle Q\rangle}^*                       \\
     \langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle\quad \forall f,g
 \end{align*}
-Such an operator is called a hermitian operator. These operators are linear if
+Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). These operators are \textbf{linear} if
 \noindent\begin{equation*}
     \hat{Q}\left[af(x)+bg(x)\right]=a\hat{Q}f(x)+b\hat{Q}g(x),
 \end{equation*}
@@ -56,7 +65,7 @@ Such an operator is called a hermitian operator. These operators are linear if
 \end{align*}
 
 \subsubsection{Determinant States}
-A state that would return the same result for every measurement of an ensemble is called a \textbf{determinant state} of the observable $Q$.
+A state $\Psi$ that would return the same result for every measurement of an ensemble is called a \textbf{determinant state} of the observable $Q$.
 In other words, there would be no variance
 \noindent\begin{align*}
     \sigma^2     & = \langle \Psi|(\hat{Q} - q) \Psi\rangle = 0 \\
@@ -70,12 +79,12 @@ In short: If a state fulfils the eigenvalue equation, every measurement will yie
 \begin{itemize}
     \item A set of eigenvalues $q$ for $\hat{Q}$ is called its \textit{spectrum}.
     \item If multiple eigenfunctions share their eigenvalue, they are called \textit{degenerated states}.
-    \item Eigenfunctions with different eigenvalues are orthogonal.
+    \item Eigenfunctions (of a Hermitian operator) with different eigenvalues are orthogonal and form a complete set.
     \item The TISE is an example for a determinant state\newline
           $\hat{Q}: \hat{H},\; q:E$.
 \end{itemize}
 
-\subsection{Eigenfuntions of a Hermitian Operator}
+\subsection{Eigenfunctions of a Hermitian Operator}
 Eigenfunctions of hermitian operators can either have a discrete or continous spectrum.
 
 \newpar{}
@@ -97,27 +106,32 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
 
 \begin{itemize}
     \item Eigenfunctions with a continous spectrum are not normalizable
-    \item These eigenfuntions with real eigenvalues are \textit{DIrac-orthonormalizable} and form a complete set.
+    \item These eigenfuntions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a complete set.
 \end{itemize}
 
 \subsection{Generalized Statistical Interpretation}
-If the spectrum of $\hat{Q}$ is discrete and the state is not a eigenfunction of $\hat{Q}$, the probability of measuring the particular eigenvalue $q_n$ corresponding to the eigenfunction $f_n(x)$ is
+If the spectrum of $\hat{Q}$ is discrete and the state
+\begin{equation*}
+    \Psi=\sum_n c_n f_n
+\end{equation*}
+is not a eigenfunction of $\hat{Q}$ (but $f_n$ is), the probability of measuring the particular eigenvalue $q_n$ corresponding to the eigenfunction $f_n(x)$ is
 \noindent\begin{equation*}
     |c_n|^2, \quad c_n = \langle f_n|\Psi\rangle
 \end{equation*}
 It follows that
 \noindent\begin{align*}
     \langle Q\rangle & = \sum_{n=1}^{\infty} |c_n|^2 q_n                     \\
-    1                & =\sum_{n=1}^{\infty} |c_n|^2      & \text{normalized}
+    1                & =\sum_{n=1}^{\infty} |c_n|^2      & \text{normalized} \\
+    \sigma^2 != 0
 \end{align*}
-As mentioned in Section\ \ref{ssec:ISW}, these coefficients can be obtaines by projecting $\Psi$ onto $\psi_n$:
+As mentioned in Section\ \ref{ssec:ISW}, these coefficients can be obtained by projecting $\Psi$ onto $\psi_n$:
 \noindent\begin{equation*}
     c_n = \int_{-\infty}^{\infty} {\psi_n}^* \Psi\; d^3 \mathbf{r} = \langle \psi_n |\Psi \rangle
 \end{equation*}
 
 \textbf{Important Remark}
 
-After a measurement of an observable, the wave function \textbf{collapses} into the measured eigenfunction $f_n$ with eigenvalue $q_n$ and probability $|c_n|^2$. This collapse reflects the transition from a superposition of possible states to a \textbf{definitive state}.
+After a measurement of an observable, the wave function \textbf{collapses} into the measured eigenfunction $\psi_n$ with eigenvalue $q_n$ and probability $|c_n|^2$. This collapse reflects the transition from a superposition of possible states to a \textbf{definitive state}.
 
 \subsection{Postulates of Quantum Mechanics}
 
