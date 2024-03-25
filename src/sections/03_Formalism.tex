@@ -1,0 +1,147 @@
+\section{Formalism}
+
+\subsection{Dirac Notation and Hilbert Spaces}
+Assuming the functions $\alpha, \beta$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbert space}) $\mathcal{H}$,
+Dirac notation is used to simplify the notation of vectors, inner product (scalar product), expectation values etc. For the functions
+\begin{align*}
+    f   & = \sum_n c_n f_n     \\
+    f^* & = \sum_n c_n^* f_n^*
+\end{align*}
+we define:
+\noindent\begin{align*}
+    |f\rangle           & := \begin{bmatrix}
+                                 c_1 & c_2 & \cdots & c_n
+                             \end{bmatrix}^T                               &  & \text{``ket''}              \\
+    \langle f|          & := \begin{bmatrix}
+                                 {c_1}^* & {c_2}^* & \cdots & {c_n}^*
+                             \end{bmatrix}                   &  & \text{``bra''}                            \\
+    \langle f|g \rangle & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  & \text{inner product}
+\end{align*}
+
+These functions can be used as a complete orthonormal base (ONB) if
+\noindent\begin{align*}
+    \langle f_m|f_n \rangle & = \delta_{mn}                    &  & \text{orthonormal}        \\
+    f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x) &  & \text{complete}           \\
+    c_n                     & = \langle f_n|f \rangle          &  & \text{projection on base}
+\end{align*}
+
+
+\subsubsection{Properties of the Inner Product}
+
+\noindent\begin{align*}
+    \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle             &  & \text{semilinear for scalar mul.} \\
+    \langle f|\lambda g \rangle & =\lambda \langle f|g \rangle                                                      \\
+    \langle f+g|h \rangle       & =\langle f|h \rangle + \langle g|h \rangle &  & \text{linear for addition}        \\
+    \langle f|g+h \rangle       & =\langle f|g \rangle + \langle f|h \rangle                                        \\
+    \langle g|f \rangle         & = {\langle f|g \rangle}^*                  &  & \text{``hermitian''}              \\
+    \langle f|f \rangle         & \ge 0                                      &  & \text{positive definite}          \\
+    \langle f|f \rangle         & = 0 \leftrightarrow f=0                                                           \\
+\end{align*}
+
+\subsubsection{Properties of QM Hilbert Space}
+\begin{itemize}
+    \item Describes physical solutions to QM systems
+    \item The stationary states $\psi_n$ form an ONB and are complete
+\end{itemize}
+
+\subsection{Observables}
+Observables are represented by hermitian operators.
+\subsubsection{Hermitian Operators}
+The expectation value of a observable is real and thus
+\noindent\begin{align*}
+    \langle Q\rangle           & = {\langle Q\rangle}^*                       \\
+    \langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle\quad \forall f,g
+\end{align*}
+Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). These operators are \textbf{linear} if
+\noindent\begin{equation*}
+    \hat{Q}\left[af(x)+bg(x)\right]=a\hat{Q}f(x)+b\hat{Q}g(x),
+\end{equation*}
+
+\ptitle{Properties}
+
+\noindent\begin{align*}
+    \langle f|(\hat{Q} + \hat{R})g\rangle                                    & = \langle (\hat{Q} + \hat{R})f|g\rangle                                                               \\[0.75em]
+    \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
+\end{align*}
+
+\subsubsection{Determinant States}
+A state $\Psi$ that would return the same result for every measurement of an ensemble is called a \textbf{determinant state} of the observable $Q$.
+In other words, there would be no variance
+\noindent\begin{align*}
+    \sigma^2     & = \langle \Psi|(\hat{Q} - q) \Psi\rangle = 0 \\
+    \hat{Q} \Psi & = q \Psi
+\end{align*}
+These determinant states of $Q$ are \textit{eigenfunctions} of $\hat{Q}$ and the expectation $\langle Q\rangle = q$ the corresponding \textit{eigenvalue}.
+\newpar{}
+In short: If a state fulfils the eigenvalue equation, every measurement will yield $q$.
+
+\textbf{Remarks:}
+\begin{itemize}
+    \item A set of eigenvalues $q$ for $\hat{Q}$ is called its \textit{spectrum}.
+    \item If multiple eigenfunctions share their eigenvalue, they are called \textit{degenerated states}.
+    \item Eigenfunctions (of a Hermitian operator) with different eigenvalues are orthogonal and form a complete set.
+    \item The TISE is an example for a determinant state\newline
+          $\hat{Q}: \hat{H},\; q:E$.
+\end{itemize}
+
+\subsection{Eigenfunctions of a Hermitian Operator}
+Eigenfunctions of hermitian operators can either have a discrete or continous spectrum.
+
+\newpar{}
+If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
+\noindent\begin{align*}
+    \Psi(x,0)    & = \sum_{n=1}^{\infty} c_n \underbrace{\psi_n(x)}_{\textsf{eigenfunctions}}    \\
+    |\Psi\rangle & = \sum_{n=1}^{\infty} c_n \underbrace{|\psi_n\rangle}_{\textsf{eigenvectors}}
+\end{align*}
+
+\ptitle{Discrete Spectrum}
+
+\begin{itemize}
+    \item Eigenvalues are real
+    \item Eigenfunctions with different eigenvalues are orthogonal
+    \item Eigenfunctions with a discrete spectrum are within the Hilbert space $\mathcal{H}$, represent physical states and form a complete set.
+\end{itemize}
+
+\ptitle{Continous Spectrum}
+
+\begin{itemize}
+    \item Eigenfunctions with a continous spectrum are not normalizable
+    \item These eigenfuntions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a complete set.
+\end{itemize}
+
+\subsection{Generalized Statistical Interpretation}
+If the spectrum of $\hat{Q}$ is discrete and the state
+\begin{equation*}
+    \Psi=\sum_n c_n f_n
+\end{equation*}
+is not a eigenfunction of $\hat{Q}$ (but $f_n$ is), the probability of measuring the particular eigenvalue $q_n$ corresponding to the eigenfunction $f_n(x)$ is
+\noindent\begin{equation*}
+    |c_n|^2, \quad c_n = \langle f_n|\Psi\rangle
+\end{equation*}
+It follows that
+\noindent\begin{align*}
+    \langle Q\rangle & = \sum_{n=1}^{\infty} |c_n|^2 q_n                     \\
+    1                & =\sum_{n=1}^{\infty} |c_n|^2      & \text{normalized} \\
+    \sigma^2 != 0
+\end{align*}
+As mentioned in Section\ \ref{ssec:ISW}, these coefficients can be obtained by projecting $\Psi$ onto $\psi_n$:
+\noindent\begin{equation*}
+    c_n = \int_{-\infty}^{\infty} {\psi_n}^* \Psi\; d^3 \mathbf{r} = \langle \psi_n |\Psi \rangle
+\end{equation*}
+
+\textbf{Important Remark}
+
+After a measurement of an observable, the wave function \textbf{collapses} into the measured eigenfunction $\psi_n$ with eigenvalue $q_n$ and probability $|c_n|^2$. This collapse reflects the transition from a superposition of possible states to a \textbf{definitive state}.
+
+\subsection{Postulates of Quantum Mechanics}
+
+\begin{enumerate}
+    \item The state of a QM system is described by $\Psi(\mathbf{r},t)$, and $|\Psi|^2\; d^3 \mathbf{r}$ is the probability of finding the particle in the volume $d^3 \mathbf{r} = dx\,dy\,dz$.
+    \item Every observable quantity in classical mechanics is represented by a \textbf{linear hermitian operator}, $\hat{Q}$, such that the mean value of the observable from an ensemble is
+          \noindent\begin{equation*}
+              \langle Q\rangle=\int\Psi^{*}\hat{Q}\Psi d^{3} \mathbf{r}= \langle\Psi|\hat{Q}\Psi\rangle
+          \end{equation*}\newline
+          \textbf{Restated}:
+          If the system is in a eigenstate of $\hat{Q}$, identical measurements will always yield the eigenvalue $q$ of $\hat{Q}$.
+          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$.
+\end{enumerate}
