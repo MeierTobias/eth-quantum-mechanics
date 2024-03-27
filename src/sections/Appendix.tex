@@ -74,7 +74,7 @@ For some operators it can be useful to evaluate the commutator on a test functio
 It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$ directly.
 
 \subsection{Inner Product}\label{ssec:InnerProd}
-
+\ptitle{Properties}
 \noindent\begin{align*}
     \langle f|g \rangle         & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  &                                   \\
     \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle                          &  & \text{semilinear for scalar mul.} \\
@@ -84,6 +84,17 @@ It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$
     \langle g|f \rangle         & = {\langle f|g \rangle}^*                               &  & \text{``hermitian''}              \\
     \langle f|f \rangle         & \ge 0                                                   &  & \text{positive definite}          \\
     \langle f|f \rangle         & = 0 \leftrightarrow f=0
+\end{align*}
+
+\ptitle{Schwarz-Inequality}
+\begin{equation*}
+    \left|\int_{a}^{b}f(x)^{*}g(x)dx\right|\leq\sqrt{\int_{a}^{b}|f(x)|^{2}dx\int_{a}^{b}|g(x)|^{2}dx}
+\end{equation*}
+
+\ptitle{Standard Deviation of Observables}
+\begin{align*}
+    \sigma^{2} & =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                                                                                        \\
+               & =\left\langle\Psi\left|{\left(\hat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\hat{Q}-q\right)\Psi\right|\left(\hat{Q}-q\right)\Psi\right\rangle
 \end{align*}
 
 \subsection{Constants}
