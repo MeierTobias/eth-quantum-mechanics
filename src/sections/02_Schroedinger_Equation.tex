@@ -280,40 +280,6 @@ For an arbitrary state $n$ the next state is given by
 \end{align*}
 Note that the energy $E_n$ is split up equally into kinetic and potential energy $T,V$
 
-\subsection{Commutator}\label{comm}
-\noindent\begin{equation*}
-    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
-\end{equation*}
-If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefore the order of the operations matters.
-
-\newpar{}
-
-\ptitle{Canonical Commutation Relation}
-
-\begin{equation*}
-    \left[\hat{x},\hat{p}\right] = i\hbar
-\end{equation*}
-
-\ptitle{Useful Commutators}
-\noindent\begin{align*}
-    \left[c,\hat B\right]                & =0  \\
-    \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1
-\end{align*}
-
-
-\ptitle{Evaluate Commutators}
-
-For some operators it can be useful to evaluate the commutator on a test function first, and then remove the test function in the end, e.g.:
-\noindent\begin{align*}
-    \left[\frac{d^2}{dx^2}, \hat{x}\right] f(x) & = \frac{d^2}{dx^2} xf(x) - x\frac{d^2}{dx^2}f(x) \\
-                                                & = 2\frac{d}{dx} f(x)                             \\
-    \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
-\end{align*}
-
-\textbf{Remark}:
-
-It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$ directly.
-
 \subsection{Finite Potential}
 Another way of modeling the boundary conditions through the finite potentials $V(x) < \infty$.
 
