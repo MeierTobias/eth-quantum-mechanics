@@ -137,10 +137,53 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
           Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$.
 \end{enumerate}
 
-\subsection{The Generalized Uncertainity Principle}
+\subsection{The Generalized Uncertainty Principle}
 For any Observables $A$, $B$:
 \begin{equation*}
-    \sigma_A^2\cdot\sigma_B^2\geqslant\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)^2
+    \sigma_A^2\cdot\sigma_B^2\geqslant{\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)}^2
 \end{equation*}
 
+\ptitle{Remarks}
 
+\begin{itemize}
+    \item The quantity $\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)$ is real (and it's square hence positive).
+\end{itemize}
+
+\begin{examplesection}[Example: Position and Momentum]
+    For $\hat{A}=x$, $\hat{B}=-i\hbar d/dx$ we have
+    \begin{align*}
+        \left[\hat{x},\hat{p}\right] & =i\hbar                                                                      \\
+        \sigma_{x}^{2}\sigma_{p}^{2} & \geq{\left(\frac{1}{2i}i\hbar\right)}^{2}={\left(\frac{\hbar}{2}\right)}^{2} \\                                                           \\
+        \sigma_{x}\sigma_{p}         & \geq\frac{\hbar}{2}
+    \end{align*}
+\end{examplesection}
+
+\subsubsection{Incompatible and Compatible Observables}
+
+\ptitle{Incompatible Observables}
+
+\begin{itemize}
+    \item The operators don't commute
+    \item The operators don't have the same Eigenfunctions
+\end{itemize}
+
+\ptitle{Compatible Observables}
+
+\begin{itemize}
+    \item The operators do commute
+    \item The operators have the same Eigenfunctions
+\end{itemize}
+
+\subsubsection{Time-Energy Uncertainty}
+\begin{equation*}
+    \Delta t\cdot\Delta E\geqslant\frac\hbar2
+\end{equation*}
+where
+\begin{align*}
+    \Delta t & \equiv \frac{\sigma_Q}{|d\langle Q\rangle/dt|} \\
+    \Delta E & \equiv \sigma H
+\end{align*}
+
+\begin{itemize}
+    \item $\Delta t$ describes how long it takes the expectation value of $Q$ to change by $\sigma$.
+\end{itemize}
