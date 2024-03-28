@@ -17,6 +17,7 @@ we define:
                              \end{bmatrix}                   &  & \text{``bra''}                            \\
     \langle f|g \rangle & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  & \text{inner product}
 \end{align*}
+where ``ket'' and ``bra'' are \textbf{vectors} that represent the function $f$.
 
 These functions can be used as a complete orthonormal base (ONB) if
 \noindent\begin{align*}
@@ -43,7 +44,7 @@ The expectation value of a observable is real and thus
     \langle Q\rangle           & = {\langle Q\rangle}^*                       \\
     \langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle\quad \forall f,g
 \end{align*}
-Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). These operators are \textbf{linear} if
+Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). An operator \textbf{must} be hermitian for its observable to become real. These operators are \textbf{linear} if
 \noindent\begin{equation*}
     \hat{Q}\left[af(x)+bg(x)\right]=a\hat{Q}f(x)+b\hat{Q}g(x),
 \end{equation*}
@@ -76,28 +77,35 @@ In short: If a state fulfils the eigenvalue equation, every measurement will yie
 \end{itemize}
 
 \subsection{Eigenfunctions of a Hermitian Operator}
-Eigenfunctions of hermitian operators can either have a discrete or continous spectrum.
+Eigenfunctions of hermitian operators can either have a discrete or continuous spectrum. For a discrete spectrum there are countably many eigenfunction whereas for a continuous the set of eigenfunctions is discrete as well.
 
 \newpar{}
+\ptitle{Discrete Spectrum}
+
 If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
 \noindent\begin{align*}
     \Psi(x,0)    & = \sum_{n=1}^{\infty} c_n \underbrace{\psi_n(x)}_{\textsf{eigenfunctions}}    \\
     |\Psi\rangle & = \sum_{n=1}^{\infty} c_n \underbrace{|\psi_n\rangle}_{\textsf{eigenvectors}}
 \end{align*}
 
-\ptitle{Discrete Spectrum}
-
 \begin{itemize}
     \item Eigenvalues are real
+    \item The eigenfunctions form a countable set (e. g. harmonic oscillator)
     \item Eigenfunctions with different eigenvalues are orthogonal
     \item Eigenfunctions with a discrete spectrum are within the Hilbert space $\mathcal{H}$, represent physical states and form a complete set.
+    \item $|\psi_n\rangle$ can be thought of as basis vectors
 \end{itemize}
 
-\ptitle{Continous Spectrum}
+\ptitle{continuous Spectrum}
 
 \begin{itemize}
-    \item Eigenfunctions with a continous spectrum are not normalizable
-    \item These eigenfuntions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a complete set.
+    \item Eigenfunctions with a continuous spectrum are not normalizable
+    \item The eigenfunctions appear as continuous set (e.g. free particle)
+    \item These eigenfuntions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a \textbf{complete set}.
+    \item In contrast to the discrete spectrum case where we had $\langle f_m|f_n\rangle=\delta_{mn}$ we now have
+          \noindent\begin{equation*}
+              \langle f_{x'}|f_{x''}\rangle=\delta(x''-x')
+          \end{equation*}
 \end{itemize}
 
 \subsection{Generalized Statistical Interpretation}
@@ -111,8 +119,10 @@ is \textbf{not a eigenfunction} of $\hat{Q}$ (but $f_n$ is), the probability of 
 \end{equation*}
 It follows that
 \noindent\begin{align*}
-    \langle Q\rangle & = \sum_{n=1}^{\infty} |c_n|^2 q_n                     \\
-    1                & =\sum_{n=1}^{\infty} |c_n|^2      & \text{normalized} \\
+    \langle Q\rangle & = \langle\Psi_{general}|\hat{Q}\Psi_{general}\rangle                                                                 \\
+                     & =\left(\sum_{m}c_{m}^{*}\langle\Psi_{m}|\right)\hat{Q}\left(\sum_{n}c_{n}|\Psi_{n}\rangle\right)                     \\
+                     & = \sum_{n=1}^{\infty} |c_n|^2 q_n                                                                                    \\
+    1                & =\sum_{n=1}^{\infty} |c_n|^2                                                                     & \text{normalized} \\
     \sigma^2         & \neq 0
 \end{align*}
 As mentioned in Section\ \ref{ssec:ISW}, these coefficients can be obtained by projecting $\Psi$ onto $\psi_n$:
@@ -133,9 +143,89 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
               \langle Q\rangle=\int\Psi^{*}\hat{Q}\Psi d^{3} \mathbf{r}= \langle\Psi|\hat{Q}\Psi\rangle
           \end{equation*}\newline
           \textbf{Restated}:
-          If the system is in a eigenstate of $\hat{Q}$, identical measurements will always yield the eigenvalue $q$ of $\hat{Q}$.
-          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$.
+          If the system is in a state that is an eigenstate of $\hat{Q}$, a measurement on a QM ensemble will always yield the eigenvalue $q$ of $\hat{Q}$ (e.g. determinant state of the infinite square well).
+          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$ (e.g. general state of infinite square well).
+    \item $\Psi(\mathbf{r},t)$ evolves in time according to the TDSE:
+          \noindent\begin{align*}
+              i\hbar \frac{\partial \Psi}{\partial t} & =\hat{H}\Psi                     \\
+              \hat{H}                                 & = \frac{\hat{p}^2}{2m} + \hat{V}
+          \end{align*}
 \end{enumerate}
+
+\subsection{Operators with Continuous Sets of Eigenfunctions}
+Remember: these eigenfunctions are not normalizable (not in Hilbert space) but those of them with real eigenvalues are Dirac-orthonormalizable and form a complete set.
+
+\subsubsection{Continuous Set of Eigenfunctions for Position}
+
+\ptitle{Eigenvalue Equation}
+
+An eigenfunction of the position operator must fulfil the following eigenvalue equation for a specific $x'$:
+\begin{equation*}
+    \hat{x}g_{x'} =x'g_{x'}
+\end{equation*}
+and hence,
+\begin{equation*}
+    x \cdot g_{x'} =x' \cdot g_{x'}
+\end{equation*}
+
+\ptitle{Eigenfunctions}
+
+The eigenfunction
+\begin{equation*}
+    g_{x'}=\delta(x-x')
+\end{equation*}
+satisfies the stated eigenvalue equation as
+\begin{equation*}
+    x\cdot \delta(x-x')=x'\cdot \delta(x-x')
+\end{equation*}
+which means that measuring the position of a particle in state $g_{x'}$ will always yield position $x'$.
+
+\ptitle{Dirac-Orthonormality}
+
+One can easily show that
+\begin{equation*}
+    \langle g_{x'}|g_{x''}\rangle=\delta(x''-x')
+\end{equation*}
+
+\ptitle{Completeness}
+
+Any function $f$ can be written (as an infinite linear combination of eigenfunctions) in terms of $g_{x'}$:
+\begin{equation*}
+    \int_{-\infty}^{\infty}f(x^{\prime})g_{x^{\prime}}(x)dx^{\prime}=\int_{-\infty}^{\infty}f(x^{\prime})\delta(x-x^{\prime})dx^{\prime}=f(x)
+\end{equation*}
+where the coefficients are just given by the values of $f$ at the desired location i.e. $f(x')$.
+
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item In the discrete case the integral was a sum, $f(x')$ was $c_n$
+\end{itemize}
+
+\subsubsection{Continuous Set of Eigenfunctions for Momentum}
+
+\ptitle{Eigenvalue Equation}
+
+An eigenfunction of the momentum operator must fulfil the following eigenvalue equation for a specific $p'$:
+\begin{equation*}
+    \hat{p}f_{p^{\prime}}=p^{\prime}f_{p^{\prime}}
+\end{equation*}
+
+\ptitle{Eigenfunctions}
+
+Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with $k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$ (de Broglie formula!):
+\begin{equation*}
+    f_{p^{\prime}}(x)=\frac{1}{\sqrt{2\pi\hbar}}\exp\left[\frac{ip^{\prime}x}{\hbar}\right]
+\end{equation*}
+which means that measuring the momentum of a particle in state $f_{p^{\prime}}(x)$ will always yield momentum $p'$.
+
+\ptitle{Dirac-Orthonormality and Completeness}
+
+As for $\hat{x}$ one can also show for $\hat{p}$ that
+\begin{itemize}
+    \item $\langle f_{p'}|f_{p''}\rangle=\delta(p''-p')$
+    \item and $f_{p'}$ form a complete set
+\end{itemize}
+
 
 \subsection{The Generalized Uncertainty Principle}
 For any Observables $A$, $B$:
@@ -158,21 +248,23 @@ For any Observables $A$, $B$:
     \end{align*}
 \end{examplesection}
 
-\subsubsection{Incompatible and Compatible Observables}
-
-\ptitle{Incompatible Observables}
-
-\begin{itemize}
-    \item The operators don't commute
-    \item The operators don't have the same Eigenfunctions
-\end{itemize}
+\subsubsection{Compatible and Incompatible Observables}
 
 \ptitle{Compatible Observables}
 
 \begin{itemize}
     \item The operators do commute
-    \item The operators have the same Eigenfunctions
+    \item The operators have the same eigenfunctions
 \end{itemize}
+
+\ptitle{Incompatible Observables}
+
+\begin{itemize}
+    \item The operators don't commute
+    \item The operators don't have the same eigenfunctions
+\end{itemize}
+
+
 
 \subsubsection{Time-Energy Uncertainty}
 \begin{equation*}
