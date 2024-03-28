@@ -39,7 +39,7 @@ Assuming that the particle has only kinetic energy ($V(x) = 0$), two general sol
 
 $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
 \noindent\begin{equation*}
-    \langle H\rangle = E,\quad{\sigma_H}^2 = 0
+    \langle H\rangle = E,\quad{\sigma_H}^2 = 0, \quad \langle p\rangle = 0
 \end{equation*}
 
 \newpar{}
@@ -164,6 +164,12 @@ With the initial condition $\Psi(x,0)$ the weights $c_n$ can be determined:
 \noindent\begin{equation*}
     c_n=\sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)dx
 \end{equation*}
+
+\ptitle{Expectation Values}
+\noindent\begin{align*}
+    \langle \varphi_n|x^2\varphi_m\rangle & = \frac{2a^2}{\pi^2}\left(\frac{{(-1)}^{n-m}}{{(n-m)}^2}-\frac{{(-1)}^{n+m}}{{(n+m)}^2}\right) \\
+    \langle \varphi_n|x^2\varphi_n\rangle & = a^2\left(\frac{1}{3} -\frac{1}{2{(n\pi)}^2}\right)
+\end{align*}
 
 
 \subsection{Harmonic Oscillator}

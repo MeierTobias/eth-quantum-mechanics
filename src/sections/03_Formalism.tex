@@ -41,8 +41,8 @@ Observables are represented by hermitian operators.
 \subsubsection{Hermitian Operators}
 The expectation value of a observable is real and thus
 \noindent\begin{align*}
-    \langle Q\rangle           & = {\langle Q\rangle}^*                       \\
-    \langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle\quad \forall f,g
+    \langle Q\rangle                            & = {\langle Q\rangle}^*                                             \\
+    \langle Q\rangle=\langle f|\hat{Q} g\rangle & = \langle={\langle Q\rangle}^*  \hat{Q}f|g\rangle\quad \forall f,g
 \end{align*}
 Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). An operator \textbf{must} be hermitian for its observable to become real. These operators are \textbf{linear} if
 \noindent\begin{equation*}
@@ -90,7 +90,7 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
 
 \begin{itemize}
     \item Eigenvalues are real
-    \item The eigenfunctions form a countable set (e. g. harmonic oscillator)
+    \item The eigenfunctions form a countable set (e.g.\ harmonic oscillator)
     \item Eigenfunctions with different eigenvalues are orthogonal
     \item Eigenfunctions with a discrete spectrum are within the Hilbert space $\mathcal{H}$, represent \textbf{physical} states and form a complete set.
     \item $|\psi_n\rangle$ can be thought of as basis vectors
@@ -100,7 +100,7 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
 
 \begin{itemize}
     \item Eigenfunctions with a continuous spectrum are not normalizable
-    \item The eigenfunctions appear as continuous set (e.g. free particle)
+    \item The eigenfunctions appear as continuous set (e.g.\ free particle)
     \item These eigenfuntions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a \textbf{complete set}.
     \item In contrast to the discrete spectrum case where we had $\langle f_m|f_n\rangle=\delta_{mn}$ we now have
           \noindent\begin{equation*}
@@ -143,8 +143,8 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
               \langle Q\rangle=\int\Psi^{*}\hat{Q}\Psi d^{3} \mathbf{r}= \langle\Psi|\hat{Q}\Psi\rangle
           \end{equation*}\newline
           \textbf{Restated}:\newline
-          If the system is in a state that is an eigenstate of $\hat{Q}$, a measurement on a QM ensemble will always yield the eigenvalue $q$ of $\hat{Q}$ (e.g. determinant state of the infinite square well).\newline
-          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$ (e.g. general state of infinite square well).
+          If the system is in a state that is an eigenstate of $\hat{Q}$, a measurement on a QM ensemble will always yield the eigenvalue $q$ of $\hat{Q}$ (e.g.\ determinant state of the infinite square well).\newline
+          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$ (e.g.\ general state of infinite square well).
     \item $\Psi(\mathbf{r},t)$ evolves in time according to the TDSE:
           \noindent\begin{align*}
               i\hbar \frac{\partial \Psi}{\partial t} & =\hat{H}\Psi                     \\
@@ -212,7 +212,9 @@ An eigenfunction of the momentum operator must fulfil the following eigenvalue e
 
 \ptitle{Eigenfunctions}
 
-Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with $k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$ (de Broglie formula!):
+Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with 
+$k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$ 
+(de Broglie formula!):
 \begin{equation*}
     f_{p^{\prime}}(x)=\frac{1}{\sqrt{2\pi\hbar}}\exp\left[\frac{ip^{\prime}x}{\hbar}\right]
 \end{equation*}
@@ -235,13 +237,12 @@ As for $\hat{x}$ one can also show for $\hat{p}$ that
 \begin{itemize}
     \item The operators do commute: $[\widehat{A}, \widehat{B}] = 0$
     \item The operators have the same eigenfunctions
-    % \item Hence, the two observables can be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too. The wave function is now collapsed into a certain eigenfunction $\psi'$ of $A$ which, as we said, is an eigenfunction of $\hat{B}$ too (with eigenvalue $b_m$). Therefore: measuring $A$ is now deterministic (yields $a_n$) \textbf{and} subsequent measurement of $B$ is deterministic too (yields $b_m$): The two observables can simultaneously be determined arbitratrarily precisely without any uncertainty in either one of them.
     \item Two compatible observables can be determined simultaneously:
-    \begin{enumerate}
-        \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
-        \item Wave function collapses into the corresponding eigenfunction $\psi'$
-        \item Subsequent measurements for $A,B$ will yield eigenvalues $a_n, b_m$, $\sigma_A=0, \sigma_B=0$
-    \end{enumerate}
+          \begin{enumerate}
+              \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+              \item Wave function collapses into the corresponding eigenfunction $\psi'$
+              \item Subsequent measurements for $A,B$ will yield eigenvalues $a_n, b_m$, $\sigma_A=0, \sigma_B=0$
+          \end{enumerate}
     \item Both measurements ($A$ and subsequent $A$ or $B$) are \textbf{deterministic}
 \end{itemize}
 
@@ -250,17 +251,16 @@ As for $\hat{x}$ one can also show for $\hat{p}$ that
 \begin{itemize}
     \item The operators don't commute: $[\widehat{A}, \widehat{B}] \neq 0$
     \item The operators don't have the same eigenfunctions
-    % \item The two observables can't be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too as the wave is collapsed into an eigenfunction of $\hat{A}$. However, as this is not an eigenfunction of $\hat{B}$, subsequent measurement of $B$ remains \textbf{probabilistic} (yields $b_m$ with probability $|c_{m,B}|^2$) which means that $A$ and $B$ can't simultaneously be determined without any uncertainty.
     \item The two observables can't be determined simultaneously without any uncertainty:
-    \begin{enumerate}
-        \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
-        \item Wave function collapses into the corresponding eigenfunction $\psi'$
-        \item Subsequent measurements 
-        \begin{itemize}
-            \item for $A$ will yield eigenvalues $a_n$, $\sigma_A=0$
-            \item for $B$ will yield eigenvalue $b_m$ with probability $|c_{m,B}|^2$ (eigenfunction is not shared)
-        \end{itemize}
-    \end{enumerate}
+          \begin{enumerate}
+              \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+              \item Wave function collapses into the corresponding eigenfunction $\psi'$
+              \item Subsequent measurements
+                    \begin{itemize}
+                        \item for $A$ will yield eigenvalues $a_n$, $\sigma_A=0$
+                        \item for $B$ will yield eigenvalue $b_m$ with probability $|c_{m,B}|^2$ (eigenfunction is not shared)
+                    \end{itemize}
+          \end{enumerate}
     \item Measurement $A$ and subsequent $A$ is \textbf{deterministic} but subsequent $B$ is \textbf{probabilistic}.
 
 \end{itemize}
