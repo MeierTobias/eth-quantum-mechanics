@@ -38,6 +38,12 @@ The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ 
     {\sigma_x}^2 = \langle x^2 \rangle - {\langle x \rangle }^2
 \end{equation*}
 
+\ptitle{Standard Deviation of Observables}
+\begin{align*}
+    \sigma_{\hat{Q}}^{2} & =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                                                                                        \\
+                         & =\left\langle\Psi\left|{\left(\hat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\hat{Q}-q\right)\Psi\right|\left(\hat{Q}-q\right)\Psi\right\rangle
+\end{align*}
+
 \subsection{Commutators}\label{comm}
 
 \noindent\begin{equation*}
@@ -98,14 +104,9 @@ It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$
 \end{align*}
 
 \ptitle{Schwarz-Inequality}
-\begin{equation*}
-    \left|\int_{a}^{b}f(x)^{*}g(x)dx\right|\leq\sqrt{\int_{a}^{b}|f(x)|^{2}dx\int_{a}^{b}|g(x)|^{2}dx}
-\end{equation*}
-
-\ptitle{Standard Deviation of Observables}
 \begin{align*}
-    \sigma^{2} & =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                                                                                        \\
-               & =\left\langle\Psi\left|{\left(\hat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\hat{Q}-q\right)\Psi\right|\left(\hat{Q}-q\right)\Psi\right\rangle
+    |\langle f|g \rangle |^2                  & \leq \langle f|f \rangle \langle g|g \rangle                 \\
+    \left|\int_{a}^{b}{f(x)}^{*}g(x)dx\right| & \leq \sqrt{\int_{a}^{b}|f(x)|^{2}dx\int_{a}^{b}|g(x)|^{2}dx}
 \end{align*}
 
 \subsection{Constants}
