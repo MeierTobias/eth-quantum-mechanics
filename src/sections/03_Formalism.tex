@@ -32,7 +32,7 @@ Properites of the inner product can be found in Appendix\ \ref{ssec:InnerProd}
 
 \subsubsection{Properties of QM Hilbert Space}
 \begin{itemize}
-    \item Describes physical solutions to QM systems
+    \item Describes \textbf{physical} solutions to QM systems
     \item The stationary states $\psi_n$ form an ONB and are complete
 \end{itemize}
 
@@ -92,7 +92,7 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
     \item Eigenvalues are real
     \item The eigenfunctions form a countable set (e. g. harmonic oscillator)
     \item Eigenfunctions with different eigenvalues are orthogonal
-    \item Eigenfunctions with a discrete spectrum are within the Hilbert space $\mathcal{H}$, represent physical states and form a complete set.
+    \item Eigenfunctions with a discrete spectrum are within the Hilbert space $\mathcal{H}$, represent \textbf{physical} states and form a complete set.
     \item $|\psi_n\rangle$ can be thought of as basis vectors
 \end{itemize}
 
@@ -178,7 +178,7 @@ satisfies the stated eigenvalue equation as
 \begin{equation*}
     x\cdot \delta(x-x')=x'\cdot \delta(x-x')
 \end{equation*}
-which means that measuring the position of a particle in state $g_{x'}$ will always yield position $x'$.
+which means that measuring the position of a particle in state $g_{x'}$ (not physical) would always yield position $x'$.
 
 \ptitle{Dirac-Orthonormality}
 
@@ -228,6 +228,25 @@ As for $\hat{x}$ one can also show for $\hat{p}$ that
 
 
 \subsection{The Generalized Uncertainty Principle}
+\subsubsection{Compatible and Incompatible Observables}
+
+\ptitle{Compatible Observables}
+
+\begin{itemize}
+    \item The operators do commute
+    \item The operators have the same eigenfunctions
+    \item Hence, the two observables can be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too. The wave function is now collapsed into a certain eigenfunction $\psi'$ of $A$ which, as we said, is an eigenfunction of $\hat{B}$ too (with eigenvalue $b_m$). Therefore: measuring $A$ is now deterministic (yields $a_n$) \textbf{and} subsequent measurement of $B$ is deterministic too (yields $b_m$): The two observables can simultaneously be determined arbitratrarily precisely without any uncertainty in either one of them.
+\end{itemize}
+
+\ptitle{Incompatible Observables}
+
+\begin{itemize}
+    \item The operators don't commute
+    \item The operators don't have the same eigenfunctions
+    \item The two observables can't be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too as the wave is collapsed into an eigenfunction of $\hat{A}$. However, as this is not an eigenfunction of $\hat{B}$, subsequent measurement of $B$ remains \textbf{probabilistic} (yields $b_m$ with probability $|c_{m,B}|^2$) which means that $A$ and $B$ can't simultaneously be determined without any uncertainty.
+\end{itemize}
+
+\subsubsection{General Uncertainty Principle (GUP) for Incompatible Operators}
 For any Observables $A$, $B$:
 \begin{equation*}
     \sigma_A^2\cdot\sigma_B^2\geqslant{\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)}^2
@@ -237,6 +256,7 @@ For any Observables $A$, $B$:
 
 \begin{itemize}
     \item The quantity $\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)$ is real (and it's square hence positive).
+    \item $\langle[\hat{A},\hat{B}]\rangle=\langle\Psi|\hat{A}\hat{B}\Psi\rangle-\langle\Psi|\hat{B}\hat{A}\Psi\rangle$
 \end{itemize}
 
 \begin{examplesection}[Example: Position and Momentum]
@@ -248,25 +268,12 @@ For any Observables $A$, $B$:
     \end{align*}
 \end{examplesection}
 
-\subsubsection{Compatible and Incompatible Observables}
-
-\ptitle{Compatible Observables}
-
-\begin{itemize}
-    \item The operators do commute
-    \item The operators have the same eigenfunctions
-\end{itemize}
-
-\ptitle{Incompatible Observables}
-
-\begin{itemize}
-    \item The operators don't commute
-    \item The operators don't have the same eigenfunctions
-\end{itemize}
-
-
-
 \subsubsection{Time-Energy Uncertainty}
+Plugging the \textbf{generalized Ehrenfest theorem}
+\begin{equation*}
+    \frac{d}{dt}\left\langle Q\right\rangle=\frac{i}{\hbar}\left\langle\left[\hat{H},\hat{Q}\right]\right\rangle+\left\langle\frac{\partial\hat{Q}}{\partial t}\right\rangle
+\end{equation*}
+into the GUP yields, assuming $\hat{Q}$ is time-independent, the \textbf{time-energy uncertainty}:
 \begin{equation*}
     \Delta t\cdot\Delta E\geqslant\frac\hbar2
 \end{equation*}
@@ -276,6 +283,10 @@ where
     \Delta E & \equiv \sigma H
 \end{align*}
 
+\ptitle{Remarks}
+
 \begin{itemize}
     \item $\Delta t$ describes how long it takes the expectation value of $Q$ to change by $\sigma$.
+    \item The generalized Ehrenfest theorem states that the rate of change of $\langle Q \rangle$ is determined by the commutator of the operator and the Hamiltonian.
+    \item If they commute, $Q$ is a conserved quantity.
 \end{itemize}
