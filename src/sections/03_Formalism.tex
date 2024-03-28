@@ -233,17 +233,36 @@ As for $\hat{x}$ one can also show for $\hat{p}$ that
 \ptitle{Compatible Observables}
 
 \begin{itemize}
-    \item The operators do commute
+    \item The operators do commute: $[\widehat{A}, \widehat{B}] = 0$
     \item The operators have the same eigenfunctions
-    \item Hence, the two observables can be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too. The wave function is now collapsed into a certain eigenfunction $\psi'$ of $A$ which, as we said, is an eigenfunction of $\hat{B}$ too (with eigenvalue $b_m$). Therefore: measuring $A$ is now deterministic (yields $a_n$) \textbf{and} subsequent measurement of $B$ is deterministic too (yields $b_m$): The two observables can simultaneously be determined arbitratrarily precisely without any uncertainty in either one of them.
+    % \item Hence, the two observables can be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too. The wave function is now collapsed into a certain eigenfunction $\psi'$ of $A$ which, as we said, is an eigenfunction of $\hat{B}$ too (with eigenvalue $b_m$). Therefore: measuring $A$ is now deterministic (yields $a_n$) \textbf{and} subsequent measurement of $B$ is deterministic too (yields $b_m$): The two observables can simultaneously be determined arbitratrarily precisely without any uncertainty in either one of them.
+    \item Two compatible observables can be determined simultaneously:
+    \begin{enumerate}
+        \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+        \item Wave function collapses into the corresponding eigenfunction $\psi'$
+        \item Subsequent measurements for $A,B$ will yield eigenvalues $a_n, b_m$, $\sigma_A=0, \sigma_B=0$
+    \end{enumerate}
+    \item Both measurements ($A$ and subsequent $A$ or $B$) are \textbf{deterministic}
 \end{itemize}
 
 \ptitle{Incompatible Observables}
 
 \begin{itemize}
-    \item The operators don't commute
+    \item The operators don't commute: $[\widehat{A}, \widehat{B}] \neq 0$
     \item The operators don't have the same eigenfunctions
-    \item The two observables can't be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too as the wave is collapsed into an eigenfunction of $\hat{A}$. However, as this is not an eigenfunction of $\hat{B}$, subsequent measurement of $B$ remains \textbf{probabilistic} (yields $b_m$ with probability $|c_{m,B}|^2$) which means that $A$ and $B$ can't simultaneously be determined without any uncertainty.
+    % \item The two observables can't be determined simultaneously i.e. for some general state $\psi$, measuring a $A$ yields a certain eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and subsequent measurement of $A$ will yield $a_n$ too as the wave is collapsed into an eigenfunction of $\hat{A}$. However, as this is not an eigenfunction of $\hat{B}$, subsequent measurement of $B$ remains \textbf{probabilistic} (yields $b_m$ with probability $|c_{m,B}|^2$) which means that $A$ and $B$ can't simultaneously be determined without any uncertainty.
+    \item The two observables can't be determined simultaneously without any uncertainty:
+    \begin{enumerate}
+        \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+        \item Wave function collapses into the corresponding eigenfunction $\psi'$
+        \item Subsequent measurements 
+        \begin{itemize}
+            \item for $A$ will yield eigenvalues $a_n$, $\sigma_A=0$
+            \item for $B$ will yield eigenvalue $b_m$ with probability $|c_{m,B}|^2$ (eigenfunction is not shared)
+        \end{itemize}
+    \end{enumerate}
+    \item Measurement $A$ and subsequent $A$ is \textbf{deterministic} but subsequent $B$ is \textbf{probabilistic}.
+
 \end{itemize}
 
 \subsubsection{General Uncertainty Principle (GUP) for Incompatible Operators}
