@@ -311,8 +311,8 @@ For any potential, the solution to the SE will either be a combination of \texti
     \includegraphics[width = .5\linewidth]{fin_pot_step.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection (increased $\lambda$)
-    \item $0<E<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
+    \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$)
+    \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
     \item $E<0$: no physical solution
 \end{itemize}
 
@@ -321,8 +321,8 @@ For any potential, the solution to the SE will either be a combination of \texti
     \includegraphics[width = .5\linewidth]{fin_pot_well.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
-    \item $0<E<V_0$: at least one bound state with penetration into barrier
+    \item $\textcolor{red}{E}>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
+    \item $0<\textcolor{blue}{E}<V_0$: at least one bound state with penetration into barrier
     \item $E<0$: no physical solution
 \end{itemize}
 
@@ -331,13 +331,13 @@ For any potential, the solution to the SE will either be a combination of \texti
     \includegraphics[width = .5\linewidth]{fin_pot_barr.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection (increased $\lambda$ over step)
-    \item $0<E<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
+    \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$ over step)
+    \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
     \item $E<0$: no physical solution
 \end{itemize}
 
 \subsubsection{Tunneling}
-The probability that a particle with energy $0<E<V_0$ is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ (which is why we can't run through walls) and the difference in energy $\sqrt{V_0-E}$:
+The probability that a particle with energy $0<E<V_0$ is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ (which is why we can't run through walls) and the difference in energy $\sqrt{V_0-E}$. The transmission coefficient $T$ is given by:
 \noindent\begin{equation*}
     T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
 \end{equation*}
