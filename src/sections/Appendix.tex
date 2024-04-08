@@ -2,15 +2,111 @@
 \subsection{Notation}
 The following notation is based on the book \textit{Introduction to Quantum Mechanics} by David J. Darrel
 \begin{align*}
-     & \lvert \alpha \rangle                                             &  & \text{Vector}                             \\
+     & \lvert \alpha \rangle                                             &  & \text{Vector in Dirac notation}           \\
      & \alpha_i^{b_j}                                                    &  & \text{Vector element $i$ wrt.\ base } b_j \\
-     & \hat{T}                                                           &  & \text{Linear transformation/ Operator}    \\
+     & \widehat{T}                                                       &  & \text{Linear transformation/ Operator}    \\
      & \mathbf{T}                                                        &  & \text{Matrix}                             \\
      & \widetilde{\mathbf{T}}                                            &  & \text{Transpose}                          \\
      & \mathbf{T}^*                                                      &  & \text{Complex conjugate}                  \\
      & \mathbf{T}^\dagger = {\widetilde{\mathbf{T}}}^*                   &  & \text{Hermitian}                          \\
      & \mathbf{T}^{-1}                                                   &  & \text{Inverse}                            \\
-     & \lbrack \mathbf{S},\mathbf{T} \rbrack = \mathbf{ST} - \mathbf{TS} &  & \text{Commutator}                         \\
+     & \lbrack \mathbf{S},\mathbf{T} \rbrack = \mathbf{ST} - \mathbf{TS} &  & \text{Commutator}
+\end{align*}
+
+\subsection{Statistics}
+Given a probability density $\rho$ the probability of obtaining $x$ in the interval $x+dx$ is given by $\rho dx$ and hence the probability of finding it in [$a,b$] is given by
+
+\begin{equation*}
+    P_{ab}=\int_{a}^{b} \rho(x)\, dx
+\end{equation*}
+
+The probability density $\rho$ is called \textbf{normalized} if
+
+\begin{equation*}
+    \int_{-\infty}^{\infty}\rho(x)dx = 1
+\end{equation*}
+
+The \textbf{expectation value} $\langle x \rangle$ can be calculated with
+
+\begin{equation*}
+    \langle x \rangle = \int_{-\infty}^{\infty} x\rho(x) dx \underbrace{{\langle \Psi|x\Psi\rangle} }_{\textsf{Dirac Notation}}
+\end{equation*}
+
+The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ is given by
+
+\begin{equation*}
+    {\sigma_x}^2 = \langle x^2 \rangle - {\langle x \rangle }^2
+\end{equation*}
+
+\ptitle{Standard Deviation of Observables}
+\begin{align*}
+    \sigma_{\hat{Q}}^{2} & =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                                                                                        \\
+                         & =\left\langle\Psi\left|{\left(\hat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\hat{Q}-q\right)\Psi\right|\left(\hat{Q}-q\right)\Psi\right\rangle
+\end{align*}
+
+\subsection{Commutators}\label{comm}
+
+\noindent\begin{equation*}
+    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
+\end{equation*}
+If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefore the order of the operations matters.
+
+\newpar{}
+
+\ptitle{Canonical Commutation Relation}
+
+\begin{equation*}
+    \left[\hat{x},\hat{p}\right] = i\hbar
+\end{equation*}
+
+\ptitle{Rules}
+
+\noindent\begin{align*}
+    \left[\hat{A}\hat{B},\hat{C}\right] & =\hat{A}\left[\hat{B},\hat{C}\right]+\left[\hat{A},\hat{C}\right]\hat{B}
+\end{align*}
+
+
+\ptitle{Useful Commutators}
+
+\noindent\begin{align*}
+    \left[c,\hat B\right]                & =0                     \\
+    \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1                    \\
+    \left[\hat{x}^n,\hat{p}\right]       & = i \hbar n x^{n-1}    \\
+    \left[x,\hat{p}^2\right]             & = 2i\hbar\hat{p}       \\
+    \left[f(\hat{x}),\hat{p}\right]      & = i \hbar\frac{df}{dx}
+\end{align*}
+
+
+\ptitle{Evaluate Commutators}
+
+For some operators it can be useful to evaluate the commutator on a test function first, and then remove the test function in the end, e.g.:
+\noindent\begin{align*}
+    \left[\frac{d^2}{dx^2}, \hat{x}\right] f(x) & = \frac{d^2}{dx^2} xf(x) - x\frac{d^2}{dx^2}f(x) \\
+                                                & = 2\frac{d}{dx} f(x)                             \\
+    \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
+\end{align*}
+
+\textbf{Remark}:
+
+It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$ directly.
+
+\subsection{Inner Product}\label{ssec:InnerProd}
+\ptitle{Properties}
+\noindent\begin{align*}
+    \langle f|g \rangle         & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  &                                   \\
+    \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle                          &  & \text{semilinear for scalar mul.} \\
+    \langle f|\lambda g \rangle & =\lambda \langle f|g \rangle                                                                   \\
+    \langle f+g|h \rangle       & =\langle f|h \rangle + \langle g|h \rangle              &  & \text{linear for addition}        \\
+    \langle f|g+h \rangle       & =\langle f|g \rangle + \langle f|h \rangle                                                     \\
+    \langle g|f \rangle         & = {\langle f|g \rangle}^*                               &  & \text{``hermitian''}              \\
+    \langle f|f \rangle         & \ge 0                                                   &  & \text{positive definite}          \\
+    \langle f|f \rangle         & = 0 \leftrightarrow f=0
+\end{align*}
+
+\ptitle{Schwarz-Inequality}
+\begin{align*}
+    |\langle f|g \rangle |^2                  & \leq \langle f|f \rangle \langle g|g \rangle                 \\
+    \left|\int_{a}^{b}{f(x)}^{*}g(x)dx\right| & \leq \sqrt{\int_{a}^{b}|f(x)|^{2}dx\int_{a}^{b}|g(x)|^{2}dx}
 \end{align*}
 
 \subsection{Constants}

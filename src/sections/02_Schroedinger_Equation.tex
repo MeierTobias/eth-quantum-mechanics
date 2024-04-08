@@ -39,7 +39,7 @@ Assuming that the particle has only kinetic energy ($V(x) = 0$), two general sol
 
 $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
 \noindent\begin{equation*}
-    \langle H\rangle = E,\quad{\sigma_H}^2 = 0
+    \langle H\rangle = E,\quad{\sigma_H}^2 = 0, \quad \langle p\rangle = 0
 \end{equation*}
 
 \newpar{}
@@ -165,6 +165,12 @@ With the initial condition $\Psi(x,0)$ the weights $c_n$ can be determined:
     c_n=\sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)dx
 \end{equation*}
 
+\ptitle{Expectation Values}
+\noindent\begin{align*}
+    \langle \varphi_n|x^2\varphi_m\rangle & = \frac{2a^2}{\pi^2}\left(\frac{{(-1)}^{n-m}}{{(n-m)}^2}-\frac{{(-1)}^{n+m}}{{(n+m)}^2}\right) \\
+    \langle \varphi_n|x^2\varphi_n\rangle & = a^2\left(\frac{1}{3} -\frac{1}{2{(n\pi)}^2}\right)
+\end{align*}
+
 
 \subsection{Harmonic Oscillator}
 
@@ -280,40 +286,6 @@ For an arbitrary state $n$ the next state is given by
 \end{align*}
 Note that the energy $E_n$ is split up equally into kinetic and potential energy $T,V$
 
-\subsection{Commutator}\label{comm}
-\noindent\begin{equation*}
-    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
-\end{equation*}
-If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefore the order of the operations matters.
-
-\newpar{}
-
-\ptitle{Canonical Commutation Relation}
-
-\begin{equation*}
-    \left[\hat{x},\hat{p}\right] = i\hbar
-\end{equation*}
-
-\ptitle{Useful Commutators}
-\noindent\begin{align*}
-    \left[c,\hat B\right]                & =0  \\
-    \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1
-\end{align*}
-
-
-\textbf{Evaluate Commutators}
-
-For some operators it can be useful to evaluate the commutator on a test function first, and then remove the test function in the end, e.g.:
-\noindent\begin{align*}
-    \left[\frac{d^2}{dx^2}, \hat{x}\right] f(x) & = \frac{d^2}{dx^2} xf(x) - x\frac{d^2}{dx^2}f(x) \\
-                                                & = 2\frac{d}{dx} f(x)                             \\
-    \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
-\end{align*}
-
-\textbf{Remark}:
-
-It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$ directly.
-
 \subsection{Finite Potential}
 Another way of modeling the boundary conditions through the finite potentials $V(x) < \infty$.
 
@@ -339,8 +311,8 @@ For any potential, the solution to the SE will either be a combination of \texti
     \includegraphics[width = .5\linewidth]{fin_pot_step.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection (increased $\lambda$)
-    \item $0<E<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
+    \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$)
+    \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
     \item $E<0$: no physical solution
 \end{itemize}
 
@@ -349,8 +321,8 @@ For any potential, the solution to the SE will either be a combination of \texti
     \includegraphics[width = .5\linewidth]{fin_pot_well.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
-    \item $0<E<V_0$: at least one bound state with penetration into barrier
+    \item $\textcolor{red}{E}>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
+    \item $0<\textcolor{blue}{E}<V_0$: at least one bound state with penetration into barrier
     \item $E<0$: no physical solution
 \end{itemize}
 
@@ -359,13 +331,13 @@ For any potential, the solution to the SE will either be a combination of \texti
     \includegraphics[width = .5\linewidth]{fin_pot_barr.png}
 \end{center}
 \begin{itemize}
-    \item $E>V_0$: transmission and reflection (increased $\lambda$ over step)
-    \item $0<E<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
+    \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$ over step)
+    \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
     \item $E<0$: no physical solution
 \end{itemize}
 
 \subsubsection{Tunneling}
-The probability that a particle with energy $0<E<V_0$ is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ (which is why we can't run through walls) and the difference in energy $\sqrt{V_0-E}$:
+The probability that a particle with energy $0<E<V_0$ is transmitted through a tall and wide barrier is exponentially decreasing with the thickness $a$ (which is why we can't run through walls) and the difference in energy $\sqrt{V_0-E}$. The transmission coefficient $T$ is given by:
 \noindent\begin{equation*}
     T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
 \end{equation*}
