@@ -306,6 +306,24 @@ For any potential, the solution to the SE will either be a combination of \texti
     \item If a particle penetrates into a potential higher than its own energy level it will take negative kinetic energy to conserve energy.
 \end{itemize}
 
+\ptitle{Solving TISE}
+\begin{enumerate}
+    \item Split up into regions
+    \item Solve TISE for regions
+          \begin{itemize}
+              \item $V=V_i$:
+                    \noindent\begin{equation*}
+                        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} \psi + V_i\psi=E\psi
+                    \end{equation*}
+              \item $V=\infty$: no solution
+          \end{itemize}
+    \item match solutions at interfaces between regions using boundary conditions:
+          \begin{itemize}
+              \item $\psi(x)$ continous and finite
+              \item $\frac{d\psi}{dx}$ continous
+          \end{itemize}
+\end{enumerate}
+
 \subsubsection{Finite Potential Step}
 \begin{center}
     \includegraphics[width = .5\linewidth]{fin_pot_step.png}
