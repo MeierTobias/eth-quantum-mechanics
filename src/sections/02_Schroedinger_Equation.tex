@@ -359,3 +359,45 @@ The probability that a particle with energy $0<E<V_0$ is transmitted through a t
 \noindent\begin{equation*}
     T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
 \end{equation*}
+
+\subsection{3D Schrödinger Equation}
+The TDSE for a three dimensional system is given by
+\begin{equation*}
+    i\hbar\frac{\partial\Psi}{\partial t} = \frac{-\hbar^2}{2m}\nabla^2\Psi + \hat{V}\Psi
+\end{equation*}
+which is derived from
+\begin{align*}
+    \hat{H} & = \frac{-\hbar^2}{2m}\nabla^2 + \hat{V}                                      \\
+    \hat{H} & = \frac{1}{2m}\left(\hat{p}_x^2 + \hat{p}_y^2 +\hat{p}_z^2 \right) + \hat{V}
+\end{align*}
+with
+\begin{gather*}
+    \nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} \\
+    \hat{p}_d = \frac{\hbar}{i}\frac{\partial}{\partial d}
+\end{gather*}
+
+If $\hat{V}$ is \textbf{time-independent} the stationary states are given by
+\begin{equation*}
+    \Psi_n(\mathbf{r},t)=\psi_n(\mathbf{r})\:e^{-iE_n t/\hbar}
+\end{equation*}
+where$\psi_n(\mathbf{r})$ are solutions to the TISE
+\begin{equation*}
+    \frac{-\hbar^2}{2m}\nabla^2\psi_n + \hat{V}\psi_n = E_n \psi_n
+\end{equation*}
+
+\subsection{Hydrogen Atom}
+The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefore the transformation of the 3D TDSE from cartesian to polar coordinates is useful.
+\newpar{}
+\ptitle{Spherical Coordinates}
+\begin{align*}
+    \theta & = \text{polar angle}     \\
+    \phi   & = \text{azimuthal angle} \\
+    r      & = \text{radius}
+\end{align*}
+\begin{align*}
+    \nabla^2=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right) \ldots \\
+    + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
+\end{align*}
+\begin{equation*}
+    d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
+\end{equation*}
