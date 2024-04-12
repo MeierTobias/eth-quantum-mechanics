@@ -385,8 +385,26 @@ where$\psi_n(\mathbf{r})$ are solutions to the TISE
     \frac{-\hbar^2}{2m}\nabla^2\psi_n + \hat{V}\psi_n = E_n \psi_n
 \end{equation*}
 
-\subsection{Hydrogen Atom}
-The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefore the transformation of the 3D TDSE from cartesian to polar coordinates is useful.
+\subsubsection{Spherical Symmetry}
+For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\hat{H}$ and separate the partial differential equation $\hat{H}\psi = E\psi$ by variables.
+\begin{small}
+    \begin{equation*}
+        \begin{matrix}
+                                &          & R(r)            &          &                \\
+                                & \nearrow &                 &          &                \\
+            \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
+                                & \searrow &                 & \nearrow &                \\
+                                &          & Y(\theta, \phi) &          &                \\
+                                &          &                 & \searrow &                \\
+                                &          &                 &          & \Phi(\phi)
+        \end{matrix}
+    \end{equation*}
+\end{small}
+
+This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$.
+
+
+
 \newpar{}
 \ptitle{Spherical Coordinates}
 \begin{align*}
@@ -401,3 +419,8 @@ The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{sphericall
 \begin{equation*}
     d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
 \end{equation*}
+
+
+
+\subsection{Hydrogen Atom}\label{H-atom}
+The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus.
