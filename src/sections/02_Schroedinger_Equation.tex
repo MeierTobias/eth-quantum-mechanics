@@ -387,26 +387,67 @@ where$\psi_n(\mathbf{r})$ are solutions to the TISE
 
 \subsubsection{Spherical Symmetry}
 For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\hat{H}$ and separate the partial differential equation $\hat{H}\psi = E\psi$ by variables.
-\begin{small}
-    \begin{equation*}
-        \begin{matrix}
-                                &          & R(r)            &          &                \\
-                                & \nearrow &                 &          &                \\
-            \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
-                                & \searrow &                 & \nearrow &                \\
-                                &          & Y(\theta, \phi) &          &                \\
-                                &          &                 & \searrow &                \\
-                                &          &                 &          & \Phi(\phi)
-        \end{matrix}
-    \end{equation*}
-\end{small}
+\renewcommand{\arraystretch}{0.7}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
+\begin{equation*}
+    \begin{matrix}
+                            &          & R(r)            &          &                \\
+                            & \nearrow &                 &          &                \\
+        \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
+                            & \searrow &                 & \nearrow &                \\
+                            &          & Y(\theta, \phi) &          &                \\
+                            &          &                 & \searrow &                \\
+                            &          &                 &          & \Phi(\phi)
+    \end{matrix}
+\end{equation*}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
 
 This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$.
 
+\newpar{}
+\ptitle{Azimuthal Angle Solution}
 
+The solution to the azimuthal angle ODE is given by
+\begin{equation*}
+    \Phi(\phi)=e^{i m_\ell \phi}
+\end{equation*}
+where $m_\ell$ is the \textbf{magnetic quantum number}
+\begin{equation*}
+    m_\ell \in \mathcal{Z}
+\end{equation*}
 
 \newpar{}
-\ptitle{Spherical Coordinates}
+\ptitle{Polar Angle Solution}
+
+The solution to the polar angle ODE is given by
+\begin{equation*}
+    \Theta(\theta) = A P_{\ell}^{m_\ell}(\cos(\theta))
+\end{equation*}
+where $A$ is a constant, $\ell$ is the \textbf{azimuthal quantum number} and $P_{\ell}^{m_\ell}(x)$ are the \textbf{associated Legendre functions}.
+\begin{equation*}
+    \ell \in \mathcal{N}_0 \quad \text{and} \quad |m_\ell| \leq \ell
+\end{equation*}
+\includegraphics[width=\linewidth]{associated_Legendre_functions_temp.png}
+
+\newpar{}
+\ptitle{Angular Solutions}
+The two angular solutions combined are called \textbf{spherical harmonics}.
+\begin{equation*}
+    Y_{\ell}^{m_\ell}(\theta, \phi) = \epsilon\sqrt{\frac{2\ell+1}{4\pi}\frac{(\ell-|m_\ell|)!}{(\ell+|m_\ell|)!}}\:e^{im_\ell\phi}\:P_{\ell}^{m_\ell}(\cos(\theta))
+\end{equation*}
+where
+\begin{equation*}
+    \epsilon = \begin{cases}
+        {(-1)}^{m_\ell} & m_\ell > 0    \\
+        1               & m_\ell \leq 0
+    \end{cases}
+\end{equation*}
+
+The spherical harmonics are normalized and orthogonal.
+
+\newpar{}
+\ptitle{Remark on Spherical Coordinates}
 \begin{align*}
     \theta & = \text{polar angle}     \\
     \phi   & = \text{azimuthal angle} \\
