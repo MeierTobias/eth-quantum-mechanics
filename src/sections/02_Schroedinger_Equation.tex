@@ -385,7 +385,7 @@ where$\psi_n(\mathbf{r})$ are solutions to the TISE
     \frac{-\hbar^2}{2m}\nabla^2\psi_n + \hat{V}\psi_n = E_n \psi_n
 \end{equation*}
 
-\subsubsection{Spherical Symmetry}
+\subsubsection{Spherical Symmetry}\label{3dSE_spherical_symmetry}
 For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\hat{H}$ and separate the partial differential equation $\hat{H}\psi = E\psi$ by variables.
 \renewcommand{\arraystretch}{0.7}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
@@ -404,6 +404,9 @@ For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is bes
 \setlength\tabcolsep{\oldtabcolsep}
 
 This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$.
+\begin{equation*}
+    \psi(r,\theta,\phi) = R(r)\:Y(\theta, \phi) = R(r)\:\Theta(\theta)\:\Phi(\phi)
+\end{equation*}
 
 \newpar{}
 \ptitle{Azimuthal Angle Solution}
@@ -433,6 +436,7 @@ where $A$ is a constant, $\ell$ is the \textbf{azimuthal quantum number} and $P_
 
 \newpar{}
 \ptitle{Angular Solutions}
+
 The two angular solutions combined are called \textbf{spherical harmonics}.
 \begin{equation*}
     Y_{\ell}^{m_\ell}(\theta, \phi) = \epsilon\sqrt{\frac{2\ell+1}{4\pi}\frac{(\ell-|m_\ell|)!}{(\ell+|m_\ell|)!}}\:e^{im_\ell\phi}\:P_{\ell}^{m_\ell}(\cos(\theta))
@@ -446,6 +450,19 @@ where
 \end{equation*}
 
 The spherical harmonics are normalized and orthogonal.
+
+\newpar{}
+\ptitle{Radial Equation}
+
+Due to the spherical symmetry the radial equation becomes
+\begin{equation*}
+    \frac{-\hbar^2}{2m}\:\frac{d^2u}{dr^2}+\left[V(r)+\frac{-\hbar^2}{2m}\frac{\ell(\ell+1)}{r^2}\right]u = Eu
+\end{equation*}
+with
+\begin{equation*}
+    u(r) = rR(r)
+\end{equation*}
+Where $V(r)$ is the potential energy function which depends on the system. A solution of the radial equation of the hydrogen atom is given in Section~\ref{H-atom}.
 
 \newpar{}
 \ptitle{Remark on Spherical Coordinates}
@@ -462,7 +479,56 @@ The spherical harmonics are normalized and orthogonal.
     d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
 \end{equation*}
 
-
-
 \subsection{Hydrogen Atom}\label{H-atom}
-The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus.
+The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the in Section~\ref{3dSE_spherical_symmetry} stated SE in polar coordinates can be used.
+\newpar{}
+The Coulombic attraction between the electron and the proton gives the potential energy function
+\begin{equation*}
+    V(r) = \frac{-e^2}{4\pi\epsilon_0}\frac{1}{r}
+\end{equation*}
+
+\ptitle{Radial Solution}
+
+The solution to the radial part of the 3D SE becomes
+\begin{align*}
+    R_{n\ell}(r) = & \sqrt{{\left(\frac{2}{na}\right)}^3\frac{(n-\ell-1)!}{2n{[(n+\ell)!]}^3}} \ldots                    \\
+                   & \ldots\exp\left(\frac{-r}{na}\right){\left(\frac{2r}{na}\right)}^\ell L_{n-\ell-1}^{2\ell+1}(2r/na)
+\end{align*}
+where $L_q^p (x)$ are the \textbf{associated Laguerre functions}, $n$ is the \textbf{principal quantum number} and $a$ is the Bohr radius.
+\begin{equation*}
+    a = \frac{4\pi\epsilon_0\hbar^2}{me^2}=0.529 \cdot 10^{-10}m
+\end{equation*}
+
+\ptitle{Final Solution}
+
+Combining the radial and the angular solution we get
+\begin{equation*}
+    \psi_{n\ell m_\ell}(r,\theta,\phi) = R_{n\ell}(r)\:Y_\ell^{m_\ell}(\theta, \phi)
+\end{equation*}
+
+where the quantum numbers are in the ranges of
+
+\begin{tabularx}{\linewidth}{@{}ll@{}}
+    principal quantum number: & $n = 1, 2, 3, \ldots$                           \\
+    azimuthal quantum number: & $\ell = 0, 1, 2, \ldots , n-1$                  \\
+    magnetic quantum number:  & $m_\ell =-\ell, -\ell+1, \ldots , \ell-1, \ell$
+\end{tabularx}
+
+\newpar{}
+\ptitle{Remark}
+
+\begin{itemize}
+    \item $\ell$ is the number of angular nodes
+    \item $n-\ell-1$ is the number of radial nodes
+\end{itemize}
+
+\newpar{}
+\ptitle{Energies}
+
+The Bohr formula gives the orbit energies of an H-atom.
+\begin{equation*}
+    E_n = -\left[\frac{m}{2\hbar^2}\left(\frac{e^2}{4\pi\epsilon_0}\right)^2\right]\frac{1}{n^2} = \frac{E_i}{n^2}
+\end{equation*}
+with $n \in \mathcal{N}$ and $E_i = -13.6eV$
+
+This is true for all \textit{hydrogenic} atoms. Note that the energy of the electronic level only depends on $n$.
