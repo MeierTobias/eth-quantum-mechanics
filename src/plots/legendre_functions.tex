@@ -1,24 +1,69 @@
-\begin{tikzpicture}
+\renewcommand{\arraystretch}{1}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
+\begin{tabularx}{\linewidth}{@{}ccc@{}}
+    $P_0^0=1$ & $P_1^1=-\sin(\theta)$ & $P_1^0=\cos(\theta)$ \\
+    {
+    \begin{tikzpicture}
+        \begin{axis}[%
+                width=0.55\linewidth,
+                axis x line=center,
+                axis y line=center,
+                unit vector ratio={1 1},
+                ylabel={$z$},
+                xlabel style={below right},
+                ylabel style={above left},
+                ticks=none,
+                xmin=-2.5,
+                xmax=2.5,
+                ymin=-2.5,
+                ymax=2.5]
+            \draw[blue, thick] (axis cs:0,0) circle [radius=1];
+        \end{axis}
+    \end{tikzpicture}
+    }
+              &
+    {
+            \begin{tikzpicture}
+                \begin{axis}[%
+                        width=0.55\linewidth,
+                        axis x line=center,
+                        axis y line=center,
+                        unit vector ratio={1 1},
+                        ylabel={$z$},
+                        xlabel style={below right},
+                        ylabel style={above left},
+                        ticks=none,
+                        xmin=-2.5,
+                        xmax=2.5,
+                        ymin=-2.5,
+                        ymax=2.5]
+                    \draw[blue, thick] (axis cs:-1,0) circle [radius=1];
+                    \draw[blue, thick] (axis cs:1,0) circle [radius=1];
+                \end{axis}
+            \end{tikzpicture}
+        }
+              &
+    {
+            \begin{tikzpicture}
+                \begin{axis}[%
+                        width=0.55\linewidth,
+                        axis x line=center,
+                        axis y line=center,
+                        unit vector ratio={1 1},
+                        ylabel={$z$},
+                        xlabel style={below right},
+                        ylabel style={above left},
+                        ticks=none,
+                        xmin=-2.5,
+                        xmax=2.5,
+                        ymin=-2.5,
+                        ymax=2.5]
+                    \draw[blue, thick] (axis cs:0,-1) circle [radius=1];
+                    \draw[blue, thick] (axis cs:0,1) circle [radius=1];
+                \end{axis}
+            \end{tikzpicture}
+        }
+\end{tabularx}
 
-    \begin{axis}[%
-            name=plot1,
-            width=0.4\linewidth,
-            ymin=-0.5, 
-            ymax=0]
-    \end{axis}
-
-    \begin{axis}[%
-            name=plot2,
-            width=0.4\linewidth,
-            at=(plot1.right of south east), anchor=left of south west,
-            ymin=-6.5, ymax=0.2]
-    \end{axis}
-
-    \begin{axis}[%
-            name=plot3,
-            width=0.4\linewidth,
-            at=(plot2.right of south east), anchor=left of south west,
-            ymin=-6.5, ymax=0.2]
-    \end{axis}
-
-\end{tikzpicture}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
