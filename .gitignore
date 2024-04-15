@@ -9,4 +9,6 @@ build/
 # ignore latexindent log
 src/indent.log
 
+# pycharm
 .idea
+python_plot/orbits
