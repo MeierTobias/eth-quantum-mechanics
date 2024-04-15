@@ -8,3 +8,5 @@ build/
 
 # ignore latexindent log
 src/indent.log
+
+.idea

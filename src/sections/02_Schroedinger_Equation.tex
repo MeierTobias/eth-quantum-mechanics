@@ -380,9 +380,13 @@ If $\hat{V}$ is \textbf{time-independent} the stationary states are given by
 \begin{equation*}
     \Psi_n(\mathbf{r},t)=\psi_n(\mathbf{r})\:e^{-iE_n t/\hbar}
 \end{equation*}
-where$\psi_n(\mathbf{r})$ are solutions to the TISE
+where $\psi_n(\mathbf{r})$ are solutions to the TISE
 \begin{equation*}
-    \frac{-\hbar^2}{2m}\nabla^2\psi_n + \hat{V}\psi_n = E_n \psi_n
+    -\frac{\hbar^2}{2m}\nabla^2\psi_n + \hat{V}\psi_n = E_n \psi_n
+\end{equation*}
+and $\Psi$ is normalized
+\noindent\begin{equation*}
+    \int|\Psi|^2 d^3\mathbf{r}=1
 \end{equation*}
 
 \subsubsection{Spherical Symmetry}\label{3dSE_spherical_symmetry}
@@ -409,7 +413,7 @@ This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ a
 \end{equation*}
 
 \newpar{}
-\ptitle{Azimuthal Angle Solution}
+\ptitle{Azimuthal Angle Solution} $\Phi$
 
 The solution to the azimuthal angle ODE is given by
 \begin{equation*}
@@ -421,7 +425,7 @@ where $m_\ell$ is the \textbf{magnetic quantum number}
 \end{equation*}
 
 \newpar{}
-\ptitle{Polar Angle Solution}
+\ptitle{Polar Angle Solution} $\Theta$
 
 The solution to the polar angle ODE is given by
 \begin{equation*}
@@ -435,7 +439,7 @@ where $A$ is a constant, $\ell$ is the \textbf{azimuthal quantum number} and $P_
 \input{plots/legendre_functions.tex}
 
 \newpar{}
-\ptitle{Angular Solutions}
+\ptitle{Angular Solutions} $\mathbf{Y}$
 
 The two angular solutions combined are called \textbf{spherical harmonics}.
 \begin{equation*}
@@ -452,11 +456,11 @@ where
 The spherical harmonics are normalized and orthogonal.
 
 \newpar{}
-\ptitle{Radial Equation}
+\ptitle{Radial Equation} $\mathbf{R}$
 
 Due to the spherical symmetry the radial equation becomes
 \begin{equation*}
-    \frac{-\hbar^2}{2m}\:\frac{d^2u}{dr^2}+\left[V(r)+\frac{-\hbar^2}{2m}\frac{\ell(\ell+1)}{r^2}\right]u = Eu
+    \frac{-\hbar^2}{2m}\:\frac{d^2u}{dr^2}+\underbrace{\left[V(r)+\frac{-\hbar^2}{2m}\frac{\ell(\ell+1)}{r^2}\right]}_{V_{\text{eff}}}u = Eu
 \end{equation*}
 with
 \begin{equation*}
@@ -479,8 +483,12 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
     d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
 \end{equation*}
 
+\textbf{Remark}
+
+Explicit solutions for the first few solutions of $Y_l^{m_l}$ can be found in the \textit{Useful Info Sheet}.
+
 \subsection{Hydrogen Atom}\label{H-atom}
-The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the in Section~\ref{3dSE_spherical_symmetry} stated SE in polar coordinates can be used.
+The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
 \newpar{}
 The Coulombic attraction between the electron and the proton gives the potential energy function
 \begin{equation*}
@@ -496,8 +504,9 @@ The solution to the radial part of the 3D SE becomes
 \end{align*}
 where $L_q^p (x)$ are the \textbf{associated Laguerre functions}, $n$ is the \textbf{principal quantum number} and $a$ is the Bohr radius.
 \begin{equation*}
-    a = \frac{4\pi\epsilon_0\hbar^2}{me^2}=0.529 \cdot 10^{-10}m
+    a = \frac{4\pi\epsilon_0\hbar^2}{m_e e^2}=0.529 \cdot 10^{-10}m
 \end{equation*}
+where $m_e\simeq m$
 
 \ptitle{Final Solution}
 
@@ -508,18 +517,34 @@ Combining the radial and the angular solution we get
 
 where the quantum numbers are in the ranges of
 
-\begin{tabularx}{\linewidth}{@{}ll@{}}
-    principal quantum number: & $n = 1, 2, 3, \ldots$                           \\
-    azimuthal quantum number: & $\ell = 0, 1, 2, \ldots , n-1$                  \\
-    magnetic quantum number:  & $m_\ell =-\ell, -\ell+1, \ldots , \ell-1, \ell$
-\end{tabularx}
+\newpar{}
+\textbf{principal quantum number} $n$
+\noindent\begin{equation*}
+    n = 1, 2, 3, \ldots
+\end{equation*}
+\begin{itemize}
+    \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit. 
+\end{itemize}
 
 \newpar{}
-\ptitle{Remark}
-
+\textbf{azimuthal quantum number} $\ell$
+\noindent\begin{equation*}
+    \ell = 0, 1, 2, \ldots , n-1
+\end{equation*}
 \begin{itemize}
-    \item $\ell$ is the number of angular nodes
+    \item $\ell$ determines the shape of the electrons orbit ($\ell$ is the number of angular nodes).
+    \item $\ell$ is directly related to the orbital angular momentum.
     \item $n-\ell-1$ is the number of radial nodes
+\end{itemize}
+
+\newpar{}
+\textbf{magnetic quantum number} $m_\ell$
+\noindent\begin{equation*}
+    m_\ell =-\ell, -\ell+1, \ldots , \ell-1, \ell
+\end{equation*}
+\begin{itemize}
+    \item $m_l$ describes the orientation of the angular momentum relative to an external magnetic field.
+    \item $m_l$ is responsible for the magnetic splitting of spectral lines i.e.\ the \textit{Zeeman effect}
 \end{itemize}
 
 \newpar{}
@@ -527,8 +552,8 @@ where the quantum numbers are in the ranges of
 
 The Bohr formula gives the orbit energies of an H-atom.
 \begin{equation*}
-    E_n = -\left[\frac{m}{2\hbar^2}\left(\frac{e^2}{4\pi\epsilon_0}\right)^2\right]\frac{1}{n^2} = \frac{E_i}{n^2}
+    E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}
 \end{equation*}
-with $n \in \mathcal{N}$ and $E_i = -13.6eV$
+with $n \in \mathcal{N}$ and $E_1 = -13.6eV$
 
 This is true for all \textit{hydrogenic} atoms. Note that the energy of the electronic level only depends on $n$.
