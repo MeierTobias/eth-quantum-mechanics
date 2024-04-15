@@ -1,0 +1,126 @@
+\section{Mathematical Tools}
+
+\subsection{Operators}
+\noindent\begin{align*}
+    \hat{Q}(\hat{x},\hat{p}): &  & \widehat{x} & =x & \widehat{p}_x & = -i\hbar \frac{\partial}{\partial x} \\
+\end{align*}
+
+\subsection{Probabilities}
+The probability of finding the particle between $a$ and $b$ at time $t$ is:
+\begin{equation*}
+    \int_a^b \underbrace{{\Psi(x,t)}^*\Psi(x,t)}_{|\Psi(x,t)|^2}\,dx =
+\end{equation*}
+\begin{align*}
+    \int_{-\infty}^{\infty} |C\cdot \Psi(x,t)|^2 dx                                 = \langle C\Psi|C\Psi\rangle & = 1,\;\Psi\in L_2, \; C\in\mathbb{C} \\
+    \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = \langle\Psi|\Psi\rangle                               & = 0
+\end{align*}
+\textbf{Remarks:}
+\begin{enumerate}
+    \item If $\Psi(x,t)$ is normalized at $t=0$ it will stay normalized $\forall t$.
+    \item $\Psi \in L_2$ implies $\lim \limits_{x \to \infty}\Psi=0$
+\end{enumerate}
+
+\subsubsection{Expectation Value}
+Observation of an ensemble of identical systems:
+\noindent\begin{align*}
+    \langle Q(\hat{x},\hat{p})\rangle & = \int_{-\infty}^{\infty}\Psi^*\hat{Q}(\hat{x},\hat{p})\Psi dx = \langle\Psi|\widehat{Q}\Psi\rangle
+\end{align*}
+
+\ptitle{Useful Expectation Values}
+\noindent\begin{align*}
+    \langle p \rangle & = m \frac{d\langle x \rangle}{dt}
+\end{align*}
+
+\subsubsection{Variance}
+\noindent\begin{align*}
+    {\sigma_{\widehat{Q}}}^2 & = \langle {\widehat{Q}}^2 \rangle - {\langle \widehat{Q} \rangle }^2 =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                               \\
+                             & =\left\langle\Psi\left|{\left(\widehat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\widehat{Q}-q\right)\Psi\right|\left(\widehat{Q}-q\right)\Psi\right\rangle
+\end{align*}
+
+
+\subsection{Commutators}
+
+\noindent\begin{equation*}
+    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
+\end{equation*}
+\noindent\begin{align*}
+    \left[\widehat{A}\widehat{B},\widehat{C}\right] & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}
+\end{align*}
+
+\ptitle{Canonical Commutation Relations}
+
+\noindent\begin{align*}
+    \left[\widehat{x},\widehat{p}_x\right]  & = i\hbar  & \left[\widehat{x}, \widehat{y}\right]     & = 0 \\
+    \left[\widehat{p}_x, \widehat{x}\right] & = -i\hbar & \left[\widehat{p}_x, \widehat{p}_y\right] & = 0
+\end{align*}
+\ptitle{Useful Commutators}
+
+\noindent\begin{align*}
+    \left[c,\hat B\right]                        & =0                     & \left[\widehat{H},\widehat{x}\right]     & =-\frac{i\hbar}{m}\widehat{p} \\
+    \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1                    & \left[\widehat{H}, \widehat{V}\right]    & \neq 0                        \\
+    \left[\widehat{x}^n,\widehat{p}\right]       & = i \hbar n x^{n-1}    & \left[\widehat{V},\widehat{x}\right]     & =0                            \\
+    \left[\widehat{x},\widehat{p}^2\right]       & = 2i\hbar\widehat{p}   & \left[\widehat{L}_x,\widehat{L}_y\right] & =i\hbar\widehat{L}_z          \\
+    \left[f(\widehat{x}),\widehat{p}\right]      & = i \hbar\frac{df}{dx} &                                          &
+\end{align*}
+
+\textbf{Remark}: Evaluate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$.
+
+
+\subsection{Dirac Notation}
+\subsection{Observables}
+\subsection{Eigenfunctions}
+\subsection{Postulates}
+\subsection{Generalized Uncertainty Principle}
+
+
+\section{Schroedinger Equation}
+\subsection{Stationary States}
+\subsection{Free Particle}
+\subsection{ISW}
+\subsection{Harmonic Oscillator}
+\subsection{Finite Potentials}
+
+\section{Tables}
+\subsection{Useful Integrals}
+\subsubsection{Exponentials}
+\begin{footnotesize}
+    \noindent\begin{align*}
+        %  & \int e^{\lambda x}dx           &  & =\frac{1}{\lambda }e^{\lambda x}+C                                                 \\
+         & \int a^{\lambda x}dx           &  & =\frac{1}{\lambda \cdot \ln(a)}a^{\lambda x}+C                                     \\
+         & \int e^{\lambda x}\sin(ax+b)dx &  & =\frac{e^{\lambda x}}{a^2+\lambda ^2}\left(\lambda \sin(ax+b)-a\cos(ax+b)\right)+C \\
+         & \int e^{\lambda x}\cos(ax+b)dx &  & =\frac{e^{\lambda x}}{a^2+\lambda ^2}\left(\lambda \cos(ax+b)+a\sin(ax+b)\right)+C \\
+         & \int x \cdot e^{\lambda x}dx   &  & =(\frac{\lambda x-1}{\lambda ^2})\cdot e^{\lambda x}+C                             \\
+         & \int x^2 \cdot e^{\lambda x}dx &  & =(\frac{\lambda ^2x^2-2\lambda x+2}{\lambda ^3})\cdot e^{\lambda x}                \\
+         & \int x\cdot e^{x^2}dx          &  & =\frac{1}{2}\cdot e^{x^2}+C
+    \end{align*}
+\end{footnotesize}
+
+\paragraph{Specific Intervals}
+more on \textit{U}
+\begin{footnotesize}
+    \noindent\begin{align*}
+        %  & \int_0^{\infty} e^{-\lambda x}x^n dx                                               &  & =\frac{n!}{\lambda ^{n+1}},\quad \lambda >0                                       \\
+        %  & \int_0^{\infty} e^{-\lambda x^2} dx                                                &  & =\frac{1}{2}\sqrt{\frac{\pi}{\lambda }},\quad \lambda >0                          \\
+        %  & \int_{-\infty}^{\infty} e^{-\lambda x^2} dx                                        &  & =\sqrt{\frac{\pi}{\lambda }},\quad \lambda >0                                     \\
+         & \int_{-\infty}^{\infty}e^{-ax^2}e^{-iwx} dx                                        &  & = \sqrt{\frac{\pi}{a}}e^{\frac{w^2}{4a}}                                          \\
+        %  & \int_{-\infty}^{\infty}e^{-(ax^2+bx+c)}dx                                          &  & = \sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}-c}                                        \\
+         & \int_{-\infty}^{\infty}x^2e^{-\lambda x^2}dx                                       &  & = \frac{1}{2\lambda }\sqrt{\frac{\pi}{\lambda }},\quad \mathrm{Re}\{\lambda \} >0 \\
+        %  & \int_0^\infty x^n e^{-ax}dx                                                        &  & =\frac{n!}{a^{n+1}},\quad n\in\mathbb{N}^+                                        \\
+        %  & \int_{0}^{a} x\sin^2\left(\frac{n\pi}{x}x\right)\; dx                              &  & =\frac{a^2}{4}                                                                    \\
+        %  & \int_0^a x^2\cdot\sin^2\left(\frac{n\pi}{a}x\right)dx                              &  & ={\left(\frac{a}{2\pi n}\right)}^3\left(\frac{4\pi^3n^3}{3}-2n\pi\right)          \\
+         & \int_{0}^{a} x\sin\left(\frac{\pi}{x}x\right)\sin\left(\frac{2\pi}{x}x\right)\; dx &  & = -\frac{8a^2}{9\pi^2}
+    \end{align*} 
+\end{footnotesize}
+\subsection{Legendre Polynomials}
+\noindent\begin{align*}
+    P_{0} & =1                     & P_{3} & =\frac{1}{2}(5x^{3}-3x)           \\
+    P_{1} & =x                     & P_{4} & =\frac{1}{8}(35x^{4}-30x^{2}+3)   \\
+    P_{2} & =\frac{1}{2}(3x^{2}-1) & P_{5} & =\frac{1}{8}(63x^{5}-70x^{3}+15x)
+\end{align*}
+\noindent\begin{align*}
+    P_{0}^{0} & =1                       & P_{2}^{0} & =\frac{1}{2}(3 \cos^{2}\theta-1)             \\
+    P_{1}^{1} & =-\sin\theta             & P_{3}^{3} & =-15 \sin\theta(1-\cos^{2}\theta)            \\
+    P_{1}^{0} & =\cos\theta              & P_{3}^{2} & =15 \sin^{2}\theta \cos\theta                \\
+    P_{2}^{2} & =3 \sin^{2}\theta        & P_{3}^{1} & =-\frac{3}{2}\sin\theta (5 \cos^{2}\theta-1) \\
+    P_{2}^{1} & =-3 \sin\theta\cos\theta & P_{3}^{0} & =\frac{1}{2} (5 \cos^{3}\theta-3 \cos\theta)
+\end{align*}
