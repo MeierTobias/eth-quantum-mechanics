@@ -40,8 +40,8 @@ The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ 
 
 \ptitle{Standard Deviation of Observables}
 \begin{align*}
-    \sigma_{\hat{Q}}^{2} & =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                                                                                        \\
-                         & =\left\langle\Psi\left|{\left(\hat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\hat{Q}-q\right)\Psi\right|\left(\hat{Q}-q\right)\Psi\right\rangle
+    \sigma_{\widehat{Q}}^{2} & =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                                                                                                    \\
+                             & =\left\langle\Psi\left|{\left(\widehat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\widehat{Q}-q\right)\Psi\right|\left(\widehat{Q}-q\right)\Psi\right\rangle
 \end{align*}
 
 \subsection{Commutators}\label{comm}
@@ -56,28 +56,34 @@ If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B
 \ptitle{Canonical Commutation Relation}
 
 \begin{align*}
-    \left[\hat{x},\hat{p}\right] &= i\hbar\\
-    \left[\hat{p}, \hat{x}\right] &= -i\hbar
+    \left[\widehat{x},\widehat{p}_x\right]    & = i\hbar  \\
+    \left[\widehat{p}_x, \widehat{x}\right]   & = -i\hbar \\
+    \left[\widehat{x}, \widehat{y}\right]     & = 0       \\
+    \left[\widehat{p}_x, \widehat{p}_y\right] & = 0
 \end{align*}
 
+\textbf{Remark} Works for all spatial dimensions.
+
+\newpar{}
 \ptitle{Rules}
 
 \noindent\begin{align*}
-    \left[\hat{A}\hat{B},\hat{C}\right] & =\hat{A}\left[\hat{B},\hat{C}\right]+\left[\hat{A},\hat{C}\right]\hat{B}
+    \left[\widehat{A}\widehat{B},\widehat{C}\right] & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}
 \end{align*}
 
 
 \ptitle{Useful Commutators}
 
 \noindent\begin{align*}
-    \left[c,\hat B\right]                & =0                            \\
-    \left[\hat{a}_{-},\hat{a}_{+}\right] & = 1                           \\
-    \left[\hat{x}^n,\hat{p}\right]       & = i \hbar n x^{n-1}           \\
-    \left[x,\hat{p}^2\right]             & = 2i\hbar\hat{p}              \\
-    \left[\hat{V},x\right]               & =0                            \\
-    \left[\hat{H},x\right]               & =-\frac{i\hbar}{m}\widehat{p} \\
-    \left[\hat{H}, \hat{V}\right]        & \neq 0                        \\
-    \left[f(\hat{x}),\hat{p}\right]      & = i \hbar\frac{df}{dx}
+    \left[c,\hat B\right]                        & =0                                                         \\
+    \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1                                                        \\
+    \left[\widehat{x}^n,\widehat{p}\right]       & = i \hbar n x^{n-1}                                        \\
+    \left[\widehat{x},\widehat{p}^2\right]       & = 2i\hbar\widehat{p}                                       \\
+    \left[\widehat{V},\widehat{x}\right]         & =0                            &  & \text{Potential energy} \\
+    \left[\widehat{H},\widehat{x}\right]         & =-\frac{i\hbar}{m}\widehat{p} &  & \text{Total energy}     \\
+    \left[\widehat{H}, \widehat{V}\right]        & \neq 0                                                     \\
+    \left[f(\widehat{x}),\widehat{p}\right]      & = i \hbar\frac{df}{dx}                                     \\
+    \left[\widehat{L}_x,\widehat{L}_y\right]     & =i\hbar\widehat{L}_z          &  & \text{Angular momentum}
 \end{align*}
 
 
@@ -85,9 +91,9 @@ If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B
 
 For some operators it can be useful to evaluate the commutator on a test function first, and then remove the test function in the end, e.g.:
 \noindent\begin{align*}
-    \left[\frac{d^2}{dx^2}, \hat{x}\right] f(x) & = \frac{d^2}{dx^2} xf(x) - x\frac{d^2}{dx^2}f(x) \\
-                                                & = 2\frac{d}{dx} f(x)                             \\
-    \left[\frac{d^2}{dx^2}, \hat{x}\right]      & = 2\frac{d}{dx}
+    \left[\frac{d^2}{dx^2}, \widehat{x}\right] f(x) & = \frac{d^2}{dx^2} xf(x) - x\frac{d^2}{dx^2}f(x) \\
+                                                    & = 2\frac{d}{dx} f(x)                             \\
+    \left[\frac{d^2}{dx^2}, \widehat{x}\right]      & = 2\frac{d}{dx}
 \end{align*}
 
 \textbf{Remark}:

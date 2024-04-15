@@ -48,7 +48,7 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
 \begin{itemize}
     \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density is time-independent):
           \noindent\begin{equation*}
-              \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\hat{Q}\psi(x)dx
+              \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\widehat{Q}\psi(x)dx
           \end{equation*}
     \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}
     \item every expectation value is \textbf{constant in time}
@@ -194,43 +194,43 @@ The TISE becomes
 
 To solve this TISE one can use the \textbf{rising and lowering operators}: (for details on operators see~\ref{comm})
 \begin{align*}
-    \hat{a}_{+} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(-i\hat{p}+m\omega\hat{x}\right) &  & \text{raising operator}  \\
-    \hat{a}_{-} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(+i\hat{p}+m\omega\hat{x}\right) &  & \text{lowering operator}
+    \widehat{a}_{+} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(-i\widehat{p}+m\omega\widehat{x}\right) &  & \text{raising operator}  \\
+    \widehat{a}_{-} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(+i\widehat{p}+m\omega\widehat{x}\right) &  & \text{lowering operator}
 \end{align*}
 
 \ptitle{Hamiltonian}
 
 The Hamiltonian Operator can now be written as
 \noindent\begin{align*}
-    \hat{H} & =\hbar\omega\left(\hat{a}_{-}\hat{a}_{+}-\frac{1}{2}\right) \\
-            & =\hbar\omega\left(\hat{a}_{+}\hat{a}_{-}+\frac{1}{2}\right)
+    \widehat{H} & =\hbar\omega\left(\widehat{a}_{-}\widehat{a}_{+}-\frac{1}{2}\right) \\
+            & =\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)
 \end{align*}
 from which
 \noindent\begin{gather*}
-    \hat{a}_{-}\hat{a}_{+}=\frac{1}{\hbar\omega}\hat{H}+\frac{1}{2} \quad\quad \hat{a}_{+}\hat{a}_{-}=\frac{1}{\hbar\omega}\hat{H}-\frac{1}{2}\\
-    \left[\hat{a}_{-},\hat{a}_{+}\right] = 1
+    \widehat{a}_{-}\widehat{a}_{+}=\frac{1}{\hbar\omega}\widehat{H}+\frac{1}{2} \quad\quad \widehat{a}_{+}\widehat{a}_{-}=\frac{1}{\hbar\omega}\widehat{H}-\frac{1}{2}\\
+    \left[\widehat{a}_{-},\widehat{a}_{+}\right] = 1
 \end{gather*}
 
 \ptitle{TISE}
 
 Applied to the TISE we get
 \begin{align*}
-    \widehat{H}(\hat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\hat{a}_{+}\psi_n \\
-    \widehat{H}(\hat{a}_{-}\psi_n) & = (E_n-\hbar\omega)\hat{a}_{-}\psi_n
+    \widehat{H}(\widehat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\widehat{a}_{+}\psi_n \\
+    \widehat{H}(\widehat{a}_{-}\psi_n) & = (E_n-\hbar\omega)\widehat{a}_{-}\psi_n
 \end{align*}
-This implies, if $\psi_n$ are solutions to the TISE with energy $E_n$, then $\hat{a}_{+}\psi_n$/$\hat{a}_{-}\psi_n$ are also solutions but with one more/less quantum of energy.
+This implies, if $\psi_n$ are solutions to the TISE with energy $E_n$, then $\widehat{a}_{+}\psi_n$/$\widehat{a}_{-}\psi_n$ are also solutions but with one more/less quantum of energy.
 \newpar{}
 At the bottom (one level above having no energy at all) of the energy potential function the steady state is given by
 \begin{equation*}
-    \hat{a}_{-}\psi_0 = 0\psi_0 = 0
+    \widehat{a}_{-}\psi_0 = 0\psi_0 = 0
 \end{equation*}
 Which is a simple ODE that results in
 \begin{equation*}
     \psi_0 = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)
 \end{equation*}
-To get $\psi_n$, $\hat{a}_{+}$ can be applied $n$-times.
+To get $\psi_n$, $\widehat{a}_{+}$ can be applied $n$-times.
 \begin{equation*}
-    \psi_n = \frac{1}{\sqrt{n!}}{\left(\hat{a}_{+}\right)}^n \psi_0
+    \psi_n = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0
 \end{equation*}
 with
 \begin{align*}
@@ -240,8 +240,8 @@ with
 
 For an arbitrary state $n$ the next state is given by
 \begin{align*}
-    \hat{a}_{+}\psi_n & = \sqrt{n+1}\psi_{n+1} \\
-    \hat{a}_{-}\psi_n & = \sqrt{n}\psi_{n-1}
+    \widehat{a}_{+}\psi_n & = \sqrt{n+1}\psi_{n+1} \\
+    \widehat{a}_{-}\psi_n & = \sqrt{n}\psi_{n-1}
 \end{align*}
 
 \includegraphics[width=\linewidth]{harmonic_oscillator.png}
@@ -265,7 +265,7 @@ For an arbitrary state $n$ the next state is given by
 \begin{itemize}
     \item The energy is quantized.
     \item $n$ is the number of energy quanta in the oscillator
-    \item $\widehat{N} \equiv \hat{a}_{+}\hat{a}_{-} = $ number operator because $\left<N\right> = n$ for $\psi_n$
+    \item $\widehat{N} \equiv \widehat{a}_{+}\widehat{a}_{-} = $ number operator because $\left<N\right> = n$ for $\psi_n$
     \item The lowest state $\psi_0$ has the \textbf{zero point energy}. Even if all the energy is removed from the system (zero Kelvin) the oscillator still has this zero point energy.
     \item Solutions alter between even and odd because the potential is \textbf{symmetric}.
     \item $\psi_{n+1}$ has one node more than $\psi_n$
@@ -363,26 +363,26 @@ The probability that a particle with energy $0<E<V_0$ is transmitted through a t
 \subsection{3D Schrödinger Equation}
 The TDSE for a three dimensional system is given by
 \begin{equation*}
-    i\hbar\frac{\partial\Psi}{\partial t} = \frac{-\hbar^2}{2m}\nabla^2\Psi + \hat{V}\Psi
+    i\hbar\frac{\partial\Psi}{\partial t} = \frac{-\hbar^2}{2m}\nabla^2\Psi + \widehat{V}\Psi
 \end{equation*}
 which is derived from
 \begin{align*}
-    \hat{H} & = \frac{-\hbar^2}{2m}\nabla^2 + \hat{V}                                      \\
-    \hat{H} & = \frac{1}{2m}\left(\hat{p}_x^2 + \hat{p}_y^2 +\hat{p}_z^2 \right) + \hat{V}
+    \widehat{H} & = \frac{-\hbar^2}{2m}\nabla^2 + \widehat{V}                                      \\
+    \widehat{H} & = \frac{1}{2m}\left(\widehat{p}_x^2 + \widehat{p}_y^2 +\widehat{p}_z^2 \right) + \widehat{V}
 \end{align*}
 with
 \begin{gather*}
     \nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} \\
-    \hat{p}_d = \frac{\hbar}{i}\frac{\partial}{\partial d}
+    \widehat{p}_d = \frac{\hbar}{i}\frac{\partial}{\partial d}
 \end{gather*}
 
-If $\hat{V}$ is \textbf{time-independent} the stationary states are given by
+If $\widehat{V}$ is \textbf{time-independent} the stationary states are given by
 \begin{equation*}
     \Psi_n(\mathbf{r},t)=\psi_n(\mathbf{r})\:e^{-iE_n t/\hbar}
 \end{equation*}
 where $\psi_n(\mathbf{r})$ are solutions to the TISE
 \begin{equation*}
-    -\frac{\hbar^2}{2m}\nabla^2\psi_n + \hat{V}\psi_n = E_n \psi_n
+    -\frac{\hbar^2}{2m}\nabla^2\psi_n + \widehat{V}\psi_n = E_n \psi_n
 \end{equation*}
 and $\Psi$ is normalized
 \noindent\begin{equation*}
@@ -390,7 +390,7 @@ and $\Psi$ is normalized
 \end{equation*}
 
 \subsubsection{Spherical Symmetry}\label{3dSE_spherical_symmetry}
-For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\hat{H}$ and separate the partial differential equation $\hat{H}\psi = E\psi$ by variables.
+For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\widehat{H}$ and separate the partial differential equation $\widehat{H}\psi = E\psi$ by variables.
 \renewcommand{\arraystretch}{0.7}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
 \begin{equation*}
@@ -488,7 +488,7 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
 Explicit solutions for the first few solutions of $Y_l^{m_l}$ can be found in the \textit{Useful Info Sheet}.
 
 \subsection{Hydrogen Atom}\label{H-atom}
-The potential energy function, i.e. $\hat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
+The potential energy function, i.e. $\widehat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
 \newpar{}
 The Coulombic attraction between the electron and the proton gives the potential energy function
 \begin{equation*}
@@ -523,7 +523,7 @@ where the quantum numbers are in the ranges of
     n = 1, 2, 3, \ldots
 \end{equation*}
 \begin{itemize}
-    \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit. 
+    \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit.
 \end{itemize}
 
 \newpar{}
