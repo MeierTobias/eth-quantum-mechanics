@@ -203,7 +203,7 @@ To solve this TISE one can use the \textbf{rising and lowering operators}: (for 
 The Hamiltonian Operator can now be written as
 \noindent\begin{align*}
     \widehat{H} & =\hbar\omega\left(\widehat{a}_{-}\widehat{a}_{+}-\frac{1}{2}\right) \\
-            & =\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)
+                & =\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)
 \end{align*}
 from which
 \noindent\begin{gather*}
@@ -367,7 +367,7 @@ The TDSE for a three dimensional system is given by
 \end{equation*}
 which is derived from
 \begin{align*}
-    \widehat{H} & = \frac{-\hbar^2}{2m}\nabla^2 + \widehat{V}                                      \\
+    \widehat{H} & = \frac{-\hbar^2}{2m}\nabla^2 + \widehat{V}                                                  \\
     \widehat{H} & = \frac{1}{2m}\left(\widehat{p}_x^2 + \widehat{p}_y^2 +\widehat{p}_z^2 \right) + \widehat{V}
 \end{align*}
 with
@@ -483,6 +483,21 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
     d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
 \end{equation*}
 
+\textbf{Normalization}
+
+\noindent\begin{equation*}
+    \int_0^{2\pi}\int_0^{\pi} |Y_\ell^{m_\ell}|^2 \sin\theta\;d\theta d\phi \overset{!}{=} 1
+\end{equation*}
+
+\textbf{Orthogonality}
+
+\noindent\begin{equation*}
+    \int_0^{2\pi}\int_0^{\pi} {(Y_\ell^{m_\ell})}^{(a)}{(Y_\ell^{m_\ell})}^{(b)} \sin\theta\;d\theta d\phi \overset{!}{=} \begin{cases}
+        1 & a=b     \\
+        0 & a\neq b
+    \end{cases}
+\end{equation*}
+
 \textbf{Remark}
 
 Explicit solutions for the first few solutions of $Y_l^{m_l}$ can be found in the \textit{Useful Info Sheet}.
@@ -557,3 +572,27 @@ The Bohr formula gives the orbit energies of an H-atom.
 with $n \in \mathcal{N}$ and $E_1 = -13.6eV$
 
 This is true for all \textit{hydrogenic} atoms. Note that the energy of the electronic level only depends on $n$.
+
+\newpar{}
+\ptitle{Degeneracy}
+
+States are called \textit{degenerate} if they share their energy levels.
+Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), all states with $\ell=0,1,\ldots, n-1$ and $m_\ell=-\ell, \ldots, \ell$ are degenerate because they share their energy $E_n$.
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{hydrogen_degeneracy.png}
+\end{center}
+
+\subsection{Cubical Infinite Square Well}
+For the potential 
+\noindent\begin{equation*}
+    V(x,y,z)=\begin{cases}0,&\text{if }x,y,z\text{ are all between }0\text{ and }a\\\infty,&\text{otherwise}\end{cases}
+\end{equation*}
+the stationary states $\Psi_n$ are given by
+
+\noindent\begin{equation*}
+    \Psi \left(x,y,z\right)={\left(\frac{2}{a}\right)}^{\frac{3}{2}} \sin\left(\frac{n_{x}\pi}{a}x\right)\sin\left(\frac{n_{y}\pi}{a}y\right)\sin\left(\frac{n_{z}\pi}{a}z\right)
+\end{equation*}
+and the corresponding energies are
+\noindent\begin{equation*}
+    E_n = \frac{\hbar^{2}}{2m} \frac{\pi^{2}}{a^{2}} \underbrace{\left(n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right)}_{n}
+\end{equation*}
