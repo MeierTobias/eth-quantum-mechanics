@@ -41,7 +41,7 @@ Observables are represented by hermitian operators.
 \subsubsection{Hermitian Operators}
 The expectation value of a observable is real and thus
 \noindent\begin{align*}
-    \langle Q\rangle                            & = {\langle Q\rangle}^*                                             \\
+    \langle Q\rangle                            & = {\langle Q\rangle}^*                                            \\
     \langle Q\rangle=\langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle={\langle Q\rangle}^*\quad \forall f,g
 \end{align*}
 Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). An operator \textbf{must} be hermitian for its observable to become real. These operators are \textbf{linear} if
@@ -55,6 +55,17 @@ Such an operator is called a hermitian operator (applying the operator to one or
     \langle f|(\hat{Q} + \hat{R})g\rangle                                    & = \langle (\hat{Q} + \hat{R})f|g\rangle                                                               \\[0.75em]
     \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
 \end{align*}
+
+\ptitle{Remark}
+
+Given hermitian operators $\hat{A}$, $\hat{B}$ and $\hat{A}\hat{B}$ then, in integral notation one has for operators and functions
+\begin{equation*}
+    \int_{-\infty}^{\infty} {(\hat{A}\hat{B}f)}^* g\; d \mathbf{r}=\int_{-\infty}^{\infty} {(\hat{A}\hat{B})}^*f^* g\; d \mathbf{r}
+\end{equation*}
+but for operators and operators
+\begin{equation*}
+    \int_{-\infty}^{\infty} {(\hat{A}\hat{B})}^*f^* g\; d \mathbf{r}=\int_{-\infty}^{\infty} \hat{B}^*\hat{A}^*f^* g\; d \mathbf{r}
+\end{equation*}
 
 \subsubsection{Determinant States}
 A state $\Psi$ that would return the same result for every measurement of an ensemble is called a \textbf{determinant state} of the observable $Q$.
@@ -212,8 +223,8 @@ An eigenfunction of the momentum operator must fulfil the following eigenvalue e
 
 \ptitle{Eigenfunctions}
 
-Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with 
-$k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$ 
+Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with
+$k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$
 (de Broglie formula!):
 \begin{equation*}
     f_{p^{\prime}}(x)=\frac{1}{\sqrt{2\pi\hbar}}\exp\left[\frac{ip^{\prime}x}{\hbar}\right]
