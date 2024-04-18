@@ -68,27 +68,11 @@ If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B
 \ptitle{Rules}
 
 \noindent\begin{align*}
-    \left[\widehat{A}\widehat{B},\widehat{C}\right]  & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}    \\
-    \left[\widehat{A}+\widehat{B},\widehat{C}\right] & = \left[\widehat{A},\widehat{C}\right]+\left[\widehat{B},\widehat{C}\right]                         \\
+    \left[\widehat{A}\widehat{B},\widehat{C}\right]  & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}     \\
+    \left[\widehat{A}+\widehat{B},\widehat{C}\right] & = \left[\widehat{A},\widehat{C}\right]+\left[\widehat{B},\widehat{C}\right]                          \\
     \left[\widehat{A},\widehat{B}^2\right]           & = \left[\widehat{A},\widehat{B}\right] \widehat{B} - \widehat{B}\left[\widehat{B},\widehat{A}\right] \\
                                                      & = \left[\widehat{A},\widehat{B}\right] \widehat{B} + \widehat{B}\left[\widehat{A},\widehat{B}\right]
 \end{align*}
-
-
-\ptitle{Useful Commutators}
-
-\noindent\begin{align*}
-    \left[c,\hat B\right]                        & =0                                                         \\
-    \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1                                                        \\
-    \left[\widehat{x}^n,\widehat{p}\right]       & = i \hbar n x^{n-1}                                        \\
-    \left[\widehat{x},\widehat{p}^2\right]       & = 2i\hbar\widehat{p}                                       \\
-    \left[\widehat{V},\widehat{x}\right]         & =0                            &  & \text{Potential energy} \\
-    \left[\widehat{H},\widehat{x}\right]         & =-\frac{i\hbar}{m}\widehat{p} &  & \text{Total energy}     \\
-    \left[\widehat{H}, \widehat{V}\right]        & \neq 0                                                     \\
-    \left[f(\widehat{x}),\widehat{p}\right]      & = i \hbar\frac{df}{dx}                                     \\
-    \left[\widehat{L}_x,\widehat{L}_y\right]     & =i\hbar\widehat{L}_z          &  & \text{Angular momentum}
-\end{align*}
-
 
 \ptitle{Evaluate Commutators}
 
@@ -102,6 +86,37 @@ For some operators it can be useful to evaluate the commutator on a test functio
 \textbf{Remark}:
 
 It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$ directly.
+
+\subsubsection{Useful Commutators}
+
+\noindent\begin{align*}
+    \left[c,\hat B\right]                        & =0  \\
+    \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1 \\
+\end{align*}
+
+\ptitle{Momentum Commutators}
+
+\begin{align*}
+    \left[\widehat{x}^n,\widehat{p}\right]  & = i \hbar n x^{n-1}    \\
+    \left[\widehat{x},\widehat{p}^2\right]  & = 2i\hbar\widehat{p}   \\
+    \left[f(\widehat{x}),\widehat{p}\right] & = i \hbar\frac{df}{dx} \\
+\end{align*}
+
+\ptitle{Energy Commutators}
+\begin{align*}
+    \left[\widehat{V},\widehat{x}\right]  & =0                            &  & \text{Potential energy} \\
+    \left[\widehat{H},\widehat{x}\right]  & =-\frac{i\hbar}{m}\widehat{p} &  & \text{Total energy}     \\
+    \left[\widehat{H}, \widehat{V}\right] & \neq 0                                                     \\
+\end{align*}
+
+\ptitle{Angular Momentum Commutators}
+
+\begin{align*}
+    \left[\widehat{L_{x}},\widehat{L_{y}}\right] & =i\hbar \widehat{L_{z}}                                                                           \\
+    \left[\widehat{L_{y}},\widehat{L_{z}}\right] & =i\hbar \widehat{L_{x}}                                                                           \\
+    \left[\widehat{L_{z}},\widehat{L_{x}}\right] & =i\hbar \widehat{L_{y}}                                                                           \\
+    \left[\widehat{L^{2}},\widehat{L_{x}}\right] & = \left[\widehat{L^{2}},\widehat{L_{y}}\right] = \left[\widehat{L^{2}},\widehat{L_{z}}\right] = 0
+\end{align*}
 
 \subsection{Inner Product}\label{ssec:InnerProd}
 \ptitle{Properties}
