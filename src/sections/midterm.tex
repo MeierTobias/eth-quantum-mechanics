@@ -95,6 +95,10 @@ Observation of an ensemble of identical systems:
 
 \subsection{Observables}
 Observables are represented by hermitian operators.
+\begin{itemize}
+    \item Eigenstate:\ \ref{midterm:det_states} \&\ \ref{midterm:eig_fun}
+    \item Else:\ \ref{midterm:gen_stat}
+\end{itemize}
 
 \subsubsection{Hermitian Operators}
 The expectation value of a observable is real and thus
@@ -115,7 +119,7 @@ These operators are \textbf{linear} if
     \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
 \end{align*}
 
-\subsubsection{Determinant States}
+\subsubsection{Determinant States}\label{midterm:det_states}
 If an ensemble is in an \textbf{determinant state}, every measurement yields the same result:
 \noindent\begin{align*}
     \sigma^2     & = \langle \Psi|(\hat{Q} - q) \Psi\rangle = 0 \\
@@ -130,7 +134,7 @@ These determinant states of $Q$ are \textit{eigenfunctions} of $\hat{Q}$ and the
           $\hat{Q}: \hat{H},\; q:E$.
 \end{itemize}
 
-\subsubsection{Eigenfunctions of a Hermitian Operator}
+\subsubsection{Eigenfunctions of a Hermitian Operator}\label{midterm:eig_fun}
 A set of eigenvalues $q$ for $\hat{Q}$ is called its \textit{spectrum}.
 
 \newpar{}
@@ -157,9 +161,104 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
           \end{equation*}
 \end{itemize}
 
-\subsection{Postulates}
-\subsection{Generalized Uncertainty Principle}
+\subsubsection{Generalized Statistical Interpretation}\label{midterm:gen_stat}
+If the spectrum of $\hat{Q}$ is discrete and the state
+\begin{equation*}
+    \Psi=\sum_n c_n \psi_n
+\end{equation*}
+is \textbf{not a eigenfunction} of $\hat{Q}$ (but $\psi_n$ is):
+\noindent\begin{equation*}
+    \underbrace{|c_n|^2}_{\textsf{Probability}}, \quad c_n = \underbrace{\langle \psi_n|\Psi\rangle}_{\textsf{Projection}} =\int_{-\infty}^{\infty} {\psi_n}^* \Psi\; d^3 \mathbf{r}
+\end{equation*}
+As a result:
+\noindent\begin{equation*}
+    \langle Q\rangle  = \sum_{n=1}^{\infty} |c_n|^2 q_n, \quad  \sum_{n=1}^{\infty} |c_n|^2 = 1, \sigma^2          \neq 0
+\end{equation*}
 
+\textbf{Wave Function Collapse}
+
+After a measurement of an observable, the wave function \textbf{collapses} into the measured eigenfunction $\psi_n$ with eigenvalue $q_n$ and probability $|c_n|^2$. This collapse reflects the transition from a superposition of possible states to a \textbf{definitive state}.
+
+\subsection{Postulates}
+
+\begin{enumerate}
+    \item The state of a QM system is described by $\Psi(\mathbf{r},t)$, and $|\Psi|^2\; d^3 \mathbf{r}$ is the probability of finding the particle in the volume $d^3 \mathbf{r} = dx\,dy\,dz$.
+    \item Every observable quantity in classical mechanics is represented by a \textbf{linear hermitian operator}, $\hat{Q}$, such that the mean value of the observable from an ensemble is
+          \noindent\begin{equation*}
+              \langle Q\rangle=\int\Psi^{*}\hat{Q}\Psi d^{3} \mathbf{r}= \langle\Psi|\hat{Q}\Psi\rangle
+          \end{equation*}\newline
+          \textbf{Restated}:\newline
+          If the system is in a state that is an eigenstate of $\hat{Q}$, a measurement on a QM ensemble will always yield the eigenvalue $q$ of $\hat{Q}$ (e.g.\ determinant state of the infinite square well).\newline
+          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$ (e.g.\ general state of infinite square well).
+    \item $\Psi(\mathbf{r},t)$ evolves in time according to the TDSE:
+          \noindent\begin{align*}
+              i\hbar \frac{\partial \Psi}{\partial t} & =\hat{H}\Psi                     \\
+              \hat{H}                                 & = \frac{\hat{p}^2}{2m} + \hat{V}
+          \end{align*}
+\end{enumerate}
+
+\subsection{Generalized Uncertainty Principle}
+\subsubsection{Compatible Observables}
+
+\begin{itemize}
+    \item $[\widehat{A}, \widehat{B}] = 0$, same eigenfunctions
+    \item Can be determined simultaneously:
+          \begin{enumerate}
+              \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+              \item Wave function collapses into the corresponding eigenfunction $\psi'$
+              \item Subsequent measurements for $A$ or $B$ will yield eigenvalues $a_n, b_m$, $\sigma_A=0, \sigma_B=0$ $\Rightarrow$ \textbf{deterministic}
+          \end{enumerate}
+\end{itemize}
+
+\subsubsection{Incompatible Observables}
+
+\begin{itemize}
+    \item $[\widehat{A}, \widehat{B}] \neq 0$, different eigenfunctions
+    \item Can't be determined simultaneously without any uncertainty:
+          \begin{enumerate}
+              \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+              \item Wave function collapses into the corresponding eigenfunction $\psi'$
+              \item Subsequent measurements
+                    \begin{itemize}
+                        \item for $A$ will yield eigenvalues $a_n$, $\sigma_A=0$ $\Rightarrow$ \textbf{deterministic}
+                        \item for $B$ will yield eigenvalue $b_m$ with probability $|c_{m,B}|^2$ (eigenfunction is not shared) $\Rightarrow$ \textbf{probabilistic}
+                    \end{itemize}
+          \end{enumerate}
+\end{itemize}
+
+\textbf{Remarks}:
+\begin{itemize}
+    \item The previous statements hold for two subsequent measurements, if for example, a third measurement is made, the compatability of the second and third have to be evaulated.
+\end{itemize}
+
+\newpar{}
+\ptitle{General Uncertainty Principle (GUP)}
+
+For any Observables $A$, $B$:
+\begin{equation*}
+    \sigma_A^2\cdot\sigma_B^2\geqslant{\underbrace{\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)}_{\textsf{real}}}^2
+\end{equation*}
+
+\subsubsection{Time-Energy Uncertainty}
+Plugging the \textbf{generalized Ehrenfest theorem}
+\begin{equation*}
+    \frac{d}{dt}\left\langle Q\right\rangle=\frac{i}{\hbar}\left\langle\left[\hat{H},\hat{Q}\right]\right\rangle+\left\langle\frac{\partial\hat{Q}}{\partial t}\right\rangle
+\end{equation*}
+into the GUP yields, assuming $\hat{Q}$ is time-independent, the \textbf{time-energy uncertainty}:
+\begin{equation*}
+    \Delta t\cdot\Delta E\geqslant\frac\hbar2 \qquad \left|\begin{matrix}
+        \Delta t & \equiv \frac{\sigma_Q}{|d\langle Q\rangle/dt|} \\
+        \Delta E & \equiv \sigma H
+    \end{matrix}\right.
+\end{equation*}
+where
+
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item $\Delta t$ describes how long it takes the expectation value of $Q$ to change by $\sigma$.
+    \item If they commute, $Q$ is a conserved quantity.
+\end{itemize}
 
 \section{Schroedinger Equation}
 \subsection{Stationary States}
