@@ -44,7 +44,9 @@ Observation of an ensemble of identical systems:
     \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
 \end{equation*}
 \noindent\begin{align*}
-    \left[\widehat{A}\widehat{B},\widehat{C}\right] & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}
+    \left[\widehat{A}\widehat{B},\widehat{C}\right]  & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}     \\
+    \left[\widehat{A}+\widehat{B},\widehat{C}\right] & = \left[\widehat{A},\widehat{C}\right]+\left[\widehat{B},\widehat{C}\right]                          \\
+    \left[\widehat{A},\widehat{B}^2\right]           & = \left[\widehat{A},\widehat{B}\right] \widehat{B} + \widehat{B}\left[\widehat{A},\widehat{B}\right]
 \end{align*}
 
 \ptitle{Canonical Commutation Relations}
@@ -67,8 +69,94 @@ Observation of an ensemble of identical systems:
 
 
 \subsection{Dirac Notation}
+\noindent\begin{align*}
+    \left|f\right\rangle  & := \begin{bmatrix}
+                                   c_1 & c_2 & \cdots & c_n
+                               \end{bmatrix}^T                               &  & \text{``ket''}              \\
+    \left\langle f\right| & := \begin{bmatrix}
+                                   {c_1}^* & {c_2}^* & \cdots & {c_n}^*
+                               \end{bmatrix}                   &  & \text{``bra''}                            \\
+    \langle f|g \rangle   & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  & \text{inner product}
+\end{align*}
+\ptitle{ONB}
+\noindent\begin{align*}
+    \langle f_m|f_n \rangle & = \delta_{mn}                    &  & \text{orthonormal}        \\
+    f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x) &  & \text{complete}           \\
+    c_n                     & = \langle f_n|f \rangle          &  & \text{projection on base}
+\end{align*}
+
+\ptitle{Properties of Inner Product}
+\noindent\begin{align*}
+    \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle               & \langle f|\lambda g \rangle & =\lambda \langle f|g \rangle \\
+    \langle f+g|h \rangle       & =\langle f|h \rangle + \langle g|h \rangle   & \langle g|f \rangle         & = {\langle f|g \rangle}^*    \\
+    \langle f|f \rangle         & \ge 0                                        & \langle f|f \rangle         & = 0 \leftrightarrow f=0      \\
+    |\langle f|g \rangle |^2    & \leq \langle f|f \rangle \langle g|g \rangle
+\end{align*}
+
 \subsection{Observables}
-\subsection{Eigenfunctions}
+Observables are represented by hermitian operators.
+
+\subsubsection{Hermitian Operators}
+The expectation value of a observable is real and thus
+\noindent\begin{align*}
+    \langle Q\rangle                            & = {\langle Q\rangle}^*                                            \\
+    \langle Q\rangle=\langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle={\langle Q\rangle}^*\quad \forall f,g
+\end{align*}
+
+These operators are \textbf{linear} if
+\noindent\begin{equation*}
+    \hat{Q}\left[af(x)+bg(x)\right]=a\hat{Q}f(x)+b\hat{Q}g(x),
+\end{equation*}
+
+\ptitle{Properties}
+
+\noindent\begin{align*}
+    \langle f|(\hat{Q} + \hat{R})g\rangle                                    & = \langle (\hat{Q} + \hat{R})f|g\rangle                                                               \\[0.75em]
+    \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
+\end{align*}
+
+\subsubsection{Determinant States}
+If an ensemble is in an \textbf{determinant state}, every measurement yields the same result:
+\noindent\begin{align*}
+    \sigma^2     & = \langle \Psi|(\hat{Q} - q) \Psi\rangle = 0 \\
+    \hat{Q} \Psi & = q \Psi
+\end{align*}
+These determinant states of $Q$ are \textit{eigenfunctions} of $\hat{Q}$ and the expectation $\langle Q\rangle = q$ the corresponding \textit{eigenvalue}.
+
+\textbf{Remarks:}
+\begin{itemize}
+    \item If multiple eigenfunctions share their eigenvalue, they are called \textit{degenerated states}.
+    \item The TISE is an example for a determinant state\newline
+          $\hat{Q}: \hat{H},\; q:E$.
+\end{itemize}
+
+\subsubsection{Eigenfunctions of a Hermitian Operator}
+A set of eigenvalues $q$ for $\hat{Q}$ is called its \textit{spectrum}.
+
+\newpar{}
+\ptitle{Discrete Spectrum}
+
+If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
+\noindent\begin{equation*}
+    \Psi(x,0)     = \sum_{n=1}^{\infty} c_n \underbrace{\psi_n(x)}_{\textsf{eigenfunctions}} \;\Leftrightarrow\; |\Psi\rangle  = \sum_{n=1}^{\infty} c_n \underbrace{|\psi_n\rangle}_{\textsf{eigenvectors}}
+\end{equation*}
+
+\begin{itemize}
+    \item Eigenvalues are real
+    \item Eigenfunctions with different eigenvalues are orthogonal
+    \item $\in \mathcal{H}$, represent \textbf{physical} states and form a complete set.
+\end{itemize}
+
+\newpar{}
+\ptitle{Continuous Spectrum}
+\begin{itemize}
+    \item Eigenfunctions with a continuous spectrum are not normalizable ($\notin \mathcal{H}$)
+    \item These eigenfunctions with real eigenvalues form a \textbf{complete set} and are \textit{Dirac-orthonormalizable}:
+          \noindent\begin{equation*}
+              \langle f_{x'}|f_{x''}\rangle=\delta(x''-x')
+          \end{equation*}
+\end{itemize}
+
 \subsection{Postulates}
 \subsection{Generalized Uncertainty Principle}
 
@@ -109,7 +197,7 @@ more on \textit{U}
         %  & \int_{0}^{a} x\sin^2\left(\frac{n\pi}{x}x\right)\; dx                              &  & =\frac{a^2}{4}                                                                    \\
         %  & \int_0^a x^2\cdot\sin^2\left(\frac{n\pi}{a}x\right)dx                              &  & ={\left(\frac{a}{2\pi n}\right)}^3\left(\frac{4\pi^3n^3}{3}-2n\pi\right)          \\
          & \int_{0}^{a} x\sin\left(\frac{\pi}{x}x\right)\sin\left(\frac{2\pi}{x}x\right)\; dx &  & = -\frac{8a^2}{9\pi^2}
-    \end{align*} 
+    \end{align*}
 \end{footnotesize}
 \subsection{Legendre Polynomials}
 \noindent\begin{align*}
