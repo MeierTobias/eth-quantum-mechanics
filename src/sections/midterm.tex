@@ -422,14 +422,16 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \ptitle{Solution to TISE}
 \noindent\begin{align*}
     \psi_0 & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right) & E_0 & = \frac{1}{2}\hbar\omega     \\
-    \psi_n & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                       & E_n & = (n+\frac{1}{2})\hbar\omega \\
+    \psi_n & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                       & E_n & = (n+\frac{1}{2})\hbar\omega
 \end{align*}
-
 \begin{align*}
     \widehat{a}_{+}\psi_n & = \sqrt{n+1}\psi_{n+1} \\
     \widehat{a}_{-}\psi_n & = \sqrt{n}\psi_{n-1}
 \end{align*}
-\includegraphics[width=\linewidth]{harmonic_oscillator.png}
+
+\begin{center}
+    \includegraphics[width=.8\linewidth]{harmonic_oscillator.png}
+\end{center}
 
 \ptitle{Hermite Polynomial Form} (\textit{Useful Info Sheet})
 
@@ -467,6 +469,45 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \end{align*}
 
 \subsection{Finite Potentials}
+\noindent\begin{equation*}
+    \begin{cases}
+        E > V(\pm \infty) & \text{scattering state} \\
+        E < V(\pm \infty) & \text{bound state}
+    \end{cases}
+\end{equation*}
+\textbf{Remarks}:
+
+\begin{itemize}
+    \item The total energy of the particle is conserved i.e.\ if the potential $V$ increases, the wavelength $\lambda$ (and so the velocity!) decreases and vice versa.
+          \noindent\begin{equation*}
+              k=\sqrt{\frac{2m(E-V_0)}{\hbar^2}} = \frac{2\pi}{\lambda}
+          \end{equation*}
+    \item If a particle penetrates into a potential higher than its own energy level it will take negative kinetic energy to conserve energy.
+\end{itemize}
+
+\subsubsection{Solving TISE}
+\begin{enumerate}
+    \item Split up into regions
+    \item Solve TISE for regions
+          \begin{itemize}
+              \item $V=V_i$:
+                    \noindent\begin{equation*}
+                        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} \psi + V_i\psi=E\psi
+                    \end{equation*}
+              \item $V=\infty$: no solution
+          \end{itemize}
+    \item match solutions at interfaces between regions using boundary conditions:
+          \begin{itemize}
+              \item $\psi(x)$ continous and finite
+              \item $\frac{d\psi}{dx}$ continous
+          \end{itemize}
+\end{enumerate}
+
+\subsubsection{Tunneling}
+Transmission coefficient $T$:
+\noindent\begin{equation*}
+    T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
+\end{equation*}
 
 \section{Tables}
 \subsection{Useful Integrals}
@@ -499,16 +540,19 @@ more on \textit{Useful Info Sheet}
          & \int_{0}^{a} x\sin\left(\frac{\pi}{x}x\right)\sin\left(\frac{2\pi}{x}x\right)\; dx &  & = -\frac{8a^2}{9\pi^2}
     \end{align*}
 \end{footnotesize}
-\subsection{Legendre Polynomials}
-\noindent\begin{align*}
-    P_{0} & =1                     & P_{3} & =\frac{1}{2}(5x^{3}-3x)           \\
-    P_{1} & =x                     & P_{4} & =\frac{1}{8}(35x^{4}-30x^{2}+3)   \\
-    P_{2} & =\frac{1}{2}(3x^{2}-1) & P_{5} & =\frac{1}{8}(63x^{5}-70x^{3}+15x)
-\end{align*}
-\noindent\begin{align*}
-    P_{0}^{0} & =1                       & P_{2}^{0} & =\frac{1}{2}(3 \cos^{2}\theta-1)             \\
-    P_{1}^{1} & =-\sin\theta             & P_{3}^{3} & =-15 \sin\theta(1-\cos^{2}\theta)            \\
-    P_{1}^{0} & =\cos\theta              & P_{3}^{2} & =15 \sin^{2}\theta \cos\theta                \\
-    P_{2}^{2} & =3 \sin^{2}\theta        & P_{3}^{1} & =-\frac{3}{2}\sin\theta (5 \cos^{2}\theta-1) \\
-    P_{2}^{1} & =-3 \sin\theta\cos\theta & P_{3}^{0} & =\frac{1}{2} (5 \cos^{3}\theta-3 \cos\theta)
-\end{align*}
+
+%% not needed in Midterm %%
+
+% \subsection{Legendre Polynomials}
+% \noindent\begin{align*}
+%     P_{0} & =1                     & P_{3} & =\frac{1}{2}(5x^{3}-3x)           \\
+%     P_{1} & =x                     & P_{4} & =\frac{1}{8}(35x^{4}-30x^{2}+3)   \\
+%     P_{2} & =\frac{1}{2}(3x^{2}-1) & P_{5} & =\frac{1}{8}(63x^{5}-70x^{3}+15x)
+% \end{align*}
+% \noindent\begin{align*}
+%     P_{0}^{0} & =1                       & P_{2}^{0} & =\frac{1}{2}(3 \cos^{2}\theta-1)             \\
+%     P_{1}^{1} & =-\sin\theta             & P_{3}^{3} & =-15 \sin\theta(1-\cos^{2}\theta)            \\
+%     P_{1}^{0} & =\cos\theta              & P_{3}^{2} & =15 \sin^{2}\theta \cos\theta                \\
+%     P_{2}^{2} & =3 \sin^{2}\theta        & P_{3}^{1} & =-\frac{3}{2}\sin\theta (5 \cos^{2}\theta-1) \\
+%     P_{2}^{1} & =-3 \sin\theta\cos\theta & P_{3}^{0} & =\frac{1}{2} (5 \cos^{3}\theta-3 \cos\theta)
+% \end{align*}
