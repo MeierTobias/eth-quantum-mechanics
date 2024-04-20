@@ -476,8 +476,9 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
     r      & = \text{radius}
 \end{align*}
 \begin{align*}
-    \nabla^2=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right) \ldots \\
-    + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
+    \mathbf{\nabla} & =\mathbf{u}_{r}\frac{\partial}{\partial r}+\frac{\mathbf{u}_{\theta}}{r}\frac{\partial}{\partial\theta}+\frac{\mathbf{u}_{\phi}}{r\sin\theta}\frac{\partial}{\partial\phi}                                      \\
+    \nabla^2        & =\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right) \ldots \\
+                    & + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
 \end{align*}
 \begin{equation*}
     d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
@@ -603,7 +604,6 @@ and the corresponding energies are
 
 \section{Angular Momentum and Spin}
 \subsection{Angular Momentum}
-\subsubsection{Angular Momentum in QM}
 
 \ptitle{Operators}
 
@@ -629,39 +629,28 @@ with
     |\mathbf{L}|=\sqrt{L_{x}^{2}+L_{y}^{2}+L_{z}^{2}}
 \end{equation*}
 
-\ptitle{Spherical Coordinates}
-
-using
-\begin{equation*}
-    \mathbf{L}=\frac{\hbar}{i}\Bigg(\mathbf{u}_{\phi}\frac{\partial}{\partial\theta}-\mathbf{u}_{\theta}\frac{1}{\sin\theta}\frac{\partial}{\partial\phi}\Bigg)
-\end{equation*}
-with
-\begin{equation*}
-    \mathbf{\nabla}=\mathbf{u}_{r}\frac{\partial}{\partial r}+\frac{\mathbf{u}_{\theta}}{r}\frac{\partial}{\partial\theta}+\frac{\mathbf{u}_{\phi}}{r\sin\theta}\frac{\partial}{\partial\phi}
-\end{equation*}
-and the \textbf{ladders}
-\begin{equation*}
-    \widehat{L_{\pm}}=\widehat{L_{x}}\pm i \widehat{L_y}
-\end{equation*}
-we get
-\begin{align*}
-    \widehat{L}_{z} & =\frac{\hbar}{i}\frac{\partial}{\partial\phi}                                                                                                                                        \\
-    \hat{L}^{2}     & =-\hbar^{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\phi^{2}}\right]
-\end{align*}
-Applying these operators to the eigenvalue equation we find that the equations become equivalent to the \textbf{angular equation} from the hydrogen atom.
-
 \ptitle{Remarks}
 
 \begin{itemize}
     \item $L_x, L_y, L_z$ are incompatible
     \item $\hat{L^2}$ and $L_x, L_y, L_z$ are compatible
+    \item Various angular momentum commutators can be found in the appendix: ~\ref{comm_am}
 \end{itemize}
 
-\subsubsection{Eigenfunctions of Angular Momentum}
-As they are compatible (share eigenfunctions), we choose to find the eigenfunctions for $\hat{L^2}$ and $L_z$
+\subsubsection{Ladder Operators for Angular Momentum}
+
+Similar to the harmonic oscillator one can find the \textbf{ladder operators}
+\begin{equation*}
+    \widehat{L_{\pm}}=\widehat{L_{x}}\pm i \widehat{L_y}
+\end{equation*}
+which increase or lower the eigenvalue of $\widehat{L_{z}}$ by $\hbar$. These operators can be used to find the eigenvalues of angular momentum.
+
+\subsubsection{Eigenfunctions}
+
+As they are compatible (share eigenfunctions), we choose to find the eigenfunctions for $\widehat{L^2}$ and $\widehat{L_z}$
 \begin{align*}
-    L^{2}f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
-    L_{z}f_{\ell}^{m_l} & =\hbar mf_{\ell}^{m_l}
+    \widehat{L^2}f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
+    \widehat{L_z}f_{\ell}^{m_l} & =\hbar mf_{\ell}^{m_l}
 \end{align*}
 with quantum numbers
 \begin{align*}
@@ -672,6 +661,7 @@ and the orthogonal \textbf{eigenfunctions}
 \begin{equation*}
     f_{\ell}^{m_l}=Y_{\ell}^{m_l}
 \end{equation*}
+i.e. the spherical harmonics.
 
 \ptitle{Remarks}
 
@@ -681,4 +671,150 @@ and the orthogonal \textbf{eigenfunctions}
     \item $Y_{\ell}^{m_l}$ are eigenfunctions of hermitian operators ($\widehat{L^2}$, $\widehat{L}_{z}$) and have \textbf{different eigenvalues}. Therefore, they are \textbf{orthogonal}.
 \end{itemize}
 
+\ptitle{Derivation}
+
+Using $\nabla$ in spherical coordinates we get
+\begin{equation*}
+    \mathbf{L}=\frac{\hbar}{i}\Bigg(\mathbf{u}_{\phi}\frac{\partial}{\partial\theta}-\mathbf{u}_{\theta}\frac{1}{\sin\theta}\frac{\partial}{\partial\phi}\Bigg)
+\end{equation*}
+and
+\begin{align*}
+    \widehat{L_{x}} & =-i\hbar\left(-\sin\phi\frac{\partial}{\partial\theta}-\cos\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
+    \widehat{L_{y}} & =-i\hbar\left(+\cos\phi\frac{\partial}{\partial\theta}-\sin\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
+    \widehat{L_{z}} & =\frac{\hbar}{i}\frac{\partial}{\partial\phi}                                                                                                                                        \\
+    \hat{L}^{2}     & =-\hbar^{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\phi^{2}}\right]
+\end{align*}
+where combining the $\widehat{L_{i}}$ yields $\hat{L}^{2}$. Applying $\widehat{L_{z}}$ and $\hat{L}^{2}$ to the eigenvalue equations we find that the equations become equivalent to the \textbf{angular equation} from the hydrogen atom and hence, have the same eigenfunctions.
+
+\subsubsection{Physical Interpretation}
+As derived for the hydrogen atom, a single electron orbiting around a nucleus is described by $\psi_{n\ell m_\ell}(r,\theta,\phi)$ (having three quantum numbers $n,l,m_l$). The electron's angular momentum is described by the quantum numbers $l,m_l$. Given the eigenvalues of $\hat{L^2}$ and $\hat{L_z}$ we find the expectations
+\begin{align*}
+    |\mathbf{L}| & =\hbar\sqrt{l(l+1)} \\
+    L_{z}        & =m_{l}\hbar
+\end{align*}
+as $m=-l,-l+1,\dots,l-1,l$ we conclude that $L_{z}$
+\begin{itemize}
+    \item Can only take discrete values
+    \item Is always shorter than $|\mathbf{L}|$
+    \item Can never point directly along the $z$ axis
+\end{itemize}
+As $L_x, L_y, L_z$ are incompatible we conclude that
+\begin{itemize}
+    \item We can determine $|\mathbf{L}|$ and $L_{z}$ simultaneously.
+    \item But then have uncertainty in $L_x, L_y$.
+\end{itemize}
+Given a certain $l$, angular momentum can be described by a cone for each $m_l$
+\begin{center}
+    \includegraphics[width = 0.6\linewidth]{angular_momentum.png}
+\end{center}
+
 \subsection{Spin}
+Similar to the earth having an angular momentum w.r.t. the sun but also itself, an electron has an angular momentum w.r.t. the nucleus and itself.
+
+\ptitle{Operators}
+
+$\mathbf{S}$ follows the same rules as $\mathbf{L}$ (see appendix ~\ref{comm_am_sp})
+
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item Electrons have an intrinsic spin.
+    \item An electron \textbf{acts as if} it was rotating on an axis but it is not as it is zero-dimensional.
+\end{itemize}
+
+
+\subsubsection{Eigenvalue Equation for Spin}
+For a QM particle (not necessarily an electron) with spin one has
+\begin{align*}
+    \widehat{S^2}f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} \\
+    \widehat{S_{z}}f_{s}^{m_s} & =\hbar m_sf_{s}^{m_s}
+\end{align*}
+where
+\begin{align*}
+    s   & =0,\frac{1}{2},1,\frac{3}{2},\dots \\
+    m_s & =-s, -s+1,\dots, s-1, s
+\end{align*}
+i.e. angular momenta are restricted to integer and half-integer values.
+
+\ptitle{Set Value for $\mathbf{s}$}
+
+In contrast to angular momentum of a QM particle where $l$ could take arbitrary integer values, $s$ takes \textbf{a set value} for each particle.
+
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item For electrons we have $s=\frac{1}{2}$, for photons $s=1$
+    \item Electrons have
+          \begin{itemize}
+              \item $m_s=\frac{1}{2}$ (spin up)
+              \item $m_s=-\frac{1}{2}$ (spin down)
+              \item Therefore, only two eigenstates $f_{\frac{1}{2}}^{\pm \frac{1}{2}}$
+          \end{itemize}
+\end{itemize}
+
+\subsubsection{The State of Spin of an Electron}
+As eigenstates for spin are not functions of $r,\theta, \phi$ (particle is zero-dimensional) one cannot write them as mathematical formulae for $f_{s}^{m_s}$. Instead, one uses Dirac notation:
+\begin{equation*}
+    f_{s}^{m_{s}}\rightarrow|s,m_{s}\rangle
+\end{equation*}
+
+\ptitle{Spin of an Electron}
+
+For an electron with $s=\frac{1}{2}$, the eigenfunctions can be described by ket and bra as:
+\begin{align*}
+    f_{\frac{1}{2}}^{+\frac{1}{2}} & \rightarrow\left|\frac{1}{2},\quad +\frac{1}{2}\right>= \left|\uparrow\right>   \\
+    f_{\frac{1}{2}}^{-\frac{1}{2}} & \rightarrow\left|\frac{1}{2},\quad-\frac{1}{2}\right> = \left|\downarrow\right>
+\end{align*}
+and one has
+\begin{align*}
+    |\mathbf{S}| & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
+    S_z          & =\pm \frac{1}{2}\hbar
+\end{align*}
+
+\ptitle{Spin Operators as Matrices}
+
+Spin can be in a general state
+
+\begin{equation*}
+    \left|\lambda\right>=a\left|\frac{1}{2},\quad +\frac{1}{2}\right>+b\left|\frac{1}{2},\quad -\frac{1}{2}\right>
+\end{equation*}
+
+Setting the two eigenstates of the electron as basis vectors of a \textbf{two-dimensional} vector space we get
+
+\begin{align*}
+    \left|\frac{1}{2},\quad +\frac{1}{2}\right> & \rightarrow \left(\begin{matrix}
+                                                                            1 \\
+                                                                            0
+                                                                        \end{matrix}\right) \\
+    \left|\frac{1}{2},\quad -\frac{1}{2}\right> & \rightarrow \left(\begin{matrix}
+                                                                            0 \\
+                                                                            1
+                                                                        \end{matrix}\right)
+\end{align*}
+
+\ptitle{Ladder Operators for Spin}
+
+The ladder operators have the effect
+\begin{align*}
+    \hat{S}_{+}\left|\frac{1}{2},-\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},+\frac{1}{2}\right> & \text{ (raises $S_z$ by $\hbar$)} \\
+    \hat{S}_{-}\left|\frac{1}{2},+\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},-\frac{1}{2}\right> & \text{ (lowers $S_z$ by $\hbar$)}
+\end{align*}
+and are in z-axis basis given by the \textbf{non-hermitian} matrices
+\begin{align*}
+    \hat{S}_{+} & \rightarrow \hbar\begin{bmatrix}
+                                       0 & 1 \\
+                                       0 & 0
+                                   \end{bmatrix} \\
+    \hat{S}_{-} & \rightarrow \hbar\begin{bmatrix}
+                                       0 & 0 \\
+                                       1 & 0
+                                   \end{bmatrix}
+\end{align*}
+
+
+\ptitle{Measuring Spin}
+
+
+
+
+
