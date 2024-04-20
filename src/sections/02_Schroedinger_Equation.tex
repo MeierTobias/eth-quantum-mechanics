@@ -609,20 +609,20 @@ and the corresponding energies are
 
 From classical mechanics we derive
 \begin{equation*}
-    \mathbf{L}=
+    \hat{\mathbf{L}}=
     \begin{pmatrix}
-        L_x \\
-        L_y \\
-        L_z
+        \hat{L_x} \\
+        \hat{L_y} \\
+        \hat{L_z}
     \end{pmatrix}
-    =\mathbf{r}\times\mathbf{p}
+    =\hat{\mathbf{r}}\times\hat{\mathbf{p}}
     =
     \begin{pmatrix}
-        yp_z-zp_y \\
-        zp_x-xp_z \\
-        xp_y-yp_x
+        y\widehat{p_z}-z\widehat{p_y} \\
+        z\widehat{p_x}-x\widehat{p_z} \\
+        x\widehat{p_y}-y\widehat{p_x}
     \end{pmatrix}
-    =\frac{\hbar}{i}(\mathbf{r}\times\mathbf{\nabla})
+    =\frac{\hbar}{i}(\mathbf{\hat{r}}\times\hat{\mathbf{\nabla}})
 \end{equation*}
 with
 \begin{equation*}
@@ -632,8 +632,8 @@ with
 \ptitle{Remarks}
 
 \begin{itemize}
-    \item $L_x, L_y, L_z$ are incompatible
-    \item $\hat{L^2}$ and $L_x, L_y, L_z$ are compatible
+    \item $\widehat{L_x}, \widehat{L_y}, \widehat{L_z}$ are incompatible
+    \item $\hat{L^2}$ and $\widehat{L_x}, \widehat{L_y}, \widehat{L_z}$ are compatible
     \item Various angular momentum commutators can be found in the appendix: ~\ref{comm_am}
 \end{itemize}
 
@@ -675,7 +675,7 @@ i.e. the spherical harmonics.
 
 Using $\nabla$ in spherical coordinates we get
 \begin{equation*}
-    \mathbf{L}=\frac{\hbar}{i}\Bigg(\mathbf{u}_{\phi}\frac{\partial}{\partial\theta}-\mathbf{u}_{\theta}\frac{1}{\sin\theta}\frac{\partial}{\partial\phi}\Bigg)
+    \hat{\mathbf{L}}=\frac{\hbar}{i}\Bigg(\mathbf{u}_{\phi}\frac{\partial}{\partial\theta}-\mathbf{u}_{\theta}\frac{1}{\sin\theta}\frac{\partial}{\partial\phi}\Bigg)
 \end{equation*}
 and
 \begin{align*}
@@ -713,13 +713,14 @@ Similar to the earth having an angular momentum w.r.t. the sun but also itself, 
 
 \ptitle{Operators}
 
-$\mathbf{S}$ follows the same rules as $\mathbf{L}$ (see appendix ~\ref{comm_am_sp})
+$\hat{\mathbf{S}}$ follows the same rules as $\hat{\mathbf{L}}$ (see appendix ~\ref{comm_am_sp})
 
 \ptitle{Remarks}
 
 \begin{itemize}
     \item Electrons have an intrinsic spin.
     \item An electron \textbf{acts as if} it was rotating on an axis but it is not as it is zero-dimensional.
+    \item This can easily be imagined as a spinning ball that is not a ball and does not spin.
 \end{itemize}
 
 
@@ -771,13 +772,16 @@ and one has
     S_z          & =\pm \frac{1}{2}\hbar
 \end{align*}
 
-\ptitle{Spin Operators as Matrices}
+\ptitle{General Spin State}
 
 Spin can be in a general state
 
 \begin{equation*}
     \left|\lambda\right>=a\left|\frac{1}{2},\quad +\frac{1}{2}\right>+b\left|\frac{1}{2},\quad -\frac{1}{2}\right>
 \end{equation*}
+where the probability of measuring a certain spin (assuming $\left|\lambda\right>$ \textbf{normalized}!) is given by $|a|^2$ for $\uparrow$ and $|b|^2$ for $\downarrow$ respectively.
+
+\ptitle{Spin Operators as Matrices}
 
 Setting the two eigenstates of the electron as basis vectors of a \textbf{two-dimensional} vector space we get
 
@@ -791,6 +795,31 @@ Setting the two eigenstates of the electron as basis vectors of a \textbf{two-di
                                                                             1
                                                                         \end{matrix}\right)
 \end{align*}
+Defining spin up and spin down \textbf{relative to z-axis} we get (by solving eigenvalue equation in Dirac notation):
+\begin{align*}
+    \hat{S}^2   & \rightarrow \frac{3}{4}{\hbar}^2\begin{bmatrix}
+                                                      1 & 0 \\
+                                                      0 & 1
+                                                  \end{bmatrix} \\
+    \hat{S}_{x} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                 0 & 1 \\
+                                                 1 & 0
+                                             \end{bmatrix}      \\
+    \hat{S}_{y} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                 0 & -i \\
+                                                 i & 0
+                                             \end{bmatrix}      \\
+    \hat{S}_{z} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                 1 & 0  \\
+                                                 0 & -1
+                                             \end{bmatrix}      \\
+\end{align*}
+
+Note that
+\begin{itemize}
+    \item $\hat{S}_{x}$, $\hat{S}_{y}$ are non-diagonal i.e. the basis vectors are not eigenvectors of these operators.
+    \item If they were diagonal in z-basis, $\hat{S}_{x},\hat{S}_{y},\hat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
+\end{itemize}
 
 \ptitle{Ladder Operators for Spin}
 
@@ -810,11 +839,4 @@ and are in z-axis basis given by the \textbf{non-hermitian} matrices
                                        1 & 0
                                    \end{bmatrix}
 \end{align*}
-
-
-\ptitle{Measuring Spin}
-
-
-
-
 
