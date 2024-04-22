@@ -609,20 +609,20 @@ and the corresponding energies are
 
 From classical mechanics we derive
 \begin{equation*}
-    \hat{\mathbf{L}}=
+    \widehat{\mathbf{L}}=
     \begin{pmatrix}
-        \hat{L_x} \\
-        \hat{L_y} \\
-        \hat{L_z}
+        \widehat{L}_x \\
+        \widehat{L}_y \\
+        \widehat{L}_z
     \end{pmatrix}
-    =\hat{\mathbf{r}}\times\hat{\mathbf{p}}
+    =\widehat{\mathbf{r}}\times\widehat{\mathbf{p}}
     =
     \begin{pmatrix}
-        y\widehat{p_z}-z\widehat{p_y} \\
-        z\widehat{p_x}-x\widehat{p_z} \\
-        x\widehat{p_y}-y\widehat{p_x}
+        y\widehat{p}_z-z\widehat{p}_y \\
+        z\widehat{p}_x-x\widehat{p}_z \\
+        x\widehat{p}_y-y\widehat{p}_x
     \end{pmatrix}
-    =\frac{\hbar}{i}(\mathbf{\hat{r}}\times\hat{\mathbf{\nabla}})
+    =\frac{\hbar}{i}(\mathbf{\widehat{r}}\times\widehat{\mathbf{\nabla}})
 \end{equation*}
 with
 \begin{equation*}
@@ -632,8 +632,8 @@ with
 \ptitle{Remarks}
 
 \begin{itemize}
-    \item $\widehat{L_x}, \widehat{L_y}, \widehat{L_z}$ are incompatible
-    \item $\hat{L^2}$ and $\widehat{L_x}, \widehat{L_y}, \widehat{L_z}$ are compatible
+    \item $\widehat{L}_x, \widehat{L}_y, \widehat{L}_z$ are incompatible
+    \item $\widehat{L}^2$ and $\widehat{L}_x, \widehat{L}_y, \widehat{L}_z$ are compatible
     \item Various angular momentum commutators can be found in the appendix:\ \ref{comm}
 \end{itemize}
 
@@ -641,16 +641,16 @@ with
 
 Similar to the harmonic oscillator one can find the \textbf{ladder operators}
 \begin{equation*}
-    \widehat{L_{\pm}}=\widehat{L_{x}}\pm i \widehat{L_y}
+    \widehat{L}_{\pm}=\widehat{L}_x\pm i \widehat{L}_y
 \end{equation*}
-which increase or lower the eigenvalue of $\widehat{L_{z}}$ by $\hbar$. These operators can be used to find the eigenvalues of angular momentum.
+which increase or lower the eigenvalue of $\widehat{L}_z$ by $\hbar$. These operators can be used to find the eigenvalues of angular momentum.
 
 \subsubsection{Eigenfunctions}
 
 As they are compatible (share eigenfunctions), we choose to find the eigenfunctions for $\widehat{L^2}$ and $\widehat{L_z}$
 \begin{align*}
-    \widehat{L^2}f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
-    \widehat{L_z}f_{\ell}^{m_l} & =\hbar mf_{\ell}^{m_l}
+    \widehat{L}^2 f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
+    \widehat{L}_z f_{\ell}^{m_l} & =\hbar mf_{\ell}^{m_l}
 \end{align*}
 with quantum numbers
 \begin{align*}
@@ -675,19 +675,20 @@ i.e.\ the spherical harmonics.
 
 Using $\nabla$ in spherical coordinates we get
 \begin{equation*}
-    \hat{\mathbf{L}}=\frac{\hbar}{i}\Bigg(\mathbf{u}_{\phi}\frac{\partial}{\partial\theta}-\mathbf{u}_{\theta}\frac{1}{\sin\theta}\frac{\partial}{\partial\phi}\Bigg)
+    \widehat{\mathbf{L}}=\frac{\hbar}{i}\Bigg(\mathbf{u}_{\phi}\frac{\partial}{\partial\theta}-\mathbf{u}_{\theta}\frac{1}{\sin\theta}\frac{\partial}{\partial\phi}\Bigg)
 \end{equation*}
 and
 \begin{align*}
-    \widehat{L_{x}} & =-i\hbar\left(-\sin\phi\frac{\partial}{\partial\theta}-\cos\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
-    \widehat{L_{y}} & =-i\hbar\left(+\cos\phi\frac{\partial}{\partial\theta}-\sin\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
-    \widehat{L_{z}} & =\frac{\hbar}{i}\frac{\partial}{\partial\phi}                                                                                                                                        \\
-    \hat{L}^{2}     & =-\hbar^{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\phi^{2}}\right]
+    \widehat{L}_{x} & =-i\hbar\left(-\sin\phi\frac{\partial}{\partial\theta}-\cos\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
+    \widehat{L}_{y} & =-i\hbar\left(+\cos\phi\frac{\partial}{\partial\theta}-\sin\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
+    \widehat{L}_{z} & =\frac{\hbar}{i}\frac{\partial}{\partial\phi}                                                                                                                                        \\
+    \widehat{L}^{2}     & =-\hbar^{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\phi^{2}}\right]
 \end{align*}
-where combining the $\widehat{L_{i}}$ yields $\hat{L}^{2}$. Applying $\widehat{L_{z}}$ and $\hat{L}^{2}$ to the eigenvalue equations we find that the equations become equivalent to the \textbf{angular equation} from the hydrogen atom and hence, have the same eigenfunctions.
+where combining the $\widehat{L}_{i}$ yields $\widehat{L}^{2}$. Applying $\widehat{L}_{z}$ and $\widehat{L}^{2}$ to the eigenvalue equations we find that the equations become equivalent to the \textbf{angular equation} from the hydrogen atom and hence, have the same eigenfunctions.
 
 \subsubsection{Physical Interpretation}
-As derived for the hydrogen atom, a single electron orbiting around a nucleus is described by $\psi_{n\ell m_\ell}(r,\theta,\phi)$ (having three quantum numbers $n,l,m_l$). The electron's angular momentum is described by the quantum numbers $l,m_l$. Given the eigenvalues of $\hat{L^2}$ and $\hat{L_z}$ we find the expectations
+% As derived for the hydrogen atom, a single electron orbiting around a nucleus is described by $\psi_{n\ell m_\ell}(r,\theta,\phi)$ (having three quantum numbers $n,l,m_l$). 
+The electron's angular momentum is described by the quantum numbers $l,m_l$. Given the eigenvalues of $\widehat{L}^2$ and $\widehat{L}_z$ we find the expectations
 \begin{align*}
     |\mathbf{L}| & =\hbar\sqrt{l(l+1)} \\
     L_{z}        & =m_{l}\hbar
@@ -713,7 +714,7 @@ Similar to the earth having an angular momentum w.r.t.\ the sun but also itself,
 
 \ptitle{Operators}
 
-$\hat{\mathbf{S}}$ follows the same rules as $\hat{\mathbf{L}}$ (see appendix\ \ref{comm_am_sp})
+$\widehat{\mathbf{S}}$ follows the same rules as $\widehat{\mathbf{L}}$ (see appendix\ \ref{comm_am_sp})
 
 \ptitle{Remarks}
 
@@ -727,8 +728,8 @@ $\hat{\mathbf{S}}$ follows the same rules as $\hat{\mathbf{L}}$ (see appendix\ \
 \subsubsection{Eigenvalue Equation for Spin}
 For a QM particle (not necessarily an electron) with spin one has
 \begin{align*}
-    \widehat{S^2}f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} \\
-    \widehat{S_{z}}f_{s}^{m_s} & =\hbar m_s f_{s}^{m_s}
+    \widehat{S}^2f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} \\
+    \widehat{S}_{z}f_{s}^{m_s} & =\hbar m_s f_{s}^{m_s}
 \end{align*}
 where
 \begin{align*}
@@ -797,44 +798,44 @@ Setting the two eigenstates of the electron as basis vectors of a \textbf{two-di
 \end{align*}
 Defining spin up and spin down \textbf{relative to z-axis} we get (by solving eigenvalue equation in Dirac notation):
 \begin{align*}
-    \hat{S}^2   & \rightarrow \frac{3}{4}{\hbar}^2\begin{bmatrix}
+    \widehat{S}^2   & \rightarrow \frac{3}{4}{\hbar}^2\begin{bmatrix}
                                                       1 & 0 \\
                                                       0 & 1
-                                                  \end{bmatrix} \\
-    \hat{S}_{x} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
-                                                 0 & 1 \\
-                                                 1 & 0
-                                             \end{bmatrix}      \\
-    \hat{S}_{y} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
-                                                 0 & -i \\
-                                                 i & 0
-                                             \end{bmatrix}      \\
-    \hat{S}_{z} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                  \end{bmatrix} &
+    \widehat{S}_{z} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
                                                  1 & 0  \\
                                                  0 & -1
-                                             \end{bmatrix}      \\
+                                             \end{bmatrix}       \\
+    \widehat{S}_{x} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                 0 & 1 \\
+                                                 1 & 0
+                                             \end{bmatrix}      &
+    \widehat{S}_{y} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                 0 & -i \\
+                                                 i & 0
+                                             \end{bmatrix}     
 \end{align*}
 
 Note that
 \begin{itemize}
-    \item $\hat{S}_{x}$, $\hat{S}_{y}$ are non-diagonal i.e.\ the basis vectors are not eigenvectors of these operators.
-    \item If they were diagonal in z-basis, $\hat{S}_{x},\hat{S}_{y},\hat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
+    \item $\widehat{S}_{x}$, $\widehat{S}_{y}$ are non-diagonal i.e.\ the basis vectors are not eigenvectors of these operators.
+    \item If they were diagonal in z-basis, $\widehat{S}_{x},\widehat{S}_{y},\widehat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
 \end{itemize}
 
 \ptitle{Ladder Operators for Spin}
 
 The ladder operators have the effect
 \begin{align*}
-    \hat{S}_{+}\left|\frac{1}{2},-\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},+\frac{1}{2}\right> & \text{ (raises $S_z$ by $\hbar$)} \\
-    \hat{S}_{-}\left|\frac{1}{2},+\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},-\frac{1}{2}\right> & \text{ (lowers $S_z$ by $\hbar$)}
+    \widehat{S}_{+}\left|\frac{1}{2},-\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},+\frac{1}{2}\right> & \text{ (raises $S_z$ by $\hbar$)} \\
+    \widehat{S}_{-}\left|\frac{1}{2},+\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},-\frac{1}{2}\right> & \text{ (lowers $S_z$ by $\hbar$)}
 \end{align*}
 and are in z-axis basis given by the \textbf{non-hermitian} matrices
 \begin{align*}
-    \hat{S}_{+} & \rightarrow \hbar\begin{bmatrix}
+    \widehat{S}_{+} & \rightarrow \hbar\begin{bmatrix}
                                        0 & 1 \\
                                        0 & 0
                                    \end{bmatrix} \\
-    \hat{S}_{-} & \rightarrow \hbar\begin{bmatrix}
+    \widehat{S}_{-} & \rightarrow \hbar\begin{bmatrix}
                                        0 & 0 \\
                                        1 & 0
                                    \end{bmatrix}
