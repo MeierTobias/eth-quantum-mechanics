@@ -659,16 +659,16 @@ with quantum numbers
 \end{align*}
 and the orthogonal \textbf{eigenfunctions}
 \begin{equation*}
-    f_{\ell}^{m_l}=Y_{\ell}^{m_l}
+    f_{\ell}^{m_\ell}=Y_{\ell}^{m_\ell}
 \end{equation*}
 i.e.\ the spherical harmonics.
 
+\newpar{}
 \ptitle{Remarks}
-
 \begin{itemize}
-    \item For each $l$ we have $2l+1$ values for $m_l$
+    \item For each $\ell$ we have $2\ell+1$ values for $m_\ell$
     \item The eigenvalues are found by using the ladder method
-    \item $Y_{\ell}^{m_l}$ are eigenfunctions of hermitian operators ($\widehat{L^2}$, $\widehat{L}_{z}$) and have \textbf{different eigenvalues}. Therefore, they are \textbf{orthogonal}.
+    \item $Y_{\ell}^{m_\ell}$ are eigenfunctions of hermitian operators ($\widehat{L}^2$, $\widehat{L}_{z}$) and have \textbf{different eigenvalues}. Therefore, they are \textbf{orthogonal}.
 \end{itemize}
 
 \ptitle{Derivation}
@@ -690,10 +690,10 @@ where combining the $\widehat{L}_{i}$ yields $\widehat{L}^{2}$. Applying $\wideh
 % As derived for the hydrogen atom, a single electron orbiting around a nucleus is described by $\psi_{n\ell m_\ell}(r,\theta,\phi)$ (having three quantum numbers $n,l,m_l$). 
 The electron's angular momentum is described by the quantum numbers $l,m_l$. Given the eigenvalues of $\widehat{L}^2$ and $\widehat{L}_z$ we find the expectations
 \begin{align*}
-    |\mathbf{L}| & =\hbar\sqrt{l(l+1)} \\
-    L_{z}        & =m_{l}\hbar
+    |\mathbf{L}| & =\hbar\sqrt{\ell(\ell+1)} \\
+    L_{z}        & =m_{\ell}\hbar
 \end{align*}
-as $m_{\ell}=-l,-l+1,\dots,l-1,l$ we conclude that $L_{z}$
+as $m_{\ell}=-\ell,-\ell+1,\dots,\ell-1,\ell$ we conclude that $L_{z}$
 \begin{itemize}
     % \item Can only take discrete values
     \item $L_z < |\mathbf{L}|$: $\mathbf{L}$ can never point directly along the $z$ axis
@@ -705,7 +705,7 @@ As $L_x, L_y, L_z$ are incompatible we conclude that
     \item We can determine $|\mathbf{L}|$ and $L_{z}$ simultaneously.
     \item But then have uncertainty in $L_x, L_y$.
 \end{itemize}
-Given a certain $l$, angular momentum can be described by a cone for each $m_l$
+Given a certain $\ell$, angular momentum can be described by a cone for each $m_\ell$
 \begin{center}
     \includegraphics[width = 0.6\linewidth]{angular_momentum.png}
 \end{center}
