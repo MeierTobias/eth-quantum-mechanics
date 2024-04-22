@@ -634,7 +634,7 @@ with
 \begin{itemize}
     \item $\widehat{L}_x, \widehat{L}_y, \widehat{L}_z$ are incompatible
     \item $\widehat{L}^2$ and $\widehat{L}_x, \widehat{L}_y, \widehat{L}_z$ are compatible
-    \item Various angular momentum commutators can be found in the appendix:\ \ref{comm}
+    \item Various angular momentum commutators can be found in the appendix:\ \ref{comm_am_sp}
 \end{itemize}
 
 \subsubsection{Ladder Operators for Angular Momentum}
@@ -682,7 +682,7 @@ and
     \widehat{L}_{x} & =-i\hbar\left(-\sin\phi\frac{\partial}{\partial\theta}-\cos\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
     \widehat{L}_{y} & =-i\hbar\left(+\cos\phi\frac{\partial}{\partial\theta}-\sin\phi\cot\theta\frac{\partial}{\partial\phi}\right)                                                                        \\
     \widehat{L}_{z} & =\frac{\hbar}{i}\frac{\partial}{\partial\phi}                                                                                                                                        \\
-    \widehat{L}^{2}     & =-\hbar^{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\phi^{2}}\right]
+    \widehat{L}^{2} & =-\hbar^{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\phi^{2}}\right]
 \end{align*}
 where combining the $\widehat{L}_{i}$ yields $\widehat{L}^{2}$. Applying $\widehat{L}_{z}$ and $\widehat{L}^{2}$ to the eigenvalue equations we find that the equations become equivalent to the \textbf{angular equation} from the hydrogen atom and hence, have the same eigenfunctions.
 
@@ -693,12 +693,13 @@ The electron's angular momentum is described by the quantum numbers $l,m_l$. Giv
     |\mathbf{L}| & =\hbar\sqrt{l(l+1)} \\
     L_{z}        & =m_{l}\hbar
 \end{align*}
-as $m=-l,-l+1,\dots,l-1,l$ we conclude that $L_{z}$
+as $m_{\ell}=-l,-l+1,\dots,l-1,l$ we conclude that $L_{z}$
 \begin{itemize}
-    \item Can only take discrete values
-    \item Is always shorter than $|\mathbf{L}|$
-    \item Can never point directly along the $z$ axis
+    % \item Can only take discrete values
+    \item $L_z < |\mathbf{L}|$: $\mathbf{L}$ can never point directly along the $z$ axis
 \end{itemize}
+
+\newpar{}
 As $L_x, L_y, L_z$ are incompatible we conclude that
 \begin{itemize}
     \item We can determine $|\mathbf{L}|$ and $L_{z}$ simultaneously.
@@ -799,21 +800,21 @@ Setting the two eigenstates of the electron as basis vectors of a \textbf{two-di
 Defining spin up and spin down \textbf{relative to z-axis} we get (by solving eigenvalue equation in Dirac notation):
 \begin{align*}
     \widehat{S}^2   & \rightarrow \frac{3}{4}{\hbar}^2\begin{bmatrix}
-                                                      1 & 0 \\
-                                                      0 & 1
-                                                  \end{bmatrix} &
+                                                          1 & 0 \\
+                                                          0 & 1
+                                                      \end{bmatrix} &
     \widehat{S}_{z} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
-                                                 1 & 0  \\
-                                                 0 & -1
-                                             \end{bmatrix}       \\
+                                                     1 & 0  \\
+                                                     0 & -1
+                                                 \end{bmatrix}       \\
     \widehat{S}_{x} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
-                                                 0 & 1 \\
-                                                 1 & 0
-                                             \end{bmatrix}      &
+                                                     0 & 1 \\
+                                                     1 & 0
+                                                 \end{bmatrix}      &
     \widehat{S}_{y} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
-                                                 0 & -i \\
-                                                 i & 0
-                                             \end{bmatrix}     
+                                                     0 & -i \\
+                                                     i & 0
+                                                 \end{bmatrix}
 \end{align*}
 
 Note that
@@ -832,12 +833,12 @@ The ladder operators have the effect
 and are in z-axis basis given by the \textbf{non-hermitian} matrices
 \begin{align*}
     \widehat{S}_{+} & \rightarrow \hbar\begin{bmatrix}
-                                       0 & 1 \\
-                                       0 & 0
-                                   \end{bmatrix} \\
+                                           0 & 1 \\
+                                           0 & 0
+                                       \end{bmatrix} \\
     \widehat{S}_{-} & \rightarrow \hbar\begin{bmatrix}
-                                       0 & 0 \\
-                                       1 & 0
-                                   \end{bmatrix}
+                                           0 & 0 \\
+                                           1 & 0
+                                       \end{bmatrix}
 \end{align*}
 
