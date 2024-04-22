@@ -281,13 +281,13 @@ where
 
 \ptitle{Phase Factor}
 \noindent\begin{equation*}
-    \varphi_n(t)       =\exp\left[\frac{-iE_n t}{\hbar}\right], \qquad E_n = \frac{\hbar^2 k_n^2}{2m}
+    \varphi_n(t) =\exp\left[\frac{-iE_n t}{\hbar}\right], \qquad E_n = \frac{\hbar^2 k_n^2}{2m}
 \end{equation*}
 
 \ptitle{TISE}
-\noindent\begin{align*}
-    \widehat{H}\psi  = \Bigl[\overbrace{-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}}^{E_{kin}}+ \overbrace{V(x)}^{E_{pot}}\Bigr]\psi & = E\psi \\
-\end{align*}
+\noindent\begin{equation*}
+    \widehat{H}\psi  = \Bigl[\overbrace{\underbrace{-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}}_{\frac{1}{2m}\hat{p}^2}}^{E_{kin}}+ \overbrace{V(x)}^{E_{pot}}\Bigr]\psi = E\psi
+\end{equation*}
 
 \newpar{}
 Assuming $V(x) = 0$:
@@ -409,7 +409,7 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 
 \ptitle{TISE}
 \noindent\begin{equation*}
-    \underbrace{\frac{-\hbar^2}{2m}\frac{d^2\psi}{dx^2} + \frac{1}{2}m \omega^2}_{\widehat{H}} x^2 \psi  = E\psi
+    \overbrace{\underbrace{\frac{-\hbar^2}{2m}\frac{d^2\psi}{dx^2}}_{\frac{1}{2m}\hat{p}^2\psi} + \frac{1}{2}m \omega^2 x^2 \psi}^{\widehat{H}\psi}  = E\psi
 \end{equation*}
 
 \ptitle{Ladder Operators}
