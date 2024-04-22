@@ -12,7 +12,7 @@ The probability of finding the particle between $a$ and $b$ at time $t$ is:
 \end{equation*}
 \begin{align*}
     \int_{-\infty}^{\infty} |C\cdot \Psi(x,t)|^2 dx                                 = \langle C\Psi|C\Psi\rangle & = 1,\;\Psi\in L_2, \; C\in\mathbb{C} \\
-    \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = \langle\Psi|\Psi\rangle                               & = 0
+    \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = \frac{d}{dt}\langle\Psi|\Psi\rangle                   & = 0
 \end{align*}
 \textbf{Remarks:}
 \begin{enumerate}
@@ -69,6 +69,8 @@ Observation of an ensemble of identical systems:
 
 
 \subsection{Dirac Notation}
+Assuming the functions $f,g$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbert space}) $\mathcal{H}$.
+
 \noindent\begin{align*}
     \left|f\right\rangle  & := \begin{bmatrix}
                                    c_1 & c_2 & \cdots & c_n
@@ -80,9 +82,10 @@ Observation of an ensemble of identical systems:
 \end{align*}
 \ptitle{ONB}
 \noindent\begin{align*}
-    \langle f_m|f_n \rangle & = \delta_{mn}                    &  & \text{orthonormal}        \\
-    f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x) &  & \text{complete}           \\
-    c_n                     & = \langle f_n|f \rangle          &  & \text{projection on base}
+    \langle f_m|f_n \rangle & = \delta_{mn}                        &  & \text{orthonormal}        \\
+    f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x)     &  & \text{complete}           \\
+    f^*(x)                  & = \sum_{n=1}^{\infty} c_n^* f_n^*(x) &  &                           \\
+    c_n                     & = \langle f_n|f \rangle              &  & \text{projection on base}
 \end{align*}
 
 \ptitle{Properties of Inner Product}
@@ -200,6 +203,25 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
           \end{align*}
 \end{enumerate}
 
+\subsection{Fundamental QM Relations}
+
+\ptitle{Black Body Radiation}
+
+\begin{equation*}
+    k_B T_{low} \ll h\nu_{high}
+\end{equation*}
+
+\ptitle{De Broglie}
+
+\begin{equation*}
+    p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
+\end{equation*}
+\textbf{Remarks:}
+\begin{enumerate}
+    \item Connects the domains of waves ($\lambda$) and particles ($p$).
+    \item QM becomes relevant if $\lambda>d$ (item's characteristic size).
+\end{enumerate}
+
 \subsection{Generalized Uncertainty Principle}
 \subsubsection{Compatible Observables}
 
@@ -232,6 +254,7 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
 \textbf{Remarks}:
 \begin{itemize}
     \item The previous statements hold for two subsequent measurements, if for example, a third measurement is made, the compatability of the second and third have to be evaulated.
+    \item $\langle[\hat{A},\hat{B}]\rangle=\langle\Psi|\hat{A}\hat{B}\Psi\rangle-\langle\Psi|\hat{B}\hat{A}\Psi\rangle$
 \end{itemize}
 
 \newpar{}
@@ -273,6 +296,7 @@ where
 \noindent\begin{equation*}
     i\hbar \frac{\partial \Psi(x,t)}{\partial t}           = \underbrace{- \frac{\hbar^2}{2m} \frac{\partial^2 \Psi(x,t)}{\partial x^2}}_{E_{kin}} + \underbrace{V(x,t)\Psi(x,t)}_{E_{pot}}
 \end{equation*}
+
 \subsection{Stationary States}
 \noindent\begin{align*}
     \Psi_n(x,t)                                                        & = \psi_n(x)\varphi_n(t)                                                                                         \\
@@ -403,6 +427,7 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \end{align*}
 
 \subsection{Harmonic Oscillator}
+Analogon to mechanical frictionless spring and mass system.
 \begin{equation*}
     V(x) = \frac{1}{2}k x^2 = \frac{1}{2}m \omega^2 x^2 \qquad \text{with} \quad \omega = \sqrt{\frac{k}{m}}
 \end{equation*}
@@ -423,12 +448,19 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
     \left[\widehat{a}_{-},\widehat{a}_{+}\right] = 1
 \end{gather*}
 
+\ptitle{Ladders and TISE}
+\begin{align*}
+    \widehat{H}(\widehat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\widehat{a}_{+}\psi_n \\
+    \widehat{H}(\widehat{a}_{-}\psi_n) & = (E_n-\hbar\omega)\widehat{a}_{-}\psi_n
+\end{align*}
+
 \ptitle{Solution to TISE}
 \noindent\begin{align*}
     \psi_0 & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right) & E_0 & = \frac{1}{2}\hbar\omega     \\
     \psi_n & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                       & E_n & = (n+\frac{1}{2})\hbar\omega
 \end{align*}
 \begin{align*}
+    \widehat{a}_{-}\psi_0                & = 0\psi_0 = 0                                      \\
     \widehat{a}_{+}\psi_n                & = \sqrt{n+1}\:\psi_{n+1}                           \\
     \widehat{a}_{-}\psi_n                & = \sqrt{n}\:\psi_{n-1}                             \\
     \widehat{a}_{+}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+2}\:\psi_{n+2}                 \\
@@ -468,15 +500,16 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
     \left\langle x \right\rangle _n & = 0 & \left\langle x^2 \right\rangle _n & = \left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega} & \forall n \in \mathbb{N} \\
     \left\langle p \right\rangle _n & = 0 & \left\langle p^2 \right\rangle _n & = \left(n+\frac{1}{2}\right)\hbar m\omega         & \forall n \in \mathbb{N}
 \end{align*}
-\noindent\begin{align*}\left\langle T \right\rangle _n & = \frac{\left\langle p^2 \right\rangle}{2m} =  \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right)        & \langle E\rangle_n =  \langle T\rangle_n +\langle V\rangle_n \\
-              \left\langle V \right\rangle _n & = \frac{m\omega^2}{2}\left\langle x^2 \right\rangle = \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right)
+\noindent\begin{align*}
+    \left\langle T \right\rangle _n & = \frac{\left\langle p^2 \right\rangle}{2m} =  \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right)        & \langle E\rangle_n & =  \langle T\rangle_n +\langle V\rangle_n \\
+    \left\langle V \right\rangle _n & = \frac{m\omega^2}{2}\left\langle x^2 \right\rangle = \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right) & \langle T\rangle_n & =  \langle V\rangle_n
 \end{align*}
 
 \subsection{Finite Potentials}
 \noindent\begin{equation*}
     \begin{cases}
-        E > V(\pm \infty) & \text{scattering state} \\
-        E < V(\pm \infty) & \text{bound state}
+        E > V(+\infty)\text{ or } E > V(-\infty)  & \text{scattering state} \\
+        E < V(+\infty)\text{ and } E < V(-\infty) & \text{bound state}
     \end{cases}
 \end{equation*}
 \textbf{Remarks}:
@@ -508,7 +541,7 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \end{enumerate}
 
 \subsubsection{Tunneling}
-Transmission coefficient $T$:
+Particle with $0<E<V_0$. Transmission coefficient $T$:
 \noindent\begin{equation*}
     T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
 \end{equation*}
