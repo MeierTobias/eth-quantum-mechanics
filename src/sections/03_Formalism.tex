@@ -41,8 +41,8 @@ Observables are represented by hermitian operators.
 \subsubsection{Hermitian Operators}
 The expectation value of a observable is real and thus
 \noindent\begin{align*}
-    \langle Q\rangle                            & = {\langle Q\rangle}^*                                             \\
-    \langle Q\rangle=\langle f|\hat{Q} g\rangle & = \langle={\langle Q\rangle}^*  \hat{Q}f|g\rangle\quad \forall f,g
+    \langle Q\rangle                            & = {\langle Q\rangle}^*                                            \\
+    \langle Q\rangle=\langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle={\langle Q\rangle}^*\quad \forall f,g
 \end{align*}
 Such an operator is called a hermitian operator (applying the operator to one or the other member of an inner product yields the same result). An operator \textbf{must} be hermitian for its observable to become real. These operators are \textbf{linear} if
 \noindent\begin{equation*}
@@ -55,6 +55,17 @@ Such an operator is called a hermitian operator (applying the operator to one or
     \langle f|(\hat{Q} + \hat{R})g\rangle                                    & = \langle (\hat{Q} + \hat{R})f|g\rangle                                                               \\[0.75em]
     \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
 \end{align*}
+
+\ptitle{Remark}
+
+Given hermitian operators $\hat{A}$, $\hat{B}$ and $\hat{A}\hat{B}$ then, in integral notation one has for operators and functions
+\begin{equation*}
+    \int_{-\infty}^{\infty} {(\hat{A}\hat{B}f)}^* g\; d \mathbf{r}=\int_{-\infty}^{\infty} {(\hat{A}\hat{B})}^*f^* g\; d \mathbf{r}
+\end{equation*}
+but for operators and operators
+\begin{equation*}
+    \int_{-\infty}^{\infty} {(\hat{A}\hat{B})}^*f^* g\; d \mathbf{r}=\int_{-\infty}^{\infty} \hat{B}^*\hat{A}^*f^* g\; d \mathbf{r}
+\end{equation*}
 
 \subsubsection{Determinant States}
 A state $\Psi$ that would return the same result for every measurement of an ensemble is called a \textbf{determinant state} of the observable $Q$.
@@ -77,7 +88,7 @@ In short: If a state fulfils the eigenvalue equation, every measurement will yie
 \end{itemize}
 
 \subsection{Eigenfunctions of a Hermitian Operator}
-Eigenfunctions of hermitian operators can either have a discrete or continuous spectrum. For a discrete spectrum there are countably many eigenfunction whereas for a continuous the set of eigenfunctions is discrete as well.
+Eigenfunctions of hermitian operators can either have a discrete or continuous spectrum.
 
 \newpar{}
 \ptitle{Discrete Spectrum}
@@ -96,12 +107,12 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
     \item $|\psi_n\rangle$ can be thought of as basis vectors
 \end{itemize}
 
-\ptitle{continuous Spectrum}
+\ptitle{Continuous Spectrum}
 
 \begin{itemize}
-    \item Eigenfunctions with a continuous spectrum are not normalizable
+    \item Eigenfunctions with a continuous spectrum are not normalizable ($\notin \mathcal{H}$)
     \item The eigenfunctions appear as continuous set (e.g.\ free particle)
-    \item These eigenfuntions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a \textbf{complete set}.
+    \item These eigenfunctions with real eigenvalues are \textit{Dirac-orthonormalizable} and form a \textbf{complete set}.
     \item In contrast to the discrete spectrum case where we had $\langle f_m|f_n\rangle=\delta_{mn}$ we now have
           \noindent\begin{equation*}
               \langle f_{x'}|f_{x''}\rangle=\delta(x''-x')
@@ -212,8 +223,8 @@ An eigenfunction of the momentum operator must fulfil the following eigenvalue e
 
 \ptitle{Eigenfunctions}
 
-Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with 
-$k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$ 
+Plugging $\hat{p}=-i\hbar \frac{d}{dx}$ into the eigenvalue equation and solving the ODE yields waves with
+$k=\frac{2 \pi}{\lambda}=\frac{p'}{\hbar}$ and wavelength $\lambda=\frac{2\pi\hbar}{p^{\prime}}=\frac{h}{p^{\prime}}$
 (de Broglie formula!):
 \begin{equation*}
     f_{p^{\prime}}(x)=\frac{1}{\sqrt{2\pi\hbar}}\exp\left[\frac{ip^{\prime}x}{\hbar}\right]
@@ -263,6 +274,12 @@ As for $\hat{x}$ one can also show for $\hat{p}$ that
           \end{enumerate}
     \item Measurement $A$ and subsequent $A$ is \textbf{deterministic} but subsequent $B$ is \textbf{probabilistic}.
 
+\end{itemize}
+
+\textbf{Remarks}:
+\begin{itemize}
+    \item The previous statements hold for two subsequent measurements, if for example, a third measurement is made, the compatability of the second and third have to be evaulated
+    \item Check the table of commutators in Appendix\ \ref{comm}
 \end{itemize}
 
 \subsubsection{General Uncertainty Principle (GUP) for Incompatible Operators}
