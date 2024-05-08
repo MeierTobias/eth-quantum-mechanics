@@ -848,6 +848,7 @@ and are in z-axis basis given by the \textbf{non-hermitian} matrices
 \subsubsection{Properties Two-Particle Systems}
 Again, we assume that $V$ is time-independent.
 
+\newpar{}
 \ptitle{Similarities to One-Particle Systems}
 
 \begin{itemize}
@@ -857,12 +858,13 @@ Again, we assume that $V$ is time-independent.
     \item $\Psi_{gen}=\sum_{n} c_{n} \Psi_{n} \exp\left[\frac{-i E_{n} t}{\hbar}\right]$
 \end{itemize}
 
+\newpar{}
 \ptitle{Differences to One-Particle Systems}
 \begin{itemize}
     \item $\Psi(\mathbf{r_1},\mathbf{r_2},t)$ is a function of position of both particles
-    \item $\hat{H}$ is given by
+    \item $\widehat{H}$ is given by
           \begin{equation*}
-              \hat{H}=-\frac{\hbar^{2}}{2m_{1}}\nabla_{1}^{2}-\frac{\hbar^{2}}{2m_{2}}\nabla_{2}^{2}+V(\mathbf{r}_{1},\mathbf{r}_{2},t)
+              \widehat{H}=-\frac{\hbar^{2}}{2m_{1}}\nabla_{1}^{2}-\frac{\hbar^{2}}{2m_{2}}\nabla_{2}^{2}+V(\mathbf{r}_{1},\mathbf{r}_{2},t)
           \end{equation*}
           where $V$ includes any interactions between particles i.e.:
           \begin{enumerate}
@@ -879,8 +881,8 @@ Again, we assume that $V$ is time-independent.
 \subsubsection{Z-Particle Systems}
 In a general multi-particle system (e.g.\ atom with $Z$ protons) the Hamiltonian is given by
 \begin{align*}
-    \hat{H} = & \underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} \\
-    +         & \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}
+    \widehat{H} = & \underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} \\
+    +             & \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}
 \end{align*}
 where in the ``repulsion'' term
 \begin{itemize}
@@ -892,15 +894,17 @@ The ``repulsion'' term makes exact solving of the TISE, in general, impossible. 
 \subsubsection{Reduceable Two-Particle Problems}
 In two special cases the TISE of two-particle systems can be solved analytically.
 
+\newpar{}
 \ptitle{1. Noninteracting Particles}
 
 \begin{itemize}
-    \item Corresponds to ignoring the ``repulsion'' term in $\hat{H}$ of the Z-particle system
+    \item Corresponds to ignoring the ``repulsion'' term in $\widehat{H}$ of the Z-particle system
     \item Assume e.g.\ electrons only interact with nucleus but not each other (simplest but most inaccurate approximation)
     \item Each electron in single particle hydrogenic state: $\psi_{n,l,m_l,m_s}$
-    \item See~\ref*{NIP} for details
+    \item See~\ref{ssec:NIP} for details
 \end{itemize}
 
+\newpar{}
 \ptitle{2. Central Potential Systems}
 
 Given a system where the particles interact only with each other via a potential that depends on their separation
@@ -909,31 +913,32 @@ Given a system where the particles interact only with each other via a potential
 \end{equation*}
 we can solve the two-particle TISE analytically by splitting the problem into center-of-mass motion
 \begin{align*}
-    R\equiv & \frac{m_1\mathbf{r_1}+m_2\mathbf{r_2}}{m_1+m_2} & \text{ center of mass} \\
-    M\equiv & m_1 + m_2                                       & \text{ total mass}
+    \mathbf{R}\equiv\  & \frac{m_1\mathbf{r_1}+m_2\mathbf{r_2}}{m_1+m_2} &  & \text{ center of mass} \\
+    M\equiv\           & m_1 + m_2                                       &  & \text{ total mass}
 \end{align*}
 and relative motion of the two particles
 \begin{align*}
-    \mathbf{r}\equiv & \mathbf{r_1}-\mathbf{r_2} &                      \\
-    m_r\equiv        & \frac{m_1 m_2}{m_1+m_2}   & \text{ reduced mass}
+    \mathbf{r}\equiv\  & \mathbf{r_1}-\mathbf{r_2} &                      \\
+    m_r\equiv\         & \frac{m_1 m_2}{m_1+m_2}   & \text{ reduced mass}
 \end{align*}
 In this case, the TISE separates to
 \begin{equation*}
-    -\frac{\hbar^{2}}{2\left(m_{1}+m_{2}\right)}\nabla_{R}^{2}\psi-\frac{\hbar^{2}}{2\mu}\nabla_{r}^{2}\psi+V(\mathbf{r})\psi=E\psi
+    -\frac{\hbar^{2}}{2M}\nabla_{\mathbf{R}}^{2}\psi-\frac{\hbar^{2}}{2m_r}\nabla_{\mathbf{r}}^{2}\psi+V(\mathbf{r})\psi=E\psi
 \end{equation*}
 and we can find a solution
 \begin{equation*}
-    \psi = \psi_R(\mathbf{R})\cdot\psi_r(\mathbf{r})
+    \psi = \psi_\mathbf{R}(\mathbf{R})\cdot\psi_\mathbf{r}(\mathbf{r})
 \end{equation*}
 Remarks:
 \begin{itemize}
     \item Works only for 2-particle system
-    \item For the H-atom we calculated $\psi_r(\mathbf{r})$ and assumed $m_r\approx m_e$ (plug it into $m_r$ to see why)
+    \item For the H-atom we calculated $\psi_\mathbf{r}(\mathbf{r})$ and assumed $m_r\approx m_e$ (plug it into $m_r$ to see why)
 \end{itemize}
 
 \subsubsection{Noninteracting Particles}\label{ssec:NIP}
-As a coarse approximation we ignore the ``repulsion'' term from the n-particle TISE to neglect all electron-electron interactions. Then, for two given single-particle solutions $\psi_a$ and $\psi_b$ one differenciates between the following two cases.
+As a coarse approximation we \textbf{ignore the ``repulsion'' term} from the n-particle TISE to neglect all electron-electron interactions. Then, for two given single-particle solutions $\psi_a$ and $\psi_b$ one differenciates between the following two cases.
 
+\newpar{}
 \ptitle{Distinguishable Particles}
 
 The overall solutions are products
@@ -947,21 +952,20 @@ or
 where
 \begin{itemize}
     \item $\psi(\mathbf{r}_{1},\mathbf{r}_{2})$ is the overall, 2-particle wave function
-    \item $\psi_{a}(\mathbf{r}_{1})$ means particle $1$ is in state $\psi_{a}$
-    \item $\psi_{a}(\mathbf{r}_{2})$ means particle $2$ is in state $\psi_{a}$
-    \item and the similar approach holds for $\psi_{b}$
+    \item $\psi_{a}(\mathbf{r}_{1})$ means particle $1$ is in state $\psi_{a}$ etc.
 \end{itemize}
 
+\newpar{}
 \ptitle{Indistinguishable Particles}
 
 For the case of e.g.\ two electrons (which are indistinguishable) the overall 2-particle wave function is a \textbf{linear combination} of the aforementioned products:
 
 \begin{equation*}
-    \psi_{+}(\mathbf{r}_{1},\mathbf{r}_{2})=C\left[\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2})+\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})\right]
+    \psi_{+}(\mathbf{r}_{1},\mathbf{r}_{2})=C\left[\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2})+\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})\right]\quad \mathrm{symmetric}
 \end{equation*}
 or
 \begin{equation*}
-    \psi_{-}(\mathbf{r}_{1},\mathbf{r}_{2})=C\left[\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2})-\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})\right]
+    \psi_{-}(\mathbf{r}_{1},\mathbf{r}_{2})=C\left[\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2})-\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})\right]\quad \mathrm{antisymm.}
 \end{equation*}
 Remarks
 \begin{itemize}
@@ -971,13 +975,13 @@ Remarks
     \item Implications of these two solutions are presented subsequently
 \end{itemize}
 
-\paragraph{Exchange Symmetry of $\psi_{\pm}$}
+\paragraph[Exchange Symmetry of psi]{Exchange Symmetry of $\psi_{\pm}$}
 
 \ptitle{Exchange Operator}
 
 The exchange operator swaps two particles
 \begin{equation*}
-    \hat{P}f(\mathbf{r_1},\mathbf{r_2})=f(\mathbf{r_2},\mathbf{r_1})
+    \widehat{P}\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r_2},\mathbf{r_1})
 \end{equation*}
 For two identical particles one has
 \begin{align*}
@@ -986,17 +990,14 @@ For two identical particles one has
 \end{align*}
 which means
 \begin{equation*}
-    \left[\hat{P},\hat{H}\right]=0
+    \left[\widehat{P},\widehat{H}\right]=0
 \end{equation*}
 which by the generalized Ehrenfest theorem implies
+
 \begin{equation*}
-    \frac{d}{dt}\langle\hat{P}\rangle=0
+    \frac{d}{dt}\langle\widehat{P}\rangle=0
 \end{equation*}
-and means that $\hat{P}$ and $\hat{H}$ share the eigenfunctions $\psi_{\pm}$.\\
-Applying $\hat{P}$ to $\psi_{\pm}$ yields the eigenvalues
-\begin{equation*}
-    \pm 1
-\end{equation*}
+and means that $\widehat{P}$ and $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$.
 
 \ptitle{Exchange Symmetry of Noninteracting Particles}
 
@@ -1005,28 +1006,29 @@ One has that
     \item $\psi_{+}$ is symmetric w.r.t.\ exchange (eigenvalue $+1$)
     \item $\psi_{-}$ is antisymmetric w.r.t.\ exchange (eigenvalue $-1$)
     \item $\psi_{\pm}$ are stationary states
-    \item As $P$ is a conserved quantity a particle, once (anti)symmetric w.r.t.\ exchange, stays (anti)symmetric
+    \item As $P$ is a conserved quantity a particle,\newline once (anti)symmetric w.r.t.\ exchange,\newline stays (anti)symmetric
 \end{itemize}
-For two distinguishable particles one finds that
+For two \textbf{distinguishable} particles one finds that
 \begin{equation*}
     \left\langle{\left(x_{1}-x_{2}\right)}^{2}\right\rangle_{d}=\left\langle x^{2}\right\rangle_{a}+\left\langle x^{2}\right\rangle_{b}-2\left\langle x\right\rangle_{a}\left\langle x\right\rangle_{b}
 \end{equation*}
-For two undistinguishable particles one has
+For two \textbf{undistinguishable} particles one has
 \begin{align*}
     \left\langle{\left(x_{1}-x_{2}\right)}^{2}\right\rangle_{\pm}= & \left\langle x^{2}\right\rangle_{a}+\left\langle x^{2}\right\rangle_{b}-2\langle x\rangle_{a}\langle x\rangle_{b}\mp2|\langle x\rangle_{ab}|^{2} \\
                                                                    & =\left\langle{\left(\Delta x\right)}^{2}\right\rangle_{d}\mp2\left|\left\langle x\right\rangle_{ab}\right|^{2}
 \end{align*}
 Therefore, particles that are in state $\psi_{+}$ (symmetric w.r.t.\ exchange) tend to be closer together than particles that are in state $\psi_{-}$.\\
-Remarks
+\textbf{Remarks}
 \begin{itemize}
+    \item $\left\langle\cdot\right\rangle_{d/\pm}$ is the expectationvalue in a distinguishable/indistinguishable state
     \item This phenomenon is often called ``exchange interaction'' or ``exchange force''
     \item Exchange symmetry or the overall 2-particle wave function influences location of particles w.r.t.\ each other
 \end{itemize}
 
 \paragraph{Bosons and Fermions}
 \begin{itemize}
-    \item Bosons (e.g.\ photons (s=1), gravitons (s=2)) are particles with \textbf{integer} spin
-    \item Fermions (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$)) are particles with \textbf{half-integer} spin
+    \item \textbf{Bosons} (e.g.\ photons (s=1), gravitons (s=2)) are particles with \textbf{integer} spin
+    \item \textbf{Fermions} (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$)) are particles with \textbf{half-integer} spin
 \end{itemize}
 As bosons are indistinguishable (same holds for fermions) their overall wave functions behave according to the previously stated rules.
 
@@ -1043,7 +1045,7 @@ The exchange symmetry of the overall wave function of
 Because electrons are fermions one
 \begin{itemize}
     \item would intuitively choose $\psi_{-}$ as an overall wave function.
-    \item must choose $\psi_{+}$ because $\psi_{-}$ would mean antibonding in $H_2$.
+    \item must choose $\psi_{+}$ because $\psi_{-}$ would mean antibonding in $\mathrm{H}_2$.
 \end{itemize}
 One finds that spin also influences the overall wave function according to
 \begin{equation*}
@@ -1054,22 +1056,25 @@ and one has for $\chi(s)$ and two identical spins $s=\frac{1}{2}$ the spin state
      & \begin{rcases}
            \uparrow \uparrow                                                        \\
            \downarrow \downarrow                                                    \\
-           \frac{1}{\sqrt{2}}\left[\uparrow \downarrow + \downarrow \uparrow\right] \\
-       \end{rcases} \text{triplet, symmetric w.r.t.\ ex.} \\
+           \frac{1}{\sqrt{2}}\left(\uparrow \downarrow + \downarrow \uparrow\right) \\
+       \end{rcases} \chi_{\mathrm{triplet}}(s)\text{: symmetric w.r.t.\ ex.} \\
      & \begin{rcases}
-           \frac{1}{\sqrt{2}}\left[\uparrow \downarrow - \downarrow \uparrow\right]
-       \end{rcases} \text{singlet, antisymmetric w.r.t.\ ex.}
+           \frac{1}{\sqrt{2}}\left(\uparrow \downarrow - \downarrow \uparrow\right)
+       \end{rcases} \chi_{\mathrm{singlet}}(s) \text{: antisymmetric w.r.t.\ ex.}
 \end{align*}
-which implies that the overall wave function $\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r})\chi(s)$ of hydrogen becomes 
+which implies that the overall wave function $\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r})\chi(s)$ of hydrogen becomes
 \begin{equation*}
-    \psi_{+}\cdot \left(\text{singlet}\right)
+    \psi_{+}\cdot \chi_{\mathrm{singlet}}(s)
 \end{equation*}
-to achieve a stable chemical bond.\\
-Remarks
+to achieve a stable chemical bond.
+
+\newpar{}
+\textbf{Remarks}
 \begin{itemize}
     \item $\psi_{-}\cdot \left(\text{triplet}\right)$ would also lead to antisymmetric $\psi(\mathbf{r_1},\mathbf{r_2})$ but is higher in energy because of antibonding.
 \end{itemize}
 
+\newpar{}
 \ptitle{Pauli Exclusion Principle}
 
 One cannot have two electrons in exactly the same state (same quantum numbers) and still have the system antisymmetric w.r.t.\ exchange because one then has $\psi_{-}=0$ i.e.\ there is no such state (Choose $\psi_{-}$ because electrons are fermions).
