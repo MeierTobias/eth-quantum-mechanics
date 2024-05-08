@@ -965,19 +965,114 @@ or
 \end{equation*}
 Remarks
 \begin{itemize}
-    \item Indistinguishable means that there is no way to  tell the two particles approximation
+    \item Indistinguishable means that there is no way to  tell the two particles apart
     \item $\psi_{+}$ stays exactly the same when swapping $\mathbf{r_1},\mathbf{r_2}$
     \item $\psi_{-}$ changes sign when swapping $\mathbf{r_1},\mathbf{r_2}$
+    \item Implications of these two solutions are presented subsequently
 \end{itemize}
 
-\paragraph{Exchange Symmetry}
+\paragraph{Exchange Symmetry of $\psi_{\pm}$}
+
 \ptitle{Exchange Operator}
+
+The exchange operator swaps two particles
+\begin{equation*}
+    \hat{P}f(\mathbf{r_1},\mathbf{r_2})=f(\mathbf{r_2},\mathbf{r_1})
+\end{equation*}
+For two identical particles one has
+\begin{align*}
+    m_1=        & m_2        \\
+    V(r_1,r_2)= & V(r_2,r_1)
+\end{align*}
+which means
+\begin{equation*}
+    \left[\hat{P},\hat{H}\right]=0
+\end{equation*}
+which by the generalized Ehrenfest theorem implies
+\begin{equation*}
+    \frac{d}{dt}\langle\hat{P}\rangle=0
+\end{equation*}
+and means that $\hat{P}$ and $\hat{H}$ share the eigenfunctions $\psi_{\pm}$.\\
+Applying $\hat{P}$ to $\psi_{\pm}$ yields the eigenvalues
+\begin{equation*}
+    \pm 1
+\end{equation*}
 
 \ptitle{Exchange Symmetry of Noninteracting Particles}
 
+One has that
+\begin{itemize}
+    \item $\psi_{+}$ is symmetric w.r.t.\ exchange (eigenvalue $+1$)
+    \item $\psi_{-}$ is antisymmetric w.r.t.\ exchange (eigenvalue $-1$)
+    \item $\psi_{\pm}$ are stationary states
+    \item As $P$ is a conserved quantity a particle, once (anti)symmetric w.r.t.\ exchange, stays (anti)symmetric
+\end{itemize}
+For two distinguishable particles one finds that
+\begin{equation*}
+    \left\langle{\left(x_{1}-x_{2}\right)}^{2}\right\rangle_{d}=\left\langle x^{2}\right\rangle_{a}+\left\langle x^{2}\right\rangle_{b}-2\left\langle x\right\rangle_{a}\left\langle x\right\rangle_{b}
+\end{equation*}
+For two undistinguishable particles one has
+\begin{align*}
+    \left\langle{\left(x_{1}-x_{2}\right)}^{2}\right\rangle_{\pm}= & \left\langle x^{2}\right\rangle_{a}+\left\langle x^{2}\right\rangle_{b}-2\langle x\rangle_{a}\langle x\rangle_{b}\mp2|\langle x\rangle_{ab}|^{2} \\
+                                                                   & =\left\langle{\left(\Delta x\right)}^{2}\right\rangle_{d}\mp2\left|\left\langle x\right\rangle_{ab}\right|^{2}
+\end{align*}
+Therefore, particles that are in state $\psi_{+}$ (symmetric w.r.t.\ exchange) tend to be closer together than particles that are in state $\psi_{-}$.\\
+Remarks
+\begin{itemize}
+    \item This phenomenon is often called ``exchange interaction'' or ``exchange force''
+    \item Exchange symmetry or the overall 2-particle wave function influences location of particles w.r.t.\ each other
+\end{itemize}
+
 \paragraph{Bosons and Fermions}
+\begin{itemize}
+    \item Bosons (e.g.\ photons (s=1), gravitons (s=2)) are particles with \textbf{integer} spin
+    \item Fermions (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$)) are particles with \textbf{half-integer} spin
+\end{itemize}
+As bosons are indistinguishable (same holds for fermions) their overall wave functions behave according to the previously stated rules.
+
+\ptitle{Exchange Symmetry Axiom}
+
+The exchange symmetry of the overall wave function of
+\begin{itemize}
+    \item identical \textbf{bosons is symmetric} w.r.t.\ exchange
+    \item identical \textbf{fermions is antisymmetric} w.r.t.\ exchange
+\end{itemize}
+
+\ptitle{Exchange Symmetry of Hydrogen}
+
+Because electrons are fermions one
+\begin{itemize}
+    \item would intuitively choose $\psi_{-}$ as an overall wave function.
+    \item must choose $\psi_{+}$ because $\psi_{-}$ would mean antibonding in $H_2$.
+\end{itemize}
+One finds that spin also influences the overall wave function according to
+\begin{equation*}
+    \psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r})\chi(s)
+\end{equation*}
+and one has for $\chi(s)$ and two identical spins $s=\frac{1}{2}$ the spin states
+\begin{align*}
+     & \begin{rcases}
+           \uparrow \uparrow                                                        \\
+           \downarrow \downarrow                                                    \\
+           \frac{1}{\sqrt{2}}\left[\uparrow \downarrow + \downarrow \uparrow\right] \\
+       \end{rcases} \text{triplet, symmetric w.r.t.\ ex.} \\
+     & \begin{rcases}
+           \frac{1}{\sqrt{2}}\left[\uparrow \downarrow - \downarrow \uparrow\right]
+       \end{rcases} \text{singlet, antisymmetric w.r.t.\ ex.}
+\end{align*}
+which implies that the overall wave function $\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r})\chi(s)$ of hydrogen becomes 
+\begin{equation*}
+    \psi_{+}\cdot \left(\text{singlet}\right)
+\end{equation*}
+to achieve a stable chemical bond.\\
+Remarks
+\begin{itemize}
+    \item $\psi_{-}\cdot \left(\text{triplet}\right)$ would also lead to antisymmetric $\psi(\mathbf{r_1},\mathbf{r_2})$ but is higher in energy because of antibonding.
+\end{itemize}
 
 \ptitle{Pauli Exclusion Principle}
+
+One cannot have two electrons in exactly the same state (same quantum numbers) and still have the system antisymmetric w.r.t.\ exchange because one then has $\psi_{-}=0$ i.e.\ there is no such state (Choose $\psi_{-}$ because electrons are fermions).
 
 \paragraph{Triplet and Singlet States}
 
