@@ -845,22 +845,42 @@ and are in z-axis basis given by the \textbf{non-hermitian} matrices
 \end{align*}
 
 \subsection{Two-Particle Systems}
-
 \subsubsection{Properties Two-Particle Systems}
+Again, we assume that $V$ is time-independent.
 
 \ptitle{Similarities to One-Particle Systems}
 
+\begin{itemize}
+    \item $\Psi$ describes system
+    \item time dependence: TDSE
+    \item total energy: TISE
+    \item $\Psi_{gen}=\sum_{n} c_{n} \Psi_{n} \exp\left[\frac{-i E_{n} t}{\hbar}\right]$
+\end{itemize}
+
 \ptitle{Differences to One-Particle Systems}
+\begin{itemize}
+    \item $\Psi(\mathbf{r_1},\mathbf{r_2},t)$ i.e.\ function of position of two particles
+    \item $\hat{H}$ is given by 
+    \begin{equation*}
+        \hat{H}=-\frac{\hbar^{2}}{2m_{1}}\nabla_{1}^{2}-\frac{\hbar^{2}}{2m_{2}}\nabla_{2}^{2}+V(\mathbf{r}_{1},\mathbf{r}_{2},t)
+    \end{equation*}
+    where $V$ includes any interactions between particles i.e.:
+    \begin{enumerate}
+        \item interactions between  electrons
+        \item interactions with the nucleus
+    \end{enumerate}
+\end{itemize}
 
 \subsubsection{Multi-Particle Systems}
 
 \subsubsection{Reduceable Two-Particle Problems}
 
-\ptitle{1. Central Potential Systems}
+\ptitle{1. Noninteracting Particles}
 
-\ptitle{2. Noninteracting Particles}
+\ptitle{2. Central Potential Systems}
 
 \subsubsection{Noninteracting Particles}
+As a coarse approximation we ignore the ``repulsion'' term from the n-particle TISE to neglect all electron-electron interactions.
 
 \ptitle{Distinguishable Particles}
 
