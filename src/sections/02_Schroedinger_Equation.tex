@@ -1115,7 +1115,11 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \ptitle{Remarks}
 
 \begin{itemize}
-    \item One sometimes also calls orbitals by their azimuthal QN, e.g.\ for $l=1$: ``p-orbitals''
+    \item One sometimes also calls orbitals
+    \begin{itemize}
+        \item by their azimuthal QN, e.g.\ for $l=1$: ``p-orbitals''
+        \item by their principal QN, e.g.\ for $n=2$: ``2p-orbitals''
+    \end{itemize}
     \item Each orbital can contain \textbf{two electrons}, one with $m_s=+\frac{1}{2}$, one with $m_s=-\frac{1}{2}$ (Pauli: unique set of QN)
     \item An s-orbital with QN $n$ has $n-1$ radial nodes
 \end{itemize}
@@ -1142,6 +1146,13 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \renewcommand{\arraystretch}{1}
 \setlength{\tabcolsep}{\oldtabcolsep}
 
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item The total number of orbitals is the number of possible states ($n,l,m_l$) that one electron can occupy.
+    \item Including spin one can have two electrons per orbital.
+\end{itemize}
+
 \subsubsection{Filling Orbitals with Electrons}
 The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 \paragraph{Hydrogenic (One-Electron) Atoms}
@@ -1167,9 +1178,10 @@ The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
     \item Example of screening: 1s and 2s electrons neutralize a part of the influence of the nucleus on the p orbitals
           \begin{itemize}
               \item The energy states become non-degenerate due to electron-electron interactions
-              \item s electrons are closer to nucleus: lower in energy
-              \item p electrons are further away due to screening: higher in energy
+              \item s electrons are closer to nucleus: higher attraction to nucleus $\leftrightarrow$ lower in energy
+              \item p electrons are further away due to screening: lower attraction to nucleus $\leftrightarrow$ higher in energy
           \end{itemize}
+    \item Screening results in different energies depending on location of electron i.e.\ shape of subshell
 \end{itemize}
 
 \ptitle{Filling Energy Levels with Electrons}
@@ -1191,7 +1203,7 @@ Example:\\
 \begin{equation*}
     Fe(Z=26): 1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^6
 \end{equation*}
-can be rewritten as 
+can be rewritten as
 \begin{equation*}
     Fe(Z=26): \left[Ar\right]4s^2 3d^6
 \end{equation*}
@@ -1218,28 +1230,111 @@ which yields an energetically more optimal state.
 
 \begin{itemize}
     \item Full subshells give fixed contributions to the state of an atom.
-    \item Non-full subshells have freedom in how to fill their orbitals with electrons. Therefore, one needs to establish a method to describe these states.
+    \item Non-full subshells have freedom in how to fill their orbitals with electrons. Therefore, one needs to establish a method to describe these states and answer the question ``in what orbital and spin angular momentum states are these electrons?''
     \item This method is especially useful when searching for the ground state of a certain atom.
 \end{itemize}
 
+\ptitle{Important Rules}
+
+\begin{enumerate}
+    \item \textbf{Filled subshells} never contribute to $L$, $S$, $J$.
+    \item One can use the \textbf{addition rule} to find all possible combination of momentum cones.
+    \item All the angular momentum quantum numbers ($l,s,\dots,L,S,\dots$) must be \textbf{multiplied by} $\boldsymbol{\hbar}$ to find the actual angular momenta.
+\end{enumerate}
+
 \paragraph{Total Momentum Quantum Numbers}
 
-\ptitle{Angular Momentum in Multiparticle Systems}
+\ptitle{Angular Momentum (AM) in Multiparticle Systems}
 
-One can establish a full-state description of an atom using total (orbital and spin) angular momentum. As these observables commute with $\hat{H}$ they are conserved quantities and useful for state description.
+One can establish a full-state description of an atom using total (orbital and spin) angular momentum. As these observables commute with $\hat{H}$ they are conserved quantities and useful for state description. For orbital angular momentum one defines
+\begin{align*}
+    L                   & \text{: total orbital AM}                \\
+    M_L=\sum_{i}m_{l,i} & \text{: total orb. AM projection on $z$} \\
+\end{align*}
+For spin one has 
+\begin{align*}
+    S                   & \text{: total spin AM}                    \\
+    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$} \\
+\end{align*}
+and in total one has
+\begin{align*}
+    J           & \text{: total AM}                   \\
+    M_J=M_L+M_S & \text{: total AM projection on $z$} \\
+\end{align*}
 
-
-\ptitle{Golden Rules}
+Remarks
+\begin{itemize}
+    \item For $M_L=0$ one also has $L=0$
+    \item For $M_S=0$ one also has $S=0$
+    \item $M_L$ relates to $L$ as $m_l$ relates to $l$ (i.e.\ $M_L$ is a projection of total angular momentum along $z$)
+    \item $M_S$ relates to $S$ as $m_s$ relates to $s$
+    \item One finds the possible values for $L,S,J$ using the addition rule.
+\end{itemize}
 
 \ptitle{Addition Rule}
 
-Describe partially filled subshells.
+Given two orbital or spin angular momenta $j_1, j_2$ one has
+\begin{equation*}
+    J=(j_1+j_2),\dots,|j_1-j_2|
+\end{equation*}
+with integer steps in between.\\
+Remarks:
+\begin{itemize}
+    \item Describes combinations to fill partially-filled subshells (many possible combinations).
+    \item Arises because AM are directional and quantized.
+    \item Depending on the specific values for the $j_i$ one has half-integer, integer or multi-integer steps between possible $J$!
+    \item Given ranges for $L$ and $S$ for an atom, one can choose a specific pair $(L,S)$ and apply the addition rule to get $J$ i.e.
+          \begin{equation*}
+              J=(L+S),\dots,|L-S|
+          \end{equation*}
+    \item Remember that for electrons one always has $s=+\frac{1}{2}$ but $m_s=\pm \frac{1}{2}$
+\end{itemize}
 
 \ptitle{Term Symbol}
 
+As partially-filled subshells impose a range of possible atom states (ways to fill electrons in subshells) given by the combinations of the $L,S,J$ one defines a simplified notation given by
+\begin{equation*}
+    \prescript{2S+1}{}{X_J}
+\end{equation*}
+where one uses for $X$ the same letters as for the subshells
+\begin{equation*}
+    X=
+    \begin{cases}
+        S,     & L=0 \\
+        P,     & L=1 \\
+        D,     & L=2 \\
+        \vdots &
+    \end{cases}
+\end{equation*}
+
+Remarks
+\begin{itemize}
+    \item The superscript $2S+1$ stands for the \# of projections
+    \item The special case of $2S+1=1$ is called singlet
+    \item The special case of $2S+1=3$ is called triplet
+\end{itemize}
+
 \ptitle{Excange Symmetry}
 
+\begin{itemize}
+    \item The addition rule does not consider exchange symmetry (Pauli exclusion).
+    \item Therefore, not all states $\prescript{2S+1}{}{X_J}$ found for a certain atom are antisymmetric w.r.t.\ exchange but one needs the latter for electrons!
+    \item Some states would require 2 electrons with exactly the same quantum numbers.
+    \item There are specific rules to find these valid states (not part of this course).
+\end{itemize}
+
 \ptitle{Hund's Rules for Finding Ground States}
+
+After considering exchange symmetry, one has reduced the number of possible states. One can the apply Hund's rule to find the lowest-energy state called ``ground state''
+\begin{enumerate}
+    \item State with largest $S$ is most stable
+    \item For states with same $S$, largest $L$ is most stable
+    \item For states with same $S$ and $L$ (but different $J$)
+          \begin{itemize}
+              \item Smallest $J$ most stable for subshells that are no more than half full
+              \item Larqest $J$ most stable for subshells that are more than half full
+          \end{itemize}
+\end{enumerate}
 
 
 
