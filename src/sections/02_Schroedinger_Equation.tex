@@ -1082,20 +1082,152 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 
 \subsection{Atoms}
 \subsubsection{Hydrogen Orbitals}
-\paragraph{Orbital Description by Quantum Numbers}
-\ptitle{Nomenclature Table}
+\paragraph{Orbital Description by Quantum Numbers (QN)}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
+{\small     % Smaller font
+    \begin{tabularx}{\linewidth}{@{}llll@{}}
+              & Name         & Range/Letter                                      & Meaning             \\
+        $n$   & principal QN & $0/K,\:1/L,\:2/M\:,3/N,\dots$                     & shell (radius)      \\
+        $l$   & azimuthal QN & $0/s,\:1/p,\:2/d\:,3/f,\dots$                     & subshell            \\
+              &              &                                                   & (orbital shape)     \\
+        $m_l$ & magnetic QN  & $-l,-l+1,\dots,l-1,l$                             & orbital orientation \\
+              &              &                                                   & \# of orientations  \\
+        $m_s$ & spin QN      & $+\frac{1}{2}/\uparrow,\:-\frac{1}{2}/\downarrow$ & spin orientation    \\
+              &              &                                                   & (w.r.t.\ z-axis)    \\
+        $s$   & spin         & fermions: half-int                                &                     \\
+              &              & bosons: int                                       &
+    \end{tabularx}
+}           % End smaller font
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{\oldtabcolsep}
+
+\ptitle{Visualization}
+
+\begin{center}
+    \includegraphics[width = 0.75\linewidth]{shell_subshell_orbital.png}
+\end{center}
+\textit{source: chemistry stack exchange}
+\begin{center}
+    \includegraphics[width = 0.99\linewidth]{orbitals.png}
+\end{center}
+
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item One sometimes also calls orbitals by their azimuthal QN, e.g.\ for $l=1$: ``p-orbitals''
+    \item Each orbital can contain \textbf{two electrons}, one with $m_s=+\frac{1}{2}$, one with $m_s=-\frac{1}{2}$ (Pauli: unique set of QN)
+    \item An s-orbital with QN $n$ has $n-1$ radial nodes
+\end{itemize}
 
 \paragraph{Orbital Table}
-
+\renewcommand{\arraystretch}{1.1}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
+{\small     % Smaller font
+    \begin{tabularx}{\linewidth}{@{}llllll@{}}
+            &       &             &             & \# of electrons\dots             \\
+        $n$ & Shell & Subshell(s) & \# Orbitals & per Subshell         & per Shell \\
+        1   & K     & s           & 1           & 2                    & 2         \\
+        2   & L     & s           & 1           & 2                    & 8         \\
+            &       & p           & 3           & 6                    &           \\
+        3   & M     & s           & 1           & 2                    & 18        \\
+            &       & p           & 3           & 6                    &           \\
+            &       & d           & 5           & 10                   &           \\
+        4   & N     & s           & 1           & 2                    & 32        \\
+            &       & p           & 3           & 6                    &           \\
+            &       & d           & 5           & 10                   &           \\
+            &       & f           & 7           & 14                   &
+    \end{tabularx}
+}           % End smaller font
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{\oldtabcolsep}
 
 \subsubsection{Filling Orbitals with Electrons}
-\paragraph{Hydrogenic (One-Electron) States}
+The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
+\paragraph{Hydrogenic (One-Electron) Atoms}
+
+\ptitle{Energy Levels}
+
+\begin{center}
+    \includegraphics[width = 0.75\linewidth]{hydr_energy_levels.png}
+\end{center}
+\begin{itemize}
+    \item Reminder: $E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}$
+    \item States are degenerate: the energy only depends on $n$, so the 2s and 2p orbitals are on same level given $n$ for an 1-electron atom!
+\end{itemize}
+
 \paragraph{Multielectron Atoms}
 
-\subsubsection{Full State Description of Atoms}
-Non-full subshells have freedom in how to fill their orbitals with electrons. Therefore, one needs to establish a method to describe these states.
-\paragraph{Angular Momentum in Multiparticle Systems}
+\ptitle{Energy Levels}
+
+\begin{center}
+    \includegraphics[width = 0.6\linewidth]{multielectron_energy_levels.png}
+\end{center}
+\begin{itemize}
+    \item Example of screening: 1s and 2s electrons neutralize a part of the influence of the nucleus on the p orbitals
+          \begin{itemize}
+              \item The energy states become non-degenerate due to electron-electron interactions
+              \item s electrons are closer to nucleus: lower in energy
+              \item p electrons are further away due to screening: higher in energy
+          \end{itemize}
+\end{itemize}
+
+\ptitle{Filling Energy Levels with Electrons}
+
+As the shells overlap, one can not just assume that a larger $n$ yields a larger energy levels (e.g.\ $E_{4s}<E{3d}$). Therefore, one needs to follow a specific order when filling orbitals with electrons. One can either use the graphical method:
+\begin{center}
+    \includegraphics[width = 0.4\linewidth]{fill_energies_graphical.png}
+\end{center}
+\textit{source: http://hyperphysics.phy-astr.gsu.edu/}\\
+or use e dedicated periodic table. Both yield the filling order
+\begin{equation*}
+    1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^{10}\dots
+\end{equation*}
+
+\ptitle{Noble Gas Notation}
+
+Instead of writing all base orbitals down, even for atoms with large $Z$, one can initiate the electron configuration formula with the noble gas preceding the element in brackets.\\
+Example:\\
+\begin{equation*}
+    Fe(Z=26): 1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^6
+\end{equation*}
+can be rewritten as 
+\begin{equation*}
+    Fe(Z=26): \left[Ar\right]4s^2 3d^6
+\end{equation*}
+
+\ptitle{Exceptions}
+
+Some elements don't follow the general rules for filling orbitals. Two important examples are
+\begin{equation*}
+    Cr: \left[Ar\right]4s^1 3d^5
+\end{equation*}
+\begin{equation*}
+    Cu: \left[Ar\right]4s^1 3d^{10}
+\end{equation*}
+which yields an energetically more optimal state.
+
+\ptitle{Valence Electrons}
+
+\begin{itemize}
+    \item The chemical reactivity strongly depends on the \# of valence electrons (outermost shell)
+    \item Noble (inert) gases have a full valence shell: don't react chemically
+\end{itemize}
+
+\subsubsection{Full-State Description of Atoms}
+
+\begin{itemize}
+    \item Full subshells give fixed contributions to the state of an atom.
+    \item Non-full subshells have freedom in how to fill their orbitals with electrons. Therefore, one needs to establish a method to describe these states.
+    \item This method is especially useful when searching for the ground state of a certain atom.
+\end{itemize}
+
 \paragraph{Total Momentum Quantum Numbers}
+
+\ptitle{Angular Momentum in Multiparticle Systems}
+
+One can establish a full-state description of an atom using total (orbital and spin) angular momentum. As these observables commute with $\hat{H}$ they are conserved quantities and useful for state description.
+
 
 \ptitle{Golden Rules}
 
