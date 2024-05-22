@@ -494,3 +494,111 @@ After considering exchange symmetry, one has reduced the number of possible stat
               \item Larqest $J$ most stable for subshells that are more than half full
           \end{itemize}
 \end{enumerate}
+
+
+\section{Solids}
+\subsection{Free-Electron Model}
+Neglecting spin and electron-electron interactions, an electrons wavefunction in a box with length $l_x,l_y,l_z$ is given by
+\noindent\begin{align*}
+    E_{n_x,n_y,n_z}    & = \frac{\hbar^2\pi^2}{2m}\left(\frac{n_x^2}{l_x^2}+\frac{n_y^2}{l_y^2}+\frac{n_z^2}{l_z^2}\right),\quad n_x,n_y,n_z \in \mathbb{N}\backslash 0 \\
+    \psi_{n_x,n_y,n_z} & = \sqrt{\frac{8}{l_x l_y l_z}} \sin\left(\frac{n_x\pi}{l_x}x\right) \sin\left(\frac{n_y\pi}{l_y}y\right) \sin\left(\frac{n_z\pi}{l_z}z\right)
+\end{align*}
+based on this solution of the SE, the distance between the discrete energy levels is at most
+\noindent\begin{equation*}
+    \Delta E \leq 10^{-6} ~\mathrm{eV}
+\end{equation*}
+and therefore the states from continous \textit{electron bands}.
+
+
+\subsubsection{k-Space}
+By transforming the energy into the k-space (wavenumbers), the energy becomes
+\noindent\begin{equation*}
+    E = \frac{\hbar^2k^2}{2m}, \quad \begin{cases}
+        k^2 = k_x^2+k_y^2+k_z^2 \\
+        k_x = \frac{n_x\pi}{l_x}, k_y = \frac{n_y\pi}{l_y}, k_z = \frac{n_z\pi}{l_z}
+    \end{cases}
+\end{equation*}
+and each solution occupies
+\noindent\begin{equation*}
+    \frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}
+\end{equation*}
+of k-space.
+
+\subsubsection{Fermi Energy}
+For electrons (fermions), the energy levels are filled with 2 $e^-$ at each level, and the highest occupied level is called the \textbf{Fermi level}.
+
+\newpar{}
+For a solid with $N$ electrons with $q$ electrons each
+\noindent\begin{equation*}
+    \frac{1}{8}\cdot\underbrace{\frac{4}{3}\pi k_F^3}_{\textsf{vol. sphere}} = \underbrace{\frac{Nq}{2}}_{\frac{\textsf{\# electrons}}{\mathsf{spin}}}\cdot \underbrace{\frac{\pi^3}{V}}_{\textsf{vol. per state}}
+\end{equation*}
+the Fermi wavenumber and its energy can be found:
+\noindent\begin{align*}
+    k_F & = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}                   \\
+    E_F & = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
+\end{align*}
+
+The \textit{density of states} - the number of one-electron levels per unit energy is given by
+\noindent\begin{equation*}
+    D(E)=\frac{\partial N(E)}{\partial E} = \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}}
+\end{equation*}
+and from this, the spacing between energy levels results:
+\noindent\begin{equation*}
+    \Delta E = \frac{1}{D(E)}
+\end{equation*}
+
+\subsection{Potential Models}
+\subsubsection{Bloch's Theorem}
+Combining a \textbf{periodic} potential
+\noindent\begin{equation*}
+    V(X) = V(x+a)
+\end{equation*}
+with the 1D TISE, \textit{Bloch's Theorem} states that
+\noindent\begin{equation*}
+    \psi(x+a) = e^{iKa} \psi(x), \quad K\in \mathbb{R}
+\end{equation*}
+In words: The wave function only changes in space by a phase factor.
+
+\newpar{}
+As a result the probability density is also periodic:
+\noindent\begin{equation*}
+    {|\psi(x+a)|}^2={|\psi(x)|}^2
+\end{equation*}
+
+\subsubsection{Periodic Boundary Conditions}
+With periodic boundary conditions
+\noindent\begin{equation*}
+    \psi(x+Na) = \psi(x)
+\end{equation*}
+and Bloch's theorem
+\noindent\begin{align*}
+    \psi(x) = \psi(x+Na) & = e^{iKNa}\psi(x) \\
+    1                    & =e^{iKNa}
+\end{align*}
+
+the quantization of $K$ can be found:
+\noindent\begin{equation*}
+    K=\frac{2\pi j}{Na}, \qquad j\in \mathbb{Z}
+\end{equation*}
+
+\ptitle{Potential}
+
+In its simples form, the potential can be modeled with a \textit{Dirac-comb}:
+\noindent\begin{equation*}
+    V(x)=\alpha\sum_{j=0}^{N-1}\delta(x-ja)
+\end{equation*}
+Solving the 1D TISE for this potential results in
+\noindent\begin{equation*}
+    \underbrace{\cos(Ka)}_{\in [-1,1]} = \underbrace{\cos(ka) + \frac{m\alpha}{\hbar^2 k}\sin(ka)}_{\textsf{exceeds }[-1,1]}, \quad k=\sqrt{\frac{2mE}{\hbar^2}}
+\end{equation*}
+
+As a consequence, only certain ranges/bands of energy are allowed.
+\begin{center}
+    \includegraphics[width=.5\linewidth]{solids_gaps.png}
+\end{center}
+
+\subsubsection{Energy Bands and Band Gaps}
+
+\begin{center}
+    \includegraphics[width=\linewidth]{solids_gaps_materials.png}
+\end{center}
