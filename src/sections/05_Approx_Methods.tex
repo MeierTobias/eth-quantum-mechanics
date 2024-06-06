@@ -1,0 +1,39 @@
+\section{Approximation Methods}
+\subsection{Perturbation Theory}
+
+\begin{equation*}
+    H=H^{(0)}+\lambda H^{\prime}
+\end{equation*}
+\begin{align*}
+    \psi_{n} & =\psi_{n}^{(0)}+\lambda\psi_{n}^{(1)}+\lambda^{2}\psi_{n}^{(2)}+\cdots \\
+    E_{n}    & =E_{n}^{(0)}+\lambda E_{n}^{(1)}+\lambda^{2}E_{n}^{(2)}+\cdots
+\end{align*}
+\begin{equation*}
+    E_{n}^{(1)}=\left\langle\psi_{n}^{(0)}\left| H^{\prime} \right|\psi_{n}^{(0)}\right\rangle
+\end{equation*}
+
+\begin{equation*}
+    \psi_{n}^{(1)}=\sum_{m\neq n}\frac{\left\langle\psi_{m}^{(0)}\left|H^{\prime}\right|\psi_{n}^{(0)}\right\rangle}{\left(E_{n}^{(0)}-E_{m}^{(0)}\right)}\psi_{m}^{(0)}
+\end{equation*}
+
+\begin{equation*}
+    E_{n}^{(2)}=\sum_{m\neq n}\frac{\left|\left\langle\psi_{m}^{(0)}\left|H^{\prime}\right|\psi_{n}^{(0)}\right\rangle\right|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}
+\end{equation*}
+
+\begin{equation*}
+    E_{\pm}^{(1)}=\frac{1}{2}\left[W_{aa}+W_{bb}\pm\sqrt{{(W_{aa}-W_{bb})}^{2}+4 |W_{ab}|^{2}}\right]
+\end{equation*}
+\begin{equation*}
+    W_{ij}=\left\langle\psi_{i}^{(0)} \left| H^{\prime} \right|\psi_{j}^{(0)}\right\rangle 
+\end{equation*}
+\subsection{Variational Principle}
+\begin{equation*}
+    E_{gs}\leq\left\langle\psi_{\mathrm{trial}}\left|\hat{H} \psi_{\mathrm{trial}}\right|\right\rangle \equiv \left<H\right>
+\end{equation*}
+\begin{equation*}
+    \Psi_{\mathrm{trial}}={\left(\frac{\alpha}{\pi}\right)}^{1/4}\exp\left[-\alpha x^{2}/2\right]
+\end{equation*}
+has 
+\begin{equation*}
+    \left<H\right>=\frac{\hbar^2\alpha}{4m}
+\end{equation*}
