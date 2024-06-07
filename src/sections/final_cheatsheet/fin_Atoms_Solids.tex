@@ -5,10 +5,82 @@
 \subsection{Full-State Description of Atoms}
 
 \section{Solids}
-\subsection{Free Electron Model}
+\subsection{Free-Electron Model}
+Neglecting spin and electron-electron interactions, an electrons wavefunction in a box with length $l_x,l_y,l_z$ is given by
+\noindent\begin{align*}
+    E_{n_x,n_y,n_z}    & = \frac{\hbar^2\pi^2}{2m}\left(\frac{n_x^2}{l_x^2}+\frac{n_y^2}{l_y^2}+\frac{n_z^2}{l_z^2}\right),\quad n_x,n_y,n_z \in \mathbb{N}\backslash 0 \\
+    \psi_{n_x,n_y,n_z} & = \sqrt{\frac{8}{l_x l_y l_z}} \sin\left(\frac{n_x\pi}{l_x}x\right) \sin\left(\frac{n_y\pi}{l_y}y\right) \sin\left(\frac{n_z\pi}{l_z}z\right)
+\end{align*}
+with spacing ($\to$ bands)
+\noindent\begin{equation*}
+    \Delta E \leq 10^{-6} ~\mathrm{eV}
+\end{equation*}
+
 \subsubsection{k-Space}
+\noindent\begin{equation*}
+    E = \frac{\hbar^2k^2}{2m}, \quad \begin{cases}
+        k^2 = k_x^2+k_y^2+k_z^2 \\
+        k_x = \frac{n_x\pi}{l_x}, k_y = \frac{n_y\pi}{l_y}, k_z = \frac{n_z\pi}{l_z}
+    \end{cases}
+\end{equation*}
+and each solution occupies
+\noindent\begin{equation*}
+    \frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}
+\end{equation*}
+
 \subsubsection{Fermi Energy}
+For a solid with $N$ electrons with $q$ electrons each
+\noindent\begin{equation*}
+    \frac{1}{8}\cdot\underbrace{\frac{4}{3}\pi k_F^3}_{\textsf{vol. sphere}} = \underbrace{\frac{Nq}{2}}_{\frac{\textsf{\# electrons}}{\mathsf{spin}}}\cdot \underbrace{\frac{\pi^3}{V}}_{\textsf{vol. per state}}
+\end{equation*}
+the Fermi wavenumber and its energy can be found:
+\noindent\begin{equation*}
+    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \qquad                  
+    E_F  = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
+\end{equation*}
+
+\newpar{}
+\ptitle{Density of States}
+
+The \textit{density of states} - the number of one-electron levels per unit energy is given by
+\noindent\begin{equation*}
+    D(E)=\frac{\partial N(E)}{\partial E} = \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}} \quad \Rightarrow \Delta E = \frac{1}{D(E)}
+\end{equation*}
+
 \subsection{Potential Models}
 \subsubsection{Bloch's Theorem}
+\noindent\begin{equation*}
+    V(X) = V(x+a)
+\end{equation*}
+\noindent\begin{equation*}
+    \psi(x+a) = e^{iKa} \psi(x), \quad K\in \mathbb{R}
+\end{equation*}
+In words: The wave function only changes in space by a phase factor.
+\noindent\begin{equation*}
+    {|\psi(x+a)|}^2={|\psi(x)|}^2
+\end{equation*}
+
 \subsubsection{Periodic Boundary Conditions}
+\noindent\begin{align*}
+    \psi(x) = \psi(x+Na) & = e^{iKNa}\psi(x) \\
+    1                    & =e^{iKNa} & \Rightarrow K=\frac{2\pi j}{Na}, \; j\in \mathbb{Z}
+\end{align*}
+
+\ptitle{Potential}
+
+In its simples form, the potential can be modeled with a \textit{Dirac-comb}:
+\noindent\begin{equation*}
+    V(x)=\alpha\sum_{j=0}^{N-1}\delta(x-ja)
+\end{equation*}
+Solving the 1D TISE for this potential results in
+\noindent\begin{equation*}
+    \underbrace{\cos(Ka)}_{\in [-1,1]} = \underbrace{\cos(ka) + \frac{m\alpha}{\hbar^2 k}\sin(ka)}_{\textsf{exceeds }[-1,1]}, \quad k=\sqrt{\frac{2mE}{\hbar^2}}
+\end{equation*}
+and only certain bands of energy are allowed.
+
 \subsection{Energy Bands and Band Gaps}
+\begin{itemize}
+    \item \textbf{Metals}: ``no'' band gap $E_g$
+    \item \textbf{Semiconductor}: $E_g < 4eV$
+    \item \textbf{Insulator}: $E_g > 4eV$
+\end{itemize}
