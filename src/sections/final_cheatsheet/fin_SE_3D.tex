@@ -223,3 +223,101 @@ as $m_{\ell}=-\ell,\dots,\ell$, and $L_x, L_y, L_z$ are incompatible
 \end{center}
 
 \subsection{Spin}
+\subsubsection{Eigenfunctions}
+
+\noindent\begin{align*}
+    \widehat{S}^2f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} \\
+    \widehat{S}_{z}f_{s}^{m_s} & =\hbar m_s f_{s}^{m_s}
+\end{align*}
+where
+\begin{equation*}
+    s =0,\frac{1}{2},1,\frac{3}{2},\dots \quad m_s =\underbrace{-s, -s+1,\dots, s-1, s}_{2s+1}
+\end{equation*}
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item The \textbf{set value} for $\mathbf{s}$ and the fact that one cannot write mathematical formulae for $f_{s}^{m_s}$ distinguishes spin from angular momentum.
+    \item For electrons we have $s=\frac{1}{2}$, for photons $s=1$
+    \item Electrons have
+          \begin{itemize}
+              \item $m_s=\frac{1}{2}$ (spin up)
+              \item $m_s=-\frac{1}{2}$ (spin down)
+              \item Therefore, only two eigenstates $f_{\frac{1}{2}}^{\pm \frac{1}{2}}$
+          \end{itemize}
+\end{itemize}
+
+\subsubsection{Spin State of an Electron}
+\noindent\begin{equation*}
+    f_{s}^{m_{s}}\rightarrow|s,m_{s}\rangle
+\end{equation*}
+\noindent\begin{align*}
+    f_{\frac{1}{2}}^{\pm\frac{1}{2}} \rightarrow\left|\frac{1}{2},\quad \pm\frac{1}{2}\right>= \left|\uparrow\right> \text{or } \left|\downarrow\right>
+\end{align*}
+\begin{align*}
+    |\mathbf{S}| & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
+    S_z          & =\pm \frac{1}{2}\hbar
+\end{align*}
+
+\ptitle{General Spin State}
+\begin{equation*}
+    \left|\lambda\right>=a\left|\frac{1}{2},\quad +\frac{1}{2}\right>+b\left|\frac{1}{2},\quad -\frac{1}{2}\right>
+\end{equation*}
+where the probability of measuring a certain spin (assuming $\left|\lambda\right>$ \textbf{normalized}!) is given by $|a|^2$ for $\uparrow$ and $|b|^2$ for $\downarrow$ respectively.
+
+\newpar{}
+\ptitle{Spin Operators as Matrices}
+
+With the two eigenstates of electron as base
+\begin{equation*}
+    \left|\frac{1}{2},\quad +\frac{1}{2}\right> \rightarrow \left(\begin{matrix}
+                                                                            1 \\
+                                                                            0
+                                                                        \end{matrix}\right),\quad 
+    \left|\frac{1}{2},\quad -\frac{1}{2}\right> \rightarrow \left(\begin{matrix}
+                                                                            0 \\
+                                                                            1
+                                                                        \end{matrix}\right)
+\end{equation*}
+\textbf{spin relative to z-axis} can be written as
+\begin{align*}
+    \widehat{S}^2   & \rightarrow \frac{3}{4}{\hbar}^2\begin{bmatrix}
+                                                          1 & 0 \\
+                                                          0 & 1
+                                                      \end{bmatrix} &
+    \widehat{S}_{z} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                     1 & 0  \\
+                                                     0 & -1
+                                                 \end{bmatrix}       \\
+    \widehat{S}_{x} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                     0 & 1 \\
+                                                     1 & 0
+                                                 \end{bmatrix}      &
+    \widehat{S}_{y} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                     0 & -i \\
+                                                     i & 0
+                                                 \end{bmatrix}
+\end{align*}
+
+Note that
+\begin{itemize}
+    \item $\widehat{S}_{x}$, $\widehat{S}_{y}$ are non-diagonal i.e.\ the basis vectors are not eigenvectors of these operators.
+    \item If they were diagonal in z-basis, $\widehat{S}_{x},\widehat{S}_{y},\widehat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
+\end{itemize}
+
+\newpar{}
+\ptitle{Ladder Operators for Spin}
+\begin{align*}
+    \widehat{S}_{+}\left|\frac{1}{2},-\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},+\frac{1}{2}\right> & \text{ (raises $S_z$ by $\hbar$)} \\
+    \widehat{S}_{-}\left|\frac{1}{2},+\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},-\frac{1}{2}\right> & \text{ (lowers $S_z$ by $\hbar$)}
+\end{align*}
+and are in z-axis basis given by the \textbf{non-hermitian} matrices
+\begin{equation*}
+    \widehat{S}_{+}  \rightarrow \hbar\begin{bmatrix}
+                                           0 & 1 \\
+                                           0 & 0
+                                       \end{bmatrix},\quad
+    \widehat{S}_{-}  \rightarrow \hbar\begin{bmatrix}
+                                           0 & 0 \\
+                                           1 & 0
+                                       \end{bmatrix}
+\end{equation*}
