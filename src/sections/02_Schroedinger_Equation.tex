@@ -50,7 +50,10 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
           \noindent\begin{equation*}
               \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\widehat{Q}\psi(x)dx
           \end{equation*}
-    \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}
+    \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}. Therefore the energies $E_n$ can be obtained with diagonalization
+    \noindent\begin{equation*}
+        \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
+    \end{equation*}
     \item every expectation value is \textbf{constant in time}
 \end{itemize}
 
@@ -787,7 +790,7 @@ where the probability of measuring a certain spin (assuming $\left|\lambda\right
 
 \ptitle{Spin Operators as Matrices}
 
-Setting the two eigenstates of the electron as basis vectors of a \textbf{two-dimensional} vector space we get
+Setting the two eigenstates of the electron as basis vectors (the space having only 2 dimensions allows for vector notation!) of a \textbf{two-dimensional} vector space we get
 
 \begin{align*}
     \left|\frac{1}{2},\quad +\frac{1}{2}\right> & \rightarrow \left(\begin{matrix}

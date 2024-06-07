@@ -1,0 +1,200 @@
+\section{Approximation Methods}
+
+\ptitle{Perturbation theory}
+\begin{itemize}
+    \item Attempts to solve new problems given the solution of an existing, simpler one.
+    \item Provides corrections to \textbf{all} energy levels of a certain \textbf{order}.
+\end{itemize}
+\ptitle{Variational principle}
+\begin{itemize}
+    \item Doesn't need previous knowledge of energies or states but, in turn, can also not use it to yield a broad range of results.
+    \item Provides an upper bound for the ground state energy (any some information on the 1st excited state) using trial functions.
+\end{itemize}
+
+\subsection{Time-Independent Perturbation Theory}
+The perturbed Hamiltonian is given by
+\begin{equation*}
+    H=H^{(0)}+\lambda H^{\prime}
+\end{equation*}
+with an adjustable dummy parameter $\lambda$ (finally set to $1$). The perturbed TISE is therefore
+\begin{equation*}
+    H\psi_n = E_n \psi_n
+\end{equation*}
+
+\begin{examplesection}[Matrix example]
+    \noindent\begin{equation*}
+        \widehat{\mathbf{H}} = \underbrace{V_0 
+        \begin{bmatrix}
+            1&0&0\\
+            0&1&0\\
+            0&0&2
+        \end{bmatrix}}_{\mathbf{H}^(0)}
+        + \underbrace{V_0 \varepsilon
+        \begin{bmatrix}
+            -1&0&0\\
+            0&0&1\\
+            0&1&0
+        \end{bmatrix}}_{\lambda\mathbf{H}^{\prime}}
+    \end{equation*}
+
+    since $\mathbf{H}^{(0)}$ is already diagonalized
+    \noindent\begin{gather*}
+        \underbrace{\lambda_1 = \lambda_2 = V_0}_{\textsf{degenerate}},\quad \underbrace{\lambda_3 = 2V_0}_{\textsf{non-degenerate}}\\
+        \psi_1^{(0)} = \begin{bmatrix}
+            1&0&0
+        \end{bmatrix}^{\mathsf{T}},
+        \psi_2^{(0)} = \begin{bmatrix}
+            0&1&0
+        \end{bmatrix}^{\mathsf{T}},
+        \psi_3^{(0)} = \begin{bmatrix}
+            0&0&1
+        \end{bmatrix}^{\mathsf{T}}
+    \end{gather*}
+
+    \newpar{}
+    \ptitle{Non-Degenerate (3)}
+    \noindent\begin{equation*}
+        E_3 = E_3^{(0)}+E_3^{(1)}+E_3^{(2)} = V_0(2+\varepsilon^2)
+    \end{equation*}
+
+    \ptitle{Degenerate (1\&2)}
+    \noindent\begin{align*}
+            E_1 &= E_1^{(0)} + E_{-}^{(1)} = \lambda_1+ E_{-}^{(1)} \\
+            E_2 &= E_2^{(0)} + E_{+}^{(1)} = \lambda_1+ E_{+}^{(1)}
+    \end{align*}
+\end{examplesection}
+
+\subsubsection{Non-Degenerate Perturbation Theory}
+Approximating perturbation of non-degenerate states and energies can be achieved by non-degenerate perturbation theory.
+\newpar{}
+\ptitle{Solving by Power Series}
+
+The perturbed total energy and state can then be approximated by a power series (e.g.\ Taylor series expansion) in $\lambda$
+\begin{align*}
+    E_{n}    & =E_{n}^{(0)}+\lambda E_{n}^{(1)}+\lambda^{2}E_{n}^{(2)}+\cdots         \\
+    \psi_{n} & =\psi_{n}^{(0)}+\lambda\psi_{n}^{(1)}+\lambda^{2}\psi_{n}^{(2)}+\cdots
+\end{align*}
+Where $E_{n}^{(k)}$, $\psi_{n}^{(k)}$ are \textit{kth-order  corrections}. Rearranging and \textit{testing} with $\psi_{n}^{(0)}$ yields the
+
+\newpar{}
+\ptitle{1st and 2nd Order Approximations}
+\begin{equation*}
+    E_{n}^{(1)}=\left\langle\psi_{n}^{(0)}\right| H^{\prime} \left.\psi_{n}^{(0)}\right\rangle
+\end{equation*}
+
+\begin{equation*}
+    \psi_{n}^{(1)}=\sum_{m\neq n}\frac{\left\langle\psi_{m}^{(0)}\right|H^{\prime}\left.\psi_{n}^{(0)}\right\rangle}{\left(E_{n}^{(0)}-E_{m}^{(0)}\right)}\psi_{m}^{(0)}
+\end{equation*}
+
+\begin{equation*}
+    E_{n}^{(2)}=\sum_{m\neq n}\frac{\left|\left\langle\psi_{m}^{(0)}\right|H^{\prime}\left.\psi_{n}^{(0)}\right\rangle\right|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}
+\end{equation*}
+
+\newpar{}
+\ptitle{Remarks}
+\begin{itemize}
+    \item The 1st order energy and state corrections are given combining exising knowledge (of the energies and states) with the new, perturbed Hamiltonian.
+    \item The denominators in the given formulas blow up for degenerate states. Therefore, one needs to use degenerate perturbation theory for approximation of these states/energies.
+\end{itemize}
+
+\subsubsection{Degenerate Perturbation Theory}
+Given two degenerate unperturbed states
+\begin{align*}
+    H^{(0)}\psi_a^{(0)}                                            & =E^{(0)}\psi_a^{(0)} \\
+    H^{(0)}\psi_b^{(0)}                                            & =E^{(0)}\psi_b^{(0)} \\
+    \left\langle\psi_a^{(0)}\right|\left.\psi_b^{(0)}\right\rangle & =0
+\end{align*}
+then, any linear combination of the states
+\begin{equation*}
+    \psi^{(0)}=\alpha\psi_a^{(0)}+\beta\psi_b^{(0)}
+\end{equation*}
+is still an eigenstate of $H^{(0)}$, with the same eigenvalue $E^{(0)}$:
+\begin{equation*}
+    H^{(0)}\psi^{(0)}=E^{(0)}\psi^{(0)}
+\end{equation*}
+Therefore, the approximation formulas from the previous section become ambiguous. Following a similar approach as for non-degenerate perturbation theory but using $\psi^{(0)}$ yields the
+
+\newpar{}
+\ptitle{1st Order Approximation}
+
+\begin{equation*}
+    E_{\pm}^{(1)}=\frac{1}{2}\left[W_{aa}+W_{bb}\pm\sqrt{{(W_{aa}-W_{bb})}^{2}+4 |W_{ab}|^{2}}\right]
+\end{equation*}
+\begin{equation*}
+    W_{ij}=\left\langle\psi_{i}^{(0)} \right| H^{\prime} \left.\psi_{j}^{(0)}\right\rangle
+\end{equation*}
+This solution arises from finding a suitable basis for the degenerate states, i.e.\ the right linear combination $\psi^{(0)}=\alpha\psi_a^{(0)}+\beta\psi_b^{(0)}$ so that we can use $\psi^{(0)}$ in the formulas from the previous section. Then, the two $\psi$ are linearly independent basis vectors, such as the standard basis vectors.
+
+\newpar{}
+\ptitle{Remarks}
+\begin{itemize}
+    \item As we have degenerate states, we need two corrections (the $\pm$): one for each state's energy (eigenstate).
+    \item 
+\end{itemize}
+
+\paragraph{n-Fold Degeneracies}
+Finding $E_{\pm}^{(1)}$ is equivalent to diagonalizing a degenerate block $\mathbf{W}$ in the Hamiltonian matrix $\mathbf{H}$ i.e.\ solving
+\begin{equation*}
+    \underbrace{
+        \left(\begin{array}{cc}
+            W_{aa} & W_{ab} \\
+            W_{ba} & W_{bb}
+        \end{array}\right)}_{\mathbf{W}}
+    \left(\begin{array}{c}
+            \alpha \\
+            \beta
+        \end{array}\right)
+    =E^{(1)}\left(\begin{array}{c}
+            \alpha \\
+            \beta
+        \end{array}\right)
+\end{equation*}
+This method can be generalized to n-degenerate states where one has an $n\times n$ $\mathbf{W}$ matrix.\\
+If $\mathbf{W}$ is diagonal
+\begin{itemize}
+    \item The $\psi_a^{(0)},\psi_b^{(0)},\psi_c^{(0)} \dots $ are already proper eigenstates
+    \item One has for the 2-fold degenerate case
+          \begin{align*}
+              E_{+}^{(1)} & =W_{aa}=\left\langle\psi_{a}^{(0)}\right|\left.\widehat{H}^{\prime}\psi_{a}^{(0)}\right\rangle \\
+              E_{-}^{(1)} & =W_{bb}=\left\langle\psi_{b}^{(0)}\right|\left.\widehat{H}^{\prime}\psi_{b}^{(0)}\right\rangle
+          \end{align*}
+          which is what we found for non-degenerate perturbation theory.
+\end{itemize}
+
+\subsection{Variational Principle}
+In contrast to perturbation theory, using the variational principle we can
+\begin{itemize}
+    \item Only find an upper bound for the \textbf{ground state} energy
+    \item Not solve the TISE given $\widehat{H}$
+\end{itemize}
+The variational principle theorem then states:
+\begin{equation*}
+    E_{gs}\leq\left\langle\psi_{\mathrm{trial}}\right|\widehat{H} \psi_{\mathrm{trial}}\left.\right\rangle \equiv \left<H\right>
+\end{equation*}
+The estimate for the upper bound can be optimized by inserting (possibly many) parameters into $ \psi_{\mathrm{trial}}$ and minimizing the resulting bound.
+
+
+\newpar{}
+\ptitle{Example}
+
+In a \textit{quartic oscillator} one has
+\begin{equation*}
+    \widehat{H}=\frac{-\hbar^{2}}{2m}\frac{d^{2}}{dx^{2}}+Cx^{4}
+\end{equation*}
+A common trial function is a Gaussian curve
+\begin{equation*}
+    \Psi_{\mathrm{trial}}={\left(\frac{\alpha}{\pi}\right)}^{1/4}\exp\left[-\alpha x^{2}/2\right]
+\end{equation*}
+resulting in
+\begin{equation*}
+    \left\langle H\right\rangle=\frac{\hbar^2\alpha}{4m}+\frac{3c}{4\alpha^2}
+\end{equation*}
+
+Minimizing the expecation value
+\noindent\begin{equation*}
+    \frac{d}{d \alpha} \left\langle H\right\rangle=0
+\end{equation*}
+yields 
+\begin{equation*}
+    E_{gs}\leq \frac{3}{8}{\left(\frac{6c\hbar^4}{m^2}\right)}^{\frac{1}{3}}, \quad\mathrm{with}\; \alpha_{\min} = {\left(\frac{6mc}{\hbar^2}\right)}^{\frac{1}{3}}
+\end{equation*}

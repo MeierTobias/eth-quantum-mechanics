@@ -82,10 +82,11 @@ Assuming the functions $f,g$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbe
 \end{align*}
 \ptitle{ONB}
 \noindent\begin{align*}
-    \langle f_m|f_n \rangle & = \delta_{mn}                        &  & \text{orthonormal}        \\
-    f(x)                    & = \sum_{n=1}^{\infty} c_n f_n(x)     &  & \text{complete}           \\
-    f^*(x)                  & = \sum_{n=1}^{\infty} c_n^* f_n^*(x) &  &                           \\
-    c_n                     & = \langle f_n|f \rangle              &  & \text{projection on base}
+    \langle f_m|f_n \rangle                                       & = \delta_{mn}                        &  & \text{orthonormal}        \\
+    f(x)                                                          & = \sum_{n=1}^{\infty} c_n f_n(x)     &  & \text{complete}           \\
+    f^*(x)                                                        & = \sum_{n=1}^{\infty} c_n^* f_n^*(x) &  &                           \\
+    c_n                                                           & = \langle f_n|f \rangle              &  & \text{projection on base} \\
+    \sum_{j=1}^{n} \left|f_j\right\rangle \left\langle f_j\right| & = \mathbf{I}                         &  & \text{closure relation}
 \end{align*}
 
 \ptitle{Properties of Inner Product}
@@ -356,6 +357,10 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
           \noindent\begin{equation*}
               \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\widehat{Q}\psi(x)dx
           \end{equation*}
+    \item The energies $E_n$ can be obtained with diagonalization
+          \noindent\begin{equation*}
+              \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
+          \end{equation*}
 \end{itemize}
 
 \subsubsection{Combining the Separable Solutions}
@@ -492,7 +497,7 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \begin{center}
     \includegraphics[width=.8\linewidth]{harmonic_oscillator.png}
 \end{center}
-\newcol{}
+
 \ptitle{Hermite Polynomial Form} (\textit{Useful Info Sheet})
 
 \noindent\begin{align*}
