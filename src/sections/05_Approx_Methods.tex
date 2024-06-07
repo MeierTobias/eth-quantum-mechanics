@@ -98,7 +98,7 @@ Where $E_{n}^{(k)}$, $\psi_{n}^{(k)}$ are \textit{kth-order  corrections}. Rearr
 \end{itemize}
 
 \subsubsection{Degenerate Perturbation Theory}
-Given two degenerate unperturbed states
+Given \textbf{two} degenerate unperturbed states
 \begin{align*}
     H^{(0)}\psi_a^{(0)}                                            & =E^{(0)}\psi_a^{(0)} \\
     H^{(0)}\psi_b^{(0)}                                            & =E^{(0)}\psi_b^{(0)} \\
@@ -116,20 +116,17 @@ Therefore, the approximation formulas from the previous section become ambiguous
 
 \newpar{}
 \ptitle{1st Order Approximation}
-
-\begin{equation*}
-    E_{\pm}^{(1)}=\frac{1}{2}\left[W_{aa}+W_{bb}\pm\sqrt{{(W_{aa}-W_{bb})}^{2}+4 |W_{ab}|^{2}}\right]
-\end{equation*}
-\begin{equation*}
+\begin{gather*}
+    E_1 = E_1^{(0)} + E_{-}^{(1)} \quad < \quad E_2 = E_2^{(0)} + E_{+}^{(1)}\\
+    E_{\pm}^{(1)}=\frac{1}{2}\left[W_{aa}+W_{bb}\pm\sqrt{{(W_{aa}-W_{bb})}^{2}+4 |W_{ab}|^{2}}\right]\\
     W_{ij}=\left\langle\psi_{i}^{(0)} \right| H^{\prime} \left.\psi_{j}^{(0)}\right\rangle
-\end{equation*}
+\end{gather*}
 This solution arises from finding a suitable basis for the degenerate states, i.e.\ the right linear combination $\psi^{(0)}=\alpha\psi_a^{(0)}+\beta\psi_b^{(0)}$ so that we can use $\psi^{(0)}$ in the formulas from the previous section. Then, the two $\psi$ are linearly independent basis vectors, such as the standard basis vectors.
 
 \newpar{}
 \ptitle{Remarks}
 \begin{itemize}
     \item As we have degenerate states, we need two corrections (the $\pm$): one for each state's energy (eigenstate).
-    \item 
 \end{itemize}
 
 \paragraph{n-Fold Degeneracies}
