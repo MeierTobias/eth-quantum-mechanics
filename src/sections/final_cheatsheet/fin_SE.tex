@@ -1,0 +1,258 @@
+\newcol{}
+\section{Schroedinger Equation}
+\noindent\begin{equation*}
+    i\hbar \frac{\partial \Psi(x,t)}{\partial t}           = \underbrace{- \frac{\hbar^2}{2m} \frac{\partial^2 \Psi(x,t)}{\partial x^2}}_{E_{kin}} + \underbrace{V(x,t)\Psi(x,t)}_{E_{pot}}
+\end{equation*}
+
+\subsection{Stationary States}
+\noindent\begin{align*}
+    \Psi_n(x,t)                                                        & = \psi_n(x)\varphi_n(t)                                                                                         \\
+    \underbrace{i\hbar\frac1\varphi\frac{d\varphi}{dt}}_{\varphi_n(t)} & =\underbrace{-\frac{\hbar^2}{2m}\frac1\psi\frac{d^2\psi}{dx^2}+V}_{\psi_n (x)} = \underbrace{E}_{\text{const.}}
+\end{align*}
+
+\ptitle{Phase Factor}
+\noindent\begin{equation*}
+    \varphi_n(t) =\exp\left[\frac{-iE_n t}{\hbar}\right], \qquad E_n = \frac{\hbar^2 k_n^2}{2m}
+\end{equation*}
+
+\ptitle{TISE}
+\noindent\begin{equation*}
+    \widehat{H}\psi  = \Bigl[\overbrace{\underbrace{-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}}_{\frac{1}{2m}\hat{p}^2}}^{E_{kin}}+ \overbrace{V(x)}^{E_{pot}}\Bigr]\psi = E\psi
+\end{equation*}
+
+\newpar{}
+Assuming $V(x) = 0$:
+\noindent\begin{align*}
+    \psi(x) & =A\sin(kx)+B\cos(kx)                                               &  & \text{standing wave (ISW)} \\
+    \psi(x) & =Ce^{ikx}+De^{-ikx}                                                &  & \text{free particle}       \\
+    k       & =\sqrt{\frac{2mE}{\hbar^{2}}}=\frac{p}{\hbar}=\frac{2\pi}{\lambda} &  & \text{wave number}
+\end{align*}
+
+\ptitle{Hamiltonian}
+
+$\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
+\noindent\begin{equation*}
+    \langle H\rangle = E,\quad{\sigma_H}^2 = 0, \quad \langle p\rangle = 0
+\end{equation*}
+
+\newpar{}
+
+\textbf{Remarks:}
+\begin{itemize}
+    \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density and expectation values are time-independent):
+          \noindent\begin{equation*}
+              \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\widehat{Q}\psi(x)dx
+          \end{equation*}
+    \item The energies $E_n$ can be obtained with diagonalization
+          \noindent\begin{equation*}
+              \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
+          \end{equation*}
+\end{itemize}
+
+\subsubsection{Combining the Separable Solutions}
+A particle/wave in a general state $\Psi$ is in a superposition of stationary states $\psi_n$ with energy $E_n$ and probability $|c_n|^2$:
+\noindent\begin{equation*}
+    \Psi(x,t) =\sum_{n=1}^\infty c_n\psi_n(x) \underbrace{\exp\left[\frac{-iE_n t}{\hbar}\right]}_{\varphi_n(t)}=\sum_{n=1}^\infty c_n\Psi_n(x,t)
+\end{equation*}
+
+\noindent\begin{equation*}
+    \langle H\rangle=\sum_{n=1}^\infty|c_n|^2\cdot \underbrace{E_n}_{\textsf{Eigenvalue}} \qquad \sum_{n=1}^\infty|c_n|^2 =1
+\end{equation*}
+
+\ptitle{Remarks:}
+\begin{itemize}
+    \item A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+    \item Probabilities and expectations of the general solution are in general \textbf{not} time-independent.
+    \item As $c_n$ are independent of time, the probability to get a certain energy and $\langle H\rangle$ are constant in time (energy conservation).
+\end{itemize}
+
+\subsection{Free Particle}
+A \textit{free particle} propagates in space as a \textbf{wave packet} and its wavefunction is determined by
+\noindent\begin{equation*}
+    \Psi_{wp}(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\Biggl[i\Biggl(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\Biggr)\Biggr]dk
+\end{equation*}
+
+\noindent\begin{equation*}
+    g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
+\end{equation*}
+\begin{equation*}
+    k  = \frac{2\pi}{\lambda}\qquad p  = \hbar k
+\end{equation*}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+    \item A free particle can have any positive energy $E$.
+    \item There is no free particle with a definite energy.
+          % \item $\frac{1}{\sqrt{2\pi}}$ plays the role of $c_n$ from the discrete superposition case.
+    \item Separable solutions do not represent physical states, therefore $\notin$ Hilbert space.
+    \item The particle carries a range of $k$
+\end{itemize}
+
+\ptitle{Group Velocity}
+
+A wavepacket consisting of infinitely many waves has a different \textit{group velocity} than the \textit{phase velocity} of the individual waves:
+\noindent\begin{equation*}
+    v_{group} = v_{classical} = 2v_{phase}
+\end{equation*}
+
+\begin{center}
+    \includegraphics[width = 0.4\linewidth]{group_vel.png}
+\end{center}
+
+\subsection{ISW}
+\noindent\begin{equation*}
+    V(x)=\begin{cases}0,&0\le x\le a\\\infty,&\text{otherwise}\end{cases}
+\end{equation*}
+\noindent\begin{align*}
+    \psi_{n}(x) & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)                      &  & \text{standing wave} \\
+    E_{n}       & =\frac{\hbar^{2}k_{n}^{2}}{2m}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}} > 0 &  & \text{quantized}
+\end{align*}
+
+\begin{center}
+    \includegraphics[width = 0.4\linewidth]{ISW.png}
+\end{center}
+
+\textbf{Remarks:}
+\begin{itemize}
+    \item Solutions alternate between \textit{odd} and \textit{even} starting from $\psi_1$: \textit{odd}
+    \item $\psi_{n+1}$ has one node (zero-crossing) more than $\psi_n$
+    \item $\psi_n$ are eigenfunctions/vectors and $E_n$ are the corresponding eigenvalues
+    \item $\psi_n$ are orthonormal base functions (complete):
+          \noindent\begin{equation*}
+              \int_{-\infty}^{\infty} \psi_m^*\psi_n\; dx =\langle \psi_m|\psi_n\rangle= \delta_{mn}
+          \end{equation*}
+          % \item \textbf{Dirichlet's theorem}: any function can be described by a fourier series
+\end{itemize}
+
+\ptitle{General Solution}
+\noindent\begin{align*}
+    \Psi(x,t) & =\sum_{n=1}^{\infty}c_{n} \overbrace{\underbrace{\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)}_{\psi_n} \underbrace{\exp\left[-i\frac{n^{2}\pi^{2}\hbar}{2ma^{2}}t\right]}_{\varphi_n}}^{\Psi_n} \\
+    c_n       & =\langle \psi_n|\Psi(x,0)\rangle = \sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)dx
+\end{align*}
+
+\ptitle{Expectation Values}
+\noindent\begin{align*}
+    \langle \varphi_n|x^2\varphi_m\rangle & = \frac{2a^2}{\pi^2}\left(\frac{{(-1)}^{n-m}}{{(n-m)}^2}-\frac{{(-1)}^{n+m}}{{(n+m)}^2}\right) \\
+    \langle \varphi_n|x^2\varphi_n\rangle & = a^2\left(\frac{1}{3} -\frac{1}{2{(n\pi)}^2}\right)
+\end{align*}
+
+\subsection{Harmonic Oscillator}
+% Analogon to mechanical frictionless spring and mass system.
+\begin{equation*}
+    V(x) = \frac{1}{2}k x^2 = \frac{1}{2}m \omega^2 x^2 \qquad \text{with} \quad \omega = \sqrt{\frac{k}{m}}
+\end{equation*}
+
+\ptitle{TISE}
+\noindent\begin{equation*}
+    \overbrace{\underbrace{\frac{-\hbar^2}{2m}\frac{d^2\psi}{dx^2}}_{\frac{1}{2m}\hat{p}^2\psi} + \frac{1}{2}m \omega^2 x^2 \psi}^{\widehat{H}\psi}  = E\psi
+\end{equation*}
+
+\ptitle{Ladder Operators}
+\begin{align*}
+    \widehat{a}_{+} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(-i\widehat{p}+m\omega\widehat{x}\right) &  & \text{raising operator}  \\
+    \widehat{a}_{-} & = \frac{1}{\sqrt{2\hbar m \omega}}\left(+i\widehat{p}+m\omega\widehat{x}\right) &  & \text{lowering operator}
+\end{align*}
+\noindent\begin{gather*}
+    \widehat{a}_{-}\widehat{a}_{+}=\frac{1}{\hbar\omega}\widehat{H}+\frac{1}{2} \quad\quad \widehat{a}_{+}\widehat{a}_{-}=\frac{1}{\hbar\omega}\widehat{H}-\frac{1}{2} \\
+    \widehat{a}_{+} + \widehat{a}_{-} = \sqrt{\frac{2m\omega}{\hbar}} \widehat{x} \\
+    \left[\widehat{a}_{-},\widehat{a}_{+}\right] = 1
+\end{gather*}
+
+\ptitle{Ladders and TISE}
+\begin{align*}
+    \widehat{H}(\widehat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\widehat{a}_{+}\psi_n \\
+    \widehat{H}(\widehat{a}_{-}\psi_n) & = (E_n-\hbar\omega)\widehat{a}_{-}\psi_n
+\end{align*}
+
+\ptitle{Solution to TISE}
+\noindent\begin{align*}
+    \psi_0 & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right) & E_0 & = \frac{1}{2}\hbar\omega     \\
+    \psi_n & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                       & E_n & = (n+\frac{1}{2})\hbar\omega
+\end{align*}
+\begin{align*}
+    \widehat{a}_{-}\psi_0                & = 0\psi_0 = 0                                      \\
+    \widehat{a}_{+}\psi_n                & = \sqrt{n+1}\:\psi_{n+1}                           \\
+    \widehat{a}_{-}\psi_n                & = \sqrt{n}\:\psi_{n-1}                             \\
+    \widehat{a}_{+}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+2}\:\psi_{n+2}                 \\
+    \widehat{a}_{-}\widehat{a}_{-}\psi_n & = \sqrt{n-1}\sqrt{n}\:\psi_{n-2}                   \\
+    \widehat{a}_{+}\widehat{a}_{-}\psi_n & = \sqrt{n}\sqrt{n}\:\psi_{n} = n \:\psi_{n}        \\
+    \widehat{a}_{-}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+1}\:\psi_{n} = (n+1)\:\psi_{n}
+\end{align*}
+
+\begin{center}
+    \includegraphics[width=.8\linewidth]{harmonic_oscillator.png}
+\end{center}
+
+\ptitle{Hermite Polynomial Form} (\textit{Useful Info Sheet})
+
+\noindent\begin{align*}
+    H_n & = {(-1)}^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2}                                           \\
+    H_1 & = 2x                                         & H_3 & = 8x^3-12x       &  & \text{odd}  \\
+    H_2 & = 4x^2-2                                     & H_4 & = 16x^4-48x^2+12 &  & \text{even}
+\end{align*}
+
+\ptitle{Remarks:}
+\begin{itemize}
+    \item The energy is quantized.
+    \item $n$ is the number of energy quanta in the oscillator
+    \item $\widehat{N} \equiv \widehat{a}_{+}\widehat{a}_{-} = $ number operator because $\left<N\right> = n$ for $\psi_n$
+    \item The lowest state $\psi_0$ has the \textbf{zero point energy}. Even if all the energy is removed from the system (zero Kelvin).
+    \item Solutions alter between even and odd because the potential is \textbf{symmetric}.
+    \item $\psi_{n+1}$ has one node more than $\psi_n$
+    \item $\psi_n$ are mutually orthogonal + complete (form a basis).
+    \item Soft boundary conditions - finite potential at the boundary/barrier.
+    \item Negative kinetic energy outside the potential parabola.
+    \item The spacing between two energy levels spreads out for large $k$ as $\omega=\sqrt{\frac{k}{m}}$.
+\end{itemize}
+
+\ptitle{Specific Expectation Values}
+\noindent\begin{align*}
+    \left\langle x \right\rangle _n & = 0 & \left\langle x^2 \right\rangle _n & = \left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega} & \forall n \in \mathbb{N} \\
+    \left\langle p \right\rangle _n & = 0 & \left\langle p^2 \right\rangle _n & = \left(n+\frac{1}{2}\right)\hbar m\omega         & \forall n \in \mathbb{N}
+\end{align*}
+\noindent\begin{align*}
+    \left\langle T \right\rangle _n & = \frac{\left\langle p^2 \right\rangle}{2m} =  \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right)        & \langle E\rangle_n & =  \langle T\rangle_n +\langle V\rangle_n \\
+    \left\langle V \right\rangle _n & = \frac{m\omega^2}{2}\left\langle x^2 \right\rangle = \frac{\hbar \omega}{2}\left(n+\frac{1}{2}\right) & \langle T\rangle_n & =  \langle V\rangle_n
+\end{align*}
+
+\subsection{Finite Potentials}
+\noindent\begin{equation*}
+    \begin{cases}
+        E > V(+\infty)\text{ or } E > V(-\infty)  & \text{scattering state} \\
+        E < V(+\infty)\text{ and } E < V(-\infty) & \text{bound state}
+    \end{cases}
+\end{equation*}
+\textbf{Remarks}:
+
+\begin{itemize}
+    \item The total energy of the particle is conserved i.e.\ if the potential $V$ increases, the wavelength $\lambda$ (and so the velocity!) decreases and vice versa.
+          \noindent\begin{equation*}
+              k=\sqrt{\frac{2m(E-V_0)}{\hbar^2}} = \frac{2\pi}{\lambda}
+          \end{equation*}
+    \item If a particle penetrates into a potential higher than its own energy level it will take negative kinetic energy to conserve energy.
+\end{itemize}
+
+\subsubsection{Solving TISE}
+\begin{enumerate}
+    \item Split up into regions
+    \item Solve TISE for regions
+          \begin{itemize}
+              \item $V=V_i$:
+                    \noindent\begin{equation*}
+                        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} \psi + V_i\psi=E\psi
+                    \end{equation*}
+              \item $V=\infty$: no solution
+          \end{itemize}
+    \item match solutions at interfaces between regions using boundary conditions:
+          \begin{itemize}
+              \item $\psi(x)$ continous and finite
+              \item $\frac{d\psi}{dx}$ continous
+          \end{itemize}
+\end{enumerate}
+
+\subsubsection{Tunneling}
+Particle with $0<E<V_0$. Transmission coefficient $T$:
+\noindent\begin{equation*}
+    T\approx\frac{16E(V_0-E)}{V_0^2}\exp\Biggl[-4 \underbrace{\frac{\sqrt{2m(V_0-E)}}{\hbar}}_{k} a\Biggr]
+\end{equation*}

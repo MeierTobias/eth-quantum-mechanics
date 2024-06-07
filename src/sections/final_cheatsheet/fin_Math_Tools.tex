@@ -1,0 +1,312 @@
+\section{Mathematical Tools}
+
+\subsection{Operators}
+\noindent\begin{align*}
+    \hat{Q}(\hat{x},\hat{p}): &  & \widehat{x} & =x & \widehat{p}_x & = -i\hbar \frac{\partial}{\partial x} \\
+\end{align*}
+
+\subsection{Probabilities}
+The probability of finding the particle between $a$ and $b$ at time $t$ is:
+\begin{equation*}
+    \int_a^b \underbrace{{\Psi(x,t)}^*\Psi(x,t)}_{|\Psi(x,t)|^2}\,dx
+\end{equation*}
+\begin{align*}
+    \int_{-\infty}^{\infty} |C\cdot \Psi(x,t)|^2 dx                                 = \langle C\Psi|C\Psi\rangle & = 1,\;\Psi\in L_2, \; C\in\mathbb{C} \\
+    \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = \frac{d}{dt}\langle\Psi|\Psi\rangle                   & = 0
+\end{align*}
+\textbf{Remarks:}
+\begin{enumerate}
+    \item If $\Psi(x,t)$ is normalized at $t=0$ it will stay normalized $\forall t$.
+    \item $\Psi \in L_2$ implies $\lim \limits_{x \to \infty}\Psi=0$
+\end{enumerate}
+
+\subsubsection{Expectation Value}
+Observation of an ensemble of identical systems:
+\noindent\begin{align*}
+    \langle Q(\hat{x},\hat{p})\rangle & = \int_{-\infty}^{\infty}\Psi^*\hat{Q}(\hat{x},\hat{p})\Psi dx = \langle\Psi|\widehat{Q}\Psi\rangle
+\end{align*}
+
+\ptitle{Useful Expectation Values} (Ehrenfest Theorem)
+\noindent\begin{align*}
+    \langle p \rangle & = m \frac{d\langle x \rangle}{dt}
+\end{align*}
+
+\subsubsection{Variance}
+\noindent\begin{align*}
+    {\sigma_{\widehat{Q}}}^2 & = \langle {\widehat{Q}}^2 \rangle - {\langle \widehat{Q} \rangle }^2 =\left\langle{\left(Q-\langle Q\rangle\right)}^{2}\right\rangle                                                               \\
+                             & =\left\langle\Psi\left|{\left(\widehat{Q}-q\right)}^{2}\Psi\right\rangle\stackrel{\text{hermitian}}{=}\left\langle\left(\widehat{Q}-q\right)\Psi\right|\left(\widehat{Q}-q\right)\Psi\right\rangle
+\end{align*}
+
+
+\subsection{Commutators}
+
+\noindent\begin{equation*}
+    \left[\widehat{A},\widehat{B}\right] = \widehat{A}\widehat{B} - \widehat{B}\widehat{A} = -\left[\widehat{B},\widehat{A}\right]
+\end{equation*}
+\noindent\begin{align*}
+    \left[\widehat{A}\widehat{B},\widehat{C}\right]  & =\widehat{A}\left[\widehat{B},\widehat{C}\right]+\left[\widehat{A},\widehat{C}\right]\widehat{B}     \\
+    \left[\widehat{A}+\widehat{B},\widehat{C}\right] & = \left[\widehat{A},\widehat{C}\right]+\left[\widehat{B},\widehat{C}\right]                          \\
+    \left[\widehat{A},\widehat{B}^2\right]           & = \left[\widehat{A},\widehat{B}\right] \widehat{B} + \widehat{B}\left[\widehat{A},\widehat{B}\right]
+\end{align*}
+
+\ptitle{Canonical Commutation Relations}
+
+\noindent\begin{align*}
+    \left[\widehat{x},\widehat{p}_x\right]  & = i\hbar  & \left[\widehat{x}, \widehat{y}\right]     & = 0 \\
+    \left[\widehat{p}_x, \widehat{x}\right] & = -i\hbar & \left[\widehat{p}_x, \widehat{p}_y\right] & = 0
+\end{align*}
+\ptitle{Useful Commutators}
+
+\noindent\begin{align*}
+    \left[c,\hat B\right]                        & =0                     & \left[\widehat{H},\widehat{x}\right]     & =-\frac{i\hbar}{m}\widehat{p} \\
+    \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1                    & \left[\widehat{H}, \widehat{V}\right]    & \neq 0                        \\
+    \left[\widehat{x}^n,\widehat{p}\right]       & = i \hbar n x^{n-1}    & \left[\widehat{V},\widehat{x}\right]     & =0                            \\
+    \left[\widehat{x},\widehat{p}^2\right]       & = 2i\hbar\widehat{p}   & \left[\widehat{L}_x,\widehat{L}_y\right] & =i\hbar\widehat{L}_z          \\
+    \left[f(\widehat{x}),\widehat{p}\right]      & = i \hbar\frac{df}{dx} &                                          &
+\end{align*}
+
+\textbf{Remark}: Evaluate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{A}\widehat{B} - \widehat{B}\widehat{A})f$.
+
+
+\subsection{Dirac Notation}
+Assuming the functions $f,g$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbert space}) $\mathcal{H}$.
+
+\noindent\begin{align*}
+    \left|f\right\rangle  & := \begin{bmatrix}
+                                   c_1 & c_2 & \cdots & c_n
+                               \end{bmatrix}^T                               &  & \text{``ket''}              \\
+    \left\langle f\right| & := \begin{bmatrix}
+                                   {c_1}^* & {c_2}^* & \cdots & {c_n}^*
+                               \end{bmatrix}                   &  & \text{``bra''}                            \\
+    \langle f|g \rangle   & := \int_{-\infty}^{\infty} f^* g\; d \mathbf{r} \in L_2 &  & \text{inner product}
+\end{align*}
+\ptitle{ONB}
+\noindent\begin{align*}
+    \langle f_m|f_n \rangle                                       & = \delta_{mn}                        &  & \text{orthonormal}        \\
+    f(x)                                                          & = \sum_{n=1}^{\infty} c_n f_n(x)     &  & \text{complete}           \\
+    f^*(x)                                                        & = \sum_{n=1}^{\infty} c_n^* f_n^*(x) &  &                           \\
+    c_n                                                           & = \langle f_n|f \rangle              &  & \text{projection on base} \\
+    \sum_{j=1}^{n} \left|f_j\right\rangle \left\langle f_j\right| & = \mathbf{I}                         &  & \text{closure relation}
+\end{align*}
+
+\ptitle{Properties of Inner Product}
+\noindent\begin{align*}
+    \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle               & \langle f|\lambda g \rangle & =\lambda \langle f|g \rangle \\
+    \langle f+g|h \rangle       & =\langle f|h \rangle + \langle g|h \rangle   & \langle g|f \rangle         & = {\langle f|g \rangle}^*    \\
+    \langle f|f \rangle         & \ge 0                                        & \langle f|f \rangle         & = 0 \leftrightarrow f=0      \\
+    |\langle f|g \rangle |^2    & \leq \langle f|f \rangle \langle g|g \rangle
+\end{align*}
+
+\subsection{Observables}
+Observables are represented by hermitian operators.
+\begin{itemize}
+    \item Eigenstate:\ \ref{midterm:det_states} \&\ \ref{midterm:eig_fun}
+    \item Else:\ \ref{midterm:gen_stat}
+\end{itemize}
+
+\subsubsection{Hermitian Operators}
+The expectation value of a observable is real and thus
+\noindent\begin{align*}
+    \langle Q\rangle                            & = {\langle Q\rangle}^*                                            \\
+    \langle Q\rangle=\langle f|\hat{Q} g\rangle & = \langle \hat{Q}f|g\rangle={\langle Q\rangle}^*\quad \forall f,g
+\end{align*}
+
+These operators are \textbf{linear} if
+\noindent\begin{equation*}
+    \hat{Q}\left[af(x)+bg(x)\right]=a\hat{Q}f(x)+b\hat{Q}g(x),
+\end{equation*}
+
+\ptitle{Properties}
+
+\noindent\begin{align*}
+    \langle f|(\hat{Q} + \hat{R})g\rangle                                    & = \langle (\hat{Q} + \hat{R})f|g\rangle                                                               \\[0.75em]
+    \langle f|\hat{Q}\hat{R}g\rangle       =\langle \hat{Q}f|\hat{R}g\rangle & =  \langle \hat{R}\hat{Q}f|g\rangle \overset{[\hat{Q},\hat{R}]=0}{=} \langle \hat{Q}\hat{R}f|g\rangle
+\end{align*}
+
+\subsubsection{Determinant States}\label{midterm:det_states}
+If an ensemble is in an \textbf{determinant state}, every measurement yields the same result:
+\noindent\begin{align*}
+    \sigma^2     & = \langle \Psi|(\hat{Q} - q) \Psi\rangle = 0 \\
+    \hat{Q} \Psi & = q \Psi
+\end{align*}
+These determinant states of $Q$ are \textit{eigenfunctions} of $\hat{Q}$ and the expectation $\langle Q\rangle = q$ the corresponding \textit{eigenvalue}.
+
+\textbf{Remarks:}
+\begin{itemize}
+    \item If multiple eigenfunctions share their eigenvalue, they are called \textit{degenerated states}.
+    \item The TISE is an example for a determinant state\newline
+          $\hat{Q}: \hat{H},\; q:E$.
+\end{itemize}
+
+\subsubsection{Eigenfunctions of a Hermitian Operator}\label{midterm:eig_fun}
+A set of eigenvalues $q$ for $\hat{Q}$ is called its \textit{spectrum}.
+
+\newpar{}
+\ptitle{Discrete Spectrum}
+
+If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
+\noindent\begin{equation*}
+    \Psi(x,0)     = \sum_{n=1}^{\infty} c_n \underbrace{\psi_n(x)}_{\textsf{eigenfunctions}} \;\Leftrightarrow\; |\Psi\rangle  = \sum_{n=1}^{\infty} c_n \underbrace{|\psi_n\rangle}_{\textsf{eigenvectors}}
+\end{equation*}
+
+\begin{itemize}
+    \item Eigenvalues are real
+    \item $\in \mathcal{H}$, represent \textbf{physical} states and form a complete set.
+    \item Eigenfunctions with different eigenvalues are orthogonal
+          \noindent\begin{equation*}
+              \langle f_m|f_n\rangle=\delta_{mn}
+          \end{equation*}
+    \item Eigenvalue equation for \textbf{position}:
+          \noindent\begin{equation*}
+              \widehat{x}g_{x'}= x'g_{x'}\;\Leftrightarrow\; g_{x'}=\delta(x-x')
+          \end{equation*}
+\end{itemize}
+
+\newpar{}
+\ptitle{Continuous Spectrum}
+\begin{itemize}
+    \item Eigenfunctions with a continuous spectrum are not normalizable ($\notin \mathcal{H}$)
+    \item These eigenfunctions with real eigenvalues form a \textbf{complete set} and are \textit{Dirac-orthonormalizable}:
+          \noindent\begin{equation*}
+              \langle f_{x'}|f_{x''}\rangle=\delta(x''-x')
+          \end{equation*}
+    \item Eigenvalue equation for \textbf{momentum}:
+          \noindent\begin{equation*}
+              \widehat{p}g_{p'}= p'g_{p'}\;\Leftrightarrow\; g_{p'}=\frac{1}{\sqrt{2\pi\hbar}} \exp\left(\frac{ip'x}{\hbar}\right), \quad \lambda = \frac{2\pi\hbar}{p'}
+          \end{equation*}
+\end{itemize}
+
+\subsubsection{Generalized Statistical Interpretation}\label{midterm:gen_stat}
+If the spectrum of $\hat{Q}$ is discrete and the state
+\begin{equation*}
+    \Psi=\sum_n c_n \psi_n
+\end{equation*}
+is \textbf{not a eigenfunction} of $\hat{Q}$ (but $\psi_n$ is):
+\noindent\begin{equation*}
+    \underbrace{|c_n|^2}_{\textsf{Probability}}, \quad c_n = \underbrace{\langle \psi_n|\Psi\rangle}_{\textsf{Projection}} =\int_{-\infty}^{\infty} {\psi_n}^* \Psi\; d^3 \mathbf{r}
+\end{equation*}
+As a result:
+\noindent\begin{equation*}
+    \langle Q\rangle  = \sum_{n=1}^{\infty} |c_n|^2 q_n, \quad  \sum_{n=1}^{\infty} |c_n|^2 = 1, \sigma^2          \neq 0
+\end{equation*}
+
+\textbf{Wave Function Collapse}
+
+After a measurement of an observable, the wave function \textbf{collapses} into the measured eigenfunction $\psi_n$ with eigenvalue $q_n$ and probability $|c_n|^2$. This collapse reflects the transition from a superposition of possible states to a \textbf{definitive state}.
+
+\subsection{Postulates}
+
+\begin{enumerate}
+    \item The state of a QM system is described by $\Psi(\mathbf{r},t)$, and $|\Psi|^2\; d^3 \mathbf{r}$ is the probability of finding the particle in the volume $d^3 \mathbf{r} = dx\,dy\,dz$.
+    \item Every observable quantity in classical mechanics is represented by a \textbf{linear hermitian operator}, $\hat{Q}$, such that the mean value of the observable from an ensemble is
+          \noindent\begin{equation*}
+              \langle Q\rangle=\int\Psi^{*}\hat{Q}\Psi d^{3} \mathbf{r}= \langle\Psi|\hat{Q}\Psi\rangle
+          \end{equation*}\newline
+          \textbf{Restated}:\newline
+          If the system is in a state that is an eigenstate of $\hat{Q}$, a measurement on a QM ensemble will always yield the eigenvalue $q$ of $\hat{Q}$ (e.g.\ determinant state of the infinite square well).\newline
+          Else, a single measurement will yield one of the eigenvalues $q_n$ of $\hat{Q}$ with probability $|c_n|^2$ (e.g.\ general state of infinite square well).
+    \item $\Psi(\mathbf{r},t)$ evolves in time according to the TDSE:
+          \noindent\begin{align*}
+              i\hbar \frac{\partial \Psi}{\partial t} & =\hat{H}\Psi                     \\
+              \hat{H}                                 & = \frac{\hat{p}^2}{2m} + \hat{V}
+          \end{align*}
+\end{enumerate}
+
+\subsection{Fundamental QM Relations}
+
+\ptitle{Black Body Radiation}
+
+\begin{equation*}
+    k_B T_{low} \ll h\nu_{high}
+\end{equation*}
+
+\ptitle{De Broglie}
+
+\begin{equation*}
+    p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
+\end{equation*}
+\textbf{Remarks:}
+\begin{enumerate}
+    \item Connects the domains of waves ($\lambda$) and particles ($p$).
+    \item QM becomes relevant if $\lambda>d$ (item's characteristic size).
+\end{enumerate}
+
+\subsection{Generalized Uncertainty Principle}
+\subsubsection{Compatible Observables}
+
+\begin{itemize}
+    \item $[\widehat{A}, \widehat{B}] = 0$, same eigenfunctions
+    \item Can be determined simultaneously:
+          \begin{enumerate}
+              \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+              \item Wave function collapses into the corresponding eigenfunction $\psi'$
+              \item Subsequent measurements for $A$ or $B$ will yield eigenvalues $a_n, b_m$, $\sigma_A=0, \sigma_B=0$ $\Rightarrow$ \textbf{deterministic}
+          \end{enumerate}
+\end{itemize}
+
+\subsubsection{Incompatible Observables}
+
+\begin{itemize}
+    \item $[\widehat{A}, \widehat{B}] \neq 0$, different eigenfunctions
+    \item Can't be determined simultaneously without any uncertainty:
+          \begin{enumerate}
+              \item Measuring $A$ yields eigenvalue $a_n$ with probability $|c_{n,A}|^2$ and $\sigma_A=0$
+              \item Wave function collapses into the corresponding eigenfunction $\psi'$
+              \item Subsequent measurements
+                    \begin{itemize}
+                        \item for $A$ will yield eigenvalues $a_n$, $\sigma_A=0$ $\Rightarrow$ \textbf{deterministic}
+                        \item for $B$ will yield eigenvalue $b_m$ with probability $|c_{m,B}|^2$ (eigenfunction is not shared) $\Rightarrow$ \textbf{probabilistic}
+                    \end{itemize}
+          \end{enumerate}
+\end{itemize}
+
+\textbf{Remarks}:
+\begin{itemize}
+    \item The previous statements hold for two subsequent measurements, if for example, a third measurement is made, the compatability of the second and third have to be evaulated.
+    \item $\langle[\hat{A},\hat{B}]\rangle=\langle\Psi|\hat{A}\hat{B}\Psi\rangle-\langle\Psi|\hat{B}\hat{A}\Psi\rangle$
+\end{itemize}
+
+\newpar{}
+\ptitle{General Uncertainty Principle (GUP)}
+
+For any Observables $A$, $B$:
+\begin{equation*}
+    \sigma_A^2\cdot\sigma_B^2\geqslant{\underbrace{\left(\frac1{2i}\langle[\hat{A},\hat{B}]\rangle\right)}_{\textsf{real}}}^2
+\end{equation*}
+
+Therefore the position and momentum operator yield the following uncertainty relation:
+\begin{equation*}
+    \sigma_x\sigma_p \geq \frac{\hbar}{2}
+\end{equation*}
+
+\subsubsection{Time-Energy Uncertainty}
+Plugging the \textbf{generalized Ehrenfest theorem}
+\begin{equation*}
+    \frac{d}{dt}\left\langle Q\right\rangle=\frac{i}{\hbar}\left\langle\left[\hat{H},\hat{Q}\right]\right\rangle+\left\langle\frac{\partial\hat{Q}}{\partial t}\right\rangle
+\end{equation*}
+into the GUP yields, assuming $\hat{Q}$ is time-independent, the \textbf{time-energy uncertainty}:
+\begin{equation*}
+    \Delta t\cdot\Delta E\geqslant\frac\hbar2 \qquad \left|\begin{matrix}
+        \Delta t & \equiv \frac{\sigma_Q}{|d\langle Q\rangle/dt|} \\
+        \Delta E & \equiv \sigma H
+    \end{matrix}\right.
+\end{equation*}
+where
+
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item $\Delta t$ describes how long it takes the expectation value of $Q$ to change by $\sigma$.
+    \item If they commute, $Q$ is a conserved quantity.
+\end{itemize}
+
+\subsection{Properties of Even and Odd Functions}
+For functions $f_1, f_2$ (even) and $g_1, g_2$ (odd):
+\newpar{}
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+    Multiplication         & Addition          & Differentiation \\
+    \midrule{}
+    $f_1\cdot f_2$ is even & $f_1+f_2$ is even & $f'$ is odd     \\
+    $g_1\cdot g_2$ is even & $g_1+g_2$ is odd  & $g'$ is even    \\
+    $f\cdot g$ is odd      &                   &
+\end{tabularx}
