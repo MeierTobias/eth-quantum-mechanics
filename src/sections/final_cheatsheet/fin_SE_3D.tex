@@ -1,5 +1,28 @@
 \section{3D Schroedinger Equation}
+\ptitle{TDSE}
+\noindent\begin{equation*}
+    i\hbar\frac{\partial\Psi}{\partial t} = \underbrace{\left(\frac{-\hbar^2}{2m}\nabla^2 + \widehat{V}(t)\right)}_{\widehat{H}}\Psi = \left(\frac{\left(\widehat{p}_x^2 + \widehat{p}_y^2 +\widehat{p}_z^2 \right)}{2m} + \widehat{V}(t)\right)\Psi
+\end{equation*}
+
+\ptitle{TISE ($V$ time-independent)}
+\begin{align*}
+    \Psi_n(\mathbf{r},t)                                                                    & =\psi_n(\mathbf{r})\:e^{-iE_n t/\hbar} \\
+    \underbrace{\left(-\frac{\hbar^2}{2m}\nabla^2 + \widehat{V}\right)}_{\widehat{H}}\psi_n & = E_n \psi_n
+\end{align*}
+
 \subsection{Spherical Symmetry}
+\renewcommand{\arraystretch}{0.7}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
+\noindent\begin{equation*}
+    \begin{matrix}
+                            &             &                 &                              \\
+        \psi(r,\theta,\phi) & \rightarrow & R(r)            &             & \Theta(\theta) \\
+                            & \searrow    &                 & \nearrow    &                \\
+                            &             & Y(\theta, \phi) & \rightarrow & \Phi(\phi)     \\
+    \end{matrix}
+\end{equation*}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
 \subsection{Hydrogen Atom}
 \subsection{Cubical ISW}
 
