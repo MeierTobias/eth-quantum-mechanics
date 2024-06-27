@@ -17,27 +17,40 @@
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 \setlength\tabcolsep{6pt} % default value: 6pt
-
-\subsection{Planck}
+\subsection{QM and Classical Physics}
+\subsubsection{Planck}
 When describing black body radiation with classical physics, the problem of \textit{infinite radiation at
-    high frequencies at any temperature} occurs, becuase each of the infinite modes need a small amount of energy.
-In quantum mechancs, each mode can only be filled in discrete amounts of energy $h \nu$:
+    high frequencies at any temperature} occurs, because each of the infinite modes need a small amount of energy.
+Classical physics predicts a radiation power per unit area and frequency 
+\begin{equation*}
+    P \propto k_B T \nu^2
+\end{equation*}
+because the number of modes, each with energy $k_B T$ (measure of average thermal energy according to statistical mechanics), in a $3D$-cavity scales with $\nu^2$.
+In quantum mechanics, each mode can only be filled in discrete amounts of energy $h \nu$:
 \begin{equation*}
     k_B T_{low} \ll h\nu_{high}
 \end{equation*}
-which means that there is not enough thermal energy for high frequency modes to radiate.
-\subsubsection{De Broglie}
+which means that the average thermal energy is too low for high frequency modes to radiate.
+\newpar{}
+\textbf{Remarks:}
+\begin{itemize}
+    \item Light occurs in packets of energy called \textbf{photons}.
+    \item QM explains why real frequency-radiation curves have a maximum and compact support instead of a parabola-shape.
+    \item In real frequency-radiation curves the maximum shifts with temperature.
+\end{itemize}
+
+\subsubsection{Wave-Particle Duality}
 The \textit{de Briogle relation} connects the wavelength $\lambda$ with the momentum $p$ for both light and matter
 \begin{equation*}
     p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
 \end{equation*}
 \textbf{Remarks:}
-\begin{enumerate}
-    \item As $\lambda$ is a property of waves and $p$ one of particles respectively, this relation connects the two domains.
+\begin{itemize}
+    \item As $\lambda$ is a property of waves and $p$ one of particles respectively, this relation connects the two domains and resolves the wave-particle dilemma.
     \item QM becomes relevant if $\lambda$ is greater than the item's characteristic size $d$.
-\end{enumerate}
+\end{itemize}
 
-\subsubsection{Probabilities}
+\subsection{Probabilities}
 The probability of finding the particle between $a$ and $b$ at time $t$ is:
 \begin{equation*}
     \int_a^b \underbrace{{\Psi(x,t)}^*\Psi(x,t)}_{|\Psi(x,t)|^2}\,dx
@@ -66,7 +79,7 @@ Any observable quantity $Q$ has an operator $\hat{Q}$ which can be formulated in
 
 
 \subsubsection{Expectation Value}
-The \textbf{expectation value} of both position and momentum can be optained by
+The \textbf{expectation value} of both position and momentum can be obtained by
 \begin{align*}
     \langle x \rangle & = \int_{-\infty}^{\infty} \hat{x} |\Psi(x,t)|^2 \, dx                                                                                                         \\
     \langle p \rangle & = \int_{-\infty}^{\infty} \Psi^* \underbrace{\left(-i\hbar \frac{\partial}{\partial x}\right)}_{\hat{p}} \Psi \, dx & = m \frac{d\langle x \rangle}{dt}
@@ -87,10 +100,10 @@ For example, the expectation value of the kinetic energy
 \end{align*}
 
 \textbf{Remarks:}
-\begin{enumerate}
+\begin{itemize}
     \item An operator $\hat{Q}$ $\textit{represents}$ its observable $Q$ which means that $\hat{Q}$ yields $Q$ when ``sandwiching'' it and integrating over $\mathbb{R}$.
     \item $\textit{Ehrenfest's Theorem}$ states that expectation values in QM follow classical laws (example: $\langle p \rangle$).
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Heisenberg Uncertainty Principle}
 By gaining certainty on the observation of either position or momentum, the uncertainty of the other one increases:

@@ -1,5 +1,5 @@
 \section{Schroedinger Equation}
-
+For potential energy functions that are constant in time, the general solution to the SE can (if analytically solvable) be expressed as a linear combination of separable solutions (=stationary states) that consist of a space-dependent function and a phase factor.
 \subsection{Stationary States}
 The Schrödinger equation can be solved by separation of variables:
 \noindent\begin{align*}
@@ -45,6 +45,7 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
 \newpar{}
 
 \textbf{Remarks:}
+For stationary states (\textbf{only}) one has the properties
 \begin{itemize}
     \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density is time-independent):
           \noindent\begin{equation*}
@@ -54,7 +55,7 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
     \noindent\begin{equation*}
         \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
     \end{equation*}
-    \item every expectation value is \textbf{constant in time}
+    \item every expectation value is \textbf{constant in time}.
 \end{itemize}
 
 \subsubsection{Combining the Separable Solutions}
@@ -87,13 +88,11 @@ A \textit{free particle} propagates in space as a \textbf{wave packet} and its w
 \noindent\begin{equation*}
     \Psi_{wp}(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
 \end{equation*}
-the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ ($g(k)$ is the Fourier transform of the initial state):
+the corresponding \textbf{shape function} $g$ can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$:
 \noindent\begin{equation*}
     g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
 \end{equation*}
-
-with:
-
+which means that $g(k)$ is the Fourier transform of the initial state and:
 \begin{align*}
     k & = \frac{2\pi}{\lambda} \\
     p & = \hbar k
@@ -224,6 +223,8 @@ Applied to the TISE we get
 \end{align*}
 This implies, if $\psi_n$ are solutions to the TISE with energy $E_n$, then $\widehat{a}_{+}\psi_n$/$\widehat{a}_{-}\psi_n$ are also solutions but with one more/less quantum of energy.
 \newpar{}
+\ptitle{Ground State}
+
 At the bottom of the energy potential function the steady state is given by
 \begin{equation*}
     \widehat{a}_{-}\psi_0 = 0\psi_0 = 0
@@ -232,15 +233,21 @@ Which is a simple ODE that results in the solution for the fist state (one level
 \begin{equation*}
     \psi_0 = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)
 \end{equation*}
+with 
+\begin{equation*}
+    E_0 = \frac{1}{2}\hbar\omega
+\end{equation*}
+\newpar{}
+\ptitle{Using Ladders to Move in States}
+
 To get $\psi_n$, $\widehat{a}_{+}$ can be applied $n$-times.
 \begin{equation*}
     \psi_n = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0
 \end{equation*}
 with
-\begin{align*}
-    E_0 & = \frac{1}{2}\hbar\omega     \\
-    E_n & = (n+\frac{1}{2})\hbar\omega
-\end{align*}
+\begin{equation*}
+    E_n = (n+\frac{1}{2})\hbar\omega
+\end{equation*}
 
 For an arbitrary state $n$ the next state is given by
 \begin{align*}
@@ -296,8 +303,8 @@ Another way of modeling the boundary conditions through the finite potentials $V
 For any potential, the solution to the SE will either be a combination of \textit{scattering} and \textit{bound states} depending on the energy of the particle:
 \noindent\begin{equation*}
     \begin{cases}
-        E > V(\pm \infty) & \text{scattering state} \\
-        E < V(\pm \infty) & \text{bound state}
+        E > V(+\infty)\text{ or } E > V(-\infty)  & \text{scattering state} \\
+        E < V(+\infty)\text{ and } E < V(-\infty) & \text{bound state}
     \end{cases}
 \end{equation*}
 \textbf{Remarks}:
@@ -323,8 +330,8 @@ For any potential, the solution to the SE will either be a combination of \texti
           \end{itemize}
     \item match solutions at interfaces between regions using boundary conditions:
           \begin{itemize}
-              \item $\psi(x)$ continous and finite
-              \item $\frac{d\psi}{dx}$ continous
+              \item $\psi(x)$ continuous and finite
+              \item $\frac{d\psi}{dx}$ continuous
           \end{itemize}
 \end{enumerate}
 
@@ -336,6 +343,7 @@ For any potential, the solution to the SE will either be a combination of \texti
     \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$)
     \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
     \item $E<0$: no physical solution
+    \item in the red case reflection and in the blue case penetration are non-classical.
 \end{itemize}
 
 \subsubsection{Finite Potential Well}
@@ -344,8 +352,10 @@ For any potential, the solution to the SE will either be a combination of \texti
 \end{center}
 \begin{itemize}
     \item $\textcolor{red}{E}>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
-    \item $0<\textcolor{blue}{E}<V_0$: at least one bound state with penetration into barrier
+    \item $0<\textcolor{blue}{E}<V_0$: at least one bound state (even for arbitrarily shallow wells) with penetration into barrier
     \item $E<0$: no physical solution
+    \item again, reflection for the red and penetration for the blue case are non-classical.
+    \item a very deep well corresponds to the ISW, which features (infinitely) many bound states.
 \end{itemize}
 
 \subsubsection{Finite Potential Barrier}
@@ -356,6 +366,7 @@ For any potential, the solution to the SE will either be a combination of \texti
     \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$ over step)
     \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
     \item $E<0$: no physical solution
+    \item in this case, reflection for the red and transmission for the blue case are non-classical.
 \end{itemize}
 
 \subsubsection{Tunneling}
