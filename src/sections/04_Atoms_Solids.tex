@@ -131,13 +131,21 @@ Remarks
     \item Implications of these two solutions are presented subsequently
 \end{itemize}
 
-\paragraph[Exchange Symmetry of psi]{Exchange Symmetry of $\psi_{\pm}$}
+\paragraph[Exchange Symmetry of psi]{Exchange Symmetry of Indistinguishable Particles $\psi_{\pm}$}
 
 \ptitle{Exchange Operator}
 
-The exchange operator swaps two particles
+The exchange operator swaps two particles and it's eigenvalues describe the (anti)symmetry
 \begin{equation*}
     \widehat{P}\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r_2},\mathbf{r_1})
+\end{equation*}
+$P$ has eigenfunctions
+\begin{equation*}
+    \psi_{\pm}
+\end{equation*}
+and eigenvalues
+\begin{equation*}
+    \pm 1
 \end{equation*}
 For two identical particles one has
 \begin{align*}
@@ -153,14 +161,14 @@ which by the generalized Ehrenfest theorem implies
 \begin{equation*}
     \frac{d}{dt}\langle\widehat{P}\rangle=0
 \end{equation*}
-and means that $\widehat{P}$ and $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$.
+and means that $P$ is a conserved quantity and $\widehat{P}$, $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$.
 
 \ptitle{Exchange Symmetry of Noninteracting Particles}
 
 One has that
 \begin{itemize}
-    \item $\psi_{+}$ is symmetric w.r.t.\ exchange (eigenvalue $+1$)
-    \item $\psi_{-}$ is antisymmetric w.r.t.\ exchange (eigenvalue $-1$)
+    \item $\psi_{+}$ is symmetric w.r.t.\ exchange (eigenvalue $+1$ for $P$)
+    \item $\psi_{-}$ is antisymmetric w.r.t.\ exchange (eigenvalue $-1$ for $P$)
     \item $\psi_{\pm}$ are stationary states
     \item As $P$ is a conserved quantity a particle,\newline once (anti)symmetric w.r.t.\ exchange,\newline stays (anti)symmetric
 \end{itemize}
@@ -176,7 +184,7 @@ For two \textbf{undistinguishable} particles one has
 Therefore, particles that are in state $\psi_{+}$ (symmetric w.r.t.\ exchange) tend to be closer together than particles that are in state $\psi_{-}$.\\
 \textbf{Remarks}
 \begin{itemize}
-    \item $\left\langle\cdot\right\rangle_{d/\pm}$ is the expectationvalue in a distinguishable/indistinguishable state
+    \item $\left\langle\cdot\right\rangle_{d}/\left\langle\cdot\right\rangle_{\pm}$ is the expectation value in a distinguishable/indistinguishable state
     \item This phenomenon is often called ``exchange interaction'' or ``exchange force''
     \item Exchange symmetry or the overall 2-particle wave function influences location of particles w.r.t.\ each other
 \end{itemize}
@@ -187,14 +195,6 @@ Therefore, particles that are in state $\psi_{+}$ (symmetric w.r.t.\ exchange) t
     \item \textbf{Fermions} (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$)) are particles with \textbf{half-integer} spin
 \end{itemize}
 As bosons are indistinguishable (same holds for fermions) their overall wave functions behave according to the previously stated rules.
-
-\ptitle{Exchange Symmetry Axiom}
-
-The exchange symmetry of the overall wave function of
-\begin{itemize}
-    \item identical \textbf{bosons is symmetric} w.r.t.\ exchange
-    \item identical \textbf{fermions is antisymmetric} w.r.t.\ exchange
-\end{itemize}
 
 \ptitle{Exchange Symmetry of Hydrogen}
 
@@ -231,9 +231,32 @@ to achieve a stable chemical bond.
 \end{itemize}
 
 \newpar{}
+\ptitle{Exchange Symmetry Axiom}
+
+The exchange symmetry of the overall wave function of
+\begin{itemize}
+    \item identical \textbf{fermions is symmetric} w.r.t.\ exchange with
+          \begin{align*}
+              \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) \\
+              \psi & = \psi_{-}\cdot \chi_{\mathrm{triplet}}(s)
+          \end{align*}
+    \item identical \textbf{bosons is antisymmetric} w.r.t.\ exchange with
+          \begin{align*}
+              \psi & = \psi_{+}\cdot \chi_{\mathrm{triplet}}(s) \\
+              \psi & = \psi_{-}\cdot \chi_{\mathrm{singlet}}(s)
+          \end{align*}
+\end{itemize}
+
+\newpar{}
 \ptitle{Pauli Exclusion Principle}
 
-One cannot have two electrons in exactly the same state (same quantum numbers) and still have the system antisymmetric w.r.t.\ exchange because one then has $\psi_{-}=0$ i.e.\ there is no such state (Choose $\psi_{-}$ because electrons are fermions).
+One cannot have two electrons in exactly the same state (same quantum numbers) and still have the system antisymmetric w.r.t.\ exchange because if both were in the same state then
+\begin{align*}
+    a        & =b           \\
+    \uparrow & = \downarrow % TBD: Stimmt das? (Aus Übungsstunde. Sieht etwas wild aus, macht aber schon Sinn (gleiches Prinzip wie bei \psi{-}))
+\end{align*}
+i.e.\ either $\chi_{\mathrm{singlet}}(s)$ or $\psi_{-}$ would become $0$ in the overall fermion wave function i.e.\ there is no such state.\\
+Another explanation is that the only function that changes sign (required for fermions) \textit{and} stays the same (because both electrons are in the same state) when swapping the particles is the zero function.
 
 \subsection{Atoms}
 \subsubsection{Hydrogen Orbitals}
@@ -245,7 +268,7 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
               & \textbf{Name} & \textbf{Range|Letter}                             & \textbf{Meaning}    \\
         $n$   & principal QN  & $0|K,\;1|L,\;2|M,\dots$                           & shell (radius)      \\
         $l$   & azimuthal QN  & $0|s,\;1|p,\;2|d,\;3|f,\dots$                     & subshell            \\
-              &               &                                                   & (orbital shape)     \\
+              &               & $n-1|\dots$                                       & (orbital shape)     \\
         $m_l$ & magnetic QN   & $-l,-l+1,\dots,l-1,l$                             & orbital orientation \\
               &               &                                                   & \# of orientations  \\
         $m_s$ & spin QN       & $+\frac{1}{2}/\uparrow,\:-\frac{1}{2}/\downarrow$ & spin orientation    \\
@@ -284,8 +307,8 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
 {\small     % Smaller font
     \begin{tabularx}{\linewidth}{@{}llllll@{}}
-            &                &                      &                      & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
-        $n$ & \textbf{Shell} & \textbf{Subshell(s)} & \# \textbf{Orbitals} & \textbf{per Subshell}                             & \textbf{per Shell} \\
+            &                & \textbf{Subshell(s)} & \# \textbf{Orbitals} & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
+        $n$ & \textbf{Shell} & $l=0\dots n-1$       & $m_{l}=-l,\dots l$   & \textbf{per Subshell}                             & \textbf{per Shell} \\
         1   & K              & s                    & 1                    & 2                                                 & 2                  \\
         \cmidrule{1-6}
         2   & L              & s                    & 1                    & 2                                                 & 8                  \\
@@ -312,8 +335,8 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \end{itemize}
 
 \subsubsection{Filling Orbitals with Electrons}
-The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 \paragraph{Hydrogenic (One-Electron) Atoms}
+The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 
 \ptitle{Energy Levels}
 
