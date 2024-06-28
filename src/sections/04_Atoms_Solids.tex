@@ -367,7 +367,7 @@ The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 
 \ptitle{Filling Energy Levels with Electrons}
 
-As the shells overlap, one can not just assume that a larger $n$ yields a larger energy levels (e.g.\ $E_{4s}<E{3d}$). Therefore, one needs to follow a specific order when filling orbitals with electrons. One can either use the graphical method:
+As the shells overlap, one can not just assume that a larger $n$ yields a larger energy level (e.g.\ $E_{4s}<E_{3d}$). Therefore, one needs to follow a specific order when filling orbitals with electrons. One can either use the graphical method:
 \begin{center}
     \includegraphics[width = 0.4\linewidth]{fill_energies_graphical.png}
 \end{center}
@@ -421,7 +421,7 @@ which yields an energetically more optimal state.
 
 \begin{enumerate}
     \item \textbf{Filled subshells} never contribute to $L$, $S$, $J$.
-    \item One can use the \textbf{addition rule} to find all possible combination of momentum cones.
+    \item One can use the \textbf{addition rule} to find all possible combinations of momentum cones.
     \item All the angular momentum quantum numbers ($l,s,\dots,L,S,\dots$) must be \textbf{multiplied by} $\boldsymbol{\hbar}$ to find the actual angular momenta.
 \end{enumerate}
 
@@ -458,9 +458,9 @@ Remarks
 
 Given two orbital or spin angular momenta $j_1, j_2$ one has
 \begin{equation*}
-    J=(j_1+j_2),\dots,|j_1-j_2|
+    j_{\mathrm{total}}=(j_1+j_2),\dots,|j_1-j_2|
 \end{equation*}
-with integer steps in between.\\
+with integer steps in between.\\ 
 Remarks:
 \begin{itemize}
     \item Describes combinations to fill partially-filled subshells (many possible combinations).
@@ -527,15 +527,15 @@ Neglecting spin and electron-electron interactions, an electrons wavefunction in
     E_{n_x,n_y,n_z}    & = \frac{\hbar^2\pi^2}{2m}\left(\frac{n_x^2}{l_x^2}+\frac{n_y^2}{l_y^2}+\frac{n_z^2}{l_z^2}\right),\quad n_x,n_y,n_z \in \mathbb{N}\backslash 0 \\
     \psi_{n_x,n_y,n_z} & = \sqrt{\frac{8}{l_x l_y l_z}} \sin\left(\frac{n_x\pi}{l_x}x\right) \sin\left(\frac{n_y\pi}{l_y}y\right) \sin\left(\frac{n_z\pi}{l_z}z\right)
 \end{align*}
-based on this solution of the SE, the distance between the discrete energy levels is at most
+Based on this solution of the SE, the distance between the discrete energy levels in a 1 cm box is at most
 \noindent\begin{equation*}
     \Delta E \leq 10^{-6} ~\mathrm{eV}
 \end{equation*}
-and therefore the states from continuous \textit{electron bands}.
+and therefore the states form continuous \textit{electron bands}.
 
 
 \subsubsection{k-Space}
-By transforming the energy into the k-space (wavenumbers), the energy becomes
+By transforming the energy into the k-space (wave numbers), the energy becomes
 \noindent\begin{equation*}
     E = \frac{\hbar^2k^2}{2m}, \quad \begin{cases}
         k^2 = k_x^2+k_y^2+k_z^2 \\
@@ -547,16 +547,18 @@ and each solution occupies
     \frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}
 \end{equation*}
 of k-space.
+% TBD: where did the n_{x}, n_{y} ... go?
 
 \subsubsection{Fermi Energy}
 For electrons (fermions), the energy levels are filled with 2 $e^-$ at each level, and the highest occupied level is called the \textbf{Fermi level}.
 
 \newpar{}
-For a solid with $N$ electrons with $q$ electrons each
+For a solid with $N$ atoms with $q$ valence electrons each the total volume
 \noindent\begin{equation*}
     \frac{1}{8}\cdot\underbrace{\frac{4}{3}\pi k_F^3}_{\textsf{vol. sphere}} = \underbrace{\frac{Nq}{2}}_{\frac{\textsf{\# electrons}}{\mathsf{spin}}}\cdot \underbrace{\frac{\pi^3}{V}}_{\textsf{vol. per state}}
 \end{equation*}
-the Fermi wavenumber and its energy can be found:
+is occupied in k-space until all electron states are occupied.\\
+The Fermi wave number and its energy can then be found as:
 \noindent\begin{align*}
     k_F & = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}                   \\
     E_F & = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
