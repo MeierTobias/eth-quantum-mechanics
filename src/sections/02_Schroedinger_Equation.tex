@@ -52,9 +52,9 @@ For stationary states (\textbf{only}) one has the properties
               \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\widehat{Q}\psi(x)dx
           \end{equation*}
     \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}. Therefore the energies $E_n$ can be obtained with diagonalization
-    \noindent\begin{equation*}
-        \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
-    \end{equation*}
+          \noindent\begin{equation*}
+              \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
+          \end{equation*}
     \item every expectation value is \textbf{constant in time}.
 \end{itemize}
 
@@ -233,7 +233,7 @@ Which is a simple ODE that results in the solution for the fist state (one level
 \begin{equation*}
     \psi_0 = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)
 \end{equation*}
-with 
+with
 \begin{equation*}
     E_0 = \frac{1}{2}\hbar\omega
 \end{equation*}
@@ -405,24 +405,31 @@ and $\Psi$ is normalized
 \end{equation*}
 
 \subsubsection{Spherical Symmetry}\label{3dSE_spherical_symmetry}
-For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\widehat{H}$ and separate the partial differential equation $\widehat{H}\psi = E\psi$ by variables.
+For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates.
+
+\newpar{}
+\ptitle{Separated Wave Function}
+
+Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\widehat{H}$ and separate the partial differential equation $\widehat{H}\psi = E\psi$ by variables.
 \renewcommand{\arraystretch}{0.7}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
 \begin{equation*}
     \begin{matrix}
-                            &          & R(r)            &          &                \\
-                            & \nearrow &                 &          &                \\
-        \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
-                            & \searrow &                 & \nearrow &                \\
-                            &          & Y(\theta, \phi) &          &                \\
-                            &          &                 & \searrow &                \\
-                            &          &                 &          & \Phi(\phi)
+                                 &          &                     &          &                 &          &                \\
+                                 &          & \varphi(t)          &          &                 &          &                \\
+                                 & \nearrow &                     &          & R(r)            &          &                \\
+        \Psi(t, r, \theta, \phi) &          &                     & \nearrow &                 &          &                \\
+                                 & \searrow & \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
+                                 &          &                     & \searrow &                 & \nearrow &                \\
+                                 &          &                     &          & Y(\theta, \phi) &          &                \\
+                                 &          &                     &          &                 & \searrow &                \\
+                                 &          &                     &          &                 &          & \Phi(\phi)
     \end{matrix}
 \end{equation*}
 \renewcommand{\arraystretch}{1}
 \setlength\tabcolsep{\oldtabcolsep}
 
-This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$.
+This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$, and the known equation for the phase factor. The solution describes the orbital shape and has the form
 \begin{equation*}
     \psi(r,\theta,\phi) = R(r)\:Y(\theta, \phi) = R(r)\:\Theta(\theta)\:\Phi(\phi)
 \end{equation*}
@@ -437,6 +444,10 @@ The solution to the azimuthal angle ODE is given by
 where $m_\ell$ is the \textbf{magnetic quantum number}
 \begin{equation*}
     m_\ell \in \mathbb{Z}
+\end{equation*}
+which arises from the boundary condition
+\begin{equation*}
+    \Phi(\phi)=\Phi(\phi+2\pi)
 \end{equation*}
 
 \newpar{}
@@ -453,6 +464,12 @@ where $A$ is a constant, $\ell$ is the \textbf{azimuthal quantum number} and $P_
 
 \input{plots/legendre_functions.tex}
 
+Remarks
+\begin{itemize}
+    \item The plots hold for the coordinate system specified above, i.e.\ $\theta$ starts in $+z$ direction.
+    \item Note that the shapes of the solutions correspond to the atom orbitals.
+\end{itemize}
+
 \newpar{}
 \ptitle{Angular Solutions} $\mathbf{Y}$
 
@@ -468,7 +485,7 @@ where
     \end{cases}
 \end{equation*}
 
-The spherical harmonics are normalized and orthogonal.
+The spherical harmonics are normalized and orthogonal (see end of this subsection).
 
 \newpar{}
 \ptitle{Radial Equation} $\mathbf{R}$
@@ -485,6 +502,10 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
 
 \newpar{}
 \ptitle{Remark on Spherical Coordinates}
+\begin{center}
+    \includegraphics[width=0.75\linewidth]{spherical_coordinates.png}
+\end{center}
+\textit{source: Griffith}
 \begin{align*}
     \theta & = \text{polar angle}     \\
     \phi   & = \text{azimuthal angle} \\
@@ -519,7 +540,7 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
 Explicit solutions for the first few solutions of $Y_l^{m_l}$ can be found in the \textit{Useful Info Sheet}.
 
 \subsection{Hydrogen Atom}\label{H-atom}
-The potential energy function, i.e. $\widehat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
+The potential energy function, i.e. $\widehat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefore the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
 \newpar{}
 The Coulombic attraction between the electron and the proton gives the potential energy function
 \begin{equation*}
@@ -539,7 +560,7 @@ where $L_q^p (x)$ are the \textbf{associated Laguerre functions}, $n$ is the \te
 \end{equation*}
 where $m_e\simeq m$
 
-\ptitle{Combined Solution}
+\subsubsection{Combined Solution}
 
 Combining the radial and the angular solution we get
 \begin{equation*}
@@ -554,6 +575,7 @@ where the quantum numbers are in the ranges of
     n = 1, 2, 3, \ldots
 \end{equation*}
 \begin{itemize}
+    \item arises from the radial equation
     \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit.
 \end{itemize}
 
@@ -563,6 +585,7 @@ where the quantum numbers are in the ranges of
     \ell = 0, 1, 2, \ldots , n-1
 \end{equation*}
 \begin{itemize}
+    \item arises from the polar equation
     \item $\ell$ determines the shape of the electrons orbit ($\ell$ is the number of angular nodes).
     \item $\ell$ is directly related to the orbital angular momentum.
     \item $n-\ell-1$ is the number of radial nodes
@@ -574,6 +597,7 @@ where the quantum numbers are in the ranges of
     m_\ell =-\ell, -\ell+1, \ldots , \ell-1, \ell
 \end{equation*}
 \begin{itemize}
+    \item arises from the azimuthal equation
     \item $m_l$ describes the orientation of the angular momentum relative to an external magnetic field.
     \item $m_l$ is responsible for the magnetic splitting of spectral lines i.e.\ the \textit{Zeeman effect}
 \end{itemize}
@@ -761,7 +785,7 @@ In contrast to angular momentum of a QM particle where $l$ could take arbitrary 
 \ptitle{Remarks}
 
 \begin{itemize}
-    \item The set value for $\mathbf{s}$ and the fact that one cannot write mathematical formulae for $f_{s}^{m_s}$ distinguishes spin from angular momentum.
+    \item The set value for $\mathbf{s}$ and the fact that one cannot write mathematical formulae for $f_{s}^{m_s}$ \textbf{distinguishes} spin from angular momentum.
     \item For electrons we have $s=\frac{1}{2}$, for photons $s=1$
     \item Electrons have
           \begin{itemize}
@@ -786,8 +810,8 @@ For an electron with $s=\frac{1}{2}$, the eigenfunctions can be described by ket
 \end{align*}
 and one has
 \begin{align*}
-    |\mathbf{S}| & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
-    S_z          & =\pm \frac{1}{2}\hbar
+    |\mathbf{S}| & =\sqrt{\hbar^2 s(s+1)} & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
+    S_z          & =\hbar m_s             & =\pm \frac{1}{2}\hbar
 \end{align*}
 
 \ptitle{General Spin State}
