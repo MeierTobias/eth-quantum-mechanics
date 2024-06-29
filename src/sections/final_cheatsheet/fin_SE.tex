@@ -61,6 +61,7 @@ A particle/wave in a general state $\Psi$ is in a superposition of stationary st
 \ptitle{Remarks:}
 \begin{itemize}
     \item A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+    \item The separation constant $E$ must be \textbf{real} for the wave function to stay normalized.
     \item Probabilities and expectations of the general solution are in general \textbf{not} time-independent.
     \item As $c_n$ are independent of time, the probability to get a certain energy and $\langle H\rangle$ are constant in time (energy conservation).
 \end{itemize}
@@ -171,8 +172,10 @@ Calculations can be simplified by substituting
 
 \ptitle{Solution to TISE}
 \noindent\begin{align*}
-    \psi_0 & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right) & E_0 & = \frac{1}{2}\hbar\omega     \\
-    \psi_n & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                       & E_n & = (n+\frac{1}{2})\hbar\omega
+    \psi_0   & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)                                                   & E_0 & = \frac{1}{2}\hbar\omega     \\
+    \psi_{1} & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                                                         \\
+    \psi_{2} & =\frac{1}{\sqrt{2}}\Big(\frac{m\omega}{\pi\hbar}\Big)^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\Big(\frac{m\omega}{2\hbar}\Big)x^{2}}                                      \\
+    \psi_n   & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                                                                         & E_n & = (n+\frac{1}{2})\hbar\omega
 \end{align*}
 \begin{align*}
     \widehat{a}_{-}\psi_0                & = 0\psi_0 = 0                                      \\
