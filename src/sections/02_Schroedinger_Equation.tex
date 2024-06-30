@@ -266,7 +266,7 @@ For an arbitrary state $n$ the next state is given by
 \ptitle{Specific Excited States}
 
 \begin{align*}
-    \psi_{1}(x) & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                      \\
+    \psi_{1}(x) & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                    \\
     \psi_{2}(x) & =\frac{1}{\sqrt{2}}\Big(\frac{m\omega}{\pi\hbar}\Big)^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\Big(\frac{m\omega}{2\hbar}\Big)x^{2}}
 \end{align*}
 
@@ -529,9 +529,10 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
     \nabla^2        & =\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right) \ldots \\
                     & + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
 \end{align*}
-\begin{equation*}
-    d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
-\end{equation*}
+\begin{align*}
+    d^2\mathbf{r} & = \sin(\theta)d\theta\:d\phi                     \\
+    d^3\mathbf{r} & = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
+\end{align*}
 
 \textbf{Normalization}
 

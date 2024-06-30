@@ -55,19 +55,6 @@ The \textbf{variance} ${\sigma_x}^2$ and \textbf{standard deviation} $\sigma_x$ 
 If $\widehat{A}$ and $\widehat{B}$ do not commute, $\left[\widehat{A},\widehat{B}\right] \neq 0$ and therefore the order of the operations matters.
 
 \newpar{}
-
-\ptitle{Canonical Commutation Relations}
-
-\noindent\begin{align*}
-    \left[\widehat{x},\widehat{p}_x\right]    & = i\hbar  \\
-    \left[\widehat{p}_x, \widehat{x}\right]   & = -i\hbar \\
-    \left[\widehat{x}, \widehat{y}\right]     & = 0       \\
-    \left[\widehat{p}_x, \widehat{p}_y\right] & = 0
-\end{align*}
-
-\textbf{Remark} Works for all spatial dimensions.
-
-\newpar{}
 \ptitle{Rules}
 
 \noindent\begin{align*}
@@ -97,7 +84,21 @@ It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$
     \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1
 \end{align*}
 
-\ptitle{Momentum Commutators}
+\newpar{}
+\ptitle{Canonical Commutation Relations}
+
+\noindent\begin{align*}
+    \left[\widehat{x},\widehat{p}_x\right]    & = i\hbar  \\
+    \left[\widehat{p}_x, \widehat{x}\right]   & = -i\hbar \\
+    \left[\widehat{x}, \widehat{y}\right]     & = 0       \\
+    \left[\widehat{x}, \widehat{p}_y\right]   & = 0       \\
+    \left[\widehat{p}_x, \widehat{p}_y\right] & = 0
+\end{align*}
+
+\textbf{Remark} Works for all spatial dimensions.
+
+\newpar{}
+\ptitle{Other Momentum Commutators}
 \noindent\begin{align*}
     \left[\widehat{x}^n,\widehat{p}\right]  & = i \hbar n x^{n-1}    \\
     \left[\widehat{x},\widehat{p}^2\right]  & = 2i\hbar\widehat{p}   \\
@@ -118,8 +119,12 @@ It is important to calculate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$
     \left[\widehat{L}^2, \mathbf{L}\right]=0
 \end{gather*}
 
-\ptitle{Spin Commutators}
-For spin, the same commutator rules hold as for angular momentum.
+\newpar{}
+\ptitle{Remarks}
+\begin{itemize}
+    \item For \textbf{spin}, the same rules hold as for angular momentum.
+    \item Note: One can ``permute through'' the operators in the first row.
+\end{itemize}
 
 \subsection{Inner Product}\label{ssec:InnerProd}
 \ptitle{Properties}
@@ -150,8 +155,8 @@ For spin, the same commutator rules hold as for angular momentum.
 \textbf{Ideal Gas}\\
 Ideal gas law:
 \noindent\begin{align*}
-    PV & =nRT=n k_B T                                             \\
-    \text{with}                                                   \\
+    PV & =nRT=n k_B T                                              \\
+    \text{with}                                                    \\
     n  & =\frac{N_{particles}}{N_A} \text{ ($n$: number of Moles)} \\
     R  & =N_A k_B \text{ universal gas constant}
 \end{align*}
