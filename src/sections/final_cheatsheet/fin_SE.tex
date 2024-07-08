@@ -84,7 +84,7 @@ A \textit{free particle} propagates in space as a \textbf{wave packet} and its w
 \begin{itemize}
     \item A free particle can have any positive energy $E$.
     \item There is no free particle with a definite energy.
-    \item $\frac{1}{\sqrt{2\pi}}\phi(k)dk$ plays the role of $c_n$ from the discrete superposition case.
+    \item $\frac{1}{\sqrt{2\pi}}g(k)dk$ plays the role of $c_n$ from the discrete superposition case.
     \item Separable solutions do not represent physical states, therefore $\notin$ Hilbert space.
     \item The particle carries a range of $k$
 \end{itemize}
@@ -172,11 +172,12 @@ Calculations can be simplified by substituting
 
 \ptitle{Solution to TISE}
 \noindent\begin{align*}
-    \psi_0   & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)                                                   & E_0 & = \frac{1}{2}\hbar\omega     \\
-    \psi_{1} & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                                                         \\
-    \psi_{2} & =\frac{1}{\sqrt{2}}\Big(\frac{m\omega}{\pi\hbar}\Big)^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\Big(\frac{m\omega}{2\hbar}\Big)x^{2}}                                      \\
-    \psi_n   & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                                                                         & E_n & = (n+\frac{1}{2})\hbar\omega
+    \psi_0   & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)                                                     & E_0 & = \frac{1}{2}\hbar\omega     \\
+    \psi_{1} & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                      & E_1 & = \frac{3}{2}\hbar\omega     \\
+    \psi_{2} & =\frac{1}{\sqrt{2}}{\Big(\frac{m\omega}{\pi\hbar}\Big)}^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\Big(\frac{m\omega}{2\hbar}\Big)x^{2}} & E_2 & = \frac{5}{2}\hbar\omega     \\
+    \psi_n   & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                                                                           & E_n & = (n+\frac{1}{2})\hbar\omega
 \end{align*}
+
 \begin{align*}
     \widehat{a}_{-}\psi_0                & = 0\psi_0 = 0                                      \\
     \widehat{a}_{+}\psi_n                & = \sqrt{n+1}\:\psi_{n+1}                           \\
