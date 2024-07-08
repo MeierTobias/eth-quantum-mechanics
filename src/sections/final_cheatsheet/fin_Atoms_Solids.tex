@@ -1,8 +1,133 @@
 \section{Atoms}
 \subsection{Hydrogen Orbitals}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{2pt}
+{\small     % Smaller font
+    \begin{tabularx}{\linewidth}{@{}ll>{\footnotesize}lX@{}}
+                 & \textbf{Name} & \textbf{(Range,Letter)}                             & \textbf{Meaning}           \\
+        $n$      & princ. QN     & $(0,K),(1,L),(2,M)\dots$                            & shell (radius)             \\
+        $\ell$   & azim. QN      & $(0,s),(1,p),(2,d)$                                 & subshell (orbital shape)   \\
+                 &               & $(3,f),\ldots,(n-1,\cdot)$                          &                            \\
+        $m_\ell$ & magn. QN      & $-\ell,-\ell+1,\dots,\ell-1,\ell$                   & \# of orbital orientations \\
+        $m_s$    & spin QN       & $(+\frac{1}{2},\uparrow),(-\frac{1}{2},\downarrow)$ & spin orientation           \\
+                 &               &                                                     & (w.r.t.\ z-axis)           \\
+        $s$      & spin          & fermions: half-int                                  &                            \\
+                 &               & bosons: int                                         &
+    \end{tabularx}
+}           % End smaller font
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{\oldtabcolsep}
 \subsubsection{Orbital Table}
+\renewcommand{\arraystretch}{0.8}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
+{\small     % Smaller font
+    \begin{tabularx}{\linewidth}{@{}llllll@{}}
+            &                & \textbf{Subshell(s)} & \# \textbf{Orbitals}              & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
+        $n$ & \textbf{Shell} & $l=0\dots n-1$       & $m_{l}=-l,\dots l$                & \textbf{per Subshell}                             & \textbf{per Shell} \\
+        1   & K              & s                    & 1                                 & 2                                                 & 2                  \\
+        \cmidrule{1-6}
+        2   & L              & s                    & 1 \qquad{\color{teal} $\cdot 2=$} & 2  \qquad{\color{teal} $\sum=$}                   & 8                  \\
+            &                & p                    & 3 \qquad{\color{teal} $\cdot 2=$} & 6                                                 &                    \\
+        \cmidrule{1-6}
+        3   & M              & s                    & 1                                 & 2                                                 & 18                 \\
+            &                & p                    & 3                                 & 6                                                 &                    \\
+            &                & d                    & 5                                 & 10                                                &                    \\
+        % \cmidrule{1-6}
+        % 4   & N              & s                    & 1                                  & 2                                                 & 32                 \\
+        %     &                & p                    & 3                                  & 6                                                 &                    \\
+        %     &                & d                    & 5                                  & 10                                                &                    \\
+        %     &                & f                    & 7                                  & 14                                                &
+    \end{tabularx}
+}           % End smaller font
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{\oldtabcolsep}
+
+% \ptitle{Remarks}
+
+% \begin{itemize}
+%     \item The total number of orbitals is the number of possible states ($n,l,m_l$) that one electron can occupy.
+% \end{itemize}
 \subsection{Filling Orbitals with Electrons}
+\ptitle{Filling Order}
+
+\includegraphics[width=\linewidth]{periodic_table_el_configurations.png}
+
+\noindent\begin{equation*}
+    1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^{10}\dots^{\textsf{total nr.\ of electrons}}
+\end{equation*}
+
+\ptitle{Noble Gas Notation}
+\begin{equation*}
+    Fe(Z=26): 1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^6 = \left[Ar\right]4s^2 3d^6
+\end{equation*}
+
+\ptitle{Exceptions}
+\begin{equation*}
+    Cr: \left[Ar\right]4s^1 3d^5 \quad
+    Cu: \left[Ar\right]4s^1 3d^{10}
+\end{equation*}
+
 \subsection{Full-State Description of Atoms}
+\ptitle{Angular Momentum (AM)}
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{6pt}
+
+\begin{tabularx}{\linewidth}{@{}llll@{}}
+    *       & total * AM & projection on $z$        \\
+    \cmidrule{1-3}
+    orbital & $L$        & $M_L=\sum_{i}m_{\ell,i}$ & $M_L=0 \Rightarrow L=0$ \\
+    spin    & $S$        & $M_S=\sum_{i}m_{s,i}$    & $M_S=0 \Rightarrow S=0$\\
+    total   & $J$        & $M_J=M_L+M_S$
+\end{tabularx}
+
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
+
+\ptitle{Addition Rule}
+\begin{equation*}
+    j_{\mathrm{total}} = j_1 \oplus j_2 = (j_1+j_2),\dots,|j_1-j_2|
+\end{equation*}
+
+\ptitle{Term Symbol}
+\noindent\begin{equation*}
+    \prescript{\overbrace{2S+1}^{\textsf{\# of projections}}}{}{X_J}, \quad X=
+        {\begin{cases}
+                S,     & L=0 \\
+                P,     & L=1 \\
+                D,     & L=2 \\
+                \cdots &
+            \end{cases}}
+\end{equation*}
+
+\ptitle{Finding Ground State}
+\begin{enumerate}
+    \item Look only at partially filled subshells
+    \item Use \textbf{addition rule} to find all possible combinations
+          \noindent\begin{equation*}
+              J = L\oplus S \quad\begin{cases}
+                  L =\ell_1 \oplus\ell_2 \oplus \cdots \oplus\ell_n \\
+                  S = s_1 \oplus s_2 \oplus \cdots \oplus s_n       \\
+              \end{cases}
+          \end{equation*}
+    \item Consider exchange symmetry
+          \begin{itemize}
+              \item keep only antisymmetric states
+              \item (exclude states that violate Pauli excl.\ principle i.e. 2 electrons with exact same QN)
+          \end{itemize}
+    \item Find ground state with \textbf{Hund's rule}
+          \begin{enumerate}
+              \item State with largest $S$ is most stable
+              \item For states with same $S$, largest $L$ is most stable
+              \item For states with same $S$ and $L$ (but different $J$)
+                    \begin{itemize}
+                        \item Smallest $J$ most stable for subshells that are no more than half full
+                        \item Larqest $J$ most stable for subshells that are more than half full
+                    \end{itemize}
+          \end{enumerate}
+    \item (optional) Multiply quantum numbers by $\hbar$
+\end{enumerate}
+
 
 \section{Solids}
 \subsection{Free-Electron Model}
@@ -37,7 +162,7 @@ For a solid with $N$ atoms with $q$ valence electrons each the total volume
 is occupied in k-space until all electron states are occupied.\\
 The Fermi wave number and its energy can then be found:
 \noindent\begin{equation*}
-    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \qquad                  
+    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \qquad
     E_F  = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
 \end{equation*}
 
@@ -64,8 +189,8 @@ In words: The wave function only changes in space by a phase factor.
 
 \subsubsection{Periodic Boundary Conditions}
 \noindent\begin{align*}
-    \psi(x) = \psi(x+Na) & = e^{iKNa}\psi(x) \\
-    1                    & =e^{iKNa} & \Rightarrow K=\frac{2\pi j}{Na}, \; j\in \mathbb{Z}
+    \psi(x) = \psi(x+Na) & = e^{iKNa}\psi(x)                                                       \\
+    1                    & =e^{iKNa}         & \Rightarrow K=\frac{2\pi j}{Na}, \; j\in \mathbb{Z}
 \end{align*}
 
 \ptitle{Potential}

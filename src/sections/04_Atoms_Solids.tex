@@ -237,6 +237,11 @@ to achieve a stable chemical bond.
 The exchange symmetry of the overall wave function of
 \begin{itemize}
     \item identical \textbf{bosons is symmetric} w.r.t.\ exchange with
+          % TODO: Dani: proof that this is valid ;)      
+          \begin{align*}
+              \psi & = \psi_{+}\cdot \chi_{\mathrm{triplet}}(s) \\
+              \psi & = \psi_{-}\cdot \chi_{\mathrm{singlet}}(s)
+          \end{align*}
     \item identical \textbf{fermions is antisymmetric} w.r.t.\ exchange with
           \begin{align*}
               \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) \\
@@ -261,17 +266,16 @@ Another explanation is that the only function that changes sign (required for fe
 \renewcommand{\arraystretch}{1.1}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{2pt}
 {\small     % Smaller font
-    \begin{tabularx}{\linewidth}{@{}lllX@{}}
-              & \textbf{Name} & \textbf{Range|Letter}                             & \textbf{Meaning}    \\
-        $n$   & principal QN  & $0|K,\;1|L,\;2|M,\dots$                           & shell (radius)      \\
-        $l$   & azimuthal QN  & $0|s,\;1|p,\;2|d,\;3|f,\dots$                     & subshell            \\
-              &               & $n-1|\dots$                                       & (orbital shape)     \\
-        $m_l$ & magnetic QN   & $-l,-l+1,\dots,l-1,l$                             & orbital orientation \\
-              &               &                                                   & \# of orientations  \\
-        $m_s$ & spin QN       & $+\frac{1}{2}/\uparrow,\:-\frac{1}{2}/\downarrow$ & spin orientation    \\
-              &               &                                                   & (w.r.t.\ z-axis)    \\
-        $s$   & spin          & fermions: half-int                                &                     \\
-              &               & bosons: int                                       &
+    \begin{tabularx}{\linewidth}{@{}ll>{\footnotesize}lX@{}}
+                 & \textbf{Name} & \textbf{(Range,Letter)}                             & \textbf{Meaning}           \\
+        $n$      & princ. QN     & $(0,K),(1,L),(2,M)\dots$                            & shell (radius)             \\
+        $\ell$   & azim. QN      & $(0,s),(1,p),(2,d)$                                 & subshell (orbital shape)   \\
+                 &               & $(3,f),\ldots,(n-1,\cdot)$                          &                            \\
+        $m_\ell$ & magn. QN      & $-\ell,-\ell+1,\dots,\ell-1,\ell$                   & \# of orbital orientations \\
+        $m_s$    & spin QN       & $(+\frac{1}{2},\uparrow),(-\frac{1}{2},\downarrow)$ & spin orientation           \\
+                 &               &                                                     & (w.r.t.\ z-axis)           \\
+        $s$      & spin          & fermions: half-int                                  &                            \\
+                 &               & bosons: int                                         &
     \end{tabularx}
 }           % End smaller font
 \renewcommand{\arraystretch}{1}
@@ -300,25 +304,25 @@ Another explanation is that the only function that changes sign (required for fe
 \end{itemize}
 
 \paragraph{Orbital Table}
-\renewcommand{\arraystretch}{1.1}
+\renewcommand{\arraystretch}{1.0}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
 {\small     % Smaller font
     \begin{tabularx}{\linewidth}{@{}llllll@{}}
-            &                & \textbf{Subshell(s)} & \# \textbf{Orbitals} & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
-        $n$ & \textbf{Shell} & $l=0\dots n-1$       & $m_{l}=-l,\dots l$   & \textbf{per Subshell}                             & \textbf{per Shell} \\
-        1   & K              & s                    & 1                    & 2                                                 & 2                  \\
+            &                & \textbf{Subshell(s)} & \# \textbf{Orbitals}              & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
+        $n$ & \textbf{Shell} & $l=0\dots n-1$       & $m_{l}=-l,\dots l$                & \textbf{per Subshell}                             & \textbf{per Shell} \\
+        1   & K              & s                    & 1                                 & 2                                                 & 2                  \\
         \cmidrule{1-6}
-        2   & L              & s                    & 1                    & 2                                                 & 8                  \\
-            &                & p                    & 3                    & 6                                                 &                    \\
+        2   & L              & s                    & 1 \qquad{\color{teal} $\cdot 2=$} & 2 \qquad{\color{teal} $\sum=$}                    & 8                  \\
+            &                & p                    & 3 \qquad{\color{teal} $\cdot 2=$} & 6                                                 &                    \\
         \cmidrule{1-6}
-        3   & M              & s                    & 1                    & 2                                                 & 18                 \\
-            &                & p                    & 3                    & 6                                                 &                    \\
-            &                & d                    & 5                    & 10                                                &                    \\
+        3   & M              & s                    & 1                                 & 2                                                 & 18                 \\
+            &                & p                    & 3                                 & 6                                                 &                    \\
+            &                & d                    & 5                                 & 10                                                &                    \\
         \cmidrule{1-6}
-        4   & N              & s                    & 1                    & 2                                                 & 32                 \\
-            &                & p                    & 3                    & 6                                                 &                    \\
-            &                & d                    & 5                    & 10                                                &                    \\
-            &                & f                    & 7                    & 14                                                &
+        4   & N              & s                    & 1                                 & 2                                                 & 32                 \\
+            &                & p                    & 3                                 & 6                                                 &                    \\
+            &                & d                    & 5                                 & 10                                                &                    \\
+            &                & f                    & 7                                 & 14                                                &
     \end{tabularx}
 }           % End smaller font
 \renewcommand{\arraystretch}{1}
@@ -369,7 +373,11 @@ As the shells overlap, one can not just assume that a larger $n$ yields a larger
     \includegraphics[width = 0.4\linewidth]{fill_energies_graphical.png}
 \end{center}
 \textit{source: http://hyperphysics.phy-astr.gsu.edu/}\\
-or use the periodic table. Both yield the filling order
+or use the periodic table:
+
+\includegraphics[width=\linewidth]{periodic_table_el_configurations.png}
+
+Both yield the filling order
 \begin{equation*}
     1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^{10}\dots
 \end{equation*}
@@ -391,12 +399,10 @@ can be rewritten as
 \ptitle{Exceptions}
 
 Some elements don't follow the general rules for filling orbitals. Two important examples are
-\begin{equation*}
-    Cr: \left[Ar\right]4s^1 3d^5
-\end{equation*}
-\begin{equation*}
-    Cu: \left[Ar\right]4s^1 3d^{10}
-\end{equation*}
+\begin{align*}
+    Cr: &\left[Ar\right]4s^1 3d^5
+    Cu: &\left[Ar\right]4s^1 3d^{10}
+\end{align*}
 which yields an energetically more optimal state.
 
 \ptitle{Valence Electrons}
@@ -429,17 +435,17 @@ which yields an energetically more optimal state.
 One can establish a full-state description of an atom using total (orbital and spin) angular momentum. As these observables commute with $\hat{H}$ they are conserved quantities and useful for state description. For orbital angular momentum one defines
 \begin{align*}
     L                   & \text{: total orbital AM}                \\
-    M_L=\sum_{i}m_{l,i} & \text{: total orb. AM projection on $z$} \\
+    M_L=\sum_{i}m_{\ell,i} & \text{: total orb. AM projection on $z$} 
 \end{align*}
 For spin one has
 \begin{align*}
     S                   & \text{: total spin AM}                    \\
-    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$} \\
+    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$} 
 \end{align*}
 and in total one has
 \begin{align*}
     J           & \text{: total AM}                   \\
-    M_J=M_L+M_S & \text{: total AM projection on $z$} \\
+    M_J=M_L+M_S & \text{: total AM projection on $z$} 
 \end{align*}
 
 Remarks
