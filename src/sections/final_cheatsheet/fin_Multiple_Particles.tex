@@ -1,11 +1,11 @@
 \section{Multiple Particle Systems}
 \subsection{Z-particle Systems}
 In a general multi-particle system (e.g.\ atom with $Z$ protons) the Hamiltonian is given by
-{\small     % Smaller font
-\begin{equation*}
-    \widehat{H}=\underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} + \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}
-\end{equation*}
-}
+    {\small     % Smaller font
+        \begin{equation*}
+            \widehat{H}=\underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} + \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}
+        \end{equation*}
+    }
 The ``repulsion'' term makes exact solving of the TISE, in general, impossible. An approximation and an exception are presented hereafter.
 
 \subsection{Two-Particle Systems}
@@ -19,28 +19,21 @@ where $V$ includes any interactions between particles i.e.:
     \item interactions of electrons with the nucleus
 \end{enumerate}
 
-\subsubsection{Reducable Two-Particle Problems}
-\newpar{}
-\ptitle{1. Noninteracting Particles}
-
-Ignore the repulsion term, see below.
-
-\newpar{}
-\ptitle{2. Central Potential Systems}
+\subsection{Reducable Two-Particle Problems}
+\subsubsection{Central Potential Systems}
 
 Given a system where the particles interact only with each other via a potential that depends on their separation
 \begin{equation*}
     V(\mathbf{r}_1,\mathbf{r}_2)\to V(|\mathbf{r}_1-\mathbf{r}_2|)
 \end{equation*}
-we can solve the two-particle TISE analytically by splitting the problem into center-of-mass motion
-\begin{align*}
-    \mathbf{R}\equiv\  & \frac{m_1\mathbf{r_1}+m_2\mathbf{r_2}}{m_1+m_2} &  & \text{ center of mass} \\
-    M\equiv\           & m_1 + m_2                                       &  & \text{ total mass}
-\end{align*}
-and relative motion of the two particles
-\begin{align*}
-    \mathbf{r}\equiv\  & \mathbf{r_1}-\mathbf{r_2} &                      \\
-    m_r\equiv\         & \frac{m_1 m_2}{m_1+m_2}   & \text{ reduced mass}
+the two-particle TISE can be solved analytically by splitting the problem into
+\noindent\begin{align*}
+    \textbf{c.o.m. motion:}   &                                                                              \\
+    \mathbf{R}\equiv\         & \frac{m_1\mathbf{r_1}+m_2\mathbf{r_2}}{m_1+m_2} &   & \text{ center of mass} \\
+    M\equiv\                  & m_1 + m_2                                       &   & \text{ total mass}     \\
+    \textbf{relative motion:} &                                                                              \\
+    \mathbf{r}\equiv\         & \mathbf{r_1}-\mathbf{r_2}                       &                            \\
+    m_r\equiv\                & \frac{m_1 m_2}{m_1+m_2}                         &   & \text{ reduced mass}
 \end{align*}
 In this case, the TISE separates to
 \begin{equation*}
@@ -52,38 +45,34 @@ and we can find a solution
 \end{equation*}
 
 \subsubsection{Noninteracting Particles}
+Ignore the interactions ($V$).
 \newpar{}
 \ptitle{Distinguishable Particles}
 
 The overall solutions are products
-\begin{align*}
-    \psi(\mathbf{r}_{1},\mathbf{r}_{2}  & )=\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2}) \\
-    \psi(\mathbf{r}_{1},\mathbf{r}_{2}) & =\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})
-\end{align*}
+\begin{equation*}
+    \psi(\mathbf{r}_{1},\mathbf{r}_{2} )=\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2}) \quad\text{or}\quad
+    \psi(\mathbf{r}_{1},\mathbf{r}_{2}) =\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})
+\end{equation*}
 
 \newpar{}
 \ptitle{Indistinguishable Particles}
 
-The overall solutions are
+The overall solutions are linear combinations (sym.\ or asym.):
 \begin{align*}
     \psi_{+}(\mathbf{r}_{1},\mathbf{r}_{2}) & =C\left[\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2})+\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})\right]\quad \mathrm{symmetric} \\
     \psi_{-}(\mathbf{r}_{1},\mathbf{r}_{2}) & =C\left[\psi_{a}(\mathbf{r}_{1})\psi_{b}(\mathbf{r}_{2})-\psi_{b}(\mathbf{r}_{1})\psi_{a}(\mathbf{r}_{2})\right]\quad \mathrm{antisymm.}
 \end{align*}
 
 \paragraph[Exchange Symmetry]{Exchange Symmetry of $\psi_\pm$}
-
-\newpar{}
-\ptitle{Exchange Operator}
+\ptitle{Exchange Operator $\widehat{P}$}
 
 \begin{equation*}
     \widehat{P}\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r_2},\mathbf{r_1})
 \end{equation*}
-$\widehat{P}$, $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$:
+$\widehat{P}$, $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$ (eigvals.\ = $\pm 1$):
 \begin{equation*}
-    \left[\widehat{P},\widehat{H}\right]=0
-\end{equation*}
-which by the generalized Ehrenfest theorem implies
-\begin{equation*}
+    \left[\widehat{P},\widehat{H}\right]=0 \quad \overset{\text{gen. Ehrenfest}}{\Rightarrow} \quad
     \frac{d}{dt}\langle\widehat{P}\rangle=0
 \end{equation*}
 
@@ -105,8 +94,17 @@ meaning that particles in $\psi_{+}$ (symmetric w.r.t.\ exchange) tend to be clo
 
 \paragraph{Bosons and Fermions}
 \begin{itemize}
-    \item \textbf{Bosons} (e.g.\ photons (s=1), gravitons (s=2)) are particles with \textbf{integer} spin
-    \item \textbf{Fermions} (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$)) are particles with \textbf{half-integer} spin
+    \item \textbf{Bosons} are particles with \textbf{integer} spin (e.g.\ photons (s=1), gravitons (s=2))
+    \item \textbf{Fermions} are particles with \textbf{half-integer} spin (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$))
+\end{itemize}
+
+\newpar{}
+\ptitle{Exchange Symmetry Axiom}
+
+The exchange symmetry of the overall wave function of
+\begin{itemize}
+    \item identical \textbf{bosons is symmetric} w.r.t.\ exchange
+    \item identical \textbf{fermions is antisymmetric} w.r.t.\ exchange
 \end{itemize}
 
 \newpar{}
@@ -118,35 +116,23 @@ One has for $\chi(s)$ and two identical spins $s=\frac{1}{2}$ the spin states
            \uparrow \uparrow                                                        \\
            \downarrow \downarrow                                                    \\
            \frac{1}{\sqrt{2}}\left(\uparrow \downarrow + \downarrow \uparrow\right) \\
-       \end{rcases} \chi_{\mathrm{triplet}}(s)\text{: symmetric w.r.t.\ ex.} \\
+       \end{rcases} \chi_{\mathrm{triplet}}(s)\text{: symmetric w.r.t.\ ex.\ } (S=1) \\
      & \begin{rcases}
            \frac{1}{\sqrt{2}}\left(\uparrow \downarrow - \downarrow \uparrow\right)
-       \end{rcases} \chi_{\mathrm{singlet}}(s) \text{: antisymmetric w.r.t.\ ex.}
+       \end{rcases} \chi_{\mathrm{singlet}}(s) \text{: antisymmetric w.r.t.\ ex.\ } (S=0)
 \end{align*}
-which implies that the overall wave function $\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r})\chi(s)$ of hydrogen becomes
-\begin{equation*}
-    \psi_{+}\cdot \chi_{\mathrm{singlet}}(s)
-\end{equation*}
-to achieve a stable chemical bond.
-
-\newpar{}
-\ptitle{Exchange Symmetry Axiom}
-
-The exchange symmetry of the overall wave function of
-\begin{itemize}
-    \item identical \textbf{fermions is symmetric} w.r.t.\ exchange with
-          \begin{align*}
-              \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) \\
-              \psi & = \psi_{-}\cdot \chi_{\mathrm{triplet}}(s)
-          \end{align*}
-    \item identical \textbf{bosons is antisymmetric} w.r.t.\ exchange with
-          \begin{align*}
-              \psi & = \psi_{+}\cdot \chi_{\mathrm{triplet}}(s) \\
-              \psi & = \psi_{-}\cdot \chi_{\mathrm{singlet}}(s)
-          \end{align*}
-\end{itemize}
-
+Because $\psi$ of fermions is antisymmetric:
+\noindent\begin{align*}
+    \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) &  & \text{stable chemical bond}        \\
+    \psi & = \psi_{-}\cdot \chi_{\mathrm{triplet}}(s) &  & \text{higher energy (antibonding)}
+\end{align*}
+ 
 \newpar{}
 \ptitle{Pauli Exclusion Principle}
 
 One cannot have two electrons in exactly the same state (same QN) and still have antisymmetry w.r.t.\ exchange.
+
+\subsection{Wavefunction for Fermions}
+\noindent\begin{equation*}
+    \psi_{n,\ell,m_\ell,m_s} = A\cdot R_{n\ell}(r)\cdot Y_\ell^{m_\ell}(\theta, \varphi) \cdot \left|s,m_s \right\rangle
+\end{equation*}
