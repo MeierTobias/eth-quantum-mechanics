@@ -48,6 +48,8 @@
 %     \item The total number of orbitals is the number of possible states ($n,l,m_l$) that one electron can occupy.
 % \end{itemize}
 \subsection{Filling Orbitals with Electrons}
+Pauli/spin: 2 electron s per orbital.
+
 \ptitle{Filling Order}
 
 \includegraphics[width=\linewidth]{periodic_table_el_configurations.png}
@@ -74,10 +76,10 @@
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{6pt}
 
 \begin{tabularx}{\linewidth}{@{}llll@{}}
-    *       & total * AM & projection on $z$        \\
+    *       & total * AM & projection on $z$                                  \\
     \cmidrule{1-3}
     orbital & $L$        & $M_L=\sum_{i}m_{\ell,i}$ & $M_L=0 \Rightarrow L=0$ \\
-    spin    & $S$        & $M_S=\sum_{i}m_{s,i}$    & $M_S=0 \Rightarrow S=0$\\
+    spin    & $S$        & $M_S=\sum_{i}m_{s,i}$    & $M_S=0 \Rightarrow S=0$ \\
     total   & $J$        & $M_J=M_L+M_S$
 \end{tabularx}
 
@@ -112,7 +114,7 @@
           \end{equation*}
     \item Consider exchange symmetry
           \begin{itemize}
-              \item keep only antisymmetric states
+              \item (fermions) keep only antisymmetric states
               \item (exclude states that violate Pauli excl.\ principle i.e. 2 electrons with exact same QN)
           \end{itemize}
     \item Find ground state with \textbf{Hund's rule}
@@ -211,3 +213,14 @@ and only certain bands of energy are allowed.
     \item \textbf{Semiconductor}: $E_g < 4eV$
     \item \textbf{Insulator}: $E_g > 4eV$
 \end{itemize}
+
+\subsection{Various Useful Stuff}
+\noindent\begin{equation*}
+    n_{\mathsf{electrons}} = N_i \exp\left(-\frac{E_g}{k_b T}\right)\quad \begin{cases}
+        n:   & \mathrm{\frac{electrons}{cm^3}} \\
+        N_i: & \mathrm{cm^{-3}}
+    \end{cases}
+\end{equation*}
+\noindent\begin{equation*}
+    E^{(\mathrm{eV})} = E^{(\mathrm{J})} \cdot 6.242 \cdot 10^{18}\, \mathrm{\frac{eV}{J}}
+\end{equation*}
