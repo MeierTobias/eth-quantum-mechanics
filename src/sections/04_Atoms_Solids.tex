@@ -34,6 +34,13 @@ Again, we assume that $V$ is time-independent.
 \end{itemize}
 
 \subsubsection{Z-Particle Systems}
+\paragraph{Hydrogenic States}
+Hydrogenic states are a special case with only 1 elctron. One then has
+\begin{equation*}
+    E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{Z e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}
+\end{equation*}
+
+\paragraph{Multi-Electron States}
 In a general multi-particle system (e.g.\ atom with $Z$ protons) the Hamiltonian is given by
 \begin{align*}
     \widehat{H} = & \underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} \\
@@ -345,7 +352,7 @@ The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
     \includegraphics[width = 0.75\linewidth]{hydr_energy_levels.png}
 \end{center}
 \begin{itemize}
-    \item Reminder: $E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}$
+    \item Reminder: $E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{Z e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}$
     \item States are degenerate: the energy only depends on $n$, so the 2s and 2p orbitals are on same level given $n$ for an 1-electron atom!
 \end{itemize}
 
@@ -400,8 +407,8 @@ can be rewritten as
 
 Some elements don't follow the general rules for filling orbitals. Two important examples are
 \begin{align*}
-    Cr: &\left[Ar\right]4s^1 3d^5
-    Cu: &\left[Ar\right]4s^1 3d^{10}
+    Cr: & \left[Ar\right]4s^1 3d^5
+    Cu: & \left[Ar\right]4s^1 3d^{10}
 \end{align*}
 which yields an energetically more optimal state.
 
@@ -434,18 +441,18 @@ which yields an energetically more optimal state.
 
 One can establish a full-state description of an atom using total (orbital and spin) angular momentum. As these observables commute with $\hat{H}$ they are conserved quantities and useful for state description. For orbital angular momentum one defines
 \begin{align*}
-    L                   & \text{: total orbital AM}                \\
-    M_L=\sum_{i}m_{\ell,i} & \text{: total orb. AM projection on $z$} 
+    L                      & \text{: total orbital AM}                \\
+    M_L=\sum_{i}m_{\ell,i} & \text{: total orb. AM projection on $z$}
 \end{align*}
 For spin one has
 \begin{align*}
     S                   & \text{: total spin AM}                    \\
-    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$} 
+    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$}
 \end{align*}
 and in total one has
 \begin{align*}
     J           & \text{: total AM}                   \\
-    M_J=M_L+M_S & \text{: total AM projection on $z$} 
+    M_J=M_L+M_S & \text{: total AM projection on $z$}
 \end{align*}
 
 Remarks
