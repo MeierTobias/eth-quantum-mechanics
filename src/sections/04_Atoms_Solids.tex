@@ -34,6 +34,13 @@ Again, we assume that $V$ is time-independent.
 \end{itemize}
 
 \subsubsection{Z-Particle Systems}
+\paragraph{Hydrogenic States}
+Hydrogenic states are a special case with only 1 elctron. One then has
+\begin{equation*}
+    E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{Z e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{Z^2 E_1}{n^2}
+\end{equation*}
+
+\paragraph{Multi-Electron States}
 In a general multi-particle system (e.g.\ atom with $Z$ protons) the Hamiltonian is given by
 \begin{align*}
     \widehat{H} = & \underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} \\
@@ -125,18 +132,28 @@ or
 Remarks
 \begin{itemize}
     \item Indistinguishable means that there is no way to  tell the two particles apart
+    \item In practice, one can somewhat tell the particles apart mathematically if the distance between them is large i.e.\ their wave functions ``don't'' overlap. If the particles are closer together their states ``merge'' and become the (anti)symmetric overall wave function.
     \item $\psi_{+}$ stays exactly the same when swapping $\mathbf{r_1},\mathbf{r_2}$
     \item $\psi_{-}$ changes sign when swapping $\mathbf{r_1},\mathbf{r_2}$
     \item Implications of these two solutions are presented subsequently
 \end{itemize}
 
-\paragraph[Exchange Symmetry of psi]{Exchange Symmetry of $\psi_{\pm}$}
+\paragraph[Exchange Symmetry of psi]{Exchange Symmetry of Indistinguishable Particles $\psi_{\pm}$}
 
+\newpar{}
 \ptitle{Exchange Operator}
 
-The exchange operator swaps two particles
+The exchange operator swaps two particles and it's eigenvalues describe the (anti)symmetry
 \begin{equation*}
     \widehat{P}\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r_2},\mathbf{r_1})
+\end{equation*}
+$P$ has eigenfunctions
+\begin{equation*}
+    \psi_{\pm}
+\end{equation*}
+and eigenvalues
+\begin{equation*}
+    \pm 1
 \end{equation*}
 For two identical particles one has
 \begin{align*}
@@ -152,14 +169,14 @@ which by the generalized Ehrenfest theorem implies
 \begin{equation*}
     \frac{d}{dt}\langle\widehat{P}\rangle=0
 \end{equation*}
-and means that $\widehat{P}$ and $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$.
+and means that $P$ is a conserved quantity and $\widehat{P}$, $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$.
 
 \ptitle{Exchange Symmetry of Noninteracting Particles}
 
 One has that
 \begin{itemize}
-    \item $\psi_{+}$ is symmetric w.r.t.\ exchange (eigenvalue $+1$)
-    \item $\psi_{-}$ is antisymmetric w.r.t.\ exchange (eigenvalue $-1$)
+    \item $\psi_{+}$ is symmetric w.r.t.\ exchange (eigenvalue $+1$ for $P$)
+    \item $\psi_{-}$ is antisymmetric w.r.t.\ exchange (eigenvalue $-1$ for $P$)
     \item $\psi_{\pm}$ are stationary states
     \item As $P$ is a conserved quantity a particle,\newline once (anti)symmetric w.r.t.\ exchange,\newline stays (anti)symmetric
 \end{itemize}
@@ -175,7 +192,7 @@ For two \textbf{undistinguishable} particles one has
 Therefore, particles that are in state $\psi_{+}$ (symmetric w.r.t.\ exchange) tend to be closer together than particles that are in state $\psi_{-}$.\\
 \textbf{Remarks}
 \begin{itemize}
-    \item $\left\langle\cdot\right\rangle_{d/\pm}$ is the expectationvalue in a distinguishable/indistinguishable state
+    \item $\left\langle\cdot\right\rangle_{d}/\left\langle\cdot\right\rangle_{\pm}$ is the expectation value in a distinguishable/indistinguishable state
     \item This phenomenon is often called ``exchange interaction'' or ``exchange force''
     \item Exchange symmetry or the overall 2-particle wave function influences location of particles w.r.t.\ each other
 \end{itemize}
@@ -186,14 +203,6 @@ Therefore, particles that are in state $\psi_{+}$ (symmetric w.r.t.\ exchange) t
     \item \textbf{Fermions} (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$)) are particles with \textbf{half-integer} spin
 \end{itemize}
 As bosons are indistinguishable (same holds for fermions) their overall wave functions behave according to the previously stated rules.
-
-\ptitle{Exchange Symmetry Axiom}
-
-The exchange symmetry of the overall wave function of
-\begin{itemize}
-    \item identical \textbf{bosons is symmetric} w.r.t.\ exchange
-    \item identical \textbf{fermions is antisymmetric} w.r.t.\ exchange
-\end{itemize}
 
 \ptitle{Exchange Symmetry of Hydrogen}
 
@@ -212,10 +221,10 @@ and one has for $\chi(s)$ and two identical spins $s=\frac{1}{2}$ the spin state
            \uparrow \uparrow                                                        \\
            \downarrow \downarrow                                                    \\
            \frac{1}{\sqrt{2}}\left(\uparrow \downarrow + \downarrow \uparrow\right) \\
-       \end{rcases} \chi_{\mathrm{triplet}}(s)\text{: symmetric w.r.t.\ ex.} \\
+       \end{rcases} \chi_{\mathrm{triplet}}(s)\text{: symmetric w.r.t.\ ex.\ } (S=1) \\
      & \begin{rcases}
            \frac{1}{\sqrt{2}}\left(\uparrow \downarrow - \downarrow \uparrow\right)
-       \end{rcases} \chi_{\mathrm{singlet}}(s) \text{: antisymmetric w.r.t.\ ex.}
+       \end{rcases} \chi_{\mathrm{singlet}}(s) \text{: antisymmetric w.r.t.\ ex.\ }(S=0)
 \end{align*}
 which implies that the overall wave function $\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r})\chi(s)$ of hydrogen becomes
 \begin{equation*}
@@ -230,9 +239,33 @@ to achieve a stable chemical bond.
 \end{itemize}
 
 \newpar{}
+\ptitle{Exchange Symmetry Axiom}
+
+The exchange symmetry of the overall wave function of
+\begin{itemize}
+    \item identical \textbf{bosons is symmetric} w.r.t.\ exchange with
+          % TODO: Dani: proof that this is valid ;)      
+          \begin{align*}
+              \psi & = \psi_{+}\cdot \chi_{\mathrm{triplet}}(s) \\
+              \psi & = \psi_{-}\cdot \chi_{\mathrm{singlet}}(s)
+          \end{align*}
+    \item identical \textbf{fermions is antisymmetric} w.r.t.\ exchange with
+          \begin{align*}
+              \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) \\
+              \psi & = \psi_{-}\cdot \chi_{\mathrm{triplet}}(s)
+          \end{align*}
+\end{itemize}
+
+\newpar{}
 \ptitle{Pauli Exclusion Principle}
 
-One cannot have two electrons in exactly the same state (same quantum numbers) and still have the system antisymmetric w.r.t.\ exchange because one then has $\psi_{-}=0$ i.e.\ there is no such state (Choose $\psi_{-}$ because electrons are fermions).
+One cannot have two electrons in exactly the same state (same quantum numbers) and still have the system antisymmetric w.r.t.\ exchange because if both were in the same state then
+\begin{align*}
+    a        & =b           \\
+    \uparrow & = \downarrow % TODO: Stimmt das? (Aus Übungsstunde. Sieht etwas wild aus, macht aber schon Sinn (gleiches Prinzip wie bei \psi{-}))
+\end{align*}
+i.e.\ either $\chi_{\mathrm{singlet}}(s)$ or $\psi_{-}$ would become $0$ in the overall fermion wave function i.e.\ there is no such state.\\
+Another explanation is that the only function that changes sign (required for fermions) \textit{and} stays the same (because both electrons are in the same state) when swapping the particles is the zero function.
 
 \subsection{Atoms}
 \subsubsection{Hydrogen Orbitals}
@@ -240,17 +273,16 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \renewcommand{\arraystretch}{1.1}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{2pt}
 {\small     % Smaller font
-    \begin{tabularx}{\linewidth}{@{}lllX@{}}
-              & \textbf{Name} & \textbf{Range|Letter}                             & \textbf{Meaning}    \\
-        $n$   & principal QN  & $0|K,\;1|L,\;2|M,\dots$                           & shell (radius)      \\
-        $l$   & azimuthal QN  & $0|s,\;1|p,\;2|d,\;3|f,\dots$                     & subshell            \\
-              &               &                                                   & (orbital shape)     \\
-        $m_l$ & magnetic QN   & $-l,-l+1,\dots,l-1,l$                             & orbital orientation \\
-              &               &                                                   & \# of orientations  \\
-        $m_s$ & spin QN       & $+\frac{1}{2}/\uparrow,\:-\frac{1}{2}/\downarrow$ & spin orientation    \\
-              &               &                                                   & (w.r.t.\ z-axis)    \\
-        $s$   & spin          & fermions: half-int                                &                     \\
-              &               & bosons: int                                       &
+    \begin{tabularx}{\linewidth}{@{}ll>{\footnotesize}lX@{}}
+                 & \textbf{Name} & \textbf{(Range,Letter)}                             & \textbf{Meaning}           \\
+        $n$      & princ. QN     & $(0,K),(1,L),(2,M)\dots$                            & shell (radius)             \\
+        $\ell$   & azim. QN      & $(0,s),(1,p),(2,d)$                                 & subshell (orbital shape)   \\
+                 &               & $(3,f),\ldots,(n-1,\cdot)$                          &                            \\
+        $m_\ell$ & magn. QN      & $-\ell,-\ell+1,\dots,\ell-1,\ell$                   & \# of orbital orientations \\
+        $m_s$    & spin QN       & $(+\frac{1}{2},\uparrow),(-\frac{1}{2},\downarrow)$ & spin orientation           \\
+                 &               &                                                     & (w.r.t.\ z-axis)           \\
+        $s$      & spin          & fermions: half-int                                  &                            \\
+                 &               & bosons: int                                         &
     \end{tabularx}
 }           % End smaller font
 \renewcommand{\arraystretch}{1}
@@ -279,25 +311,25 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \end{itemize}
 
 \paragraph{Orbital Table}
-\renewcommand{\arraystretch}{1.1}
+\renewcommand{\arraystretch}{1.0}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
 {\small     % Smaller font
     \begin{tabularx}{\linewidth}{@{}llllll@{}}
-            &                &                      &                      & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
-        $n$ & \textbf{Shell} & \textbf{Subshell(s)} & \# \textbf{Orbitals} & \textbf{per Subshell}                             & \textbf{per Shell} \\
-        1   & K              & s                    & 1                    & 2                                                 & 2                  \\
+            &                & \textbf{Subshell(s)} & \# \textbf{Orbitals}              & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
+        $n$ & \textbf{Shell} & $l=0\dots n-1$       & $m_{l}=-l,\dots l$                & \textbf{per Subshell}                             & \textbf{per Shell} \\
+        1   & K              & s                    & 1                                 & 2                                                 & 2                  \\
         \cmidrule{1-6}
-        2   & L              & s                    & 1                    & 2                                                 & 8                  \\
-            &                & p                    & 3                    & 6                                                 &                    \\
+        2   & L              & s                    & 1 \qquad{\color{teal} $\cdot 2=$} & 2 \qquad{\color{teal} $\sum=$}                    & 8                  \\
+            &                & p                    & 3 \qquad{\color{teal} $\cdot 2=$} & 6                                                 &                    \\
         \cmidrule{1-6}
-        3   & M              & s                    & 1                    & 2                                                 & 18                 \\
-            &                & p                    & 3                    & 6                                                 &                    \\
-            &                & d                    & 5                    & 10                                                &                    \\
+        3   & M              & s                    & 1                                 & 2                                                 & 18                 \\
+            &                & p                    & 3                                 & 6                                                 &                    \\
+            &                & d                    & 5                                 & 10                                                &                    \\
         \cmidrule{1-6}
-        4   & N              & s                    & 1                    & 2                                                 & 32                 \\
-            &                & p                    & 3                    & 6                                                 &                    \\
-            &                & d                    & 5                    & 10                                                &                    \\
-            &                & f                    & 7                    & 14                                                &
+        4   & N              & s                    & 1                                 & 2                                                 & 32                 \\
+            &                & p                    & 3                                 & 6                                                 &                    \\
+            &                & d                    & 5                                 & 10                                                &                    \\
+            &                & f                    & 7                                 & 14                                                &
     \end{tabularx}
 }           % End smaller font
 \renewcommand{\arraystretch}{1}
@@ -311,8 +343,8 @@ One cannot have two electrons in exactly the same state (same quantum numbers) a
 \end{itemize}
 
 \subsubsection{Filling Orbitals with Electrons}
-The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 \paragraph{Hydrogenic (One-Electron) Atoms}
+The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 
 \ptitle{Energy Levels}
 
@@ -320,7 +352,7 @@ The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
     \includegraphics[width = 0.75\linewidth]{hydr_energy_levels.png}
 \end{center}
 \begin{itemize}
-    \item Reminder: $E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}$
+    \item Reminder: $E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{Z e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}$
     \item States are degenerate: the energy only depends on $n$, so the 2s and 2p orbitals are on same level given $n$ for an 1-electron atom!
 \end{itemize}
 
@@ -343,12 +375,16 @@ The hydrogenic atom model is an atom with $Z$ protons and $1$ single electron.
 
 \ptitle{Filling Energy Levels with Electrons}
 
-As the shells overlap, one can not just assume that a larger $n$ yields a larger energy levels (e.g.\ $E_{4s}<E{3d}$). Therefore, one needs to follow a specific order when filling orbitals with electrons. One can either use the graphical method:
+As the shells overlap, one can not just assume that a larger $n$ yields a larger energy level (e.g.\ $E_{4s}<E_{3d}$). Therefore, one needs to follow a specific order when filling orbitals with electrons. One can either use the graphical method:
 \begin{center}
     \includegraphics[width = 0.4\linewidth]{fill_energies_graphical.png}
 \end{center}
 \textit{source: http://hyperphysics.phy-astr.gsu.edu/}\\
-or use the periodic table. Both yield the filling order
+or use the periodic table:
+
+\includegraphics[width=\linewidth]{periodic_table_el_configurations.png}
+
+Both yield the filling order
 \begin{equation*}
     1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 3d^{10}\dots
 \end{equation*}
@@ -370,12 +406,10 @@ can be rewritten as
 \ptitle{Exceptions}
 
 Some elements don't follow the general rules for filling orbitals. Two important examples are
-\begin{equation*}
-    Cr: \left[Ar\right]4s^1 3d^5
-\end{equation*}
-\begin{equation*}
-    Cu: \left[Ar\right]4s^1 3d^{10}
-\end{equation*}
+\begin{align*}
+    Cr: & \left[Ar\right]4s^1 3d^5
+    Cu: & \left[Ar\right]4s^1 3d^{10}
+\end{align*}
 which yields an energetically more optimal state.
 
 \ptitle{Valence Electrons}
@@ -397,7 +431,7 @@ which yields an energetically more optimal state.
 
 \begin{enumerate}
     \item \textbf{Filled subshells} never contribute to $L$, $S$, $J$.
-    \item One can use the \textbf{addition rule} to find all possible combination of momentum cones.
+    \item One can use the \textbf{addition rule} to find all possible combinations of momentum cones.
     \item All the angular momentum quantum numbers ($l,s,\dots,L,S,\dots$) must be \textbf{multiplied by} $\boldsymbol{\hbar}$ to find the actual angular momenta.
 \end{enumerate}
 
@@ -407,18 +441,18 @@ which yields an energetically more optimal state.
 
 One can establish a full-state description of an atom using total (orbital and spin) angular momentum. As these observables commute with $\hat{H}$ they are conserved quantities and useful for state description. For orbital angular momentum one defines
 \begin{align*}
-    L                   & \text{: total orbital AM}                \\
-    M_L=\sum_{i}m_{l,i} & \text{: total orb. AM projection on $z$} \\
+    L                      & \text{: total orbital AM}                \\
+    M_L=\sum_{i}m_{\ell,i} & \text{: total orb. AM projection on $z$}
 \end{align*}
 For spin one has
 \begin{align*}
     S                   & \text{: total spin AM}                    \\
-    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$} \\
+    M_S=\sum_{i}m_{s,i} & \text{: total spin. AM projection on $z$}
 \end{align*}
 and in total one has
 \begin{align*}
     J           & \text{: total AM}                   \\
-    M_J=M_L+M_S & \text{: total AM projection on $z$} \\
+    M_J=M_L+M_S & \text{: total AM projection on $z$}
 \end{align*}
 
 Remarks
@@ -434,7 +468,7 @@ Remarks
 
 Given two orbital or spin angular momenta $j_1, j_2$ one has
 \begin{equation*}
-    J=(j_1+j_2),\dots,|j_1-j_2|
+    j_{\mathrm{total}}=(j_1+j_2),\dots,|j_1-j_2|
 \end{equation*}
 with integer steps in between.\\
 Remarks:
@@ -503,15 +537,15 @@ Neglecting spin and electron-electron interactions, an electrons wavefunction in
     E_{n_x,n_y,n_z}    & = \frac{\hbar^2\pi^2}{2m}\left(\frac{n_x^2}{l_x^2}+\frac{n_y^2}{l_y^2}+\frac{n_z^2}{l_z^2}\right),\quad n_x,n_y,n_z \in \mathbb{N}\backslash 0 \\
     \psi_{n_x,n_y,n_z} & = \sqrt{\frac{8}{l_x l_y l_z}} \sin\left(\frac{n_x\pi}{l_x}x\right) \sin\left(\frac{n_y\pi}{l_y}y\right) \sin\left(\frac{n_z\pi}{l_z}z\right)
 \end{align*}
-based on this solution of the SE, the distance between the discrete energy levels is at most
+Based on this solution of the SE, the distance between the discrete energy levels in a 1 cm box is at most
 \noindent\begin{equation*}
     \Delta E \leq 10^{-6} ~\mathrm{eV}
 \end{equation*}
-and therefore the states from continous \textit{electron bands}.
+and therefore the states form continuous \textit{electron bands}.
 
 
 \subsubsection{k-Space}
-By transforming the energy into the k-space (wavenumbers), the energy becomes
+By transforming the energy into the k-space (wave numbers), the energy becomes
 \noindent\begin{equation*}
     E = \frac{\hbar^2k^2}{2m}, \quad \begin{cases}
         k^2 = k_x^2+k_y^2+k_z^2 \\
@@ -523,16 +557,18 @@ and each solution occupies
     \frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}
 \end{equation*}
 of k-space.
+% TODO: where did the n_{x}, n_{y} ... go? -> using k from now on
 
 \subsubsection{Fermi Energy}
 For electrons (fermions), the energy levels are filled with 2 $e^-$ at each level, and the highest occupied level is called the \textbf{Fermi level}.
 
 \newpar{}
-For a solid with $N$ electrons with $q$ electrons each
+For a solid with $N$ atoms with $q$ valence electrons each the total volume
 \noindent\begin{equation*}
     \frac{1}{8}\cdot\underbrace{\frac{4}{3}\pi k_F^3}_{\textsf{vol. sphere}} = \underbrace{\frac{Nq}{2}}_{\frac{\textsf{\# electrons}}{\mathsf{spin}}}\cdot \underbrace{\frac{\pi^3}{V}}_{\textsf{vol. per state}}
 \end{equation*}
-the Fermi wavenumber and its energy can be found:
+is occupied in k-space until all electron states are occupied.\\
+The Fermi wave number and its energy can then be found as:
 \noindent\begin{align*}
     k_F & = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}                   \\
     E_F & = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
@@ -583,7 +619,7 @@ the quantization of $K$ can be found:
 
 \ptitle{Potential}
 
-In its simples form, the potential can be modeled with a \textit{Dirac-comb}:
+In its simplest form, the potential can be modeled with a \textit{Dirac-comb}:
 \noindent\begin{equation*}
     V(x)=\alpha\sum_{j=0}^{N-1}\delta(x-ja)
 \end{equation*}

@@ -1,0 +1,325 @@
+\section{3D Schroedinger Equation}
+\ptitle{TDSE}
+\noindent\begin{equation*}
+    i\hbar\frac{\partial\Psi}{\partial t} = \underbrace{\left(\frac{-\hbar^2}{2m}\nabla^2 + \widehat{V}(t)\right)}_{\widehat{H}}\Psi = \left(\frac{\left(\widehat{p}_x^2 + \widehat{p}_y^2 +\widehat{p}_z^2 \right)}{2m} + \widehat{V}(t)\right)\Psi
+\end{equation*}
+
+\ptitle{TISE ($V$ time-independent)}
+\begin{align*}
+    \Psi_n(\mathbf{r},t)                                                                    & =\psi_n(\mathbf{r})\:e^{-iE_n t/\hbar} \\
+    \underbrace{\left(-\frac{\hbar^2}{2m}\nabla^2 + \widehat{V}\right)}_{\widehat{H}}\psi_n & = E_n \psi_n
+\end{align*}
+
+\subsection{Spherical Symmetry}
+\renewcommand{\arraystretch}{0.7}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
+\noindent\begin{equation*}
+    \begin{matrix}
+                            &             &                 &                              \\
+        \psi(r,\theta,\phi) & \rightarrow & Y(\theta, \phi) & \rightarrow & \Theta(\theta) \\
+                            & \searrow    &                 & \searrow    &                \\
+                            &             & R(r)            &             & \Phi(\phi)     \\
+    \end{matrix}
+\end{equation*}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
+
+\ptitle{Azimuthal Angle Solution} $\Phi$
+\begin{equation*}
+    \Phi(\phi)=e^{i m_\ell \phi}, \quad m_\ell \in \mathbb{Z}
+\end{equation*}
+
+\ptitle{Polar Angle Solution} $\Theta$
+\begin{equation*}
+    \Theta(\theta) = A P_{\ell}^{m_\ell}(\cos(\theta)), \quad \ell \in \mathbb{N}_0 \quad \text{and} \quad |m_\ell| \leq \ell
+\end{equation*}
+
+\ptitle{Angular Solutions $\mathbf{Y}$ (Spherical Harmonics)}
+
+See \textit{Useful Info Sheet}
+\begin{equation*}
+    Y_{\ell}^{m_\ell}(\theta, \phi) = \epsilon\sqrt{\frac{2\ell+1}{4\pi}\frac{(\ell-|m_\ell|)!}{(\ell+|m_\ell|)!}}\:e^{im_\ell\phi}\:P_{\ell}^{m_\ell}(\cos(\theta))
+\end{equation*}
+% where
+\begin{equation*}
+    \epsilon = \begin{cases}
+        {(-1)}^{m_\ell} & m_\ell > 0    \\
+        1               & m_\ell \leq 0
+    \end{cases}
+\end{equation*}
+
+\newpar{}
+\ptitle{Radial Equation} $\mathbf{R}$
+
+Explicit solution depends of the potential $V$.
+\begin{equation*}
+    \frac{-\hbar^2}{2m}\:\frac{d^2u}{dr^2}+\underbrace{\left[V(r)+\frac{-\hbar^2}{2m}\frac{\ell(\ell+1)}{r^2}\right]}_{V_{\text{eff}}}u = Eu
+\end{equation*}
+% with
+\begin{equation*}
+    u(r) = rR(r)
+\end{equation*}
+
+\ptitle{Remark on Spherical Coordinates}
+% \begin{align*}
+%     \theta & = \text{polar angle}     \\
+%     \phi   & = \text{azimuthal angle} \\
+%     r      & = \text{radius}
+% \end{align*}
+{\footnotesize
+    \begin{align*}
+    % \mathbf{\nabla} & =\mathbf{u}_{r}\frac{\partial}{\partial r}+\frac{\mathbf{u}_{\theta}}{r}\frac{\partial}{\partial\theta}+\frac{\mathbf{u}_{\phi}}{r\sin\theta}\frac{\partial}{\partial\phi}                                      \\
+    \nabla^2  =\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right) 
+              + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
+\end{align*}}
+\begin{equation*}
+    d^2\mathbf{r} = \sin(\theta)d\theta\:d\phi; \qquad
+    d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
+\end{equation*}
+
+\textbf{Normalization}
+
+\noindent\begin{equation*}
+    \int_0^{2\pi}\int_0^{\pi} |Y_\ell^{m_\ell}|^2 \sin\theta\;d\theta d\phi \overset{!}{=} 1
+\end{equation*}
+
+\textbf{Orthogonality}
+
+\noindent\begin{equation*}
+    \int_0^{2\pi}\int_0^{\pi} {(Y_\ell^{m_\ell})}^{(a)}{(Y_\ell^{m_\ell})}^{(b)} \sin\theta\;d\theta d\phi \overset{!}{=} \begin{cases}
+        1 & a=b     \\
+        0 & a\neq b
+    \end{cases}
+\end{equation*}
+
+\subsection{Hydrogen Atom}
+\noindent\begin{equation*}
+    V(r) = \frac{-e^2}{4\pi\epsilon_0}\frac{1}{r}\qquad \mathrm{spherical\ symmetry}
+\end{equation*}
+
+\ptitle{Radial Solution}
+\begin{align*}
+    R_{n\ell}(r) = & \sqrt{{\left(\frac{2}{na}\right)}^3\frac{(n-\ell-1)!}{2n{[(n+\ell)!]}^3}} \ldots                    \\
+                   & \ldots\exp\left(\frac{-r}{na}\right){\left(\frac{2r}{na}\right)}^\ell L_{n-\ell-1}^{2\ell+1}(2r/na)
+\end{align*}
+with \textbf{Bohr radius} $a$ ($m_e\simeq m$)
+\begin{equation*}
+    a = \frac{4\pi\epsilon_0\hbar^2}{m_e e^2}=0.529 \cdot 10^{-10}m
+\end{equation*}
+
+\ptitle{Combined Solution}
+\begin{equation*}
+    \psi_{n\ell m_\ell}(r,\theta,\phi) = R_{n\ell}(r)\:Y_\ell^{m_\ell}(\theta, \phi)
+\end{equation*}
+
+\ptitle{Energies (of all Hydrogenic Atoms)}
+
+\begin{equation*}
+    E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{E_1}{n^2}
+\end{equation*}
+with $n \in \mathcal{N}$ and $E_1 = -13.6eV$
+
+\ptitle{Degeneracy}
+
+States are called \textit{degenerate} if they share their energy levels.
+
+Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), all states with $\ell=0,1,\ldots, n-1$ and $m_\ell=-\ell, \ldots, \ell$ are degenerate because they share their energy $E_n$.
+
+
+\subsubsection{Quantum Numbers}
+\textbf{Principal Quantum Number} $n$
+\noindent\begin{equation*}
+    n = 1, 2, 3, \ldots \in \mathcal{N}
+\end{equation*}
+\begin{itemize}
+    \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit.
+\end{itemize}
+
+\newpar{}
+\textbf{Azimuthal Quantum Number} $\ell$
+\noindent\begin{equation*}
+    \ell = 0, 1, 2, \ldots , n-1
+\end{equation*}
+\begin{itemize}
+    \item $\ell$ determines the shape of the electrons orbit ($\ell$ is the number of angular nodes).
+    \item $\ell$ is directly related to the orbital angular momentum.
+    \item $n-\ell-1$ is the number of radial nodes
+\end{itemize}
+
+\newpar{}
+\textbf{Magnetic Quantum Number} $m_\ell$
+\noindent\begin{equation*}
+    m_\ell =-\ell, -\ell+1, \ldots , \ell-1, \ell
+\end{equation*}
+\begin{itemize}
+    \item $m_l$ describes the orientation of the angular momentum relative to an external magnetic field.
+    \item $m_l$ is responsible for the magnetic splitting of spectral lines i.e.\ the \textit{Zeeman effect}
+\end{itemize}
+
+\subsection{Cubical ISW}
+\noindent\begin{equation*}
+    V(x,y,z)=\begin{cases}0,&\text{if }x,y,z\text{ are all between }0\text{ and }a\\\infty,&\text{otherwise}\end{cases}
+\end{equation*}
+
+\noindent\begin{align*}
+    \Psi_n \left(x,y,z\right) & ={\left(\frac{2}{a}\right)}^{\frac{3}{2}} \sin\left(\frac{n_{x}\pi}{a}x\right)\sin\left(\frac{n_{y}\pi}{a}y\right)\sin\left(\frac{n_{z}\pi}{a}z\right) \\
+    E_n                       & = \frac{\hbar^{2}}{2m} \frac{\pi^{2}}{a^{2}} \underbrace{\left(n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right)}_{n}
+\end{align*}
+
+\section{Anglar Momentum and Spin}
+\subsection{Angular Momentum}
+\noindent\begin{equation*}
+    \widehat{\mathbf{L}}=
+    \begin{pmatrix}
+        \widehat{L}_x \\
+        \widehat{L}_y \\
+        \widehat{L}_z
+    \end{pmatrix}
+    =\widehat{\mathbf{r}}\times\widehat{\mathbf{p}}
+    =
+    \begin{pmatrix}
+        y\widehat{p}_z-z\widehat{p}_y \\
+        z\widehat{p}_x-x\widehat{p}_z \\
+        x\widehat{p}_y-y\widehat{p}_x
+    \end{pmatrix}
+    =\frac{\hbar}{i}(\mathbf{\widehat{r}}\times\widehat{\mathbf{\nabla}})
+\end{equation*}
+with
+\begin{equation*}
+    |\mathbf{L}|=\sqrt{L_{x}^{2}+L_{y}^{2}+L_{z}^{2}}
+\end{equation*}
+
+See Subsection~\ref{ang_mom_comm} for compatibility.
+
+\subsubsection{Ladder Operators for Angular Momentum}
+
+\noindent\begin{equation*}
+    \widehat{L}_{\pm}=\widehat{L}_x\pm i \widehat{L}_y \quad \mathrm{change\ eigenvalue\ of\ } \widehat{L}_z \mathrm{\ by\ } \hbar
+\end{equation*}
+
+\subsubsection{Eigenfunctions}
+
+$\widehat{L}^2$ and $\widehat{L}_z$ are compatible (share orthogonal eigenfunctions $f_{\ell}^{m_\ell}=Y_{\ell}^{m_\ell}$):
+\begin{align*}
+    \widehat{L}^2 f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
+    \widehat{L}_z f_{\ell}^{m_l} & =\hbar m_\ell f_{\ell}^{m_l}
+\end{align*}
+with quantum numbers
+\begin{align*}
+    \ell  =0, 1/2, 1, 3/2,\ldots\qquad  m_\ell = \underbrace{-\ell, -\ell+1, \ldots, \ell-1, \ell}_{2\ell+1}
+\end{align*}
+
+\subsubsection{Physical Interpretation}
+\noindent\begin{align*}
+    |\mathbf{L}| & =\hbar\sqrt{\ell(\ell+1)} \\
+    L_{z}        & =m_{\ell}\hbar
+\end{align*}
+as $m_{\ell}=-\ell,\dots,\ell$, and $L_x, L_y, L_z$ are incompatible
+\begin{itemize}
+    \item $L_z < |\mathbf{L}|$: $\mathbf{L}$ can never point directly along the $z$ axis
+    \item We can determine $|\mathbf{L}|$ and $L_{z}$ simultaneously.
+    \item But then have uncertainty in $L_x, L_y$.
+\end{itemize}
+\begin{center}
+    \includegraphics[width = 0.3\linewidth]{angular_momentum.png}
+\end{center}
+
+\subsection{Spin}
+\subsubsection{Eigenfunctions}
+
+\noindent\begin{align*}
+    \widehat{S}^2f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} \\
+    \widehat{S}_{z}f_{s}^{m_s} & =\hbar m_s f_{s}^{m_s}
+\end{align*}
+where
+\begin{equation*}
+    s =0,\frac{1}{2},1,\frac{3}{2},\dots \quad m_s =\underbrace{-s, -s+1,\dots, s-1, s}_{2s+1}
+\end{equation*}
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item The \textbf{set value} for $\mathbf{s}$ and the fact that one cannot write mathematical formulae for $f_{s}^{m_s}$ distinguishes spin from angular momentum.
+    \item For electrons we have $s=\frac{1}{2}$, for photons $s=1$
+    \item Electrons have
+          \begin{itemize}
+              \item $m_s=\frac{1}{2}$ (spin up)
+              \item $m_s=-\frac{1}{2}$ (spin down)
+              \item Therefore, only two eigenstates $f_{\frac{1}{2}}^{\pm \frac{1}{2}}$
+          \end{itemize}
+\end{itemize}
+
+\subsubsection{Spin State of an Electron}
+\noindent\begin{equation*}
+    f_{s}^{m_{s}}\rightarrow|s,m_{s}\rangle
+\end{equation*}
+\noindent\begin{align*}
+    f_{\frac{1}{2}}^{\pm\frac{1}{2}} \rightarrow\left|\frac{1}{2},\quad \pm\frac{1}{2}\right>= \left|\uparrow\right> \text{or } \left|\downarrow\right>
+\end{align*}
+\begin{align*}
+    |\mathbf{S}| & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
+    S_z          & =\pm \frac{1}{2}\hbar
+\end{align*}
+
+\ptitle{General Spin State}
+\begin{equation*}
+    \left|\lambda\right>=a\left|\frac{1}{2},\quad +\frac{1}{2}\right>+b\left|\frac{1}{2},\quad -\frac{1}{2}\right>
+\end{equation*}
+where the probability of measuring a certain spin (assuming $\left|\lambda\right>$ \textbf{normalized}!) is given by $|a|^2$ for $\uparrow$ and $|b|^2$ for $\downarrow$ respectively.
+
+\newpar{}
+\ptitle{Spin Operators as Matrices}
+
+With the two eigenstates of electron as base
+\begin{equation*}
+    \left|\frac{1}{2},\quad +\frac{1}{2}\right> \rightarrow \left(\begin{matrix}
+            1 \\
+            0
+        \end{matrix}\right),\quad
+    \left|\frac{1}{2},\quad -\frac{1}{2}\right> \rightarrow \left(\begin{matrix}
+            0 \\
+            1
+        \end{matrix}\right)
+\end{equation*}
+\textbf{spin relative to z-axis} can be written as
+\begin{align*}
+    \widehat{S}^2   & \rightarrow \frac{3}{4}{\hbar}^2\begin{bmatrix}
+                                                          1 & 0 \\
+                                                          0 & 1
+                                                      \end{bmatrix} &
+    \widehat{S}_{z} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                     1 & 0  \\
+                                                     0 & -1
+                                                 \end{bmatrix}       \\
+    \widehat{S}_{x} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                     0 & 1 \\
+                                                     1 & 0
+                                                 \end{bmatrix}      &
+    \widehat{S}_{y} & \rightarrow \frac{\hbar}{2}\begin{bmatrix}
+                                                     0 & -i \\
+                                                     i & 0
+                                                 \end{bmatrix}
+\end{align*}
+
+Note that
+\begin{itemize}
+    \item $\widehat{S}_{x}$, $\widehat{S}_{y}$ are non-diagonal i.e.\ the basis vectors are not eigenvectors of these operators.
+    \item If they were diagonal in z-basis, $\widehat{S}_{x},\widehat{S}_{y},\widehat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
+\end{itemize}
+
+\newpar{}
+\ptitle{Ladder Operators for Spin}
+\begin{align*}
+    \widehat{S}_{+}\left|\frac{1}{2},-\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},+\frac{1}{2}\right> & \text{ (raises $S_z$ by $\hbar$)} \\
+    \widehat{S}_{-}\left|\frac{1}{2},+\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},-\frac{1}{2}\right> & \text{ (lowers $S_z$ by $\hbar$)}
+\end{align*}
+and are in z-axis basis given by the \textbf{non-hermitian} matrices
+\begin{equation*}
+    \widehat{S}_{+}  \rightarrow \hbar\begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{bmatrix},\quad
+    \widehat{S}_{-}  \rightarrow \hbar\begin{bmatrix}
+        0 & 0 \\
+        1 & 0
+    \end{bmatrix}
+\end{equation*}

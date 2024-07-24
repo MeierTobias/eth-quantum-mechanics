@@ -1,5 +1,5 @@
 \section{Schroedinger Equation}
-
+For potential energy functions that are constant in time, the general solution to the SE can (if analytically solvable) be expressed as a linear combination of separable solutions (=stationary states) that consist of a space-dependent function and a phase factor.
 \subsection{Stationary States}
 The Schrödinger equation can be solved by separation of variables:
 \noindent\begin{align*}
@@ -45,16 +45,17 @@ $\widehat{H}$ is the Hamiltonian operator representing \textbf{total energy}:
 \newpar{}
 
 \textbf{Remarks:}
+For stationary states (\textbf{only}) one has the properties
 \begin{itemize}
     \item $|\Psi(x,t)|^2 = |\psi(x)|^2$ (prob.\ density is time-independent):
           \noindent\begin{equation*}
               \langle Q\rangle=\int_{-\infty}^\infty\psi^*(x)\widehat{Q}\psi(x)dx
           \end{equation*}
     \item $\widehat{H}\psi = E\psi$ is an \textit{eigenvalue equation}. Therefore the energies $E_n$ can be obtained with diagonalization
-    \noindent\begin{equation*}
-        \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
-    \end{equation*}
-    \item every expectation value is \textbf{constant in time}
+          \noindent\begin{equation*}
+              \det\left(\mathbf{H}-E_n \mathbf{I}\right) = \mathbf{0} \qquad \mathbf{H}_{jk} = \left\langle f_j\right|\widehat{H}\left|f_k \right\rangle
+          \end{equation*}
+    \item every expectation value is \textbf{constant in time}.
 \end{itemize}
 
 \subsubsection{Combining the Separable Solutions}
@@ -78,6 +79,7 @@ The expectation value of the energy of a particle in a general state is given by
 \ptitle{Remarks:}
 \begin{itemize}
     \item In other words, $\Psi_n$ \textit{says} where a particle most likely \textit{is} when it has the energy $E_n$. So $\Psi$ tells us that a particle is in serval $\Psi_n$'s with several $E_n$'s at the same time. A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+    \item The separation constant $E$ must be \textbf{real} for the wave function to stay normalized.
     \item In contrast to the case of stationary states, probabilities and expectations of the general solution (a linear combination of stationary states) are in general \textbf{not} time-independent.
     \item As $c_n$ are independent on time, the probability to get a certain energy and $\langle H\rangle$ are constant in time (energy conservation).
 \end{itemize}
@@ -87,13 +89,11 @@ A \textit{free particle} propagates in space as a \textbf{wave packet} and its w
 \noindent\begin{equation*}
     \Psi_{wp}(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(k)\exp\left[i\left(kx- \underbrace{\frac{\hbar k^{2}}{2m}}_{\omega}t\right)\right]dk
 \end{equation*}
-the corresponding \textbf{shape function} can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$ ($g(k)$ is the Fourier transform of the initial state):
+the corresponding \textbf{shape function} $g$ can be determined from the initial condition $\Psi(x,0)$ i.e.\ setting $t=0$:
 \noindent\begin{equation*}
     g(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_{wp}(x,0)e^{-ikx}dx
 \end{equation*}
-
-with:
-
+which means that $g(k)$ is the Fourier transform of the initial state and:
 \begin{align*}
     k & = \frac{2\pi}{\lambda} \\
     p & = \hbar k
@@ -104,7 +104,7 @@ with:
 \begin{itemize}
     \item A free particle can have any positive energy $E$.
     \item There is no free particle with a definite energy.
-    \item $\frac{1}{\sqrt{2\pi}}$ plays the role of $c_n$ from the discrete superposition case.
+    \item $\frac{1}{\sqrt{2\pi}}g(k)dk$ plays the role of $c_n$ from the discrete superposition case.
     \item Separable solutions do not represent physical states, therefore $\notin$ Hilbert space.
     \item The particle carries a range of $k$
 \end{itemize}
@@ -138,6 +138,10 @@ each with a corresponding energy (\textbf{quantized})
 \begin{center}
     \includegraphics[width = 0.4\linewidth]{ISW.png}
 \end{center}
+Calculations can be simplified by substituting
+\begin{equation*}
+    \omega= \frac{\pi^2 \hbar}{2m a^2},\quad \frac{E_n}{\hbar} = \omega n^2
+\end{equation*}
 
 \textbf{Remarks:}
 \begin{itemize}
@@ -224,6 +228,8 @@ Applied to the TISE we get
 \end{align*}
 This implies, if $\psi_n$ are solutions to the TISE with energy $E_n$, then $\widehat{a}_{+}\psi_n$/$\widehat{a}_{-}\psi_n$ are also solutions but with one more/less quantum of energy.
 \newpar{}
+\ptitle{Ground State}
+
 At the bottom of the energy potential function the steady state is given by
 \begin{equation*}
     \widehat{a}_{-}\psi_0 = 0\psi_0 = 0
@@ -232,15 +238,21 @@ Which is a simple ODE that results in the solution for the fist state (one level
 \begin{equation*}
     \psi_0 = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)
 \end{equation*}
+with
+\begin{equation*}
+    E_0 = \frac{1}{2}\hbar\omega
+\end{equation*}
+\newpar{}
+\ptitle{Using Ladders to Move in States}
+
 To get $\psi_n$, $\widehat{a}_{+}$ can be applied $n$-times.
 \begin{equation*}
     \psi_n = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0
 \end{equation*}
 with
-\begin{align*}
-    E_0 & = \frac{1}{2}\hbar\omega     \\
-    E_n & = (n+\frac{1}{2})\hbar\omega
-\end{align*}
+\begin{equation*}
+    E_n = (n+\frac{1}{2})\hbar\omega
+\end{equation*}
 
 For an arbitrary state $n$ the next state is given by
 \begin{align*}
@@ -249,6 +261,14 @@ For an arbitrary state $n$ the next state is given by
 \end{align*}
 
 \includegraphics[width=\linewidth]{harmonic_oscillator.png}
+
+\newpar{}
+\ptitle{Specific Excited States}
+
+\begin{align*}
+    \psi_{1}(x) & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                    \\
+    \psi_{2}(x) & =\frac{1}{\sqrt{2}}{\Big(\frac{m\omega}{\pi\hbar}\Big)}^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\Big(\frac{m\omega}{2\hbar}\Big)x^{2}}
+\end{align*}
 
 \ptitle{Hermite Polynomial Form}
 
@@ -296,8 +316,8 @@ Another way of modeling the boundary conditions through the finite potentials $V
 For any potential, the solution to the SE will either be a combination of \textit{scattering} and \textit{bound states} depending on the energy of the particle:
 \noindent\begin{equation*}
     \begin{cases}
-        E > V(\pm \infty) & \text{scattering state} \\
-        E < V(\pm \infty) & \text{bound state}
+        E > V(+\infty)\text{ or } E > V(-\infty)  & \text{scattering state} \\
+        E < V(+\infty)\text{ and } E < V(-\infty) & \text{bound state}
     \end{cases}
 \end{equation*}
 \textbf{Remarks}:
@@ -323,8 +343,8 @@ For any potential, the solution to the SE will either be a combination of \texti
           \end{itemize}
     \item match solutions at interfaces between regions using boundary conditions:
           \begin{itemize}
-              \item $\psi(x)$ continous and finite
-              \item $\frac{d\psi}{dx}$ continous
+              \item $\psi(x)$ continuous and finite
+              \item $\frac{d\psi}{dx}$ continuous
           \end{itemize}
 \end{enumerate}
 
@@ -336,6 +356,7 @@ For any potential, the solution to the SE will either be a combination of \texti
     \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$)
     \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponential decay
     \item $E<0$: no physical solution
+    \item in the red case reflection and in the blue case penetration are non-classical.
 \end{itemize}
 
 \subsubsection{Finite Potential Well}
@@ -344,8 +365,10 @@ For any potential, the solution to the SE will either be a combination of \texti
 \end{center}
 \begin{itemize}
     \item $\textcolor{red}{E}>V_0$: transmission and reflection. Constructive/destructive interference, decreased $\lambda$ over well.
-    \item $0<\textcolor{blue}{E}<V_0$: at least one bound state with penetration into barrier
+    \item $0<\textcolor{blue}{E}<V_0$: at least one bound state (even for arbitrarily shallow wells) with penetration into barrier
     \item $E<0$: no physical solution
+    \item again, reflection for the red and penetration for the blue case are non-classical.
+    \item a very deep well corresponds to the ISW, which features (infinitely) many bound states.
 \end{itemize}
 
 \subsubsection{Finite Potential Barrier}
@@ -356,6 +379,7 @@ For any potential, the solution to the SE will either be a combination of \texti
     \item $\textcolor{red}{E}>V_0$: transmission and reflection (increased $\lambda$ over step)
     \item $0<\textcolor{blue}{E}<V_0$: reflection and penetration (tunneling) into barrier with exponentially decaying probability of transmission
     \item $E<0$: no physical solution
+    \item in this case, reflection for the red and transmission for the blue case are non-classical.
 \end{itemize}
 
 \subsubsection{Tunneling}
@@ -377,7 +401,7 @@ which is derived from
 with
 \begin{gather*}
     \nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} \\
-    \widehat{p}_d = \frac{\hbar}{i}\frac{\partial}{\partial d}
+    \widehat{p}_d = -i\hbar\frac{\partial}{\partial d}
 \end{gather*}
 
 If $\widehat{V}$ is \textbf{time-independent} the stationary states are given by
@@ -394,24 +418,31 @@ and $\Psi$ is normalized
 \end{equation*}
 
 \subsubsection{Spherical Symmetry}\label{3dSE_spherical_symmetry}
-For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates. Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\widehat{H}$ and separate the partial differential equation $\widehat{H}\psi = E\psi$ by variables.
+For spherical symmetric problems (like the hydrogen atom~\ref{H-atom}) it is best to transform the 3D TDSE from cartesian to polar coordinates.
+
+\newpar{}
+\ptitle{Separated Wave Function}
+
+Then one can substitute $\nabla^2(r, \theta, \phi)$ in $\widehat{H}$ and separate the partial differential equation $\widehat{H}\psi = E\psi$ by variables.
 \renewcommand{\arraystretch}{0.7}
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
 \begin{equation*}
     \begin{matrix}
-                            &          & R(r)            &          &                \\
-                            & \nearrow &                 &          &                \\
-        \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
-                            & \searrow &                 & \nearrow &                \\
-                            &          & Y(\theta, \phi) &          &                \\
-                            &          &                 & \searrow &                \\
-                            &          &                 &          & \Phi(\phi)
+                                 &          &                     &          &                 &          &                \\
+                                 &          & \varphi(t)          &          &                 &          &                \\
+                                 & \nearrow &                     &          & R(r)            &          &                \\
+        \Psi(t, r, \theta, \phi) &          &                     & \nearrow &                 &          &                \\
+                                 & \searrow & \psi(r,\theta,\phi) &          &                 &          & \Theta(\theta) \\
+                                 &          &                     & \searrow &                 & \nearrow &                \\
+                                 &          &                     &          & Y(\theta, \phi) &          &                \\
+                                 &          &                     &          &                 & \searrow &                \\
+                                 &          &                     &          &                 &          & \Phi(\phi)
     \end{matrix}
 \end{equation*}
 \renewcommand{\arraystretch}{1}
 \setlength\tabcolsep{\oldtabcolsep}
 
-This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$.
+This results in three separate ODEs for each variable $R(r)$, $\Theta(\theta)$ and $\Phi(\phi)$, and the known equation for the phase factor. The solution describes the orbital shape and has the form
 \begin{equation*}
     \psi(r,\theta,\phi) = R(r)\:Y(\theta, \phi) = R(r)\:\Theta(\theta)\:\Phi(\phi)
 \end{equation*}
@@ -426,6 +457,10 @@ The solution to the azimuthal angle ODE is given by
 where $m_\ell$ is the \textbf{magnetic quantum number}
 \begin{equation*}
     m_\ell \in \mathbb{Z}
+\end{equation*}
+which arises from the boundary condition
+\begin{equation*}
+    \Phi(\phi)=\Phi(\phi+2\pi)
 \end{equation*}
 
 \newpar{}
@@ -442,6 +477,12 @@ where $A$ is a constant, $\ell$ is the \textbf{azimuthal quantum number} and $P_
 
 \input{plots/legendre_functions.tex}
 
+Remarks
+\begin{itemize}
+    \item The plots hold for the coordinate system specified above, i.e.\ $\theta$ starts in $+z$ direction.
+    \item Note that the shapes of the solutions correspond to the atom orbitals.
+\end{itemize}
+
 \newpar{}
 \ptitle{Angular Solutions} $\mathbf{Y}$
 
@@ -457,7 +498,7 @@ where
     \end{cases}
 \end{equation*}
 
-The spherical harmonics are normalized and orthogonal.
+The spherical harmonics are normalized and orthogonal (see end of this subsection).
 
 \newpar{}
 \ptitle{Radial Equation} $\mathbf{R}$
@@ -474,6 +515,10 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
 
 \newpar{}
 \ptitle{Remark on Spherical Coordinates}
+\begin{center}
+    \includegraphics[width=0.75\linewidth]{spherical_coordinates.png}
+\end{center}
+\textit{source: Griffith}
 \begin{align*}
     \theta & = \text{polar angle}     \\
     \phi   & = \text{azimuthal angle} \\
@@ -484,9 +529,10 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
     \nabla^2        & =\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right) \ldots \\
                     & + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
 \end{align*}
-\begin{equation*}
-    d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
-\end{equation*}
+\begin{align*}
+    d^2\mathbf{r} & = \sin(\theta)d\theta\:d\phi                     \\
+    d^3\mathbf{r} & = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
+\end{align*}
 
 \textbf{Normalization}
 
@@ -508,7 +554,7 @@ Where $V(r)$ is the potential energy function which depends on the system. A sol
 Explicit solutions for the first few solutions of $Y_l^{m_l}$ can be found in the \textit{Useful Info Sheet}.
 
 \subsection{Hydrogen Atom}\label{H-atom}
-The potential energy function, i.e. $\widehat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefor the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
+The potential energy function, i.e. $\widehat{V}(\mathbf{r})$, is \textbf{spherically symmetric} with respect to the nucleus. Therefore the SE in polar coordinates, stated in Section~\ref{3dSE_spherical_symmetry} can be used.
 \newpar{}
 The Coulombic attraction between the electron and the proton gives the potential energy function
 \begin{equation*}
@@ -528,7 +574,7 @@ where $L_q^p (x)$ are the \textbf{associated Laguerre functions}, $n$ is the \te
 \end{equation*}
 where $m_e\simeq m$
 
-\ptitle{Final Solution}
+\subsubsection{Combined Solution}
 
 Combining the radial and the angular solution we get
 \begin{equation*}
@@ -543,6 +589,7 @@ where the quantum numbers are in the ranges of
     n = 1, 2, 3, \ldots
 \end{equation*}
 \begin{itemize}
+    \item arises from the radial equation
     \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit.
 \end{itemize}
 
@@ -552,6 +599,7 @@ where the quantum numbers are in the ranges of
     \ell = 0, 1, 2, \ldots , n-1
 \end{equation*}
 \begin{itemize}
+    \item arises from the polar equation
     \item $\ell$ determines the shape of the electrons orbit ($\ell$ is the number of angular nodes).
     \item $\ell$ is directly related to the orbital angular momentum.
     \item $n-\ell-1$ is the number of radial nodes
@@ -563,6 +611,7 @@ where the quantum numbers are in the ranges of
     m_\ell =-\ell, -\ell+1, \ldots , \ell-1, \ell
 \end{equation*}
 \begin{itemize}
+    \item arises from the azimuthal equation
     \item $m_l$ describes the orientation of the angular momentum relative to an external magnetic field.
     \item $m_l$ is responsible for the magnetic splitting of spectral lines i.e.\ the \textit{Zeeman effect}
 \end{itemize}
@@ -651,7 +700,7 @@ which increase or lower the eigenvalue of $\widehat{L}_z$ by $\hbar$. These oper
 
 \subsubsection{Eigenfunctions}
 
-As they are compatible (share eigenfunctions), we choose to find the eigenfunctions for $\widehat{L^2}$ and $\widehat{L_z}$
+As they are compatible (share eigenfunctions), we choose to find the eigenfunctions for $\widehat{L}^2$ and $\widehat{L}_z$
 \begin{align*}
     \widehat{L}^2 f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
     \widehat{L}_z f_{\ell}^{m_l} & =\hbar mf_{\ell}^{m_l}
@@ -750,7 +799,7 @@ In contrast to angular momentum of a QM particle where $l$ could take arbitrary 
 \ptitle{Remarks}
 
 \begin{itemize}
-    \item The set value for $\mathbf{s}$ and the fact that one cannot write mathematical formulae for $f_{s}^{m_s}$ distinguishes spin from angular momentum.
+    \item The set value for $\mathbf{s}$ and the fact that one cannot write mathematical formulae for $f_{s}^{m_s}$ \textbf{distinguishes} spin from angular momentum.
     \item For electrons we have $s=\frac{1}{2}$, for photons $s=1$
     \item Electrons have
           \begin{itemize}
@@ -775,8 +824,8 @@ For an electron with $s=\frac{1}{2}$, the eigenfunctions can be described by ket
 \end{align*}
 and one has
 \begin{align*}
-    |\mathbf{S}| & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
-    S_z          & =\pm \frac{1}{2}\hbar
+    |\mathbf{S}| & =\sqrt{\hbar^2 s(s+1)} & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
+    S_z          & =\hbar m_s             & =\pm \frac{1}{2}\hbar
 \end{align*}
 
 \ptitle{General Spin State}
@@ -788,6 +837,7 @@ Spin can be in a general state
 \end{equation*}
 where the probability of measuring a certain spin (assuming $\left|\lambda\right>$ \textbf{normalized}!) is given by $|a|^2$ for $\uparrow$ and $|b|^2$ for $\downarrow$ respectively.
 
+\newpar{}
 \ptitle{Spin Operators as Matrices}
 
 Setting the two eigenstates of the electron as basis vectors (the space having only 2 dimensions allows for vector notation!) of a \textbf{two-dimensional} vector space we get
@@ -828,6 +878,7 @@ Note that
     \item If they were diagonal in z-basis, $\widehat{S}_{x},\widehat{S}_{y},\widehat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
 \end{itemize}
 
+\newpar{}
 \ptitle{Ladder Operators for Spin}
 
 The ladder operators have the effect
