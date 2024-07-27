@@ -42,10 +42,11 @@ Hydrogenic states are a special case with only 1 elctron. One then has
 
 \paragraph{Multi-Electron States}
 In a general multi-particle system (e.g.\ atom with $Z$ protons) the Hamiltonian is given by
-\begin{align*}
-    \widehat{H} = & \underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} \\
-    +             & \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}
-\end{align*}
+{\small
+\begin{equation*}
+    \widehat{H} = \sum_{j=1}^{Z} \left[ \underbrace{ \left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}}  +              \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}\right]
+\end{equation*}
+}
 where in the ``repulsion'' term
 \begin{itemize}
     \item the interaction between electrons $j,k$ is described
@@ -556,8 +557,10 @@ and each solution occupies
 \noindent\begin{equation*}
     \frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}
 \end{equation*}
-of k-space.
-% TODO: where did the n_{x}, n_{y} ... go? -> using k from now on
+of k-space for box volume $V$. This can be shown using the unit cuboid in k-space i.e.\ with $n_x=1,n_y=1,n_z =1$ and 
+\begin{equation*}
+    k_x k_y k_z = \frac{\pi^3}{l_x l_y l_z}
+\end{equation*}
 
 \subsubsection{Fermi Energy}
 For electrons (fermions), the energy levels are filled with 2 $e^-$ at each level, and the highest occupied level is called the \textbf{Fermi level}.
