@@ -77,11 +77,16 @@ Explicit solution depends of the potential $V$.
     d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
 \end{equation*}
 
-\textbf{Normalization}
+\newpar{}
+\ptitle{Probability Calculations}
 
 \noindent\begin{equation*}
-    \int_0^{2\pi}\int_0^{\pi} |Y_\ell^{m_\ell}|^2 \sin\theta\;d\theta d\phi \overset{!}{=} 1
+    \int_{r_0}^{r_1} \int_{\phi_1}^{\phi_2} \int_{\theta_1}^{\theta_2} r^2 {\left[R(r)\right]}^2 \cdot |Y_\ell^{m_\ell}|^2 \sin\theta\;d\theta d\phi dr
 \end{equation*}
+\begin{equation*}
+    \underbrace{r^2 {\left[R(r)\right]}^2}_{\text{radial prob.\ density}} \text{and} \underbrace{|Y_\ell^{m_\ell}|^2 \sin\theta}_{\text{angular prob.\ density}}
+\end{equation*}
+for which both probability densities are normalized w.r.t.\ ingetration over their complete domains.
 
 \textbf{Orthogonality}
 
