@@ -136,7 +136,7 @@ Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), 
     n = 1, 2, 3, \ldots \in \mathcal{N}
 \end{equation*}
 \begin{itemize}
-    \item $n$ defines the energy level of an electron and thus the size of the electron cloud and the energy associated with the electrons orbit.
+    \item $n$ defines the energy level of an electron, the size of the electron cloud and the energy associated with the orbit.
 \end{itemize}
 
 % \newpar{}
@@ -186,7 +186,7 @@ Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), 
         z\widehat{p}_x-x\widehat{p}_z \\
         x\widehat{p}_y-y\widehat{p}_x
     \end{pmatrix}
-    =\frac{\hbar}{i}(\mathbf{\widehat{r}}\times\widehat{\mathbf{\nabla}}) \\
+    =\frac{\hbar}{i}(\mathbf{\widehat{r}}\times\widehat{\mathbf{\nabla}})                                                                \\
     |\mathbf{L}|         & =\sqrt{L_{x}^{2}+L_{y}^{2}+L_{z}^{2}},  \qquad \widehat{L}_z = \frac{\hbar}{i} \frac{\partial}{\partial \phi}
 \end{align*}
 
@@ -202,7 +202,7 @@ See Subsection~\ref{ang_mom_comm} for compatibility.
 
 $\widehat{L}^2$ and $\widehat{L}_z$ are compatible (share orthogonal eigenfunctions $f_{\ell}^{m_\ell}=Y_{\ell}^{m_\ell}$):
 \begin{align*}
-    \widehat{L}^2 f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} \\
+    \widehat{L}^2 f_{\ell}^{m_l} & =\hbar^{2}\ell (\ell+1) f_{\ell}^{m_l} &
     \widehat{L}_z f_{\ell}^{m_l} & =\hbar m_\ell f_{\ell}^{m_l}
 \end{align*}
 with quantum numbers
@@ -229,10 +229,9 @@ as $m_{\ell}=-\ell,\dots,\ell$, and $L_x, L_y, L_z$ are incompatible
 \subsubsection{Eigenfunctions}
 
 \noindent\begin{align*}
-    \widehat{S}^2f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} \\
+    \widehat{S}^2f_{s}^{m_s}   & =\hbar^{2}s (s+1) f_{s}^{m_s} &
     \widehat{S}_{z}f_{s}^{m_s} & =\hbar m_s f_{s}^{m_s}
 \end{align*}
-where
 \begin{equation*}
     s =0,\frac{1}{2},1,\frac{3}{2},\dots \quad m_s =\underbrace{-s, -s+1,\dots, s-1, s}_{2s+1}
 \end{equation*}
@@ -250,15 +249,11 @@ where
 \end{itemize}
 
 \subsubsection{Spin State of an Electron}
-\noindent\begin{equation*}
-    f_{s}^{m_{s}}\rightarrow|s,m_{s}\rangle
-\end{equation*}
 \noindent\begin{align*}
-    f_{\frac{1}{2}}^{\pm\frac{1}{2}} \rightarrow\left|\frac{1}{2},\quad \pm\frac{1}{2}\right>= \left|\uparrow\right> \text{or } \left|\downarrow\right>
-\end{align*}
-\begin{align*}
-    |\mathbf{S}| & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar \\
-    S_z          & =\pm \frac{1}{2}\hbar
+    f_{s}^{m_{s}}                    & \rightarrow|s,m_{s}\rangle                                                                                         &
+    f_{\frac{1}{2}}^{\pm\frac{1}{2}} & \rightarrow\left|\frac{1}{2},\quad \pm\frac{1}{2}\right>= \left|\uparrow\right> \text{or } \left|\downarrow\right>   \\
+    S_z                              & =\pm \frac{1}{2}\hbar                                                                                              &
+    |\mathbf{S}|                     & =\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)}\hbar=\sqrt{\frac{3}{4}}\hbar
 \end{align*}
 
 \ptitle{General Spin State}
@@ -301,13 +296,11 @@ With the two eigenstates of electron as base
                                                  \end{bmatrix}
 \end{align*}
 
-Note that
 \begin{itemize}
     \item $\widehat{S}_{x}$, $\widehat{S}_{y}$ are non-diagonal i.e.\ the basis vectors are not eigenvectors of these operators.
-    \item If they were diagonal in z-basis, $\widehat{S}_{x},\widehat{S}_{y},\widehat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
+          % \item If they were diagonal in z-basis, $\widehat{S}_{x},\widehat{S}_{y},\widehat{S}_{z}$ would have the same eigenvectors (but is not the case as they are incompatible).
 \end{itemize}
 
-\newpar{}
 \ptitle{Ladder Operators for Spin}
 \begin{align*}
     \widehat{S}_{+}\left|\frac{1}{2},-\frac{1}{2}\right> & =\hbar\left|\frac{1}{2},+\frac{1}{2}\right> & \text{ (raises $S_z$ by $\hbar$)} \\
