@@ -163,7 +163,7 @@ Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), 
 \subsection{Cubical ISW}
 \noindent\begin{align*}
     V(x,y,z)           & =\begin{cases}0,&\text{if }x,y,z\text{ are all between }0\text{ and }a\\\infty,&\text{otherwise}\end{cases}                                            \\
-    \Psi_{n_x,n_y,n_z} & ={\left(\frac{2}{a}\right)}^{\frac{3}{2}} \sin\left(\frac{n_{x}\pi}{a}x\right)\sin\left(\frac{n_{y}\pi}{a}y\right)\sin\left(\frac{n_{z}\pi}{a}z\right) \\
+    \psi_{n_x,n_y,n_z} & ={\left(\frac{2}{a}\right)}^{\frac{3}{2}} \sin\left(\frac{n_{x}\pi}{a}x\right)\sin\left(\frac{n_{y}\pi}{a}y\right)\sin\left(\frac{n_{z}\pi}{a}z\right) \\
     E_{n_x,n_y,n_z}    & = \frac{\hbar^{2}}{2m} \frac{\pi^{2}}{a^{2}} \left(n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right)
 \end{align*}
 
@@ -190,10 +190,18 @@ Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), 
 See Subsection~\ref{ang_mom_comm} for compatibility.
 
 \subsubsection{Ladder Operators for Angular Momentum}
+\renewcommand{\arraystretch}{0.7}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
 
-\noindent\begin{equation*}
-    \widehat{L}_{\pm}=\widehat{L}_x\pm i \widehat{L}_y \quad \mathrm{change\ eigenvalue\ of\ } \widehat{L}_z \mathrm{\ by\ } \hbar
-\end{equation*}
+\begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash}p{0.4\linewidth}X@{}}
+    $\widehat{L}_{\pm}=\widehat{L}_x\pm i \widehat{L}_y$
+    & 
+    change eigenvalue of $\widehat{L}_z$ by $\hbar$ \newline raises or lowers $m_\ell$ by 1.
+\end{tabularx}
+
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
+
 
 \subsubsection{Eigenfunctions}
 
