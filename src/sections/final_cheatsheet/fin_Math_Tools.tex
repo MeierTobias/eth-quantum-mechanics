@@ -2,15 +2,14 @@
 
 \subsection{Operators}
 \noindent\begin{align*}
-    \hat{Q}(\hat{x},\hat{p}): &  & \widehat{x} & =x & \widehat{p}_x & = -i\hbar \frac{\partial}{\partial x} \\
+    \hat{Q}(\hat{x},\hat{p}): &  & \widehat{x}              & =x             & \widehat{p}_x & = -i\hbar \frac{\partial}{\partial x}            \\
+                              &  & \widehat{T}_r \varphi(x) & = \varphi(x-a): & \widehat{T}_r & = \exp\left(-\frac{ia}{\hbar} \widehat{p}\right)
 \end{align*}
 
 \subsection{Probabilities}
 The probability of finding the particle between $a$ and $b$ at time $t$ is:
-\begin{equation*}
-    \int_a^b \underbrace{{\Psi(x,t)}^*\Psi(x,t)}_{|\Psi(x,t)|^2}\,dx
-\end{equation*}
 \begin{align*}
+    \int_a^b \underbrace{{\Psi(x,t)}^*\Psi(x,t)}_{|\Psi(x,t)|^2}\,dx                                                                                    \\
     \int_{-\infty}^{\infty} |C\cdot \Psi(x,t)|^2 dx                                 = \langle C\Psi|C\Psi\rangle & = 1,\;\Psi\in L_2, \; C\in\mathbb{C} \\
     \frac{d}{dt}\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = \frac{d}{dt}\langle\Psi|\Psi\rangle                   & = 0
 \end{align*}
@@ -53,17 +52,15 @@ Evaluate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{
 \ptitle{Canonical Commutation Relations}
 
 \noindent\begin{align*}
-    \left[\widehat{x},\widehat{p}_x\right]  & = i\hbar & \left[\widehat{x}, \widehat{y}\right]     & = 0 \\
+    \left[\widehat{x},\widehat{p}_x\right]  & = i\hbar & \left[\widehat{x}, \widehat{y}\right]     & = 0 &
     \left[\widehat{x}, \widehat{p}_y\right] & = 0      & \left[\widehat{p}_x, \widehat{p}_y\right] & = 0
 \end{align*}
 \ptitle{Useful Commutators}
 
 \noindent\begin{align*}
-    \left[c,\hat B\right]                        & =0                     & \left[\widehat{H},\widehat{x}\right]     & =-\frac{i\hbar}{m}\widehat{p} \\
-    \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1                    & \left[\widehat{H}, \widehat{V}\right]    & \neq 0                        \\
-    \left[\widehat{x}^n,\widehat{p}\right]       & = i \hbar n x^{n-1}    & \left[\widehat{V},\widehat{x}\right]     & =0                            \\
-    \left[\widehat{x},\widehat{p}^2\right]       & = 2i\hbar\widehat{p}   & \left[\widehat{L}_x,\widehat{L}_y\right] & =i\hbar\widehat{L}_z          \\
-    \left[f(\widehat{x}),\widehat{p}\right]      & = i \hbar\frac{df}{dx} &                                          &
+    \left[c,\hat B\right]                  & =0                            & \left[\widehat{a}_{-},\widehat{a}_{+}\right] & = 1                  & \left[\widehat{L}_x,\widehat{L}_y\right] & =i\hbar\widehat{L}_z   \\
+    \left[\widehat{x}^n,\widehat{p}\right] & = i \hbar n x^{n-1}           & \left[\widehat{x},\widehat{p}^2\right]       & = 2i\hbar\widehat{p} & \left[f(\widehat{x}),\widehat{p}\right]  & = i \hbar\frac{df}{dx} \\
+    \left[\widehat{H},\widehat{x}\right]   & =-\frac{i\hbar}{m}\widehat{p} & \left[\widehat{H}, \widehat{V}\right]        & \neq 0               & \left[\widehat{V},\widehat{x}\right]     & =0
 \end{align*}
 
 
@@ -97,6 +94,7 @@ Assuming the functions $f,g$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbe
     \sum_{j=1}^{n} \left|f_j\right\rangle \left\langle f_j\right| & = \mathbf{I}                         &  & \text{closure relation}
 \end{align*}
 
+\newcol{}
 \ptitle{Properties of Inner Product}
 \noindent\begin{align*}
     \langle \lambda f|g \rangle & =\lambda^* \langle f|g \rangle               & \langle f|\lambda g \rangle & =\lambda \langle f|g \rangle \\
@@ -222,18 +220,24 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
 
 \subsection{Fundamental QM Relations}
 
-\ptitle{Black Body Radiation}
+\noindent\begin{align*}
+    \mathrm{Black\ Body\ Radiation}: &  & k_B T_{low}         & \ll h\nu_{high}                         \\
+    \mathrm{Photon\ Energy}           &  & E_{\mathsf{ph}}     & = \frac{hc}{\lambda}                    \\
+    \mathrm{De\ Broglie}             &  & p=\frac{h}{\lambda} & =\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
+\end{align*}
 
-\begin{equation*}
-    k_B T_{low} \ll h\nu_{high}
-\end{equation*}
+% \ptitle{Black Body Radiation}
 
-\ptitle{De Broglie}
+% \begin{equation*}
+%     k_B T_{low} \ll h\nu_{high}
+% \end{equation*}
 
-\begin{equation*}
-    p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
-\end{equation*}
-\textbf{Remarks:}
+% \ptitle{De Broglie}
+
+% \begin{equation*}
+%     p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
+% \end{equation*}
+\textbf{Remarks on de Broglie:}
 \begin{enumerate}
     \item Connects the domains of waves ($\lambda$) and particles ($p$).
     \item QM becomes relevant if $\lambda>d$ (item's characteristic size).
@@ -296,7 +300,7 @@ into the GUP yields, assuming $\hat{Q}$ is time-independent, the \textbf{time-en
 \begin{equation*}
     \Delta t\cdot\Delta E\geqslant\frac\hbar2 \qquad \left|\begin{matrix}
         \Delta t & \equiv \frac{\sigma_Q}{|d\langle Q\rangle/dt|} \\
-        \Delta E & \equiv \sigma H
+        \Delta E & \equiv \sigma_H
     \end{matrix}\right.
 \end{equation*}
 where

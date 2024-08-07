@@ -11,7 +11,7 @@
 
 \ptitle{Phase Factor}
 \noindent\begin{equation*}
-    \varphi_n(t) =\exp\left[\frac{-iE_n t}{\hbar}\right], \qquad E_n = \frac{\hbar^2 k_n^2}{2m}
+    \varphi_n(t) =\exp\left[\frac{-iE_n t}{\hbar}\right]
 \end{equation*}
 
 \ptitle{TISE}
@@ -19,7 +19,6 @@
     \widehat{H}\psi  = \Bigl[\overbrace{\underbrace{-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}}_{\frac{1}{2m}\hat{p}^2}}^{E_{kin}}+ \overbrace{V(x)}^{E_{pot}}\Bigr]\psi = E\psi
 \end{equation*}
 
-\newpar{}
 Assuming $V(x) = 0$:
 \noindent\begin{align*}
     \psi(x) & =A\sin(kx)+B\cos(kx)                                               &  & \text{standing wave (ISW)} \\
@@ -60,7 +59,7 @@ A particle/wave in a general state $\Psi$ is in a superposition of stationary st
 
 \ptitle{Remarks:}
 \begin{itemize}
-    \item A Measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
+    \item A measurement will \textbf{collapse} $\Psi$ into one of the $\Psi_n$'s.
     \item The separation constant $E$ must be \textbf{real} for the wave function to stay normalized.
     \item Probabilities and expectations of the general solution are in general \textbf{not} time-independent.
     \item As $c_n$ are independent of time, the probability to get a certain energy and $\langle H\rangle$ are constant in time (energy conservation).
@@ -101,10 +100,8 @@ A wavepacket consisting of infinitely many waves has a different \textit{group v
 \end{center}
 
 \subsection{ISW}
-\noindent\begin{equation*}
-    V(x)=\begin{cases}0,&0\le x\le a\\\infty,&\text{otherwise}\end{cases}
-\end{equation*}
 \noindent\begin{align*}
+    V(x)        & =\begin{cases}0,&0\le x\le a\\\infty,&\text{otherwise}\end{cases}                                  \\
     \psi_{n}(x) & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)                      &  & \text{standing wave} \\
     E_{n}       & =\frac{\hbar^{2}k_{n}^{2}}{2m}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}} > 0 &  & \text{quantized}
 \end{align*}
@@ -144,7 +141,7 @@ Calculations can be simplified by substituting
 
 \subsection{Harmonic Oscillator}
 % Analogon to mechanical frictionless spring and mass system.
-\begin{equation*}
+\noindent\begin{equation*}
     V(x) = \frac{1}{2}k x^2 = \frac{1}{2}m \omega^2 x^2 \qquad \text{with} \quad \omega = \sqrt{\frac{k}{m}}
 \end{equation*}
 
@@ -166,30 +163,38 @@ Calculations can be simplified by substituting
 
 \ptitle{Ladders and TISE}
 \begin{align*}
-    \widehat{H}(\widehat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\widehat{a}_{+}\psi_n \\
+    \widehat{H}(\widehat{a}_{+}\psi_n) & = (E_n+\hbar\omega)\widehat{a}_{+}\psi_n &
     \widehat{H}(\widehat{a}_{-}\psi_n) & = (E_n-\hbar\omega)\widehat{a}_{-}\psi_n
 \end{align*}
 
 \ptitle{Solution to TISE}
 \noindent\begin{align*}
-    \psi_0   & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)                                                     & E_0 & = \frac{1}{2}\hbar\omega     \\
-    \psi_{1} & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\left(\frac{m\omega}{2\hbar}\right)x^{2}}                      & E_1 & = \frac{3}{2}\hbar\omega     \\
-    \psi_{2} & =\frac{1}{\sqrt{2}}{\Big(\frac{m\omega}{\pi\hbar}\Big)}^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\Big(\frac{m\omega}{2\hbar}\Big)x^{2}} & E_2 & = \frac{5}{2}\hbar\omega     \\
-    \psi_n   & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                                                                           & E_n & = (n+\frac{1}{2})\hbar\omega
+    \psi_0   & = {\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\exp\left(\frac{-m\omega}{2\hbar}x^2\right)                                           & E_0 & = \frac{1}{2}\hbar\omega     \\
+    \psi_{1} & ={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\frac{m\omega}{2\hbar}x^{2}}                         & E_1 & = \frac{3}{2}\hbar\omega     \\
+    \psi_{2} & =\frac{1}{\sqrt{2}}{\Big(\frac{m\omega}{\pi\hbar}\Big)}^{\frac{1}{4}}\Big(\frac{2m\omega}{\hbar}x^{2}-1\Big)e^{-\frac{m\omega}{2\hbar}x^{2}} & E_2 & = \frac{5}{2}\hbar\omega     \\
+    \psi_n   & = \frac{1}{\sqrt{n!}}{\left(\widehat{a}_{+}\right)}^n \psi_0                                                                                 & E_n & = (n+\frac{1}{2})\hbar\omega
 \end{align*}
 
-\begin{align*}
-    \widehat{a}_{-}\psi_0                & = 0\psi_0 = 0                                      \\
-    \widehat{a}_{+}\psi_n                & = \sqrt{n+1}\:\psi_{n+1}                           \\
-    \widehat{a}_{-}\psi_n                & = \sqrt{n}\:\psi_{n-1}                             \\
-    \widehat{a}_{+}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+2}\:\psi_{n+2}                 \\
-    \widehat{a}_{-}\widehat{a}_{-}\psi_n & = \sqrt{n-1}\sqrt{n}\:\psi_{n-2}                   \\
-    \widehat{a}_{+}\widehat{a}_{-}\psi_n & = \sqrt{n}\sqrt{n}\:\psi_{n} = n \:\psi_{n}        \\
-    \widehat{a}_{-}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+1}\:\psi_{n} = (n+1)\:\psi_{n}
-\end{align*}
+% \begin{align*}
+%     \widehat{a}_{-}\psi_0                & = 0\psi_0 = 0                                      \\
+%     \widehat{a}_{+}\psi_n                & = \sqrt{n+1}\:\psi_{n+1}                           \\
+%     \widehat{a}_{-}\psi_n                & = \sqrt{n}\:\psi_{n-1}                             \\
+%     \widehat{a}_{+}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+2}\:\psi_{n+2}                 \\
+%     \widehat{a}_{-}\widehat{a}_{-}\psi_n & = \sqrt{n-1}\sqrt{n}\:\psi_{n-2}                   \\
+%     \widehat{a}_{+}\widehat{a}_{-}\psi_n & = \sqrt{n}\sqrt{n}\:\psi_{n} = n \:\psi_{n}        \\
+%     \widehat{a}_{-}\widehat{a}_{+}\psi_n & = \sqrt{n+1}\sqrt{n+1}\:\psi_{n} = (n+1)\:\psi_{n}
+% \end{align*}
+
+\begin{gather*}
+    \widehat{a}_{-}\psi_0 = 0, \quad \widehat{a}_{+}\psi_n = \sqrt{n+1}\:\psi_{n+1}, \quad \widehat{a}_{-}\psi_n = \sqrt{n}\:\psi_{n-1}\\
+    \widehat{a}_{+}\widehat{a}_{+}\psi_n = \sqrt{n+1}\sqrt{n+2}\:\psi_{n+2}\\
+    \widehat{a}_{-}\widehat{a}_{-}\psi_n = \sqrt{n-1}\sqrt{n}\:\psi_{n-2}\\
+    \widehat{a}_{+}\widehat{a}_{-}\psi_n = \sqrt{n}\sqrt{n}\:\psi_{n} = n \:\psi_{n}\\
+    \widehat{a}_{-}\widehat{a}_{+}\psi_n = \sqrt{n+1}\sqrt{n+1}\:\psi_{n} = (n+1)\:\psi_{n}
+\end{gather*}
 
 \begin{center}
-    \includegraphics[width=.8\linewidth]{harmonic_oscillator.png}
+    \includegraphics[width=.6\linewidth]{harmonic_oscillator.png}
 \end{center}
 
 \ptitle{Hermite Polynomial Form} (\textit{Useful Info Sheet})
@@ -205,13 +210,13 @@ Calculations can be simplified by substituting
     \item The energy is quantized.
     \item $n$ is the number of energy quanta in the oscillator
     \item $\widehat{N} \equiv \widehat{a}_{+}\widehat{a}_{-} = $ number operator because $\left<N\right> = n$ for $\psi_n$
-    \item The lowest state $\psi_0$ has the \textbf{zero point energy}. Even if all the energy is removed from the system (zero Kelvin).
-    \item Solutions alter between even and odd because the potential is \textbf{symmetric}.
+    \item The lowest state $\psi_0$ has the \textbf{zero point energy}. %Even if all the energy is removed from the system (zero Kelvin).
+    \item Solutions alter between even and odd% because the potential is \textbf{symmetric}.
     \item $\psi_{n+1}$ has one node more than $\psi_n$
     \item $\psi_n$ are mutually orthogonal + complete (form a basis).
     \item Soft boundary conditions - finite potential at the boundary/barrier.
     \item Negative kinetic energy outside the potential parabola.
-    \item The spacing between two energy levels spreads out for large $k$ as $\omega=\sqrt{\frac{k}{m}}$.
+          % \item The spacing between two energy levels spreads out for large $k$ as $\omega=\sqrt{\frac{k}{m}}$.
 \end{itemize}
 
 \ptitle{Specific Expectation Values}

@@ -23,17 +23,11 @@
 \end{align*}
 
 \ptitle{1st and 2nd Order Approximations}
-\begin{equation*}
-    E_{n}^{(1)}=\left\langle\psi_{n}^{(0)}\right| H^{\prime} \left.\psi_{n}^{(0)}\right\rangle
-\end{equation*}
-
-\begin{equation*}
-    \psi_{n}^{(1)}=\sum_{m\neq n}\frac{\left\langle\psi_{m}^{(0)}\right|H^{\prime}\left.\psi_{n}^{(0)}\right\rangle}{\left(E_{n}^{(0)}-E_{m}^{(0)}\right)}\psi_{m}^{(0)}
-\end{equation*}
-
-\begin{equation*}
-    E_{n}^{(2)}=\sum_{m\neq n}\frac{\left|\left\langle\psi_{m}^{(0)}\right|H^{\prime}\left.\psi_{n}^{(0)}\right\rangle\right|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}
-\end{equation*}
+\begin{gather*}
+    E_{n}^{(1)}     =\left\langle\psi_{n}^{(0)}\right| H^{\prime} \left.\psi_{n}^{(0)}\right\rangle,                                                                        \qquad
+    \psi_{n}^{(1)}  =\sum_{m\neq n}\frac{\left\langle\psi_{m}^{(0)}\right|H^{\prime}\left.\psi_{n}^{(0)}\right\rangle}{\left(E_{n}^{(0)}-E_{m}^{(0)}\right)}\psi_{m}^{(0)}   \\
+    E_{n}^{(2)}     =\sum_{m\neq n}\frac{\left|\left\langle\psi_{m}^{(0)}\right|H^{\prime}\left.\psi_{n}^{(0)}\right\rangle\right|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}
+\end{gather*}
 
 \subsubsection{Degenerate Perturbation Theory}
 \textbf{Two} different unpertubed states are degenerate if they share their eigenvalues ($E_1^{(0)} = E_2^{(0)}$).
@@ -69,10 +63,13 @@ If $\mathbf{W}^{n\times n}$ is diagonal
 \begin{itemize}
     \item The $\psi_a^{(0)},\psi_b^{(0)},\psi_c^{(0)} \dots $ are already proper eigenstates
     \item One has for the 2-fold degenerate case
-          \begin{align*}
-              E_{+}^{(1)} & =W_{aa}=\left\langle\psi_{a}^{(0)}\right|\left.\widehat{H}^{\prime}\psi_{a}^{(0)}\right\rangle \\
-              E_{-}^{(1)} & =W_{bb}=\left\langle\psi_{b}^{(0)}\right|\left.\widehat{H}^{\prime}\psi_{b}^{(0)}\right\rangle
-          \end{align*}
+          \noindent\begin{equation*}
+              E_{+}^{(1)}  =W_{aa}, \qquad E_{-}^{(1)}  =W_{bb}
+          \end{equation*}
+          %   \begin{align*}
+          %       E_{+}^{(1)} & =W_{aa}=\left\langle\psi_{a}^{(0)}\right|\left.\widehat{H}^{\prime}\psi_{a}^{(0)}\right\rangle \\
+          %       E_{-}^{(1)} & =W_{bb}=\left\langle\psi_{b}^{(0)}\right|\left.\widehat{H}^{\prime}\psi_{b}^{(0)}\right\rangle
+          %   \end{align*}
 \end{itemize}
 
 % \begin{examplesection}[Matrix example]
@@ -128,6 +125,6 @@ The variational principle theorem then states:
 \begin{enumerate}
     \item Set trial function e.g.: $\Psi_{\mathrm{trial}}={\left(\frac{\alpha}{\pi}\right)}^{1/4}\exp\left(\frac{-\alpha x^{2}}{2}\right)$\newline (1s orbital of HO)
     \item Calculate expectation: $\left\langle H\right\rangle= \left\langle\psi_{\mathrm{trial}}\right|\widehat{H} \psi_{\mathrm{trial}}\left.\right\rangle$
-    \item Minimize: $\frac{d}{d \alpha} \left\langle H\right\rangle=0\;\to\; \alpha_{\min}$ 
+    \item Minimize: $\frac{d}{d \alpha} \left\langle H\right\rangle=0\;\to\; \alpha_{\min}$
     \item $E_{gs}\leq {\left\langle H \right\rangle}_{\alpha_{\min}}$
 \end{enumerate}

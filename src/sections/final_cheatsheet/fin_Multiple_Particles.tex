@@ -1,17 +1,18 @@
 \section{Multiple Particle Systems}
 \subsection{Z-particle Systems}
 \subsubsection{Hydrogenic States}
-In case of $Z$ protons but only $1$ electron one has
+A hydrogenic atom with $Z$ protons and one electron has
 \begin{equation*}
-    E_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{Z e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{Z^2 E_1}{n^2}
+    \widetilde{E}_n = -\left[\frac{m}{2\hbar^2}{\left(\frac{Z e^2}{4\pi\epsilon_0}\right)}^2\right]\frac{1}{n^2} = \frac{Z^2 E_1}{n^2}, \quad n=1,2,\dots
 \end{equation*}
 \subsubsection{Multi-Electron Systems}
 In a general multi-particle system (e.g.\ atom with $Z$ protons) the Hamiltonian is given by
-    {\small     % Smaller font
-        \begin{equation*}
-            \widehat{H}=\underbrace{\sum_{j=1}^{Z}\left\{-\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}\right\}}_{T\text{ and interaction with nucleus}} + \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}
+    {\small
+        \noindent\begin{equation*}
+            \widehat{H} = \sum_{j=1}^{Z} \Biggl[ \underbrace{ -\frac{\hbar^{2}}{2m}\nabla_{j}^{2}-\left(\frac{1}{4\pi \epsilon_{0}}\right)\frac{Ze^{2}}{r_{j}}}_{T\text{ and interaction with nucleus}}  +              \underbrace{\frac{1}{2}\left(\frac{1}{4\pi \epsilon_{0}}\right)\sum_{j\neq k}^{Z}\frac{e^{2}}{\left|\mathbf{r}_{j}-\mathbf{r}_{k}\right|}}_{\text{repulsive int.\ of electrons}}\Biggr]
         \end{equation*}
     }
+
 The ``repulsion'' term makes exact solving of the TISE, in general, impossible. An approximation and an exception are presented hereafter.
 
 \subsection{Two-Particle Systems}
@@ -53,7 +54,7 @@ and we can find a solution
 \subsubsection{Noninteracting Particles}
 Ignore the interactions ($V$).
 \newpar{}
-\ptitle{Distinguishable Particles}
+\ptitle{Distinguishable Particles} (no Pauli)
 
 The overall solutions are products
 \begin{equation*}
@@ -73,7 +74,7 @@ The overall solutions are linear combinations (sym.\ or asym.):
 \paragraph[Exchange Symmetry]{Exchange Symmetry of $\psi_\pm$}
 \ptitle{Exchange Operator $\widehat{P}$}
 
-\begin{equation*}
+\noindent\begin{equation*}
     \widehat{P}\psi(\mathbf{r_1},\mathbf{r_2})=\psi(\mathbf{r_2},\mathbf{r_1})
 \end{equation*}
 $\widehat{P}$, $\widehat{H}$ share the eigenfunctions $\psi_{\pm}$ (eigvals.\ = $\pm 1$):
@@ -104,7 +105,7 @@ meaning that particles in $\psi_{+}$ (symmetric w.r.t.\ exchange) tend to be clo
     \item \textbf{Fermions} are particles with \textbf{half-integer} spin (e.g.\ electrons, protons, neutrons (s=$\frac{1}{2}$))
 \end{itemize}
 
-\newpar{}
+% \newpar{}
 \ptitle{Exchange Symmetry Axiom}
 
 The exchange symmetry of the overall wave function of
@@ -129,8 +130,8 @@ One has for $\chi(s)$ and two identical spins $s=\frac{1}{2}$ the spin states
 \end{align*}
 Because $\psi$ of fermions is antisymmetric:
 \noindent\begin{align*}
-    \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) &  & \text{stable chemical bond}         \\
-    \psi & = \psi_{-}\cdot \chi_{\mathrm{triplet}}(s) &  & \text{highe r energy (antibonding)}
+    \psi & = \psi_{+}\cdot \chi_{\mathrm{singlet}}(s) &  & \text{stable chemical bond}        \\
+    \psi & = \psi_{-}\cdot \chi_{\mathrm{triplet}}(s) &  & \text{higher energy (antibonding)}
 \end{align*}
 
 \newpar{}
