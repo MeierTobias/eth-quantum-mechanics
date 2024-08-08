@@ -562,6 +562,16 @@ of k-space for box volume $V$. This can be shown using the unit cuboid in k-spac
     k_x k_y k_z = \frac{\pi^3}{l_x l_y l_z}
 \end{equation*}
 
+\newpar{}
+\ptitle{Remarks}
+\begin{itemize}
+    \item One assumes noninteraction electrons and an empty box ($V=0$).
+    \begin{itemize}
+        \item Too simple to explain more advanced phenomena.
+    \end{itemize}
+    \item More precise model: Nuclei located on a periodic lattice and are modelled using the periodic potential model:~\ref{pot_models}.
+\end{itemize}
+
 \subsubsection{Fermi Energy}
 For electrons (fermions), the energy levels are filled with 2 $e^-$ at each level, and the highest occupied level is called the \textbf{Fermi level}.
 
@@ -581,12 +591,12 @@ The \textit{density of states} - the number of one-electron levels per unit ener
 \noindent\begin{equation*}
     D(E)=\frac{\partial N(E)}{\partial E} = \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}}
 \end{equation*}
-and from this, the spacing between energy levels results:
+and changes with the energy. It is denser for bottom states.From this, the spacing between energy levels results:
 \noindent\begin{equation*}
     \Delta E = \frac{1}{D(E)}
 \end{equation*}
 
-\subsection{Potential Models}
+\subsection{Potential Models}\label{pot_models}
 \subsubsection{Bloch's Theorem}
 Combining a \textbf{periodic} potential
 \noindent\begin{equation*}
@@ -605,7 +615,7 @@ As a result the probability density is also periodic:
 \end{equation*}
 
 \subsubsection{Periodic Boundary Conditions}
-With periodic boundary conditions
+With periodic boundary conditions (assuming wrap-around at boundaries)
 \noindent\begin{equation*}
     \psi(x+Na) = \psi(x)
 \end{equation*}
@@ -614,10 +624,9 @@ and Bloch's theorem
     \psi(x) = \psi(x+Na) & = e^{iKNa}\psi(x) \\
     1                    & =e^{iKNa}
 \end{align*}
-
-the quantization of $K$ can be found:
+As $KNa\overset{!}{=} j\cdot 2 \pi,\;j\in \mathbb{Z}$ the quantization of $K$ can be found:
 \noindent\begin{equation*}
-    K=\frac{2\pi j}{Na}, \qquad j\in \mathbb{Z}
+    K=\frac{2\pi j}{Na}
 \end{equation*}
 
 \ptitle{Potential}
@@ -626,7 +635,8 @@ In its simplest form, the potential can be modeled with a \textit{Dirac-comb}:
 \noindent\begin{equation*}
     V(x)=\alpha\sum_{j=0}^{N-1}\delta(x-ja)
 \end{equation*}
-Solving the 1D TISE for this potential results in
+which assumes that electrons reside near the nuclei. Hence, the latter are located at half-integer multiples of $a$.
+Solving the 1D TISE (assuming lattice of ISW) for this potential results in
 \noindent\begin{equation*}
     \underbrace{\cos(Ka)}_{\in [-1,1]} = \underbrace{\cos(ka) + \frac{m\alpha}{\hbar^2 k}\sin(ka)}_{\textsf{exceeds }[-1,1]}, \quad k=\sqrt{\frac{2mE}{\hbar^2}}
 \end{equation*}
@@ -641,3 +651,14 @@ As a consequence, only certain ranges/bands of energy are allowed.
 \begin{center}
     \includegraphics[width=\linewidth]{solids_gaps_materials.png}
 \end{center}
+
+\newpar{}
+\ptitle{Remarks}
+
+\begin{itemize}
+    \item Electrical current implies particle motion
+    \begin{itemize}
+        \item Increase of (kinetic) energy!
+        \item Therefore, for conduction, free energy levels right above $E_f$ are needed.
+    \end{itemize}
+\end{itemize}
