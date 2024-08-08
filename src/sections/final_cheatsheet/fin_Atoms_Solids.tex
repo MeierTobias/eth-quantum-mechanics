@@ -155,7 +155,11 @@ For a solid with $N$ atoms with $q$ valence electrons each the total volume
 \end{equation*}
 is occupied in k-space until all electron states are occupied.
 \noindent\begin{equation*}
-    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \quad
+    k_F  = \begin{cases}
+        Nq\frac{\pi}{2L}                                  & \mathrm{1D} \\
+        {\left(\frac{2Nq\pi}{A}\right)}^\frac{1}{2}       & \mathrm{2D} \\
+        {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}} & \mathrm{3D}
+    \end{cases}, \quad
     E_F  = \begin{cases}
         \frac{1}{8}\left(\hbar \pi \frac{Nq}{L}\right)^2                    & \mathrm{1D} \\
         \frac{\hbar^2 \pi}{m} \frac{Nq}{A}                                  & \mathrm{2D} \\
