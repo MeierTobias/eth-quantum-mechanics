@@ -149,16 +149,18 @@ with spacing ($\to$ bands). For $l_x=l_y=l_z=$ 1 cm one has:
 and each solution occupies $\frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}$
 
 \subsubsection{Fermi Energy}
-\newpar{}
 For a solid with $N$ atoms with $q$ valence electrons each the total volume
 \noindent\begin{equation*}
     \frac{1}{8}\cdot\underbrace{\frac{4}{3}\pi k_F^3}_{\textsf{vol. sphere}} = \underbrace{\frac{Nq}{2}}_{\frac{\textsf{\# electrons}}{\mathsf{spin}}}\cdot \underbrace{\frac{\pi^3}{V}}_{\textsf{vol. per state}}
 \end{equation*}
-is occupied in k-space until all electron states are occupied.\\
-The Fermi wave number and its energy can then be found:
+is occupied in k-space until all electron states are occupied.
 \noindent\begin{equation*}
-    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \qquad
-    E_F  = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
+    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \quad
+    E_F  = \begin{cases}
+        \frac{1}{8}\left(\hbar \pi \frac{Nq}{L}\right)^2                    & \mathrm{1D} \\
+        \frac{\hbar^2 \pi}{m} \frac{Nq}{A}                                  & \mathrm{2D} \\
+        \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}} & \mathrm{3D}
+    \end{cases}
 \end{equation*}
 
 \newpar{}
@@ -166,7 +168,7 @@ The Fermi wave number and its energy can then be found:
 
 The \textit{density of states} - the number of one-electron levels per unit energy is given by
 \noindent\begin{equation*}
-    D(E)=\frac{\partial N(E)}{\partial E} = \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}} \quad \Rightarrow \Delta E = \frac{1}{D(E)}
+    D(E)=\frac{\partial N(E)}{\partial E} \overset{\mathrm{3D}}{=} \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}} \quad \Rightarrow \Delta E = \frac{1}{D(E)}
 \end{equation*}
 and changes with the energy. It is denser for bottom states.
 
