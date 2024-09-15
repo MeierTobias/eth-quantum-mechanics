@@ -2,7 +2,7 @@
 
 \subsection{Operators}
 \noindent\begin{align*}
-    \hat{Q}(\hat{x},\hat{p}): &  & \widehat{x}              & =x             & \widehat{p}_x & = -i\hbar \frac{\partial}{\partial x}            \\
+    \hat{Q}(\hat{x},\hat{p}): &  & \widehat{x}              & =x              & \widehat{p}_x & = -i\hbar \frac{\partial}{\partial x}            \\
                               &  & \widehat{T}_r \varphi(x) & = \varphi(x-a): & \widehat{T}_r & = \exp\left(-\frac{ia}{\hbar} \widehat{p}\right)
 \end{align*}
 
@@ -67,11 +67,13 @@ Evaluate $\widehat{A}\widehat{B}f - \widehat{B}\widehat{A}f$ and not $(\widehat{
 \ptitle{Angular Momentum Commutators}\label{ang_mom_comm}
 
 Same rules apply to spin $\mathbf{S}$
-\noindent\begin{gather*}
-    \left[\widehat{L}_{x},\widehat{L}_{y}\right] =i\hbar \widehat{L}_{z}, \qquad \left[\widehat{L}_{y},\widehat{L}_{z}\right]  =i\hbar \widehat{L}_{x}, \qquad \left[\widehat{L}_{z},\widehat{L}_{x}\right]  =i\hbar \widehat{L}_{y}      \\
-    \left[\widehat{L}^{2},\widehat{L}_{x}\right] = \left[\widehat{L}^{2},\widehat{L}_{y}\right] = \left[\widehat{L}^{2},\widehat{L}_{z}\right] = 0\\
-    \left[\widehat{L}^2, \mathbf{L}\right]=0
-\end{gather*}
+\noindent\begin{flalign*}
+     & \left[\widehat{L}_{x},\widehat{L}_{y}\right] =i\hbar \widehat{L}_{z} &  & \left[\widehat{L}_{y},\widehat{L}_{z}\right]  =i\hbar \widehat{L}_{x} &  & \left[\widehat{L}_{z},\widehat{L}_{x}\right]  =i\hbar \widehat{L}_{y} & \\
+     & \left[\widehat{L}_{x, y, z}, \widehat{L}^{2}\right]= 0               &  & \left[\widehat{L}_{x,y,z},\widehat{r}^2\right] =0                     &  & \left[\widehat{L}_{x,y,z},\widehat{\mathbf{p}}^2\right] =0                     & \\
+     & \left[\widehat{L}^2, \mathbf{L}\right]=0                             &  & \left[\widehat{L}^2, \widehat{L}_\pm\right]=0                         &  & \left[\widehat{L}_z, \widehat{L}_\pm\right]=\pm\hbar\widehat{L}_\pm   & \\
+     & \left[\widehat{L}_{z},x\right]  =i\hbar y,                           &  & \left[\widehat{L}_{z},y\right]  =-i\hbar z,                           &  & \left[\widehat{L}_{z},z\right]  =0                                    & \\
+     & \left[\widehat{L}_{z},\widehat{p}_x\right]  =i\hbar \widehat{p}_y,   &  & \left[\widehat{L}_{z},\widehat{p}_y\right]  =-i\hbar \widehat{p}_z,   &  & \left[\widehat{L}_{z},\widehat{p}_z\right]  =0                        &
+\end{flalign*}
 
 \subsection{Dirac Notation}
 Assuming the functions $f,g$ are square integrable i.e.\ in $L_2$ (\textbf{Hilbert space}) $\mathcal{H}$.
@@ -162,10 +164,6 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
           \noindent\begin{equation*}
               \langle f_m|f_n\rangle=\delta_{mn}
           \end{equation*}
-    \item Eigenvalue equation for \textbf{position}:
-          \noindent\begin{equation*}
-              \widehat{x}g_{x'}= x'g_{x'}\;\Leftrightarrow\; g_{x'}=\delta(x-x')
-          \end{equation*}
 \end{itemize}
 
 \newpar{}
@@ -175,6 +173,10 @@ If $\psi_n$ are solutions to $\hat{Q}\psi_n=q\psi_n$ then
     \item These eigenfunctions with real eigenvalues form a \textbf{complete set} and are \textit{Dirac-orthonormalizable}:
           \noindent\begin{equation*}
               \langle f_{x'}|f_{x''}\rangle=\delta(x''-x')
+          \end{equation*}
+    \item Eigenvalue equation for \textbf{position}:
+          \noindent\begin{equation*}
+              \widehat{x}g_{x'}= x'g_{x'}\;\Leftrightarrow\; g_{x'}=\delta(x-x')
           \end{equation*}
     \item Eigenvalue equation for \textbf{momentum}:
           \noindent\begin{equation*}
@@ -221,8 +223,8 @@ After a measurement of an observable, the wave function \textbf{collapses} into 
 \subsection{Fundamental QM Relations}
 
 \noindent\begin{align*}
-    \mathrm{Black\ Body\ Radiation}: &  & k_B T_{low}         & \ll h\nu_{high}                         \\
-    \mathrm{Photon\ Energy}           &  & E_{\mathsf{ph}}     & = \frac{hc}{\lambda}                    \\
+    \mathrm{Black\ Body\ Radiation}: &  & k_B T_{low}         & \ll h\nu_{high}                                    \\
+    \mathrm{Photon\ Energy}          &  & E_{\mathsf{ph}}     & = \frac{hc}{\lambda} = \frac{2\pi\hbar c}{\lambda} \\
     \mathrm{De\ Broglie}             &  & p=\frac{h}{\lambda} & =\frac{2\pi\hbar}{\lambda}=\hbar\cdot k
 \end{align*}
 

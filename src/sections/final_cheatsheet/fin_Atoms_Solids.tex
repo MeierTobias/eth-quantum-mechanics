@@ -22,16 +22,16 @@
 \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
 {\small     % Smaller font
     \begin{tabularx}{\linewidth}{@{}llllll@{}}
-            &                & \textbf{Subshell(s)} & \# \textbf{Orbitals}              & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
-        $n$ & \textbf{Shell} & $l=0\dots n-1$       & $m_{l}=-l,\dots l$                & \textbf{per Subshell}                             & \textbf{per Shell} \\
-        1   & K              & s                    & 1                                 & 2                                                 & 2                  \\
+            &                & \textbf{Subshell(s)}          & \# \textbf{Orbitals}              & \multicolumn{2}{c}{\# \textbf{of electrons}\dots}                      \\
+        $n$ & \textbf{Shell} & $\ell=0\dots n-1$             & $m_{\ell}=-\ell,\dots \ell$       & \textbf{per Subshell}                             & \textbf{per Shell} \\
+        1   & K              & s \quad{\color{teal}$\ell=0$} & 1                                 & 2                                                 & 2                  \\
         \cmidrule{1-6}
-        2   & L              & s                    & 1 \qquad{\color{teal} $\cdot 2=$} & 2  \qquad{\color{teal} $\sum=$}                   & 8                  \\
-            &                & p                    & 3 \qquad{\color{teal} $\cdot 2=$} & 6                                                 &                    \\
+        2   & L              & s \quad{\color{teal}$\ell=0$} & 1 \qquad{\color{teal} $\cdot 2=$} & 2  \qquad{\color{teal} $\sum=$}                   & 8                  \\
+            &                & p \quad{\color{teal}$\ell=1$} & 3 \qquad{\color{teal} $\cdot 2=$} & 6                                                 &                    \\
         \cmidrule{1-6}
-        3   & M              & s                    & 1                                 & 2                                                 & 18                 \\
-            &                & p                    & 3                                 & 6                                                 &                    \\
-            &                & d                    & 5                                 & 10                                                &                    \\
+        3   & M              & s \quad{\color{teal}$\ell=0$} & 1                                 & 2                                                 & 18                 \\
+            &                & p \quad{\color{teal}$\ell=1$} & 3                                 & 6                                                 &                    \\
+            &                & d \quad{\color{teal}$\ell=2$} & 5                                 & 10                                                &                    \\
         % \cmidrule{1-6}
         % 4   & N              & s                    & 1                                  & 2                                                 & 32                 \\
         %     &                & p                    & 3                                  & 6                                                 &                    \\
@@ -128,13 +128,13 @@ Pauli/spin: 2 electron s per orbital.
 
 
 \section{Solids}
-\subsection{Free-Electron Model}
+\subsection{Free-Electron Model}\label{ssec:FEM}
 Neglecting spin and electron-electron interactions, an electrons wavefunction in a box with length $l_x,l_y,l_z$ is given by
 \noindent\begin{align*}
     E_{n_x,n_y,n_z}    & = \frac{\hbar^2\pi^2}{2m}\left(\frac{n_x^2}{l_x^2}+\frac{n_y^2}{l_y^2}+\frac{n_z^2}{l_z^2}\right),\quad n_x,n_y,n_z \in \mathbb{N}\backslash 0 \\
     \psi_{n_x,n_y,n_z} & = \sqrt{\frac{8}{l_x l_y l_z}} \sin\left(\frac{n_x\pi}{l_x}x\right) \sin\left(\frac{n_y\pi}{l_y}y\right) \sin\left(\frac{n_z\pi}{l_z}z\right)
 \end{align*}
-with spacing ($\to$ bands)
+with spacing ($\to$ bands). For $l_x=l_y=l_z=$ 1 cm one has:
 \noindent\begin{equation*}
     \Delta E \leq 10^{-6} ~\mathrm{eV}
 \end{equation*}
@@ -149,16 +149,22 @@ with spacing ($\to$ bands)
 and each solution occupies $\frac{\pi^3}{l_x l_y l_z}=\frac{\pi^3}{V}$
 
 \subsubsection{Fermi Energy}
-\newpar{}
-For a solid with $N$ atoms with $q$ valence electrons each the total volume
+For a solid with $N$ atoms with $q$ valence electrons each the total volume (3D)
 \noindent\begin{equation*}
     \frac{1}{8}\cdot\underbrace{\frac{4}{3}\pi k_F^3}_{\textsf{vol. sphere}} = \underbrace{\frac{Nq}{2}}_{\frac{\textsf{\# electrons}}{\mathsf{spin}}}\cdot \underbrace{\frac{\pi^3}{V}}_{\textsf{vol. per state}}
 \end{equation*}
-is occupied in k-space until all electron states are occupied.\\
-The Fermi wave number and its energy can then be found:
+is occupied in k-space until all electron states are occupied.
 \noindent\begin{equation*}
-    k_F  = {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}}, \qquad
-    E_F  = \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}}
+    k_F  = \begin{cases}
+        Nq\frac{\pi}{2L}                                  & \mathrm{1D} \\
+        {\left(\frac{2Nq\pi}{A}\right)}^\frac{1}{2}       & \mathrm{2D} \\
+        {\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{1}{3}} & \mathrm{3D}
+    \end{cases}, \quad
+    E_F  = \begin{cases}
+        \frac{1}{8}{\left(\hbar \pi \frac{Nq}{L}\right)}^2                    & \mathrm{1D} \\
+        \frac{\hbar^2 \pi}{m} \frac{Nq}{A}                                  & \mathrm{2D} \\
+        \frac{\hbar^2}{2m}{\left(\frac{3\pi^2 N q}{V}\right)}^{\frac{2}{3}} & \mathrm{3D}
+    \end{cases}
 \end{equation*}
 
 \newpar{}
@@ -166,8 +172,9 @@ The Fermi wave number and its energy can then be found:
 
 The \textit{density of states} - the number of one-electron levels per unit energy is given by
 \noindent\begin{equation*}
-    D(E)=\frac{\partial N(E)}{\partial E} = \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}} \quad \Rightarrow \Delta E = \frac{1}{D(E)}
+    D(E)=\frac{\partial N(E)}{\partial E} \overset{\mathrm{3D}}{=} \frac{V}{2\pi^2}{\left(\frac{2m}{\hbar^2}\right)}^{\frac{3}{2}} E^{\frac{1}{2}} \quad \Rightarrow \Delta E = \frac{1}{D(E)}
 \end{equation*}
+and changes with the energy. It is denser for bottom states.
 
 \subsection{Potential Models}
 \subsubsection{Bloch's Theorem}

@@ -67,15 +67,16 @@ Explicit solution depends of the potential $V$.
 %     r      & = \text{radius}
 % \end{align*}
 {\footnotesize
-    \begin{align*}
+    \begin{equation*}
         % \mathbf{\nabla} & =\mathbf{u}_{r}\frac{\partial}{\partial r}+\frac{\mathbf{u}_{\theta}}{r}\frac{\partial}{\partial\theta}+\frac{\mathbf{u}_{\phi}}{r\sin\theta}\frac{\partial}{\partial\phi}                                      \\
         \nabla^2  =\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial\theta}\left(\sin(\theta)\frac{\partial}{\partial \theta}\right)
         + \frac{1}{r^2\sin^2(\theta)}\left(\frac{\partial^2}{\partial \phi^2}\right)
-    \end{align*}}
-\begin{equation*}
-    d^2\mathbf{r} = \sin(\theta)d\theta\:d\phi; \qquad
-    d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi
-\end{equation*}
+    \end{equation*}}
+\begin{gather*}
+    d^2\mathbf{r} = \sin(\theta)d\theta\:d\phi, \qquad d^3\mathbf{r} = dx\:dy\:dz = r^2\sin(\theta)dr\:d\theta\:d\phi\\
+    x = r\sin\theta\cos\phi,\quad y = r\sin\theta\sin\phi,\quad z=r\cos\theta\\
+    r^2=x^2+y^2+z^2, \quad \theta=\arccos\left(\frac{z}{r}\right) , \quad \phi=\arctan\left(\frac{y}{x}\right)
+\end{gather*}
 
 \newpar{}
 \ptitle{Probability Calculations}
@@ -160,12 +161,19 @@ Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), 
     \item $m_l$ is responsible for the magnetic splitting of spectral lines i.e.\ the \textit{Zeeman effect}
 \end{itemize}
 
-\subsection{Cubical ISW}
+\subsection{Other 3D examples}
+\ptitle{Cubical ISW}: see~\ref{ssec:FEM} with $l_x,l_y,l_z = a$
+
+\ptitle{3D Harmonic Oscillator}
 \noindent\begin{align*}
-    V(x,y,z)           & =\begin{cases}0,&\text{if }x,y,z\text{ are all between }0\text{ and }a\\\infty,&\text{otherwise}\end{cases}                                            \\
-    \Psi_{n_x,n_y,n_z} & ={\left(\frac{2}{a}\right)}^{\frac{3}{2}} \sin\left(\frac{n_{x}\pi}{a}x\right)\sin\left(\frac{n_{y}\pi}{a}y\right)\sin\left(\frac{n_{z}\pi}{a}z\right) \\
-    E_{n_x,n_y,n_z}    & = \frac{\hbar^{2}}{2m} \frac{\pi^{2}}{a^{2}} \left(n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right)
+    V(r) & = \frac{1}{2}m\omega^2r^2,\quad \omega^2r^2 = \omega_x^2x^2 + \omega_y^2y^2 + \omega_z^2z^2 \\
+    E_n  & = \hbar \omega(n_x+n_y+n_z + \frac{3}{2})
 \end{align*}
+% \noindent\begin{align*}
+%     V(x,y,z)           & =\begin{cases}0,&\text{if }x,y,z\text{ are all between }0\text{ and }a\\\infty,&\text{otherwise}\end{cases}                                            \\
+%     \psi_{n_x,n_y,n_z} & ={\left(\frac{2}{a}\right)}^{\frac{3}{2}} \sin\left(\frac{n_{x}\pi}{a}x\right)\sin\left(\frac{n_{y}\pi}{a}y\right)\sin\left(\frac{n_{z}\pi}{a}z\right) \\
+%     E_{n_x,n_y,n_z}    & = \frac{\hbar^{2}}{2m} \frac{\pi^{2}}{a^{2}} \left(n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right)
+% \end{align*}
 
 \section{Angular Momentum and Spin}
 \subsection{Angular Momentum}
@@ -190,10 +198,18 @@ Considering the hydrogen atom with a given $n$ (except the ground state $n=1$), 
 See Subsection~\ref{ang_mom_comm} for compatibility.
 
 \subsubsection{Ladder Operators for Angular Momentum}
+\renewcommand{\arraystretch}{0.7}
+\setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{0pt}
 
-\noindent\begin{equation*}
-    \widehat{L}_{\pm}=\widehat{L}_x\pm i \widehat{L}_y \quad \mathrm{change\ eigenvalue\ of\ } \widehat{L}_z \mathrm{\ by\ } \hbar
-\end{equation*}
+\begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash}p{0.4\linewidth}X@{}}
+    $\widehat{L}_{\pm}=\widehat{L}_x\pm i \widehat{L}_y$
+     &
+    change eigenvalue of $\widehat{L}_z$ by $\hbar$ \newline raises or lowers $m_\ell$ by 1.
+\end{tabularx}
+
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{\oldtabcolsep}
+
 
 \subsubsection{Eigenfunctions}
 
