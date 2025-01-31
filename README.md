@@ -79,3 +79,7 @@ The LaTeX template of this summary can be found [here](https://github.com/MeierT
 ## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+## Disclaimer
+
+All information, images, and materials presented here are sourced from the official lecture slides of the course "Quantum Mechanics" taught by Prof. Dr.  David J. Norris (Spring Semester 2024) and the textbook "Introduction to Quantum Mechanics" by David J. Griffiths and Darrell F. Schroeter. This course summary is intended solely for educational and academic purposes. Any other use or distribution is strictly prohibited.
